@@ -1,24 +1,24 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
-entity shifter is
+entity shifter_1bit is
 	generic (N: natural);
 	port(
-		X : in STD_LOGIC_VECTOR(N-1 downto 0);
+		X : in STD_LOGIC;
+		X_SHIFT : in STD_LOGIC;
 		SHAMT : in STD_LOGIC;
-		R : out STD_LOGIC_VECTOR(N-1 downto 0)
+		R : out STD_LOGIC
 		);
-end shifter;
+end shifter_1bit;
 
-architecture Behavioral of shifter is
+architecture Behavioral of shifter_1bit is
 
 begin
 
 	shift : process(SHAMT, X)
 	begin
 		if SHAMT = '1' then
-			R(0) <= X(1);
-			R(1) <= X(0);
+			R <= X_SHIFT;
 		else
 			R <= X;
 		end if;
