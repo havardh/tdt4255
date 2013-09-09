@@ -12,37 +12,48 @@ entity shifter is
 end shifter;
 
 architecture Behavioral of shifter is
-	component shifter_1bit is
+	
+	component shiftword is
+		generic ( N: natural := 32; D: natural := 1);
 		port(
-			X : in STD_LOGIC;
-			X_SHIFT : in STD_LOGIC;
+			X : in STD_LOGIC_VECTOR(N-1 downto 0);
 			SHAMT : in STD_LOGIC;
-			R : out STD_LOGIC
+			R : out STD_LOGIC_VECTOR(N-1 downto 0)
 		);
 	end component;
 
-	type X_AUX_T is array (integer(log2(real(N))) downto 0) of STD_LOGIC_VECTOR (N-1 downto 0);
+	type X_AUX_T is array (integer(log2(real(N)))-2 downto 0) of STD_LOGIC_VECTOR (N-1 downto 0);
 
 	signal X_AUX : X_AUX_T;
 
 begin
 
-X_AUX(integer(log2(real(N)))) <= X;
+			last_shifter : shiftword
+				generic map(N => N, D => 0)
+				port map (
+					X => X_AUX(0),
+					SHAMT => SHAMT(0),
+					R => R
+				);
 
+	
 gen_cols:
-for j in 0 to integer(log2(real(N)))-1 generate
-	gen_shift:
-	for i in 0 to N-1 generate
-	shift : shifter_1bit
-		port map (
-			X => X_AUX(j+1)(i),
-			X_SHIFT => X( (i+(2**j) ) mod N ),
-			SHAMT => SHAMT(j),
-			R => X_AUX(j)(i)
-		);
-	end generate;
-end generate;
+for i in 1 to integer(log2(real(N)))-2 generate
+			next_shifter : shiftword
+				generic map(N => N, D => i)
+				port map(
+					X => X_AUX(i),
+					SHAMT => SHAMT(i),
+					R => X_AUX(i-1)
+				);
+		end generate;
 
-R <= X_AUX(0);
+			first_shifter : shiftword
+				generic map(N => N, D => integer(log2(real(N)))-1)
+				port map (
+					X => X,
+					SHAMT => SHAMT( integer(log2(real(N))) -1),
+					R => X_AUX(integer(log2(real(N))) -2)
+				);
 
 end Behavioral;

@@ -8,15 +8,15 @@ build:
 	ghdl -a $(FLAGS) shiftword.vhd
 	ghdl -a $(FLAGS) shiftword_tb.vhd
 	ghdl -e $(FLAGS) shiftword_tb
-#	ghdl -a $(FLAGS) shifter.vhd
-#	ghdl -a $(FLAGS) shifter_tb.vhd
-#	ghdl -e $(FLAGS) shifter_tb
+	ghdl -a $(FLAGS) shifter.vhd
+	ghdl -a $(FLAGS) shifter_tb.vhd
+	ghdl -e $(FLAGS) shifter_tb
 
 
 run: build
 	ghdl -r $(FLAGS) shifter_1bit_tb --vcd=trace.vcd
 	ghdl -r $(FLAGS) shiftword_tb --vcd=trace.vcd
-#	ghdl -r $(FLAGS) shifter_tb --vcd=trace.vcd
+	ghdl -r $(FLAGS) shifter_tb --vcd=trace.vcd
 
 clean:
 	rm -rf *.o e~* work* shifter_1bit_tb shifter_tb *.vcd *~
