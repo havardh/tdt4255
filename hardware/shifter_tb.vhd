@@ -2,6 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.math_real.all;
 
+
+
 entity shifter_tb is
 end shifter_tb;
 
@@ -46,21 +48,7 @@ architecture Behavioral of shifter_tb is
 				severity failure;
 	end assertEqual;
 
---	type SIGNAL_ARRAY is array(
-
---	procedure assertArray(asserts : SIGNAL_ARRAY) is
---
---	begin
---		
---		for i in 0 to asserts'length loop
---			X <= asserts(i).X;
---			SHAMT <= asserts(i).SHAMT;
---			wait for 10 ns;
---			assertEqual( R, asserts(i).expected, asserts(i).msg);
---		end loop;	
---
---	end assertArray;
-
+	
 	signal X : STD_LOGIC_VECTOR(31 downto 0);
 	signal SHAMT : STD_LOGIC_VECTOR(4 downto 0);
 
@@ -78,19 +66,23 @@ begin
 		X <= "00000000000000000000000000000001";
 		SHAMT <= "00000";
 		wait for 10 ns;
-		assert (R = "00000000000000000000000000000001") report "Should not shift if shamt is 0" severity error;
-
-	
+		assertEqual(R, "00000000000000000000000000000001", "00000000000000000000000000000001");
+		
 		X <= "00000000000000000000000000000001";
 		SHAMT <= "00001";
 		wait for 10 ns;
 		assertEqual(R, "10000000000000000000000000000000", "10000000000000000000000000000000");
-	
---		X <= "00000000000000000000000000000001";
---		SHAMT <= "00011";
---		wait for 10 ns;
---		assertEqual(R, "00100000000000000000000000000000", "00100000000000000000000000000000");
 
+		X <= "00000000000000000000000000000001";
+		SHAMT <= "00011";
+		wait for 10 ns;
+		assertEqual(R, "00100000000000000000000000000000", "00100000000000000000000000000000");
+
+		X <= "00000000000000000000000000000001";
+		SHAMT <= "11111";
+		wait for 10 ns;
+		assertEqual(R, "00000000000000000000000000000010", "00000000000000000000000000000010");
+		
 		wait;
 		
 	end process;
