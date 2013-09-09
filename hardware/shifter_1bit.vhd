@@ -15,7 +15,7 @@ architecture Behavioral of shifter_1bit is
 
 begin
 
-	shift : process(SHAMT, X)
+	shift : process(SHAMT, X, X_SHIFT)
 	begin
 		if SHAMT = '1' then
 			R <= X_SHIFT;
