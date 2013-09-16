@@ -70,109 +70,114 @@ architecture Behavioral of control_unit is
 begin
 	process (clk, state, inst)
 		begin 
+		
 		if (rising_edge(clk)) then
-			case state is
-				when fetch =>
-					case inst is
-						when op_alu =>
-							reg_dst <= '1';
-							branch <= '0';
-							mem_read <= '0';
-							mem_to_reg <= '0';
-							alu_op <= ALUOP_FUNC;
-							mem_write <= '0';
-							alu_src <= '0';
-							reg_write <= '1';
-							jump <= '0';
-							state <= execute_1;
+			if(reset) then
+				state <= fetch;
+			else 
+				case state is
+					when fetch =>
+						case inst is
+							when op_alu =>
+								reg_dst <= '1';
+								branch <= '0';
+								mem_read <= '0';
+								mem_to_reg <= '0';
+								alu_op <= ALUOP_FUNC;
+								mem_write <= '0';
+								alu_src <= '0';
+								reg_write <= '1';
+								jump <= '0';
+								state <= execute_1;
+							
+							when op_lw =>
+								reg_dst <= '0';
+								branch <= '0';
+								mem_read <= '1';
+								mem_to_reg <= '1';
+								alu_op <= ALUOP_LOAD_STORE;
+								mem_write <= '0';
+								alu_src <= '1';
+								reg_write <= '1';
+								jump <= '0';
+								state <= execute_2;
+							
+							when op_sw =>
+								reg_dst <= '0';
+								branch <= '0';
+								mem_read <= '0';
+								mem_to_reg <= '0';
+								alu_op <= ALUOP_LOAD_STORE;
+								mem_write <= '1';
+								alu_src <= '1';
+								reg_write <= '0';
+								jump <= '0';
+								state <= execute_2;
+								
+							when op_lui =>
+								reg_dst <= '0';
+								branch <= '0';
+								mem_read <= '0';
+								mem_to_reg <= '0';
+								alu_op <= ALUOP_LDI;
+								mem_write <= '0';
+								alu_src <= '1';
+								reg_write <= '1';
+								jump <= '0';
+								state <= execute_1;
+								
+							when op_beq =>
+								reg_dst <= '1';
+								branch <= '1';
+								mem_read <= '0';
+								mem_to_reg <= '0';
+								alu_op <= ALUOP_BRANCH;
+								mem_write <= '0';
+								alu_src <= '0';
+								reg_write <= '0';
+								jump <= '0';
+								state <= execute_1;
+								
+							when op_j =>
+								reg_dst <= '1';
+								branch <= '0';
+								mem_read <= '0';
+								mem_to_reg <= '0';
+								alu_op <= ALUOP_BRANCH;
+								mem_write <= '0';
+								alu_src <= '0';
+								reg_write <= '0';
+								jump <= '1';
+								state <= execute_1;
+							
+							when others =>
+								reg_dst <= '0';
+								branch <= '0';
+								mem_read <= '0';
+								mem_to_reg <= '0';
+								alu_op <= ALUOP_BRANCH;
+								mem_write <= '0';
+								alu_src <= '0';
+								reg_write <= '0';
+								jump <= '0';
+								state <= fetch;
+								
+						end case;
 						
-						when op_lw =>
-							reg_dst <= '0';
-							branch <= '0';
-							mem_read <= '1';
-							mem_to_reg <= '1';
-							alu_op <= ALUOP_LOAD_STORE;
-							mem_write <= '0';
-							alu_src <= '1';
-							reg_write <= '1';
-							jump <= '0';
-							state <= execute_2;
+					when execute_1 =>
+						state <= fetch;
+					
+					when execute_2 =>
+						state <= stall;
+					
+					when stall =>
+						state <= fetch;
 						
-						when op_sw =>
-							reg_dst <= '0';
-							branch <= '0';
-							mem_read <= '0';
-							mem_to_reg <= '0';
-							alu_op <= ALUOP_LOAD_STORE;
-							mem_write <= '1';
-							alu_src <= '1';
-							reg_write <= '0';
-							jump <= '0';
-							state <= execute_2;
-							
-						when op_lui =>
-							reg_dst <= '0';
-							branch <= '0';
-							mem_read <= '0';
-							mem_to_reg <= '0';
-							alu_op <= ALUOP_LDI;
-							mem_write <= '0';
-							alu_src <= '1';
-							reg_write <= '1';
-							jump <= '0';
-							state <= execute_1;
-							
-						when op_beq =>
-							reg_dst <= '1';
-							branch <= '1';
-							mem_read <= '0';
-							mem_to_reg <= '0';
-							alu_op <= ALUOP_BRANCH;
-							mem_write <= '0';
-							alu_src <= '0';
-							reg_write <= '0';
-							jump <= '0';
-							state <= execute_1;
-							
-						when op_j =>
-							reg_dst <= '1';
-							branch <= '0';
-							mem_read <= '0';
-							mem_to_reg <= '0';
-							alu_op <= ALUOP_BRANCH;
-							mem_write <= '0';
-							alu_src <= '0';
-							reg_write <= '0';
-							jump <= '1';
-							state <= execute_1;
+					when others =>
+						state <= fetch;
 						
-						when others =>
-							reg_dst <= '0';
-							branch <= '0';
-							mem_read <= '0';
-							mem_to_reg <= '0';
-							alu_op <= ALUOP_BRANCH;
-							mem_write <= '0';
-							alu_src <= '0';
-							reg_write <= '0';
-							jump <= '0';
-							state <= fetch;
-							
-					end case;
-					
-				when execute_1 =>
-					state <= fetch;
-				
-				when execute_2 =>
-					state <= stall;
-				
-				when stall =>
-					state <= fetch;
-					
-				when others =>
-					state <= fetch;
-					
-			end case;
+				end case;
+			end if;
 		end if;
 	end process;
 end Behavioral;
