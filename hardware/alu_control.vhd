@@ -68,10 +68,10 @@ begin
 		elsif (ALU_OP = ALUOP_LOAD_STORE) then
 			ALU_INPUT <= (Op1 => '1', others => '0');
 			
-		elsif (ALU_OP = ALUOP_LDI) then
+		elsif (ALU_OP = ALUOP_BRANCH) then
 			ALU_INPUT <= (Op1 => '1', Op2 => '1', others => '0');
 		
-		elsif (ALU_OP = ALUOP_BRANCH) then
+		elsif (ALU_OP = ALUOP_LDI) then
 			ALU_INPUT <= (Op3 => '1', others => '0');
 			
 		end if;
