@@ -72,7 +72,7 @@ begin
 		begin 
 		
 		if (rising_edge(clk)) then
-			if(reset) then
+			if reset = '1' then
 				state <= fetch;
 			else 
 				case state is
