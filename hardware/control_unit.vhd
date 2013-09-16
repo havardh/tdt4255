@@ -1,6 +1,4 @@
 ----------------------------------------------------------------------------------
-
-
 -- Company: 
 -- Engineer: 
 -- 
@@ -52,17 +50,17 @@ entity control_unit is
 end control_unit;
 
 architecture Behavioral of control_unit is
-	 signal state 		: STD_LOGIC_VECTOR (1 downto 0);
-	 constant fetch 	: STD_LOGIC_VECTOR (1 downto 0) := "00";
-	 constant execute_1 : STD_LOGIC_VECTOR (1 downto 0) := "01";
-	 constant execute_2 : STD_LOGIC_VECTOR (1 downto 0) := "10";
-	 constant stall 	: STD_LOGIC_VECTOR (1 downto 0) := "11";
-	 constant op_alu 	: STD_LOGIC_VECTOR (5 downto 0) := "000000";
-	 constant op_lw 	: STD_LOGIC_VECTOR (5 downto 0) := "100011";
-	 constant op_sw 	: STD_LOGIC_VECTOR (5 downto 0) := "101011";
-	 constant op_lui 	: STD_LOGIC_VECTOR (5 downto 0) := "001111";
-	 constant op_beq 	: STD_LOGIC_VECTOR (5 downto 0) := "000100";
-	 constant op_j 	: STD_LOGIC_VECTOR (5 downto 0) := "000010";
+	 signal state 			: STD_LOGIC_VECTOR (1 downto 0);
+	 constant fetch 		: STD_LOGIC_VECTOR (1 downto 0) := "00";
+	 constant execute_1 	: STD_LOGIC_VECTOR (1 downto 0) := "01";
+	 constant execute_2 	: STD_LOGIC_VECTOR (1 downto 0) := "10";
+	 constant stall 		: STD_LOGIC_VECTOR (1 downto 0) := "11";
+	 constant op_alu 		: STD_LOGIC_VECTOR (5 downto 0) := "000000";
+	 constant op_lw 		: STD_LOGIC_VECTOR (5 downto 0) := "100011";
+	 constant op_sw 		: STD_LOGIC_VECTOR (5 downto 0) := "101011";
+	 constant op_lui 		: STD_LOGIC_VECTOR (5 downto 0) := "001111";
+	 constant op_beq 		: STD_LOGIC_VECTOR (5 downto 0) := "000100";
+	 constant op_j 		: STD_LOGIC_VECTOR (5 downto 0) := "000010";
 	 
 
 	
