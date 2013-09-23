@@ -21,3 +21,7 @@ _xmsgs
 *wlf
 hardware/work
 hardware/transcript
+*.aux
+*.log
+*.toc
+*.pdf
