@@ -45,7 +45,8 @@ entity control_unit is
 		 mem_write 	: out STD_LOGIC;
 		 alu_src 	: out STD_LOGIC;
 		 reg_write 	: out STD_LOGIC;
-		 jump 		: out STD_LOGIC 
+		 jump 		: out STD_LOGIC;
+		 pc_latch   : out STD_LOGIC
 	 );
 end control_unit;
 
@@ -72,9 +73,11 @@ begin
 		if (rising_edge(clk)) then
 			if reset = '1' then
 				state <= fetch;
+				pc_latch <= '0';
 			else 
 				case state is
 					when fetch =>
+						pc_latch <= '0';
 						case inst is
 							when op_alu =>
 								reg_dst <= '1';
@@ -158,17 +161,40 @@ begin
 								alu_src <= '0';
 								reg_write <= '0';
 								jump <= '0';
+								pc_latch <= '1';
 								state <= fetch;
 								
 						end case;
 						
 					when execute_1 =>
+						pc_latch <= '1';
+							reg_dst <= '0';
+							branch <= '0';
+							mem_read <= '0';
+							mem_to_reg <= '0';
+							alu_op <= ALUOP_BRANCH;
+							mem_write <= '0';
+							alu_src <= '0';
+							reg_write <= '0';
+							jump <= '0';
+							pc_latch <= '1';
 						state <= fetch;
 					
 					when execute_2 =>
 						state <= stall;
 					
 					when stall =>
+						pc_latch <= '1';
+							reg_dst <= '0';
+							branch <= '0';
+							mem_read <= '0';
+							mem_to_reg <= '0';
+							alu_op <= ALUOP_BRANCH;
+							mem_write <= '0';
+							alu_src <= '0';
+							reg_write <= '0';
+							jump <= '0';
+							pc_latch <= '1';
 						state <= fetch;
 						
 					when others =>
