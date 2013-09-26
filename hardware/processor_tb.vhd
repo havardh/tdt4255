@@ -1,61 +1,34 @@
 --------------------------------------------------------------------------------
--- Company: 
--- Engineer:
+-- Processor test bench
 --
--- Create Date:   10:56:57 09/16/2013
--- Design Name:   
--- Module Name:   C:/Users/havarhoi/Documents/TDT4255/oving1/src/processor_tb.vhd
--- Project Name:  oving1
--- Target Device:  
--- Tool versions:  
--- Description:   
--- 
--- VHDL Test Bench Created by ISE for module: processor
--- 
--- Dependencies:
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
---
--- Notes: 
--- This testbench has been automatically generated using types std_logic and
--- std_logic_vector for the ports of the unit under test.  Xilinx recommends
--- that these types always be used for the top-level I/O of a design in order
--- to guarantee that the testbench will bind correctly to the post-implementation 
--- simulation model.
---------------------------------------------------------------------------------
-LIBRARY ieee;
-USE ieee.std_logic_1164.ALL;
- 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---USE ieee.numeric_std.ALL;
+
+library ieee;
+use ieee.std_logic_1164.ALL;
+use ieee.numeric_std.all;
  
 library work;
-use work.mips_constant_pkg.all; 
-
-ENTITY processor_tb IS
-END processor_tb;
+use work.asserts.all;
  
-ARCHITECTURE behavior OF processor_tb IS 
+entity processor_tb is
+end processor_tb;
+ 
+architecture behavior of processor_tb is
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT processor
-    PORT(
-         clk : IN  std_logic;
-         reset : IN  std_logic;
-         processor_enable : IN  std_logic;
-         imem_address : OUT  std_logic_vector(31 downto 0);
-         imem_data_in : IN  std_logic_vector(31 downto 0);
-         dmem_data_in : IN  std_logic_vector(31 downto 0);
-         dmem_address : OUT  std_logic_vector(31 downto 0);
-         dmem_address_wr : OUT  std_logic_vector(31 downto 0);
-         dmem_data_out : OUT  std_logic_vector(31 downto 0);
-         dmem_write_enable : OUT  std_logic
+    component processor port (
+         clk               : in std_logic;
+         reset             : in  std_logic;
+         processor_enable  : in  std_logic;
+         imem_address      : out  std_logic_vector(31 downto 0);
+         imem_data_in      : in  std_logic_vector(31 downto 0);
+         dmem_data_in      : in  std_logic_vector(31 downto 0);
+         dmem_address      : out  std_logic_vector(31 downto 0);
+         dmem_address_wr   : out  std_logic_vector(31 downto 0);
+         dmem_data_out     : out  std_logic_vector(31 downto 0);
+         dmem_write_enable : out  std_logic
         );
-    END COMPONENT;
+    end component;
     
 
    --Inputs
@@ -75,10 +48,10 @@ ARCHITECTURE behavior OF processor_tb IS
    -- Clock period definitions
    constant clk_period : time := 10 ns;
  
-BEGIN
+begin
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: processor PORT MAP (
+   uut: processor port map (
           clk => clk,
           reset => reset,
           processor_enable => processor_enable,
@@ -94,9 +67,9 @@ BEGIN
    -- Clock process definitions
    clk_process :process
    begin
-		clk <= '0';
-		wait for clk_period/2;
 		clk <= '1';
+		wait for clk_period/2;
+		clk <= '0';
 		wait for clk_period/2;
    end process;
  
@@ -104,19 +77,43 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      -- hold reset state for 100 ns.
-      reset <= '0';
-		processor_enable <= '1';
-		wait for 100 ns;
-      wait for clk_period*10;
-		reset <= '1';
-		wait for clk_period*10;
-		processor_enable <= '0';
+		-- hold reset state for 100 ns.
+		wait for 100 ns;	
 		reset <= '0';
-		
-		wait for clk_period*20;
-		
-      wait;
+		processor_enable <= '1';
+
+		-- imem_data_in <= "00010000001000000000000000000001"; -- jump
+
+		-- Load data memory 0 (Set intruction, wait for execute, assert dbus address and then wait for fetch)
+		imem_data_in <= "10001100001000010000000000000010";
+		dmem_data_in <= "00000000000000000000000000000010";
+		wait for clk_period*2;
+		assertEqual(dmem_address, "00000000000000000000000000000010","00000000000000000000000000000010");
+		wait for clk_period;
+
+		-- Branch if r0 and r1 are equal (They should not be, so we expect program counter to be 8 in next fetch
+		imem_data_in <= "00010000001000000000000000000001";
+		wait for clk_period*2;
+		assertEqual(imem_address, "00000000000000000000000000000100","00000000000000000000000000000100");
+
+		-- Branch if r1 and r1 are equal (The are, so we expect program counter to be 16 during next fetch)
+		imem_data_in <= "00010000001000010000000000000001";
+		wait for clk_period*2;
+		wait for clk_period/2;
+		assertEqual(imem_address, "00000000000000000000000000010000","00000000000000000000000000010000");
+
+		-- Load upper immediate (32 << 16)
+		imem_data_in <= "00111100000000100000000000100000";
+		wait for clk_period/2;
+		wait for clk_period;
+
+		-- Write r2 to memory to validate previous instruction
+		imem_data_in <= "10101100000000100000000000000000";
+		wait for clk_period*3;
+		assertEqual(dmem_data_out, "00000000001000000000000000000000", "00000000001000000000000000000000");
+
+
+		wait;
    end process;
 
-END;
+end;

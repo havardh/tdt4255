@@ -67,7 +67,8 @@ architecture Behavioral of processor is
 			alu_op     : out ALU_OP;
 			mem_write  : out std_logic;
 			alu_src    : out std_logic;
-			reg_write  : out std_logic
+			reg_write  : out std_logic;
+			pc_latch   : out std_logic
 		);
 	end component;
 	
@@ -110,17 +111,17 @@ architecture Behavioral of processor is
 			R : out std_logic_vector(31 downto 0)
 		);
 	end component;
-	
-	component mux is
-		generic ( N: natural := 32);
-		port (
-			S : in std_logic;
-			A : in std_logic_vector(N-1 downto 0);
-			B : in std_logic_vector(N-1 downto 0);
-			R : out std_logic_vector(N-1 downto 0)
-		);
-	end component;
-	
+--	
+--	component mux is
+--		generic ( N: natural := 32);
+--		port (
+--			S : in std_logic;
+--			A : in std_logic_vector(N-1 downto 0);
+--			B : in std_logic_vector(N-1 downto 0);
+--			R : out std_logic_vector(N-1 downto 0)
+--		);
+--	end component;
+--	
 	component adder is 
 		generic (N: natural := 32);
 		port (
@@ -149,6 +150,7 @@ architecture Behavioral of processor is
 	signal mem_write  : std_logic;
 	signal alu_src    : std_logic;
 	signal reg_write  : std_logic;
+	signal pc_latch   : std_logic;
 		
 	-- Mux register input
 	signal reg_write_mux_out  : std_logic_vector (4 downto 0);
@@ -169,14 +171,14 @@ architecture Behavioral of processor is
 	signal flags   : ALU_FLAGS;
 
 	-- Program Counter signals
-	signal PC      : std_logic_vector (31 downto 0);
+	signal PC      : std_logic_vector (31 downto 0) := "00000000000000000000000000000000";
 	signal PC_INC  : std_logic_vector (31 downto 0);
 	signal PC_JUMP : std_logic_vector (31 downto 0);
 	signal PC_NEXT : std_logic_vector (31 downto 0);
 	signal PC_INC2 : std_logic_vector (31 downto 0);
 	
 	signal sign_extended : std_logic_vector (31 downto 0);
-	signal shifted       : std_logic_vector (31 downto 0);
+	signal shifted       : std_logic_vector (31 downto 0) := "00000000000000000000000000001000";
 	signal jump          : std_logic;
 
 begin
@@ -192,119 +194,118 @@ begin
 		alu_op     => alu_op,
 		mem_write  => mem_write,
 		alu_src    => alu_src,
-		reg_write  => reg_write
+		reg_write  => reg_write,
+		pc_latch   => pc_latch
+	);
+
+	clk_enable: process (clk, processor_enable)
+	begin
+		if processor_enable = '1' then
+			internal_clk <= clk;
+		else
+			internal_clk <= '0';
+		end if;
+	end process;
+
+	add4: adder port map(
+		X => PC,
+		Y => "00000000000000000000000000000100",
+		CIN => '0',
+		R => PC_INC
 	);
 	
-	reg_file : register_file port map (
-		clk        => internal_clk,
-		reset      => reset,
-		rw         => reg_write,
-		rs_addr    => imem_data_in(25 downto 21),
-		rt_addr    => imem_data_in(20 downto 16),
-		rd_addr    => reg_write_mux_out,
-		write_data => data_write_mux_out,
-		rs         => rs,
-		rt         => rt
-	);
+	pc_latch1: process (pc_latch, PC_INC)
+	begin
+		if rising_edge(pc_latch) then
+			PC <= PC_NEXT;
+		end if;
+	end process;
 	
-	alu1 : alu port map (
-		X      => rs,
-		Y      => alu_in_mux,
-		ALU_IN => alu_input,
-		R      => alu_out,
-		FLAGS  => flags
-	);
+	imem_address <= PC;
 	
-	alu_control1 : alu_control port map (
-		func      => imem_data_in(5 downto 0),
-		ALU_OP    => alu_op,
-		ALU_INPUT => alu_input
-	);
+	pc_mux: process (jump, PC_INC, PC_JUMP)
+	begin
+		if jump = '1' then
+			PC_NEXT <= PC_JUMP;
+		else
+			PC_NEXT <= PC_INC;
+		end if;
+	end process;
 	
-	sign_extend1 : sign_extend port map (
+	add_jump: adder port map(
+		X => PC_INC,
+		Y => shifted,
+		CIN => '0',
+		R => PC_JUMP
+	);
+		
+	signex: sign_extend port map(
 		A => imem_data_in(15 downto 0),
 		R => sign_extended
 	);
 	
-	add4 : adder 
-		generic map(N => 32)
-		port map (
-		X   => PC,
-		Y   => "00000000000000000000000000000100",
-		CIN => '0',
-		R   => PC_INC
+	shift2: shiftleft port map(
+		A => sign_extended,
+		R => shifted
 	);
 	
-	add_jump : adder 
-		generic map (N => 32)
-		port map (
-			X   => PC_INC2,
-			Y   => shifted,
-			CIN => '0',
-			R   => PC_JUMP
+	aluctl: alu_control port map(
+		func => imem_data_in(5 downto 0),
+		ALU_OP => alu_op,
+		ALU_INPUT => alu_input
+	);
+
+	alu1: alu port map(
+		X => rs,
+		Y => alu_in_mux,
+		ALU_IN => alu_input,
+		R => alu_out,
+		FLAGS => flags
 	);
 	
-	shiftleft2 : shiftleft
-		port map(
-			A => sign_extended,
-			R => shifted
-	);
+	jump <= flags.Zero and branch;
 	
-	write_reg_mux : mux 
-		generic map(N => 5)
-		port map (
-			S => reg_dst,
-			A => imem_data_in(20 downto 16),
-			B => imem_data_in(15 downto 11),
-			R => reg_write_mux_out
-	);
-		
-	alu_in_mux1 : mux
-		generic map(N => 32)
-		port map (
-			S => alu_src,
-			A => rt,
-			B => sign_extended,
-			R => alu_in_mux
-	);
-		
-	reg_write_in_mux : mux
-		generic map(N => 32)
-		port map (
-			S => mem_read,
-			A => alu_out,
-			B => dmem_data_in,
-			R => data_write_mux_out
-	);
-		
-	pc_mux : mux 
-		generic map (N => 32)
-		port map (
-			S => jump,
-			A => PC_JUMP,
-			B => PC_INC,
-			R => PC_NEXT
-	);
-	
-	
-	dmem_write_enable <= mem_write;
-	jump              <= flags.zero and branch;
-	imem_address      <= PC;
-	PC_INC2           <= PC_INC;
-	dmem_address      <= alu_out; 
-	dmem_data_out     <= rt;
-		
-	process(clk, internal_clk, PC_NEXT, processor_enable)
+	reg_write_mux: process(reg_dst, imem_data_in) 
 	begin
-		
-		if processor_enable = '1' then
-			internal_clk <= clk;
-		else 
-			internal_clk <= '0';
+		if reg_dst = '1' then
+			reg_write_mux_out <= imem_data_in(15 downto 11);
+		else
+			reg_write_mux_out <= imem_data_in(20 downto 16);
 		end if;
+	end process;
+	
+	regfile: register_file port map(
+		clk => internal_clk,
+		reset => reset,
+		rw => reg_write,
+		rs_addr => imem_data_in(25 downto 21),
+		rt_addr => imem_data_in(20 downto 16),
+		rd_addr => reg_write_mux_out,
+		write_data => data_write_mux_out,
+		rs => rs,
+		rt => rt
+	);
+	
+	alu_in_mux1: process(rt, sign_extended, alu_src) 
+	begin
+		if alu_src = '1' then
+			alu_in_mux <= sign_extended;
+		else 
+			alu_in_mux <= rt;
+		end if;
+	end process;
 		
-		if rising_edge(internal_clk) then
-			PC <= PC_NEXT;
+	dmem_address <= alu_out;
+	dmem_address_wr <= alu_out;
+	dmem_data_out <= rt;
+	dmem_write_enable <= mem_write;
+	
+	data_out_mux: process(dmem_data_in, alu_out, mem_to_reg)
+	begin
+		if mem_to_reg = '1' then
+			data_write_mux_out <= dmem_data_in;
+		else
+			data_write_mux_out <= alu_out;
 		end if;
 	end process;
 
