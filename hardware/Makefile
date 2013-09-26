@@ -1,14 +1,17 @@
 FLAGS = --ieee=synopsys --work=work -fexplicit
 
 # All sources, only dependecies to sources left in the list allowed
-SOURCES = mips_constant_pkg.vhd asserts.vhd control_unit.vhd processor.vhd
+
+SOURCES = mips_constant_pkg.vhd asserts.vhd sign_extend.vhd shiftleft.vhd control_unit.vhd full_adder.vhd adder.vhd alu_1bit.vhd alu.vhd register_file.vhd alu_control.vhd processor2.vhd
 
 # Test benches in order of execution
-TESTS = control_unit_tb.vhd processor_tb.vhd
+TESTS = control_unit_tb.vhd alu_control.vhd processor2_tb.vhd
 
 OBJECTS = $(SOURCES:.vhd=.o) $(TESTS:.vhd=.o)
 TEST_BINARIES = $(TESTS:.vhd=)
 BINARIES = $(SOURCES:.vhd=) $(TESTS:.vhd=)
+
+all: $(OBJECTS)
 
 # Keep intermediatefiles
 .PHONY: build
