@@ -112,6 +112,12 @@ begin
 		wait for clk_period*3;
 		assertEqual(dmem_data_out, "00000000001000000000000000000000", "00000000001000000000000000000000");
 
+		-- Attempt a JUMP
+		imem_data_in <= "00001011111111111111111111111111";
+		wait for clk_period*2;
+
+		wait for clk_period/2;
+		assertEqual(imem_address, "00001111111111111111111111111100", "00001111111111111111111111111100");
 
 		wait;
    end process;

@@ -143,7 +143,8 @@ architecture Behavioral of processor is
 	signal PC_NEXT   : std_logic_vector (31 downto 0); -- Next PC value
 	
 	signal sign_extended : std_logic_vector (31 downto 0);
-	signal shifted       : std_logic_vector (31 downto 0) := "00000000000000000000000000001000";
+	signal shifted       : std_logic_vector (31 downto 0);
+	signal shifted_instr : std_logic_vector (31 downto 0);
 	signal jump          : std_logic;
 
 begin
@@ -196,7 +197,14 @@ begin
 		r   => PC_BRANCH
 	);
 
-	-- TODO PC_JUMP
+	-- Create jump target
+	create_pc_jump: process (shifted_instr, PC_INC)
+	begin 
+		-- Top 4 bits come from PC_INC
+		PC_JUMP(31 downto 28) <= PC_INC(31 downto 28);
+		-- Low bits are the shifted instruction
+		PC_JUMP(27 downto 0) <= shifted_instr(27 downto 0);
+	end process;
 	
 	-- PC next mux, combines the jump and branch mux	
 	pc_mux: process (jump, branch, PC_JUMP, PC_BRANCH, PC_INC)
@@ -223,14 +231,20 @@ begin
 	
 	-- Signextend the low 16 bits of the instruction
 	signex: sign_extend port map(
-		A => imem_data_in(15 downto 0),
-		R => sign_extended
+		a => imem_data_in(15 downto 0),
+		r => sign_extended
 	);
 	
 	-- Shift the signextended low 16 bits of the instruction two bits to the left
-	shift2: shiftleft port map(
-		A => sign_extended,
-		R => shifted
+	shift2_singex: shiftleft port map(
+		a => sign_extended,
+		r => shifted
+	);
+
+	-- Shift entire instruction two bits, used to calculate jump target
+	shift2_instr: shiftleft port map(
+		a => imem_data_in,
+		r => shifted_instr
 	);
 	
 	-- ALU Control unit
