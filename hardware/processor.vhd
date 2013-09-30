@@ -105,9 +105,7 @@ architecture Behavioral of processor is
 			r : out std_logic_vector (31 downto 0)
 		);
 	end component;
-	
-	signal clk : std_logic;
-	
+		
 	-- Signals from control unit
 	signal reg_dst    : std_logic;
 	signal branch     : std_logic;
@@ -149,17 +147,12 @@ architecture Behavioral of processor is
 	
 	signal running       : std_logic := '0';
 	signal ctrl_reset    : std_logic := '0';
-	
-	signal gated_clk : std_logic;
-
 begin
-
-	gated_clk <= clk and processor_enable;
 
 	-- Control unit
 	control : control_unit port map(
-		clk        => gated_clk,
-		reset      => reset,
+		clk        => clk,
+		reset      => ctrl_reset,
 		inst       => imem_data_in(31 downto 26),
 		reg_dst    => reg_dst,
 		branch     => branch,
@@ -173,22 +166,19 @@ begin
 		jump       => jump
 	);
 
---	processor_enable: process (clk, processor_enable)
---	begin
---		if rising_edge(clk) and processor_enable = '1' and running = '0' then
---			ctrl_reset <= '1';
---			running <= '1';
---		else
---			ctrl_reset <= '0';
---		end if;
---	end process;
-	
-	processor_reset: process(clk, reset) 
+	processor_enable_process: process (clk, reset, processor_enable)
 	begin
-		if rising_edge(clk) and reset = '1' then
-			PC <= (others => 0);
-			--running <= '0';
-		end if;
+		if rising_edge(clk) then
+			if reset = '1' then
+				ctrl_reset <= '1';
+				running <= '0';
+			elsif processor_enable = '1' and running = '0' then
+				ctrl_reset <= '1';
+				running <= '1';
+			else
+				ctrl_reset <= '0';
+			end if;
+		end if;		
 	end process;
 
 	-- PC signal is always hooked to the instruction memory address
@@ -237,9 +227,11 @@ begin
 		
     -- Program counter latch. Updates the PC register on rising internal clock.
     -- The next program counter value is located in PC_NEXT
-	pc_latch1: process (pc_latch, PC_NEXT)
+	pc_latch1: process (clk, reset, pc_latch, PC_NEXT)
 	begin
-		if rising_edge(pc_latch) then
+		if rising_edge(clk) and reset = '1' then
+			PC <= (others => '0');			
+		elsif rising_edge(pc_latch) then
 			PC <= PC_NEXT;
 		end if;
 	end process;
