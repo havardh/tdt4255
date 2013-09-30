@@ -1,0 +1,810 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd" Line 319: Assignment to <arg fmt="%s" index="1">cs_s_h_clr</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd" Line 323: Assignment to <arg fmt="%s" index="1">addr_match_clr</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1127" delta="new" >"C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd" Line 1025: Assignment to <arg fmt="%s" index="1">start_data_phase</arg> ignored, since the identifier is never used
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="new" >"//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 215: <arg fmt="%s" index="1">flags</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd</arg>&quot; line <arg fmt="%d" index="2">318</arg>: Output port &lt;<arg fmt="%s" index="3">Bus2IP_Addr</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLBV46_SLAVE_SINGLE_I</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd</arg>&quot; line <arg fmt="%d" index="2">318</arg>: Output port &lt;<arg fmt="%s" index="3">Bus2IP_RNW</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">PLBV46_SLAVE_SINGLE_I</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd</arg>&quot; line <arg fmt="%d" index="2">395</arg>: Output port &lt;<arg fmt="%s" index="3">Reset2Bus_ToutSup</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">SOFT_RESET_I</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_MSize&lt;0:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_wrPendPri&lt;0:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_rdPendPri&lt;0:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_reqPri&lt;0:1&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_TAttribute&lt;0:15&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_SAValid</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_rdPrim</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_wrPrim</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_abort</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_busLock</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_lockErr</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_wrBurst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_rdBurst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_wrPendReq</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_rdPendReq</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">PLB_UABus&lt;0:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">Address_In_Erly&lt;0:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">Address_Valid_Erly</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">Bus_RNW_Erly</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">A&lt;24:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">A&lt;24:31&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">Bus2IP_Data&lt;0:27&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">Bus2IP_BE&lt;0:2&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="37" delta="new" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">sigis</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">W_ADDR&lt;31:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">ADDR&lt;31:8&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">152</arg>: Output port &lt;<arg fmt="%s" index="3">mem_read</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">control</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">184</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">add4</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">193</arg>: Output port &lt;<arg fmt="%s" index="3">COUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">add_jump</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">258</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Carry</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">alu1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">258</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Overflow</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">alu1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd</arg>&quot; line <arg fmt="%d" index="2">258</arg>: Output port &lt;<arg fmt="%s" index="3">FLAGS_Negative</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">alu1</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">A&lt;31:30&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">ALU_INPUT_Op1</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">ALU_INPUT_Op2</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">ALU_INPUT_Op3</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="warning" file="Xst" num="737" delta="new" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">ALU_INPUT_Op0</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">71</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">BEGIN_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[1].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[2].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[3].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[4].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[5].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[6].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[7].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[8].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[9].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[10].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[11].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[12].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[13].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[14].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[15].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[16].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[17].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[18].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[19].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[20].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[21].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[22].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[23].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[24].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[25].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[26].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[27].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[28].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[29].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="info" file="Xst" num="3010" delta="new" >&quot;<arg fmt="%s" index="1">//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd</arg>&quot; line <arg fmt="%d" index="2">86</arg>: Output port &lt;<arg fmt="%s" index="3">SET</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">GEN_ALU[30].NEXT_ALU1B</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="2404" delta="new" > FFs/Latches &lt;<arg fmt="%s" index="1">status</arg>&lt;<arg fmt="%d" index="2">0</arg>:<arg fmt="%d" index="3">1</arg>&gt;&gt; (without init value) have a constant value of <arg fmt="%c" index="4">0</arg> in block &lt;<arg fmt="%s" index="5">com</arg>&gt;.
+</msg>
+
+<msg type="info" file="Xst" num="3040" delta="new" >The RAM &lt;<arg fmt="%s" index="1">Mram_MEM</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_REGS</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="info" file="Xst" num="3031" delta="new" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_REGS1</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_out_s_h_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">plb_address_decoder</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">addr_out_s_h_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">plb_address_decoder</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1426" delta="new" >The value init of the FF/Latch <arg fmt="%s" index="1">master_id_31</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">plb_slave_attachment</arg>.
+You should achieve better results by setting this init to <arg fmt="%i" index="3">0</arg>.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">master_id_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_18</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_17</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_15</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_14</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_13</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_12</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_10</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_9</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_8</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_7</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_6</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_5</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="new" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">master_id_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">plb_slave_attachment</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">GEN_FOR_SHARED.addr_cntl_cs</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">plb_slave_attachment</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;addr_cycle_flush&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="new" >The FF/Latch &lt;<arg fmt="%s" index="1">mem_read</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">control_unit</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;mem_to_reg&gt; </arg>
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_1</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_2</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_3</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_4</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_5</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_6</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_18</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_17</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_16</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_11</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_10</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_9</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="2677" delta="new" >Node &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mips_multi_cycle_0_wrapper</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mips_multi_cycle_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mips_multi_cycle_0_wrapper</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="info" file="Xst" num="2169" delta="old" >HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+</msg>
+
+</messages>
+
