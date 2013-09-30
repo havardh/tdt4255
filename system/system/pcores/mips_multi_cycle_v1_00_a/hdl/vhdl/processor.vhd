@@ -106,7 +106,7 @@ architecture Behavioral of processor is
 		);
 	end component;
 	
-	signal clk : std_logic;
+	signal internal_clk : std_logic;
 	
 	-- Signals from control unit
 	signal reg_dst    : std_logic;
@@ -146,19 +146,11 @@ architecture Behavioral of processor is
 	signal shifted       : std_logic_vector (31 downto 0);
 	signal shifted_instr : std_logic_vector (31 downto 0);
 	signal jump          : std_logic;
-	
-	signal running       : std_logic := '0';
-	signal ctrl_reset    : std_logic := '0';
-	
-	signal gated_clk : std_logic;
 
 begin
-
-	gated_clk <= clk and processor_enable;
-
 	-- Control unit
 	control : control_unit port map(
-		clk        => gated_clk,
+		clk        => internal_clk,
 		reset      => reset,
 		inst       => imem_data_in(31 downto 26),
 		reg_dst    => reg_dst,
@@ -173,21 +165,14 @@ begin
 		jump       => jump
 	);
 
---	processor_enable: process (clk, processor_enable)
---	begin
---		if rising_edge(clk) and processor_enable = '1' and running = '0' then
---			ctrl_reset <= '1';
---			running <= '1';
---		else
---			ctrl_reset <= '0';
---		end if;
---	end process;
-	
-	processor_reset: process(clk, reset) 
+	-- Clock enable, while processor_enable is 1 internal_clk mirrors clk
+    -- When processor_enable is 0 internal_clk is 0 aswell
+	clk_enable: process (clk, processor_enable)
 	begin
-		if rising_edge(clk) and reset = '1' then
-			PC <= (others => 0);
-			--running <= '0';
+		if processor_enable = '1' then
+			internal_clk <= clk;
+		else
+			internal_clk <= '0';
 		end if;
 	end process;
 
@@ -290,7 +275,7 @@ begin
 	
 	-- Map the register file
 	regfile: register_file port map(
-		clk        => clk,
+		clk        => internal_clk,
 		reset      => reset,
 		rw         => reg_write,
 		rs_addr    => imem_data_in(25 downto 21),
