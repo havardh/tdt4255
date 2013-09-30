@@ -87,19 +87,18 @@ begin
 		-- Load data memory 0 (Set intruction, wait for execute, assert dbus address and then wait for fetch)
 		imem_data_in <= "10001100001000010000000000000010";
 		dmem_data_in <= "00000000000000000000000000000010";
-		wait for clk_period*2;
+		wait for clk_period*3.5;
 		assertEqual(dmem_address, "00000000000000000000000000000010","00000000000000000000000000000010");
-		wait for clk_period;
+		wait for clk_period*0.5;
 
 		-- Branch if r0 and r1 are equal (They should not be, so we expect program counter to be 8 in next fetch
 		imem_data_in <= "00010000001000000000000000000001";
-		wait for clk_period*2;
+		wait for clk_period*2.5;
 		assertEqual(imem_address, "00000000000000000000000000000100","00000000000000000000000000000100");
 
 		-- Branch if r1 and r1 are equal (The are, so we expect program counter to be 16 during next fetch)
 		imem_data_in <= "00010000001000010000000000000001";
 		wait for clk_period*2;
-		wait for clk_period/2;
 		assertEqual(imem_address, "00000000000000000000000000010000","00000000000000000000000000010000");
 
 		-- Load upper immediate (32 << 16)

@@ -172,6 +172,8 @@ begin
 			if reset = '1' then
 				ctrl_reset <= '1';
 				running <= '0';
+			elsif processor_enable = '0' then
+				ctrl_reset <= '1';
 			elsif processor_enable = '1' and running = '0' then
 				ctrl_reset <= '1';
 				running <= '1';
@@ -179,6 +181,17 @@ begin
 				ctrl_reset <= '0';
 			end if;
 		end if;		
+	end process;
+	
+    -- Program counter latch. Updates the PC register on rising internal clock.
+    -- The next program counter value is located in PC_NEXT
+	pc_latch1: process (clk, reset, pc_latch, PC_NEXT)
+	begin
+		if rising_edge(clk) and reset = '1' then
+			PC <= (others => '0');			
+		elsif rising_edge(pc_latch) and running = '1' then
+			PC <= PC_NEXT;
+		end if;
 	end process;
 
 	-- PC signal is always hooked to the instruction memory address
@@ -225,16 +238,6 @@ begin
 		end if;
 	end process;
 		
-    -- Program counter latch. Updates the PC register on rising internal clock.
-    -- The next program counter value is located in PC_NEXT
-	pc_latch1: process (clk, reset, pc_latch, PC_NEXT)
-	begin
-		if rising_edge(clk) and reset = '1' then
-			PC <= (others => '0');			
-		elsif rising_edge(pc_latch) then
-			PC <= PC_NEXT;
-		end if;
-	end process;
 	
 	-- Signextend the low 16 bits of the instruction
 	signex: sign_extend port map(

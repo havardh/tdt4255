@@ -1,7 +1,7 @@
 ##############################################################################
 ## Filename:          C:\Users\runarbol\Desktop\tdt4255-new\system\system\pcores/mips_multi_cycle_v1_00_a/data/mips_multi_cycle_v2_1_0.pao
 ## Description:       Peripheral Analysis Order
-## Date:              Mon Sep 30 10:59:19 2013 (by Create and Import Peripheral Wizard)
+## Date:              Mon Sep 30 12:27:46 2013 (by Create and Import Peripheral Wizard)
 ##############################################################################
 
 lib proc_common_v3_00_a proc_common_pkg vhdl

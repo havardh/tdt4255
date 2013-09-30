@@ -63,9 +63,6 @@ architecture Behavioral of control_unit is
 	 constant op_beq 		: STD_LOGIC_VECTOR (5 downto 0) := "000100";
 	 constant op_j 		: STD_LOGIC_VECTOR (5 downto 0) := "000010";
 	 
-
-	
-
 begin
 	process (clk, state, inst)
 		begin 
