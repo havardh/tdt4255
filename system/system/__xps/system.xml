@@ -1,7 +1,7 @@
 
-<EDKSYSTEM EDKVERSION="12.4" EDWVERSION="1.2" TIMESTAMP="Mon Sep 30 09:07:24 2013">
+<EDKSYSTEM EDKVERSION="12.4" EDWVERSION="1.2" TIMESTAMP="Mon Sep 30 11:12:32 2013">
 
-  <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx16" PACKAGE="csg324" PART="xc6slx16csg324-2" SOURCE="//samba.idi.ntnu.no/runarbol/tdt4255/system/system/" SPEEDGRADE="-2"/>
+  <SYSTEMINFO ARCH="spartan6" DEVICE="xc6slx16" PACKAGE="csg324" PART="xc6slx16csg324-2" SOURCE="C:/Users/runarbol/Desktop/tdt4255-new/system/system/" SPEEDGRADE="-2"/>
 
   <EXTERNALPORTS>
     <PORT DIR="I" MHS_INDEX="0" NAME="fpga_0_USB_UART_RX_pin" SIGNAME="fpga_0_USB_UART_RX_pin"/>

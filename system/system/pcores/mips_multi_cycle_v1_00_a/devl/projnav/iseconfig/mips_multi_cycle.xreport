@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-09-30T09:16:55</DateModified>
+  <DateModified>2013-09-30T10:18:23</DateModified>
   <ModuleName>mips_multi_cycle</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav/iseconfig/mips_multi_cycle.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>M:/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav/iseconfig/mips_multi_cycle.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav\</ImplementationReportsDirectory>
   <DateInitialized>2013-09-30T08:42:01</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

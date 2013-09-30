@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "mips_multi_cycle_0_wrapper_xst.prj"
-Verilog Include Directory          : {"M:\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255-new\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -89,57 +89,57 @@ Parsing architecture <implementation> of entity <plbv46_slave_single>.
 Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/soft_reset.vhd" into library proc_common_v3_00_a
 Parsing entity <soft_reset>.
 Parsing architecture <implementation> of entity <soft_reset>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <user_logic>.
 Parsing architecture <IMP> of entity <user_logic>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <adder>.
-Parsing architecture <Behavioral> of entity <adder>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_constant_pkg.vhd" into library mips_multi_cycle_v1_00_a
-Parsing package <MIPS_CONSTANT_PKG>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <alu>.
-Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <alu_1bit>.
-Parsing architecture <Behavioral> of entity <alu_1bit>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <alu_control>.
-Parsing architecture <Behavioral> of entity <alu_control>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/asserts.vhd" into library mips_multi_cycle_v1_00_a
-Parsing package <asserts>.
-Parsing package body <asserts>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <com>.
-Parsing architecture <Behavioral> of entity <com>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <control_unit>.
-Parsing architecture <Behavioral> of entity <control_unit>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <full_adder>.
-Parsing architecture <Behavioral> of entity <full_adder>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <memory>.
-Parsing architecture <Behavioral> of entity <memory>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <processor>.
-Parsing architecture <Behavioral> of entity <processor>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <register_file>.
-Parsing architecture <Behavioral> of entity <register_file>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/shiftleft.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <shiftleft>.
-Parsing architecture <Behavioral> of entity <shiftleft>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <sign_extend>.
-Parsing architecture <Behavioral> of entity <sign_extend>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <toplevel>.
-Parsing architecture <Behavioral> of entity <toplevel>.
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <mips_multi_cycle>.
 Parsing architecture <IMP> of entity <mips_multi_cycle>.
-Parsing VHDL file "\tdt4255\system\system\synthesis\../hdl/mips_multi_cycle_0_wrapper.vhd" into library work
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <adder>.
+Parsing architecture <Behavioral> of entity <adder>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_constant_pkg.vhd" into library mips_multi_cycle_v1_00_a
+Parsing package <MIPS_CONSTANT_PKG>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <alu_1bit>.
+Parsing architecture <Behavioral> of entity <alu_1bit>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <alu_control>.
+Parsing architecture <Behavioral> of entity <alu_control>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/asserts.vhd" into library mips_multi_cycle_v1_00_a
+Parsing package <asserts>.
+Parsing package body <asserts>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <com>.
+Parsing architecture <Behavioral> of entity <com>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <control_unit>.
+Parsing architecture <Behavioral> of entity <control_unit>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <full_adder>.
+Parsing architecture <Behavioral> of entity <full_adder>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <memory>.
+Parsing architecture <Behavioral> of entity <memory>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <processor>.
+Parsing architecture <Behavioral> of entity <processor>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <register_file>.
+Parsing architecture <Behavioral> of entity <register_file>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/shiftleft.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <shiftleft>.
+Parsing architecture <Behavioral> of entity <shiftleft>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <sign_extend>.
+Parsing architecture <Behavioral> of entity <sign_extend>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <toplevel>.
+Parsing architecture <Behavioral> of entity <toplevel>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255-new\system\system\synthesis\../hdl/mips_multi_cycle_0_wrapper.vhd" into library work
 Parsing entity <mips_multi_cycle_0_wrapper>.
 Parsing architecture <STRUCTURE> of entity <mips_multi_cycle_0_wrapper>.
 
@@ -192,19 +192,19 @@ Elaborating entity <user_logic> (architecture <IMP>) with generics from library 
 Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <com> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
-INFO:HDLCompiler:679 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" Line 231. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" Line 231. Case statement is complete. others clause is never selected
 
 Elaborating entity <memory> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <processor> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <control_unit> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-INFO:HDLCompiler:679 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" Line 200. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" Line 200. Case statement is complete. others clause is never selected
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <full_adder> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-WARNING:HDLCompiler:92 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 215: flags should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 220: flags should be on the sensitivity list of the process
 
 Elaborating entity <sign_extend> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
 
@@ -217,19 +217,23 @@ Elaborating entity <alu> (architecture <Behavioral>) with generics from library 
 Elaborating entity <alu_1bit> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <register_file> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
+WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 189. All outputs of instance <add4> of block <adder> are unconnected in block <processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 198. All outputs of instance <add_jump> of block <adder> are unconnected in block <processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 246. All outputs of instance <shift2_singex> of block <shiftleft> are unconnected in block <processor>. Underlying logic will be removed.
+WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 252. All outputs of instance <shift2_instr> of block <shiftleft> are unconnected in block <processor>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mips_multi_cycle_0_wrapper>.
-    Related source file is "/tdt4255/system/system/hdl/mips_multi_cycle_0_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255-new/system/system/hdl/mips_multi_cycle_0_wrapper.vhd".
     Summary:
 	no macro.
 Unit <mips_multi_cycle_0_wrapper> synthesized.
 
 Synthesizing Unit <mips_multi_cycle>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_BASEADDR = "10000100010000011000000000000000"
@@ -247,9 +251,9 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
         C_FAMILY = "spartan6"
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 318: Output port <Bus2IP_Addr> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 318: Output port <Bus2IP_RNW> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 395: Output port <Reset2Bus_ToutSup> of the instance <SOFT_RESET_I> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 318: Output port <Bus2IP_Addr> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 318: Output port <Bus2IP_RNW> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 395: Output port <Reset2Bus_ToutSup> of the instance <SOFT_RESET_I> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <mips_multi_cycle> synthesized.
@@ -300,11 +304,11 @@ Synthesizing Unit <plb_slave_attachment>.
         C_INCLUDE_DPHASE_TIMER = 0
         C_FAMILY = "spartan6"
 WARNING:Xst:647 - Input <PLB_UABus<0:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Register <sl_rdcomp_i> equivalent to <rd_clear_sl_busy> has been removed
+    Register <sl_rddack_i> equivalent to <rd_clear_sl_busy> has been removed
     Register <set_sl_busy> equivalent to <sl_addrack_i> has been removed
     Register <wr_clear_sl_busy> equivalent to <sl_wrdack_i> has been removed
     Register <sl_wrcomp_i> equivalent to <sl_wrdack_i> has been removed
-    Register <sl_rdcomp_i> equivalent to <rd_clear_sl_busy> has been removed
-    Register <sl_rddack_i> equivalent to <rd_clear_sl_busy> has been removed
     Found 32-bit register for signal <plb_wrdbus_reg>.
     Found 1-bit register for signal <plb_masterid_reg>.
     Found 1-bit register for signal <plb_rnw_reg>.
@@ -503,7 +507,7 @@ WARNING:Xst:647 - Input <Bus2IP_BE<0:2>> is never used. This port will be preser
 Unit <soft_reset> synthesized.
 
 Synthesizing Unit <user_logic>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_SLV_DWIDTH = 32
@@ -519,7 +523,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
 Unit <user_logic> synthesized.
 
 Synthesizing Unit <toplevel>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
     Summary:
@@ -527,7 +531,7 @@ Synthesizing Unit <toplevel>.
 Unit <toplevel> synthesized.
 
 Synthesizing Unit <com>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
         INPUT_BUS_WIDTH = 32
@@ -561,7 +565,7 @@ Synthesizing Unit <com>.
 Unit <com> synthesized.
 
 Synthesizing Unit <memory>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd".
         N = 32
         M = 8
 WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -575,23 +579,31 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <memory> synthesized.
 
 Synthesizing Unit <processor>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 152: Output port <mem_read> of the instance <control> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 184: Output port <COUT> of the instance <add4> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 193: Output port <COUT> of the instance <add_jump> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 258: Output port <FLAGS_Carry> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 258: Output port <FLAGS_Overflow> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 258: Output port <FLAGS_Negative> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <branch> of the instance <control> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <mem_read> of the instance <control> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <jump> of the instance <control> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <pc_latch> of the instance <control> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 189: Output port <COUT> of the instance <add4> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 198: Output port <R> of the instance <add_jump> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 198: Output port <COUT> of the instance <add_jump> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 252: Output port <R> of the instance <shift2_instr> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 265: Output port <FLAGS_Carry> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 265: Output port <FLAGS_Overflow> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 265: Output port <FLAGS_Zero> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 265: Output port <FLAGS_Negative> of the instance <alu1> is unconnected or connected to loadless signal.
+    Found 1-bit register for signal <running>.
     Found 32-bit register for signal <PC>.
+    Found 1-bit register for signal <ctrl_reset>.
     Summary:
-	inferred  32 D-type flip-flop(s).
-	inferred   6 Multiplexer(s).
+	inferred  34 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
 Unit <processor> synthesized.
 
 Synthesizing Unit <control_unit>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd".
     Found 1-bit register for signal <pc_latch>.
     Found 1-bit register for signal <reg_dst>.
     Found 1-bit register for signal <branch>.
@@ -622,36 +634,22 @@ Synthesizing Unit <control_unit>.
 	inferred   1 Finite State Machine(s).
 Unit <control_unit> synthesized.
 
-Synthesizing Unit <adder>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd".
-        N = 32
-    Summary:
-	no macro.
-Unit <adder> synthesized.
-
 Synthesizing Unit <full_adder>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd".
     Summary:
 Unit <full_adder> synthesized.
 
 Synthesizing Unit <sign_extend>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd".
     Summary:
 	no macro.
 Unit <sign_extend> synthesized.
 
-Synthesizing Unit <shiftleft>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/shiftleft.vhd".
-WARNING:Xst:647 - Input <A<31:30>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Summary:
-	no macro.
-Unit <shiftleft> synthesized.
-
 Synthesizing Unit <alu_control>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd".
-    Found 1-bit 4-to-1 multiplexer for signal <ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_180_o> created at line 55.
-    Found 1-bit 4-to-1 multiplexer for signal <ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_190_o> created at line 55.
-    Found 1-bit 4-to-1 multiplexer for signal <ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_200_o> created at line 55.
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd".
+    Found 1-bit 4-to-1 multiplexer for signal <ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_182_o> created at line 55.
+    Found 1-bit 4-to-1 multiplexer for signal <ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o> created at line 55.
+    Found 1-bit 4-to-1 multiplexer for signal <ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_202_o> created at line 55.
 WARNING:Xst:737 - Found 1-bit latch for signal <ALU_INPUT_Op1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <ALU_INPUT_Op2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <ALU_INPUT_Op3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -662,51 +660,51 @@ WARNING:Xst:737 - Found 1-bit latch for signal <ALU_INPUT_Op0>. Latches may be g
 Unit <alu_control> synthesized.
 
 Synthesizing Unit <alu>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd".
         N = 32
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 71: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[1].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[8].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[9].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[10].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[11].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[12].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[13].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[14].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[15].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[16].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[17].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[18].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[19].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[20].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[21].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[22].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[23].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[24].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[25].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[26].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[27].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[28].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[29].NEXT_ALU1B> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[30].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 71: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[1].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[8].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[9].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[10].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[11].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[12].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[13].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[14].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[15].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[16].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[17].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[18].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[19].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[20].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[21].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[22].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[23].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[24].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[25].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[26].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[27].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[28].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[29].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[30].NEXT_ALU1B> is unconnected or connected to loadless signal.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <alu> synthesized.
 
 Synthesizing Unit <alu_1bit>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd".
     Summary:
 	inferred   5 Multiplexer(s).
 Unit <alu_1bit> synthesized.
 
 Synthesizing Unit <register_file>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd".
 WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 32x32-bit dual-port RAM <Mram_REGS> for signal <REGS>.
     Summary:
@@ -721,8 +719,8 @@ Macro Statistics
 # RAMs                                                 : 4
  256x32-bit dual-port RAM                              : 2
  32x32-bit dual-port RAM                               : 2
-# Registers                                            : 58
- 1-bit register                                        : 29
+# Registers                                            : 60
+ 1-bit register                                        : 31
  2-bit register                                        : 5
  3-bit register                                        : 1
  32-bit register                                       : 15
@@ -732,15 +730,15 @@ Macro Statistics
  9-bit register                                        : 2
 # Latches                                              : 4
  1-bit latch                                           : 4
-# Multiplexers                                         : 342
- 1-bit 2-to-1 multiplexer                              : 320
+# Multiplexers                                         : 339
+ 1-bit 2-to-1 multiplexer                              : 319
  1-bit 4-to-1 multiplexer                              : 3
  2-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 15
+ 32-bit 2-to-1 multiplexer                             : 13
  5-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 2
-# Xors                                                 : 193
- 1-bit xor2                                            : 193
+# Xors                                                 : 65
+ 1-bit xor2                                            : 65
 
 =========================================================================
 
@@ -820,17 +818,17 @@ Macro Statistics
 # RAMs                                                 : 4
  256x32-bit dual-port block RAM                        : 2
  32x32-bit dual-port distributed RAM                   : 2
-# Registers                                            : 530
- Flip-Flops                                            : 530
-# Multiplexers                                         : 332
- 1-bit 2-to-1 multiplexer                              : 310
+# Registers                                            : 532
+ Flip-Flops                                            : 532
+# Multiplexers                                         : 329
+ 1-bit 2-to-1 multiplexer                              : 309
  1-bit 4-to-1 multiplexer                              : 3
  2-bit 2-to-1 multiplexer                              : 3
- 32-bit 2-to-1 multiplexer                             : 15
+ 32-bit 2-to-1 multiplexer                             : 13
  5-bit 2-to-1 multiplexer                              : 1
 # FSMs                                                 : 2
-# Xors                                                 : 193
- 1-bit xor2                                            : 193
+# Xors                                                 : 65
+ 1-bit xor2                                            : 65
 
 =========================================================================
 
@@ -869,6 +867,38 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_4> has a 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_3> has a constant value of 0 in block <plb_slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_2> has a constant value of 0 in block <plb_slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_1> has a constant value of 0 in block <plb_slave_attachment>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <PC_31> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_30> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_29> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_28> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_27> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_26> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_25> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_24> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_23> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_22> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_21> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_20> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_19> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_18> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_17> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_16> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_15> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_14> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_13> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_12> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_11> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_10> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_9> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_8> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_7> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_6> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_1> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_0> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <GEN_FOR_SHARED.addr_cntl_cs> in Unit <plb_slave_attachment> is equivalent to the following FF/Latch, which will be removed : <addr_cycle_flush> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
@@ -917,8 +947,6 @@ Optimizing unit <control_unit> ...
 Optimizing unit <alu_control> ...
 
 Optimizing unit <alu> ...
-
-Optimizing unit <adder> ...
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_0> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_1> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_2> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
@@ -1036,32 +1064,9 @@ WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT425
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:1293 - FF/Latch <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_1> has a constant value of 0 in block <mips_multi_cycle_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_0> has a constant value of 0 in block <mips_multi_cycle_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/jump> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/branch> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1073,8 +1078,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 360
- Flip-Flops                                            : 360
+# Registers                                            : 353
+ Flip-Flops                                            : 353
 
 =========================================================================
 
@@ -1097,20 +1102,20 @@ Top Level Output File Name         : mips_multi_cycle_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 892
+# BELS                             : 855
 #      GND                         : 1
 #      LUT2                        : 20
-#      LUT3                        : 94
-#      LUT4                        : 150
-#      LUT5                        : 87
-#      LUT6                        : 419
-#      MUXF7                       : 120
+#      LUT3                        : 114
+#      LUT4                        : 120
+#      LUT5                        : 79
+#      LUT6                        : 394
+#      MUXF7                       : 126
 #      VCC                         : 1
-# FlipFlops/Latches                : 364
-#      FD                          : 8
-#      FDE                         : 9
-#      FDR                         : 214
-#      FDRE                        : 129
+# FlipFlops/Latches                : 357
+#      FD                          : 3
+#      FDE                         : 7
+#      FDR                         : 215
+#      FDRE                        : 128
 #      LD                          : 4
 # RAMS                             : 16
 #      RAM32M                      : 10
@@ -1124,18 +1129,18 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             364  out of  18224     1%  
- Number of Slice LUTs:                  818  out of   9112     8%  
-    Number used as Logic:               770  out of   9112     8%  
+ Number of Slice Registers:             357  out of  18224     1%  
+ Number of Slice LUTs:                  775  out of   9112     8%  
+    Number used as Logic:               727  out of   9112     7%  
     Number used as Memory:               48  out of   2176     2%  
        Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    952
-   Number with an unused Flip Flop:     588  out of    952    61%  
-   Number with an unused LUT:           134  out of    952    14%  
-   Number of fully used LUT-FF pairs:   230  out of    952    24%  
-   Number of unique control sets:        25
+ Number of LUT Flip Flop pairs used:    923
+   Number with an unused Flip Flop:     566  out of    923    61%  
+   Number with an unused LUT:           148  out of    923    16%  
+   Number of fully used LUT-FF pairs:   209  out of    923    22%  
+   Number of unique control sets:        23
 
 IO Utilization: 
  Number of IOs:                         201
@@ -1166,12 +1171,10 @@ Clock Information:
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------+
 Clock Signal                                                                                                                                                                                                        | Clock buffer(FF name)                                                                           | Load  |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------+
-SPLB_Clk                                                                                                                                                                                                            | NONE(mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0)                 | 344   |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_internal_clk11:O)                                           | NONE(*)(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS162)| 26    |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch                                                                                                                                 | NONE(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_7)                   | 6     |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_GND_74_o_PWR_46_o_MUX_176_o1:O)| NONE(*)(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op0)| 4     |
+SPLB_Clk                                                                                                                                                                                                            | NONE(mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0)                 | 369   |
+mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_GND_74_o_PWR_46_o_MUX_178_o1:O)| NONE(*)(mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op0)| 4     |
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+-------+
-(*) These 2 clock signal(s) are generated by combinatorial logic,
+(*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -1184,7 +1187,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 18.943ns (Maximum Frequency: 52.791MHz)
+   Minimum period: 19.506ns (Maximum Frequency: 51.266MHz)
    Minimum input arrival time before clock: 3.301ns
    Maximum output required time after clock: 0.633ns
    Maximum combinational path delay: No path found
@@ -1195,120 +1198,63 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'SPLB_Clk'
-  Clock period: 18.943ns (frequency: 52.791MHz)
-  Total number of paths / destination ports: 145621 / 749
+  Clock period: 19.506ns (frequency: 51.266MHz)
+  Total number of paths / destination ports: 979671 / 938
 -------------------------------------------------------------------------
-Delay:               18.943ns (Levels of Logic = 11)
+Delay:               19.506ns (Levels of Logic = 12)
   Source:            mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM (RAM)
-  Destination:       mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/DATA_MEM/Mram_MEM (RAM)
+  Destination:       mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS5 (RAM)
   Source Clock:      SPLB_Clk rising
   Destination Clock: SPLB_Clk rising
 
-  Data Path: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM to mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/DATA_MEM/Mram_MEM
+  Data Path: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM to mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB8BWER:CLKBRDCLK->DOBDO7   51   2.950   2.430  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/instr_data<23>)
-     LUT6:I1->O            5   0.373   0.979  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mmux_RS271 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/rs<4>)
-     LUT5:I3->O            1   0.373   0.820  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_SW1 (N55)
-     LUT5:I3->O            1   0.373   0.820  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2 (N36)
-     LUT5:I3->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[4].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<4>)
+     RAMB8BWER:CLKBRDCLK->DOBDO2   21   2.950   1.911  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/instr_data<18>)
+     LUT5:I0->O            9   0.373   0.976  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_alu_in_mux1101_1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_alu_in_mux1101)
+     LUT4:I3->O            3   0.373   1.054  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_alu_in_mux271 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu_in_mux<4>)
+     LUT6:I3->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1 (N50)
+     LUT5:I4->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[4].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<4>)
      LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[6].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<6>)
      LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[8].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<8>)
      LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[10].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<10>)
      LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[12].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<12>)
      LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[14].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<14>)
-     LUT6:I5->O            6   0.373   1.164  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[16].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<16>)
-     LUT6:I3->O            1   0.373   0.681  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/Mmux_dmem_address_wr11 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/dmem_address_wr<0>)
-     RAMB8BWER:ADDRAWRADDR5        0.400          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/DATA_MEM/Mram_MEM
+     LUT6:I5->O            9   0.373   0.976  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[16].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<16>)
+     LUT6:I5->O           10   0.373   1.008  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<18>)
+     LUT5:I4->O            2   0.373   0.725  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_data_write_mux_out142 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/data_write_mux_out<21>)
+     RAM32M:DIB1               0.152          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS14
     ----------------------------------------
-    Total                     18.943ns (7.453ns logic, 11.490ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                     19.506ns (7.578ns logic, 11.928ns route)
+                                       (38.8% logic, 61.2% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk'
-  Clock period: 17.908ns (frequency: 55.841MHz)
-  Total number of paths / destination ports: 125846 / 172
--------------------------------------------------------------------------
-Delay:               17.908ns (Levels of Logic = 12)
-  Source:            mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS2 (RAM)
-  Destination:       mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS15 (RAM)
-  Source Clock:      mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk rising
-  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk rising
-
-  Data Path: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS2 to mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS15
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     RAM32M:WCLK->DOC0     5   1.384   1.458  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<4>)
-     LUT6:I0->O            5   0.373   0.979  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mmux_RS271 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/rs<4>)
-     LUT5:I3->O            1   0.373   0.820  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_SW1 (N55)
-     LUT5:I3->O            1   0.373   0.820  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2 (N36)
-     LUT5:I3->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[4].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<4>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[6].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<6>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[8].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<8>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[10].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<10>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[12].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<12>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[14].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<14>)
-     LUT6:I5->O            6   0.373   0.876  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[16].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<16>)
-     LUT6:I5->O           17   0.373   1.209  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<18>)
-     LUT5:I4->O            2   0.373   0.725  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_data_write_mux_out171 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/data_write_mux_out<24>)
-     RAM32M:DIA0               0.565          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS6
-    ----------------------------------------
-    Total                     17.908ns (6.425ns logic, 11.483ns route)
-                                       (35.9% logic, 64.1% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch'
-  Clock period: 6.510ns (frequency: 153.610MHz)
-  Total number of paths / destination ports: 49 / 6
--------------------------------------------------------------------------
-Delay:               6.510ns (Levels of Logic = 4)
-  Source:            mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_3 (FF)
-  Destination:       mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_7 (FF)
-  Source Clock:      mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch rising
-  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch rising
-
-  Data Path: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_3 to mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_7
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     FD:C->Q               8   0.633   1.232  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_3 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_3)
-     LUT4:I1->O            2   0.373   1.327  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/add4/GEN_ADDER[5].NEXT_FA/Mxor_R_xo<0>1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_INC<5>)
-     LUT5:I0->O            2   0.373   0.864  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/add_jump/GEN_ADDER[5].NEXT_FA/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/add_jump/CAUX<5>)
-     LUT3:I1->O            1   0.373   0.820  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_PC_NEXT30_SW0 (N10)
-     LUT6:I4->O            1   0.373   0.000  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_PC_NEXT30 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_NEXT<7>)
-     FD:D                      0.142          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/PC_7
-    ----------------------------------------
-    Total                      6.510ns (2.267ns logic, 4.243ns route)
-                                       (34.8% logic, 65.2% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o'
-  Clock period: 5.328ns (frequency: 187.684MHz)
+Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o'
+  Clock period: 5.326ns (frequency: 187.744MHz)
   Total number of paths / destination ports: 7 / 4
 -------------------------------------------------------------------------
-Delay:               5.328ns (Levels of Logic = 2)
+Delay:               5.326ns (Levels of Logic = 2)
   Source:            mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (LATCH)
   Destination:       mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (LATCH)
-  Source Clock:      mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o falling
-  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o falling
+  Source Clock:      mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o falling
+  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o falling
 
   Data Path: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 to mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LD:G->Q             321   0.748   3.040  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2)
-     LUT5:I0->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_190_o2_SW0 (N26)
-     LUT6:I5->O            1   0.373   0.000  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_190_o2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_190_o)
+     LD:G->Q             304   0.748   3.038  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2)
+     LUT5:I0->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o2_SW0 (N22)
+     LUT6:I5->O            1   0.373   0.000  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o)
      LD:D                      0.112          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2
     ----------------------------------------
-    Total                      5.328ns (1.606ns logic, 3.722ns route)
-                                       (30.1% logic, 69.9% route)
+    Total                      5.326ns (1.606ns logic, 3.720ns route)
+                                       (30.2% logic, 69.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'SPLB_Clk'
-  Total number of paths / destination ports: 417 / 417
+  Total number of paths / destination ports: 419 / 419
 -------------------------------------------------------------------------
 Offset:              3.301ns (Levels of Logic = 1)
   Source:            SPLB_Rst (PAD)
@@ -1321,25 +1267,6 @@ Offset:              3.301ns (Levels of Logic = 1)
     ----------------------------------------  ------------
      LUT2:I0->O          113   0.373   2.248  mips_multi_cycle_0/SOFT_RESET_I/Reset2IP_Reset1 (mips_multi_cycle_0/rst_Bus2IP_Reset)
      FDRE:R                    0.541          mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_31
-    ----------------------------------------
-    Total                      3.301ns (1.053ns logic, 2.248ns route)
-                                       (31.9% logic, 68.1% route)
-
-=========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk'
-  Total number of paths / destination ports: 12 / 12
--------------------------------------------------------------------------
-Offset:              3.301ns (Levels of Logic = 1)
-  Source:            SPLB_Rst (PAD)
-  Destination:       mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch (FF)
-  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk rising
-
-  Data Path: SPLB_Rst to mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LUT2:I0->O          113   0.373   2.248  mips_multi_cycle_0/SOFT_RESET_I/Reset2IP_Reset1 (mips_multi_cycle_0/rst_Bus2IP_Reset)
-     FDRE:R                    0.541          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch
     ----------------------------------------
     Total                      3.301ns (1.053ns logic, 2.248ns route)
                                        (31.9% logic, 68.1% route)
@@ -1372,54 +1299,30 @@ Clock to Setup on destination clock SPLB_Clk
                                                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-SPLB_Clk                                                                                             |   18.943|         |         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o|         |   16.461|         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch                  |    2.008|         |         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk                      |   16.405|         |         |         |
+SPLB_Clk                                                                                             |   19.506|         |         |         |
+mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o|         |   16.158|         |         |
 -----------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o
 -----------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
                                                                                                      | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                                                                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 -----------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-SPLB_Clk                                                                                             |         |         |    5.816|         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o|         |         |    5.328|         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk                      |         |         |    2.576|         |
------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch
------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-SPLB_Clk                                                                                             |   41.434|         |         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o|         |   38.952|         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/pc_latch                  |    6.510|         |         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk                      |   38.896|         |         |         |
------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk
------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-SPLB_Clk                                                                                             |   20.446|         |         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_176_o|         |   17.964|         |         |
-mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/internal_clk                      |   17.908|         |         |         |
+SPLB_Clk                                                                                             |         |         |    5.723|         |
+mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o|         |         |    5.326|         |
 -----------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 35.00 secs
-Total CPU time to Xst completion: 34.59 secs
+Total REAL time to Xst completion: 33.00 secs
+Total CPU time to Xst completion: 33.10 secs
  
 --> 
 
-Total memory usage is 316960 kilobytes
+Total memory usage is 316064 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  221 (   0 filtered)
-Number of infos    :   46 (   0 filtered)
+Number of warnings :  233 (   0 filtered)
+Number of infos    :   52 (   0 filtered)
 
