@@ -187,15 +187,17 @@ begin
     -- The next program counter value is located in PC_NEXT
 	pc_latch1: process (clk, reset, pc_latch, PC_NEXT)
 	begin
-		if rising_edge(clk) and reset = '1' then
+		if falling_edge(clk) and reset = '1' then
 			PC <= (others => '0');			
-		elsif rising_edge(pc_latch) and running = '1' then
+		elsif falling_edge(clk) and pc_latch = '1' and running = '1' then
 			PC <= PC_NEXT;
 		end if;
 	end process;
 
 	-- PC signal is always hooked to the instruction memory address
-	imem_address <= PC;
+	imem_address(29 downto 0) <= PC(31 downto 2);
+	imem_address(31 downto 30) <= "00";
+	-- imem_address <= PC;
 
 	-- Constant added that takes PC as it's X input and the contant 4 as Y.
     -- Result is placed in PC_INC which is the next PC given no branch or jump
@@ -225,7 +227,7 @@ begin
 	end process;
 	
 	-- PC next mux, combines the jump and branch mux	
-	pc_mux: process (jump, branch, PC_JUMP, PC_BRANCH, PC_INC)
+	pc_mux: process (jump, branch, flags, PC_JUMP, PC_BRANCH, PC_INC)
 	begin
 		if jump = '1' then
 			PC_NEXT <= PC_JUMP;

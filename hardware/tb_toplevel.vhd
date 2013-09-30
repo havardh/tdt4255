@@ -79,7 +79,7 @@ ARCHITECTURE behavior OF tb_toplevel IS
   constant addr15: std_logic_vector(0 to 31) := "00000000000000000000000000001111";
   constant addr16: std_logic_vector(0 to 31) := "00000000000000000000000000010000";
   constant addr17: std_logic_vector(0 to 31) := "00000000000000000000000000010001";
-
+  
   -- This is written to memory initially
   constant data1 : std_logic_vector(0 to 31):= "00000000000000000000000000000010";
 	constant data2 : std_logic_vector(0 to 31):= "00000000000000000000000000001010";
