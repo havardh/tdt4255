@@ -1075,7 +1075,7 @@ architecture STRUCTURE of system is
     );
   end component;
 
-  component mips_multi_cycle_0_wrapper is
+  component mips_kult_0_wrapper is
     port (
       SPLB_Clk : in std_logic;
       SPLB_Rst : in std_logic;
@@ -1276,7 +1276,7 @@ architecture STRUCTURE of system is
   attribute BOX_TYPE of clock_generator_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of mdm_0_wrapper : component is "user_black_box";
   attribute BOX_TYPE of proc_sys_reset_0_wrapper : component is "user_black_box";
-  attribute BOX_TYPE of mips_multi_cycle_0_wrapper : component is "user_black_box";
+  attribute BOX_TYPE of mips_kult_0_wrapper : component is "user_black_box";
 
 begin
 
@@ -2337,7 +2337,7 @@ begin
       Peripheral_aresetn => open
     );
 
-  mips_multi_cycle_0 : mips_multi_cycle_0_wrapper
+  mips_kult_0 : mips_kult_0_wrapper
     port map (
       SPLB_Clk => clk_66_6667MHz,
       SPLB_Rst => mb_plb_SPLB_Rst(2),

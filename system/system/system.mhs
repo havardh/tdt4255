@@ -134,10 +134,9 @@ BEGIN proc_sys_reset
  PORT Peripheral_Reset = sys_periph_reset
 END
 
-BEGIN mips_multi_cycle
- PARAMETER INSTANCE = mips_multi_cycle_0
+BEGIN mips_kult
+ PARAMETER INSTANCE = mips_kult_0
  PARAMETER HW_VER = 1.00.a
- PARAMETER C_INCLUDE_DPHASE_TIMER = 0
  PARAMETER C_BASEADDR = 0x84418000
  PARAMETER C_HIGHADDR = 0x8441bfff
  BUS_INTERFACE SPLB = mb_plb

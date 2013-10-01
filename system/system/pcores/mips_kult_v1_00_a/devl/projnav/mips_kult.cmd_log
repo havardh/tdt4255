@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_kult_v1_00_a/devl/projnav/mips_kult.xst" -ofn "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_kult_v1_00_a/devl/projnav/mips_kult.syr" 

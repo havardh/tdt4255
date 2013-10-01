@@ -5,10 +5,10 @@
 
 // IMPORTANT: These defines/includes depend on the name of your peripheral!
 //            You may need to update them...
-#include "mips_multi_cycle.h"
-#define WR MIPS_MULTI_CYCLE_mWriteReg
-#define RR MIPS_MULTI_CYCLE_mReadReg
-#define BASE XPAR_MIPS_MULTI_CYCLE_0_BASEADDR
+#include "mips_kult.h"
+#define WR MIPS_KULT_mWriteReg
+#define RR MIPS_KULT_mReadReg
+#define BASE XPAR_MIPS_KULT_0_BASEADDR
 // Name dependent defines/includes ends here
 
 #define CMD_NONE 0

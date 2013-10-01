@@ -84,7 +84,7 @@ Synthesizing Unit <system>.
     Set property "BOX_TYPE = user_black_box" for instance <clock_generator_0>.
     Set property "BOX_TYPE = user_black_box" for instance <mdm_0>.
     Set property "BOX_TYPE = user_black_box" for instance <proc_sys_reset_0>.
-    Set property "BOX_TYPE = user_black_box" for instance <mips_multi_cycle_0>.
+    Set property "BOX_TYPE = user_black_box" for instance <mips_kult_0>.
 INFO:Xst:3010 - "/users/runarbol/desktop/tdt4255-new/system/system/hdl/system.vhd" line 1294: Output port <M_AXI_IP_AWID> of the instance <microblaze_0> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/runarbol/desktop/tdt4255-new/system/system/hdl/system.vhd" line 1294: Output port <M_AXI_IP_AWADDR> of the instance <microblaze_0> is unconnected or connected to loadless signal.
 INFO:Xst:3010 - "/users/runarbol/desktop/tdt4255-new/system/system/hdl/system.vhd" line 1294: Output port <M_AXI_IP_AWLEN> of the instance <microblaze_0> is unconnected or connected to loadless signal.
@@ -536,7 +536,7 @@ Reading core <../implementation/dlmb_wrapper.ngc>.
 Reading core <../implementation/dlmb_cntlr_wrapper.ngc>.
 Reading core <../implementation/ilmb_cntlr_wrapper.ngc>.
 Reading core <../implementation/mdm_0_wrapper.ngc>.
-Reading core <../implementation/mips_multi_cycle_0_wrapper.ngc>.
+Reading core <../implementation/mips_kult_0_wrapper.ngc>.
 Reading core <../implementation/lmb_bram_wrapper.ngc>.
 Loading core <usb_uart_wrapper> for timing and area information for instance <USB_UART>.
 Loading core <clock_generator_0_wrapper> for timing and area information for instance <clock_generator_0>.
@@ -548,7 +548,7 @@ Loading core <dlmb_wrapper> for timing and area information for instance <dlmb>.
 Loading core <dlmb_cntlr_wrapper> for timing and area information for instance <dlmb_cntlr>.
 Loading core <ilmb_cntlr_wrapper> for timing and area information for instance <ilmb_cntlr>.
 Loading core <mdm_0_wrapper> for timing and area information for instance <mdm_0>.
-Loading core <mips_multi_cycle_0_wrapper> for timing and area information for instance <mips_multi_cycle_0>.
+Loading core <mips_kult_0_wrapper> for timing and area information for instance <mips_kult_0>.
 Loading core <lmb_bram_wrapper> for timing and area information for instance <lmb_bram>.
 
 =========================================================================
@@ -565,7 +565,7 @@ Optimizing unit <system> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 22.
+Found area constraint ratio of 100 (+ 0) on block system, actual ratio is 19.
 INFO:Xst:2260 - The FF/Latch <microblaze_0/Performance.Use_DBUS.Using_D_PLB.DPLB_Interface_I2/WB_DPLB_Data_Strobe> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/Performance.Use_DBUS.Using_D_PLB.DPLB_Interface_I2/WB_DPLB_Data_Strobe_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_MPLB_RST[1].I_MPLB_RST> in Unit <mb_plb> is equivalent to the following 5 FFs/Latches : <mb_plb/GEN_MPLB_RST[0].I_MPLB_RST> <mb_plb/GEN_SPLB_RST[2].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[1].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[0].I_SPLB_RST> <mb_plb/I_PLB_RST> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd2> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd2_1> 
@@ -573,6 +573,7 @@ INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODE
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0> in Unit <mb_plb> is equivalent to the following 3 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_2> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_3> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd4> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd4_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <mips_kult_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1> in Unit <mips_kult_0> is equivalent to the following FF/Latch : <mips_kult_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1_1> 
 INFO:Xst:2260 - The FF/Latch <microblaze_0/Performance.Use_DBUS.Using_D_PLB.DPLB_Interface_I2/WB_DPLB_Data_Strobe> in Unit <microblaze_0> is equivalent to the following FF/Latch : <microblaze_0/Performance.Use_DBUS.Using_D_PLB.DPLB_Interface_I2/WB_DPLB_Data_Strobe_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0> in Unit <mb_plb> is equivalent to the following 3 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_2> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_0_3> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1> in Unit <mb_plb> is equivalent to the following 2 FFs/Latches : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_1> <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARB_ENCODER/arbAddrSelReg_i_1_2> 
@@ -580,6 +581,7 @@ INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd2> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd2_1> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_MPLB_RST[1].I_MPLB_RST> in Unit <mb_plb> is equivalent to the following 5 FFs/Latches : <mb_plb/GEN_MPLB_RST[0].I_MPLB_RST> <mb_plb/GEN_SPLB_RST[2].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[1].I_SPLB_RST> <mb_plb/GEN_SPLB_RST[0].I_SPLB_RST> <mb_plb/I_PLB_RST> 
 INFO:Xst:2260 - The FF/Latch <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3> in Unit <mb_plb> is equivalent to the following FF/Latch : <mb_plb/GEN_SHARED.I_PLB_ARBITER_LOGIC/I_ARBCONTROL_SM/arbctrl_sm_cs_FSM_FFd3_1> 
+INFO:Xst:2260 - The FF/Latch <mips_kult_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1> in Unit <mips_kult_0> is equivalent to the following FF/Latch : <mips_kult_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1_1> 
 
 Final Macro Processing ...
 
@@ -608,38 +610,38 @@ Top Level Output File Name         : system.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3317
+# BELS                             : 2779
 #      GND                         : 13
-#      INV                         : 23
+#      INV                         : 24
 #      LUT1                        : 42
-#      LUT2                        : 171
-#      LUT3                        : 572
-#      LUT4                        : 438
-#      LUT5                        : 438
-#      LUT6                        : 1005
+#      LUT2                        : 207
+#      LUT3                        : 544
+#      LUT4                        : 417
+#      LUT5                        : 382
+#      LUT6                        : 660
 #      MULT_AND                    : 2
 #      MUXCY                       : 74
 #      MUXCY_L                     : 163
-#      MUXF7                       : 247
+#      MUXF7                       : 122
 #      VCC                         : 9
 #      XORCY                       : 120
-# FlipFlops/Latches                : 2135
-#      FD                          : 189
+# FlipFlops/Latches                : 2118
+#      FD                          : 248
+#      FD_1                        : 1
 #      FDC                         : 4
 #      FDC_1                       : 5
 #      FDCE                        : 31
-#      FDE                         : 357
+#      FDE                         : 350
 #      FDE_1                       : 8
-#      FDP                         : 5
-#      FDR                         : 691
-#      FDRE                        : 778
+#      FDP                         : 7
+#      FDR                         : 642
+#      FDRE                        : 758
 #      FDRE_1                      : 1
 #      FDS                         : 22
 #      FDSE                        : 40
-#      LD                          : 4
-# RAMS                             : 48
-#      RAM32M                      : 26
-#      RAM32X1D                    : 4
+#      LD                          : 1
+# RAMS                             : 34
+#      RAM32M                      : 16
 #      RAMB16BWER                  : 16
 #      RAMB8BWER                   : 2
 # Shift Registers                  : 133
@@ -666,19 +668,19 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            2135  out of  18224    11%  
- Number of Slice LUTs:                 3013  out of   9112    33%  
-    Number used as Logic:              2768  out of   9112    30%  
-    Number used as Memory:              245  out of   2176    11%  
-       Number used as RAM:              112
+ Number of Slice Registers:            2118  out of  18224    11%  
+ Number of Slice LUTs:                 2552  out of   9112    28%  
+    Number used as Logic:              2355  out of   9112    25%  
+    Number used as Memory:              197  out of   2176     9%  
+       Number used as RAM:               64
        Number used as SRL:              133
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   4089
-   Number with an unused Flip Flop:    1954  out of   4089    47%  
-   Number with an unused LUT:          1076  out of   4089    26%  
-   Number of fully used LUT-FF pairs:  1059  out of   4089    25%  
-   Number of unique control sets:       123
+ Number of LUT Flip Flop pairs used:   3606
+   Number with an unused Flip Flop:    1488  out of   3606    41%  
+   Number with an unused LUT:          1054  out of   3606    29%  
+   Number of fully used LUT-FF pairs:  1064  out of   3606    29%  
+   Number of unique control sets:       114
 
 IO Utilization: 
  Number of IOs:                           4
@@ -709,17 +711,14 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                                                                                                                                                                                                                                              | Clock buffer(FF name)                                                                                              | Load  |
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------+
-fpga_0_clk_1_sys_clk_pin                                                                                                                                                                                                                                  | clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst:CLKOUT0                                                     | 2071  |
-mdm_0/mdm_0/drck_i                                                                                                                                                                                                                                        | BUFG                                                                                                               | 202   |
-mdm_0/mdm_0/update                                                                                                                                                                                                                                        | BUFG                                                                                                               | 42    |
-mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o(mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_GND_74_o_PWR_46_o_MUX_178_o1:O)| NONE(*)(mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op0)| 4     |
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                  | Clock buffer(FF name)                                                                          | Load  |
+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
+fpga_0_clk_1_sys_clk_pin                                                                      | clock_generator_0/PLL0_INST/Using_PLL_ADV.PLL_ADV_inst:CLKOUT0                                 | 2043  |
+mdm_0/mdm_0/drck_i                                                                            | BUFG                                                                                           | 202   |
+mdm_0/mdm_0/update                                                                            | BUFG                                                                                           | 42    |
+mips_kult_0/mips_kult_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/state_FSM_FFd1| NONE(mips_kult_0/mips_kult_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/mem_write)| 1     |
+----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -730,7 +729,7 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 19.506ns (Maximum Frequency: 51.266MHz)
+   Minimum period: 12.922ns (Maximum Frequency: 77.387MHz)
    Minimum input arrival time before clock: 10.260ns
    Maximum output required time after clock: 12.055ns
    Maximum combinational path delay: No path found
@@ -741,36 +740,24 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_0_clk_1_sys_clk_pin'
-  Clock period: 19.506ns (frequency: 51.266MHz)
-  Total number of paths / destination ports: 1154804 / 6085
+  Clock period: 10.297ns (frequency: 97.113MHz)
+  Total number of paths / destination ports: 177788 / 5810
 -------------------------------------------------------------------------
-Delay:               19.506ns (Levels of Logic = 12)
-  Source:            mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM (RAM)
-  Destination:       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS5 (RAM)
+Delay:               10.297ns (Levels of Logic = 0)
+  Source:            microblaze_0/microblaze_0/Performance.Data_Flow_I/Operand_Select_I/EX_Op2_31 (FF)
+  Destination:       microblaze_0/microblaze_0/Performance.Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48A.Normal_in_fabric.DSP48A_I1 (DSP)
   Source Clock:      fpga_0_clk_1_sys_clk_pin rising
   Destination Clock: fpga_0_clk_1_sys_clk_pin rising
 
-  Data Path: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS5
+  Data Path: microblaze_0/microblaze_0/Performance.Data_Flow_I/Operand_Select_I/EX_Op2_31 to microblaze_0/microblaze_0/Performance.Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48A.Normal_in_fabric.DSP48A_I1
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB8BWER:CLKBRDCLK->DOBDO2   21   2.950   1.911  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/INST_MEM/Mram_MEM (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/instr_data<18>)
-     LUT5:I0->O            9   0.373   0.976  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_alu_in_mux1101_1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_alu_in_mux1101)
-     LUT4:I3->O            3   0.373   1.054  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_alu_in_mux271 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu_in_mux<4>)
-     LUT6:I3->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1 (N50)
-     LUT5:I4->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[4].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<4>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[6].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<6>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[8].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<8>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[10].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<10>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[12].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<12>)
-     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[14].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<14>)
-     LUT6:I5->O            9   0.373   0.976  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[16].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<16>)
-     LUT6:I5->O           10   0.373   1.008  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/alu1/COUT_AUX<18>)
-     LUT5:I4->O            2   0.373   0.725  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/Mmux_data_write_mux_out142 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/data_write_mux_out<21>)
-     RAM32M:DIB1               0.152          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/regfile/Mram_REGS14
+     FDRE:C->Q            49   0.633   1.803  microblaze_0/Performance.Data_Flow_I/Operand_Select_I/EX_Op2_31 (microblaze_0/Performance.Data_Flow_I/ex_op2<31>)
+     DSP48A1:B0                7.861          microblaze_0/Performance.Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.dsp_module_I1/Using_DSP48A.Normal_in_fabric.DSP48A_I1
     ----------------------------------------
-    Total                     19.506ns (7.578ns logic, 11.928ns route)
-                                       (38.8% logic, 61.2% route)
+    Total                     10.297ns (8.494ns logic, 1.803ns route)
+                                       (82.5% logic, 17.5% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'mdm_0/mdm_0/drck_i'
@@ -822,29 +809,6 @@ Delay:               6.461ns (Levels of Logic = 4)
     ----------------------------------------
     Total                      6.461ns (2.235ns logic, 4.226ns route)
                                        (34.6% logic, 65.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o'
-  Clock period: 5.326ns (frequency: 187.744MHz)
-  Total number of paths / destination ports: 7 / 4
--------------------------------------------------------------------------
-Delay:               5.326ns (Levels of Logic = 2)
-  Source:            mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (LATCH)
-  Destination:       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (LATCH)
-  Source Clock:      mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o falling
-  Destination Clock: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o falling
-
-  Data Path: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LD:G->Q             304   0.748   3.038  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2)
-     LUT5:I0->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o2_SW0 (N22)
-     LUT6:I5->O            1   0.373   0.000  mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/Mmux_ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o2 (mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op0_ALU_INPUT_Op0_MUX_192_o)
-     LD:D                      0.112          mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/ALU_INPUT_Op2
-    ----------------------------------------
-    Total                      5.326ns (1.606ns logic, 3.720ns route)
-                                       (30.2% logic, 69.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_0_clk_1_sys_clk_pin'
@@ -1008,15 +972,15 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock fpga_0_clk_1_sys_clk_pin
-------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                                                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-fpga_0_clk_1_sys_clk_pin                                                                                                |   19.506|         |         |         |
-mdm_0/mdm_0/drck_i                                                                                                      |    6.391|         |         |         |
-mdm_0/mdm_0/update                                                                                                      |    5.035|    4.087|         |         |
-mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o|         |   16.158|         |         |
-------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+----------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                              | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                                  |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+fpga_0_clk_1_sys_clk_pin                                                                      |   10.297|    2.753|    3.860|         |
+mdm_0/mdm_0/drck_i                                                                            |    6.391|         |         |         |
+mdm_0/mdm_0/update                                                                            |    5.035|    4.087|         |         |
+mips_kult_0/mips_kult_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/state_FSM_FFd1|    3.066|         |         |         |
+----------------------------------------------------------------------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock mdm_0/mdm_0/drck_i
 ------------------------+---------+---------+---------+---------+
@@ -1038,26 +1002,25 @@ mdm_0/mdm_0/drck_i      |    1.615|         |         |         |
 mdm_0/mdm_0/update      |         |    6.461|   10.661|         |
 ------------------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o
-------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-                                                                                                                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                                                                                                            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
-------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
-fpga_0_clk_1_sys_clk_pin                                                                                                |         |         |    5.723|         |
-mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/aluctl/GND_74_o_PWR_46_o_MUX_178_o|         |         |    5.326|         |
-------------------------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+Clock to Setup on destination clock mips_kult_0/mips_kult_0/USER_LOGIC_I/tdt4255_toplevel/MIPS_SC_PROCESSOR/control/state_FSM_FFd1
+------------------------+---------+---------+---------+---------+
+                        | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+------------------------+---------+---------+---------+---------+
+fpga_0_clk_1_sys_clk_pin|    5.008|         |         |         |
+------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 26.00 secs
-Total CPU time to Xst completion: 25.46 secs
+Total REAL time to Xst completion: 24.00 secs
+Total CPU time to Xst completion: 24.08 secs
  
 --> 
 
-Total memory usage is 280608 kilobytes
+Total memory usage is 293536 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :  442 (   0 filtered)
+Number of infos    :  444 (   0 filtered)
 

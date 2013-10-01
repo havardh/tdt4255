@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/Users/runarbol/Desktop/tdt4255-new/hardware/processor.xst" -ofn "C:/Users/runarbol/Desktop/tdt4255-new/hardware/processor.syr" 

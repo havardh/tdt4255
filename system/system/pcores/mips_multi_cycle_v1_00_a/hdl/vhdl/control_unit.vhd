@@ -54,8 +54,9 @@ architecture Behavioral of control_unit is
 	 constant fetch 		: STD_LOGIC_VECTOR (1 downto 0) := "00";
 	 constant execute 	: STD_LOGIC_VECTOR (1 downto 0) := "01";
 	 constant stall 		: STD_LOGIC_VECTOR (1 downto 0) := "10";
+	 constant stall1 		: STD_LOGIC_VECTOR (1 downto 0) := "11";
 	 signal state 			: STD_LOGIC_VECTOR (1 downto 0);
-	 signal next_state 			: STD_LOGIC_VECTOR (1 downto 0);
+	 signal next_state 	: STD_LOGIC_VECTOR (1 downto 0);
 	 constant op_alu 		: STD_LOGIC_VECTOR (5 downto 0) := "000000";
 	 constant op_lw 		: STD_LOGIC_VECTOR (5 downto 0) := "100011";
 	 constant op_sw 		: STD_LOGIC_VECTOR (5 downto 0) := "101011";
@@ -67,7 +68,7 @@ begin
 	process (clk, reset)
 	begin
 		if (reset = '1') then
-			state <= fetch;
+			state <= stall1;
 		elsif rising_edge(clk) then
 			state <= next_state;
 		end if;
@@ -77,17 +78,7 @@ begin
 	process (state, inst)
 	begin 
 		case state is
-			when fetch =>
---					reg_dst <= '0';
---					branch <= '0';
---					mem_read <= '0';
---					mem_to_reg <= '0';
---					alu_op <= ALUOP_BRANCH;
---					mem_write <= '0';
---					alu_src <= '0';
---					reg_write <= '0';
---					jump <= '0';
-			
+			when fetch =>			
 					mem_write <= '0';
 					reg_write <= '0';
 					pc_latch <= '0';
@@ -192,10 +183,7 @@ begin
 						next_state <= fetch;								
 				end case;
 				
-								
 			when stall =>
-					
-					
 					pc_latch <= '1';
 					next_state <= fetch;
 				

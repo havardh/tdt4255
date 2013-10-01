@@ -183,21 +183,18 @@ begin
 		end if;		
 	end process;
 	
-    -- Program counter latch. Updates the PC register on rising internal clock.
+    -- Program counter latch. Updates the PC register on falling clock.
     -- The next program counter value is located in PC_NEXT
 	pc_latch1: process (clk, reset, pc_latch, PC_NEXT)
 	begin
 		if falling_edge(clk) and reset = '1' then
-			PC <= (others => '0');			
+			PC <= (others => '0');	
+		elsif falling_edge(clk) and ctrl_reset = '1' then
+			PC <= (others => '0');
 		elsif falling_edge(clk) and pc_latch = '1' and running = '1' then
 			PC <= PC_NEXT;
 		end if;
 	end process;
-
-	-- PC signal is always hooked to the instruction memory address
-	imem_address(29 downto 0) <= PC(31 downto 2);
-	imem_address(31 downto 30) <= "00";
-	-- imem_address <= PC;
 
 	-- Constant added that takes PC as it's X input and the contant 4 as Y.
     -- Result is placed in PC_INC which is the next PC given no branch or jump
@@ -308,11 +305,19 @@ begin
 		end if;
 	end process;
 		
-	-- Link dmem inputs
-	dmem_address      <= alu_out;
-	dmem_address_wr   <= alu_out;
-	dmem_data_out     <= rt;
-	dmem_write_enable <= mem_write;
+			-- Link dmem inputs
+			--dmem_address      <= alu_out;
+			--dmem_address_wr   <= alu_out;
+			dmem_address      <= X"00000000";
+			dmem_address_wr   <= X"00000000";
+			dmem_data_out     <= rt;
+			--dmem_write_enable <= mem_write;
+			dmem_write_enable <= '1';
+
+			-- PC signal is always hooked to the instruction memory address
+			imem_address(29 downto 0) <= PC(31 downto 2);
+			imem_address(31 downto 30) <= "00";
+			-- imem_address <= PC;
 	
 	-- mem_to_reg mux, selects what data is sent to the write register
 	data_out_mux: process(dmem_data_in, alu_out, mem_to_reg)

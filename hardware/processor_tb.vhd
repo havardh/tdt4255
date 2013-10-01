@@ -81,7 +81,7 @@ begin
 		wait for 100 ns;	
 		reset <= '0';
 		processor_enable <= '1';
-		wait for clk_period;
+		wait for clk_period*2;
 		
 		
 

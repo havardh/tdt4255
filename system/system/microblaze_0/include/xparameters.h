@@ -78,13 +78,13 @@
 
 /******************************************************************/
 
-/* Definitions for driver MIPS_MULTI_CYCLE */
-#define XPAR_MIPS_MULTI_CYCLE_NUM_INSTANCES 1
+/* Definitions for driver MIPS_KULT */
+#define XPAR_MIPS_KULT_NUM_INSTANCES 1
 
-/* Definitions for peripheral MIPS_MULTI_CYCLE_0 */
-#define XPAR_MIPS_MULTI_CYCLE_0_DEVICE_ID 0
-#define XPAR_MIPS_MULTI_CYCLE_0_BASEADDR 0x84418000
-#define XPAR_MIPS_MULTI_CYCLE_0_HIGHADDR 0x8441BFFF
+/* Definitions for peripheral MIPS_KULT_0 */
+#define XPAR_MIPS_KULT_0_DEVICE_ID 0
+#define XPAR_MIPS_KULT_0_BASEADDR 0x84418000
+#define XPAR_MIPS_KULT_0_HIGHADDR 0x8441BFFF
 
 
 /******************************************************************/
