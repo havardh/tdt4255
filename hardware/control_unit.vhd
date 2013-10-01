@@ -46,7 +46,7 @@ entity control_unit is
 		 alu_src 	: out STD_LOGIC;
 		 reg_write 	: out STD_LOGIC;
 		 jump 		: out STD_LOGIC;
-		 pc_latch   : out STD_LOGIC
+		 pc_latch   : out STD_LOGIC := '0'
 	 );
 end control_unit;
 
@@ -69,6 +69,7 @@ begin
 	begin
 		if (reset = '1') then
 			state <= stall1;
+			--pc_latch <= '0';
 		elsif rising_edge(clk) then
 			state <= next_state;
 		end if;
@@ -188,6 +189,7 @@ begin
 					next_state <= fetch;
 				
 			when others =>
+				pc_latch <= '0';
 				next_state <= fetch;						
 		end case;
 	end process;

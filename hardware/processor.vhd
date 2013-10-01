@@ -134,7 +134,7 @@ architecture Behavioral of processor is
 	signal flags   : ALU_FLAGS;
 
 	-- Program Counter signals
-	signal PC        : std_logic_vector (31 downto 0);
+	signal PC        : std_logic_vector (31 downto 0) := X"00000000";
 	signal PC_INC    : std_logic_vector (31 downto 0); -- PC + 4
 	signal PC_JUMP   : std_logic_vector (31 downto 0); -- Jump target
 	signal PC_BRANCH : std_logic_vector (31 downto 0); -- Branch target
@@ -188,9 +188,9 @@ begin
 	pc_latch1: process (clk, reset, pc_latch, PC_NEXT)
 	begin
 		if falling_edge(clk) and reset = '1' then
-			PC <= (2 => '1', others => '0');	
+			PC <= (others => '0');	
 		elsif falling_edge(clk) and ctrl_reset = '1' then
-			PC <= (3 => '1', others => '0');
+			PC <= (others => '0');
 		elsif falling_edge(clk) and pc_latch = '1' and running = '1' then
 			PC <= PC_NEXT;
 		end if;
