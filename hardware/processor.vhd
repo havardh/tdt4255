@@ -306,13 +306,11 @@ begin
 	end process;
 		
 			-- Link dmem inputs
-			--dmem_address      <= alu_out;
-			--dmem_address_wr   <= alu_out;
-			dmem_address      <= X"00000005";
-			dmem_address_wr   <= X"00000005";
-			dmem_data_out     <= PC;
-			--dmem_write_enable <= mem_write;
-			dmem_write_enable <= '1';
+			dmem_address      <= alu_out;
+			dmem_address_wr   <= alu_out;
+			
+			dmem_data_out     <= rt;
+			dmem_write_enable <= mem_write;
 
 			-- PC signal is always hooked to the instruction memory address
 			imem_address(29 downto 0) <= PC(31 downto 2);
