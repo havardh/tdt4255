@@ -86,6 +86,8 @@ download: $(DOWNLOAD_BIT) dummy
 init_bram: $(DOWNLOAD_BIT)
 
 sim: $(DEFAULT_SIM_SCRIPT)
+	cd simulation/behavioral; \
+	$(SIM_CMD) -gui -do $(^F) &
 
 simmodel: $(DEFAULT_SIM_SCRIPT)
 
@@ -180,6 +182,24 @@ $(CYG_TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) : $(TESTAPP_PERIPHERAL_MICROBLAZE_
 
 TestApp_Peripheral_microblaze_0_programclean:
 	rm -f $(TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) 
+
+#################################################################
+# SOFTWARE APPLICATION APP_COMMUNICATION
+#################################################################
+
+App_Communication_program: $(CYG_APP_COMMUNICATION_OUTPUT) 
+
+$(CYG_APP_COMMUNICATION_OUTPUT) : $(APP_COMMUNICATION_SOURCES) $(APP_COMMUNICATION_HEADERS) $(APP_COMMUNICATION_LINKER_SCRIPT) \
+                    $(LIBRARIES) __xps/app_communication_compiler.opt
+	@mkdir -p $(APP_COMMUNICATION_OUTPUT_DIR) 
+	$(APP_COMMUNICATION_CC) $(APP_COMMUNICATION_CC_OPT) $(APP_COMMUNICATION_SOURCES) -o $(CYG_APP_COMMUNICATION_OUTPUT) \
+	$(APP_COMMUNICATION_OTHER_CC_FLAGS) $(APP_COMMUNICATION_INCLUDES) $(APP_COMMUNICATION_LIBPATH) \
+	$(APP_COMMUNICATION_CFLAGS) $(APP_COMMUNICATION_LFLAGS) 
+	$(APP_COMMUNICATION_CC_SIZE) $(CYG_APP_COMMUNICATION_OUTPUT) 
+	@echo ""
+
+App_Communication_programclean:
+	rm -f $(APP_COMMUNICATION_OUTPUT) 
 
 #################################################################
 # BOOTLOOP ELF FILES
