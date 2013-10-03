@@ -1,0 +1,4 @@
+vhdl work "../../hdl/vhdl/full_adder.vhd"
+vhdl work "../../hdl/vhdl/mips_constant_pkg.vhd"
+vhdl work "../../hdl/vhdl/adder.vhd"
+vhdl work "../../hdl/vhdl/processor.vhd"

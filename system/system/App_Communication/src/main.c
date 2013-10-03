@@ -5,7 +5,7 @@
 
 // IMPORTANT: These defines/includes depend on the name of your peripheral!
 //            You may need to update them...
-#include "mips_multicycle.h"
+#include "mips_multi_cycle.h"
 #define WR MIPS_MULTI_CYCLE_mWriteReg
 #define RR MIPS_MULTI_CYCLE_mReadReg
 #define BASE XPAR_MIPS_MULTI_CYCLE_0_BASEADDR

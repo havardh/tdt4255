@@ -42,6 +42,7 @@ begin
 			dmem_address    <= (others => '0');
 			dmem_address_wr <= (others => '0');
 			dmem_data_out   <= X"00001100";
+			
 		end if;
 	end process;
 
