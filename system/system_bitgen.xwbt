@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\runarbol\Desktop\tdt4255-new\system\system.ncd
-OUTFILE=C:\Users\runarbol\Desktop\tdt4255-new\system\system.bit
-FAMILY=Spartan6
-PART=xc6slx16-2csg324
-WORKINGDIR=C:\Users\runarbol\Desktop\tdt4255-new\system
-LICENSE=ISE
-USER_INFO=174154421_208900020_000
