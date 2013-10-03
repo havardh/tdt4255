@@ -318,11 +318,11 @@ LMB_Clk        |    2.202|         |         |         |
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.90 secs
+Total CPU time to Xst completion: 3.94 secs
  
 --> 
 
-Total memory usage is 264672 kilobytes
+Total memory usage is 264480 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

@@ -1128,7 +1128,7 @@ architecture STRUCTURE of system is
   signal Debug_SYS_Rst : std_logic;
   signal Ext_BRK : std_logic;
   signal Ext_NM_BRK : std_logic;
-  signal clk_66_6667MHz : std_logic;
+  signal clk_25_0000MHz : std_logic;
   signal dcm_clk_s : std_logic;
   signal dlmb_LMB_ABus : std_logic_vector(0 to 31);
   signal dlmb_LMB_AddrStrobe : std_logic;
@@ -1293,7 +1293,7 @@ begin
 
   microblaze_0 : microblaze_0_wrapper
     port map (
-      CLK => clk_66_6667MHz,
+      CLK => clk_25_0000MHz,
       RESET => dlmb_LMB_Rst,
       MB_RESET => mb_reset,
       INTERRUPT => net_gnd0,
@@ -1879,7 +1879,7 @@ begin
 
   mb_plb : mb_plb_wrapper
     port map (
-      PLB_Clk => clk_66_6667MHz,
+      PLB_Clk => clk_25_0000MHz,
       SYS_Rst => sys_bus_reset(0),
       PLB_Rst => open,
       SPLB_Rst => mb_plb_SPLB_Rst,
@@ -1980,7 +1980,7 @@ begin
 
   ilmb : ilmb_wrapper
     port map (
-      LMB_Clk => clk_66_6667MHz,
+      LMB_Clk => clk_25_0000MHz,
       SYS_Rst => sys_bus_reset(0),
       LMB_Rst => ilmb_LMB_Rst,
       M_ABus => ilmb_M_ABus,
@@ -2003,7 +2003,7 @@ begin
 
   dlmb : dlmb_wrapper
     port map (
-      LMB_Clk => clk_66_6667MHz,
+      LMB_Clk => clk_25_0000MHz,
       SYS_Rst => sys_bus_reset(0),
       LMB_Rst => dlmb_LMB_Rst,
       M_ABus => dlmb_M_ABus,
@@ -2026,7 +2026,7 @@ begin
 
   dlmb_cntlr : dlmb_cntlr_wrapper
     port map (
-      LMB_Clk => clk_66_6667MHz,
+      LMB_Clk => clk_25_0000MHz,
       LMB_Rst => dlmb_LMB_Rst,
       LMB_ABus => dlmb_LMB_ABus,
       LMB_WriteDBus => dlmb_LMB_WriteDBus,
@@ -2047,7 +2047,7 @@ begin
 
   ilmb_cntlr : ilmb_cntlr_wrapper
     port map (
-      LMB_Clk => clk_66_6667MHz,
+      LMB_Clk => clk_25_0000MHz,
       LMB_Rst => ilmb_LMB_Rst,
       LMB_ABus => ilmb_LMB_ABus,
       LMB_WriteDBus => ilmb_LMB_WriteDBus,
@@ -2086,7 +2086,7 @@ begin
 
   USB_UART : usb_uart_wrapper
     port map (
-      SPLB_Clk => clk_66_6667MHz,
+      SPLB_Clk => clk_25_0000MHz,
       SPLB_Rst => mb_plb_SPLB_Rst(0),
       PLB_ABus => mb_plb_PLB_ABus,
       PLB_PAValid => mb_plb_PLB_PAValid,
@@ -2136,7 +2136,7 @@ begin
   clock_generator_0 : clock_generator_0_wrapper
     port map (
       CLKIN => dcm_clk_s,
-      CLKOUT0 => clk_66_6667MHz,
+      CLKOUT0 => clk_25_0000MHz,
       CLKOUT1 => open,
       CLKOUT2 => open,
       CLKOUT3 => open,
@@ -2187,7 +2187,7 @@ begin
       S_AXI_RRESP => open,
       S_AXI_RVALID => open,
       S_AXI_RREADY => net_gnd0,
-      SPLB_Clk => clk_66_6667MHz,
+      SPLB_Clk => clk_25_0000MHz,
       SPLB_Rst => mb_plb_SPLB_Rst(1),
       PLB_ABus => mb_plb_PLB_ABus,
       PLB_UABus => mb_plb_PLB_UABus,
@@ -2313,7 +2313,7 @@ begin
 
   proc_sys_reset_0 : proc_sys_reset_0_wrapper
     port map (
-      Slowest_sync_clk => clk_66_6667MHz,
+      Slowest_sync_clk => clk_25_0000MHz,
       Ext_Reset_In => sys_rst_s,
       Aux_Reset_In => net_gnd0,
       MB_Debug_Sys_Rst => Debug_SYS_Rst,
@@ -2339,7 +2339,7 @@ begin
 
   mips_multi_cycle_0 : mips_multi_cycle_0_wrapper
     port map (
-      SPLB_Clk => clk_66_6667MHz,
+      SPLB_Clk => clk_25_0000MHz,
       SPLB_Rst => mb_plb_SPLB_Rst(2),
       PLB_ABus => mb_plb_PLB_ABus,
       PLB_UABus => mb_plb_PLB_UABus,

@@ -3,14 +3,14 @@ Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: processor.prj
 
@@ -44,6 +44,21 @@ Parsing entity <full_adder>.
 Parsing architecture <Behavioral> of entity <full_adder>.
 Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/mips_constant_pkg.vhd" into library work
 Parsing package <MIPS_CONSTANT_PKG>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/alu_1bit.vhd" into library work
+Parsing entity <alu_1bit>.
+Parsing architecture <Behavioral> of entity <alu_1bit>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/sign_extend.vhd" into library work
+Parsing entity <sign_extend>.
+Parsing architecture <Behavioral> of entity <sign_extend>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/register_file.vhd" into library work
+Parsing entity <register_file>.
+Parsing architecture <Behavioral> of entity <register_file>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/control_unit.vhd" into library work
+Parsing entity <control_unit>.
+Parsing architecture <Behavioral> of entity <control_unit>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/alu.vhd" into library work
+Parsing entity <alu>.
+Parsing architecture <Behavioral> of entity <alu>.
 Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/adder.vhd" into library work
 Parsing entity <adder>.
 Parsing architecture <Behavioral> of entity <adder>.
@@ -52,12 +67,12 @@ Parsing entity <processor>.
 Parsing architecture <Behavioral> of entity <processor>.
 
 
-Total REAL time to Xst completion: 3.00 secs
+Total REAL time to Xst completion: 4.00 secs
 Total CPU time to Xst completion: 3.16 secs
  
 --> 
 
-Total memory usage is 184552 kilobytes
+Total memory usage is 184232 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

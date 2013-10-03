@@ -1,0 +1,2 @@
+vhdl work "../../hdl/vhdl/mips_constant_pkg.vhd"
+vhdl work "../../hdl/vhdl/control_unit.vhd"

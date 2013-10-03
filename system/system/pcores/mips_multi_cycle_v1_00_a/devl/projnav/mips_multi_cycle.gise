@@ -23,9 +23,18 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_XMSGS" xil_pn:name="_xmsgs/xst.xmsgs"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="control_unit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="control_unit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="control_unit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="mips_multi_cycle.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="mips_multi_cycle.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="mips_multi_cycle.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="processor.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="processor.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="processor.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="toplevel.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="toplevel.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="toplevel.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 

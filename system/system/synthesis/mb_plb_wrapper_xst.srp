@@ -1062,11 +1062,11 @@ PLB_Clk        |    5.952|         |         |         |
 
 
 Total REAL time to Xst completion: 11.00 secs
-Total CPU time to Xst completion: 11.03 secs
+Total CPU time to Xst completion: 11.06 secs
  
 --> 
 
-Total memory usage is 286752 kilobytes
+Total memory usage is 286688 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   24 (   0 filtered)

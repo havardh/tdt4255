@@ -113,8 +113,8 @@ Synthesizing Unit <proc_sys_reset>.
     Set property "equivalent_register_removal = no" for signal <Peripheral_Reset>.
     Set property "equivalent_register_removal = no" for signal <Interconnect_aresetn>.
     Set property "equivalent_register_removal = no" for signal <Peripheral_aresetn>.
-    Register <RstcPPCresetchip_1> equivalent to <RstcPPCresetchip_0> has been removed
     Register <RstcPPCresetsys_1> equivalent to <RstcPPCresetsys_0> has been removed
+    Register <RstcPPCresetchip_1> equivalent to <RstcPPCresetchip_0> has been removed
     Found 1-bit register for signal <RstcPPCresetchip_0>.
     Found 1-bit register for signal <RstcPPCresetsys_0>.
     Found 1-bit register for signal <RstcPPCresetcore_1>.
@@ -470,11 +470,11 @@ Slowest_sync_clk|    3.696|         |         |         |
 
 
 Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.90 secs
+Total CPU time to Xst completion: 4.89 secs
  
 --> 
 
-Total memory usage is 268576 kilobytes
+Total memory usage is 268000 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

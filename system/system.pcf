@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map M.81d on Thu Oct 03 14:14:15 2013
+// Written by: Map M.81d on Thu Oct 03 16:51:41 2013
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
 COMP "fpga_0_clk_1_sys_clk_pin" LOCATE = SITE "L12" LEVEL 1;
-COMP "fpga_0_USB_UART_RX_pin" LOCATE = SITE "H13" LEVEL 1;
 COMP "fpga_0_rst_1_sys_rst_pin" LOCATE = SITE "H18" LEVEL 1;
+COMP "fpga_0_USB_UART_RX_pin" LOCATE = SITE "H13" LEVEL 1;
 COMP "fpga_0_USB_UART_TX_pin" LOCATE = SITE "H14" LEVEL 1;
 PIN lmb_bram/lmb_bram/ramb16bwer_0_pins<28> = BEL
         "lmb_bram/lmb_bram/ramb16bwer_0" PINNAME CLKA;
@@ -88,6 +88,16 @@ PIN
         "microblaze_0/microblaze_0/Performance.Data_Flow_I/MUL_Unit_I/Use_HW_MUL.Using_DSP48_Architectures.No_MUL64.dsp_module_I3/Using_DSP48A.Normal_in_fabric.DSP48A_I1"
         PINNAME CLK;
 PIN
+        mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM_pins<16>
+        = BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM"
+        PINNAME CLKAWRCLK;
+PIN
+        mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM_pins<17>
+        = BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM"
+        PINNAME CLKBRDCLK;
+PIN
         mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/DATA_MEM/Mram_MEM_pins<16>
         = BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/DATA_MEM/Mram_MEM"
@@ -158,6 +168,7 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/tx_Start" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read" BEL
+        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_1" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/enable_interrupts" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/running" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/reset_RX_FIFO" BEL
@@ -165,8 +176,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "USB_UART/USB_UART/UARTLITE_CORE_I/status_Reg_2" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/status_Reg_1" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_0" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_1" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_5" BEL
+        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_2" BEL
+        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_3" BEL
         "USB_UART/USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/sl_busy" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_Write" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/rx_1" BEL
@@ -247,9 +258,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/mux_sel_0" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/clr_Status" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/EN_16x_Baud" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_2" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_3" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_4" BEL
         "USB_UART/USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_1"
         BEL
         "USB_UART/USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_0"
@@ -2393,129 +2401,19 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         BEL
         "mdm_0/mdm_0/MDM_Core_I1/PLB_Interconnect.PLBv46_rdDBus_DFF[31].PLBv46_rdBus_FDRE"
         PIN
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM_pins<16>"
+        PIN
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM_pins<17>"
+        PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/DATA_MEM/Mram_MEM_pins<16>"
         PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/DATA_MEM/Mram_MEM_pins<17>"
         BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_5"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_6"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_7"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_8"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_29"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_28"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_27"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_26"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_25"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_24"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_23"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_22"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_21"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_20"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_19"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_18"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_17"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_16"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_15"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_14"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_13"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_12"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_11"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_10"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_9"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_8"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_7"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_6"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_5"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_0"
-        BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_busy"
         BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/state_FSM_FFd1"
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2"
         BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/state_FSM_FFd2"
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd1"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_0"
         BEL
@@ -2829,6 +2727,24 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         BEL "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg0_1"
         BEL "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg0_0"
         BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_0"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_5"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_6"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_7"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_8"
+        BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_2"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_1"
@@ -2838,6 +2754,26 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rnw_s_h"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/decode_hit_reg"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_0"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_0"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_29"
         BEL
@@ -2886,6 +2822,70 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_be_reg_1"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_be_reg_0"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_29"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_28"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_27"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_26"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_25"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_24"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_23"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_22"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_21"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_20"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_19"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_18"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_17"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_16"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_15"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_14"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_13"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_12"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_11"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_10"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_9"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_8"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_7"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_6"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_5"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_0"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_31"
         BEL
@@ -2965,7 +2965,33 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_i"
         BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0"
+        BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/data_timeout"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS161/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS161/DP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS62/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS62/DP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS162/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS162/DP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS61/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS61/DP"
         BEL
         "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[0].ram32m_i_RAMA_D1"
         BEL
@@ -3221,7 +3247,167 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PIN
         BEL
         "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[9].ram32m_i_RAMD_D1"
         BEL
-        "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[9].ram32m_i_RAMD";
+        "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[9].ram32m_i_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMD";
 TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         "lmb_bram/lmb_bram/ramb16bwer_0_pins<28>" PIN
         "lmb_bram/lmb_bram/ramb16bwer_0_pins<29>" PIN
@@ -3283,6 +3469,7 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/tx_Start" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/tx_DataBits" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/fifo_Read" BEL
+        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_1" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/enable_interrupts" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/running" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/reset_RX_FIFO" BEL
@@ -3290,8 +3477,8 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         "USB_UART/USB_UART/UARTLITE_CORE_I/status_Reg_2" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/status_Reg_1" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_0" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_1" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_5" BEL
+        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_2" BEL
+        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_3" BEL
         "USB_UART/USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/sl_busy" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_Write" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/rx_1" BEL
@@ -3372,9 +3559,6 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         "USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_TX_I/mux_sel_0" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/clr_Status" BEL
         "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/EN_16x_Baud" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_2" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_3" BEL
-        "USB_UART/USB_UART/UARTLITE_CORE_I/BAUD_RATE_I/count_4" BEL
         "USB_UART/USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_1"
         BEL
         "USB_UART/USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_0"
@@ -5518,129 +5702,19 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         BEL
         "mdm_0/mdm_0/MDM_Core_I1/PLB_Interconnect.PLBv46_rdDBus_DFF[31].PLBv46_rdBus_FDRE"
         PIN
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM_pins<16>"
+        PIN
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM_pins<17>"
+        PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/DATA_MEM/Mram_MEM_pins<16>"
         PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/DATA_MEM/Mram_MEM_pins<17>"
         BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_5"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_6"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_7"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_8"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_0"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_29"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_28"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_27"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_26"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_25"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_24"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_23"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_22"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_21"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_20"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_19"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_18"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_17"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_16"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_15"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_14"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_13"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_12"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_11"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_10"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_9"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_8"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_7"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_6"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_5"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_4"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_3"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_2"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_1"
-        BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_0"
-        BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_busy"
         BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/state_FSM_FFd1"
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2"
         BEL
-        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/state_FSM_FFd2"
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd1"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_0"
         BEL
@@ -5954,6 +6028,24 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         BEL "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg0_1"
         BEL "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg0_0"
         BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_0"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_5"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_6"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_7"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER/INFERRED_GEN.icount_out_8"
+        BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_2"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/addr_out_s_h_1"
@@ -5963,6 +6055,26 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rnw_s_h"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/decode_hit_reg"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_0"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/wrce_out_i_0"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_29"
         BEL
@@ -6011,6 +6123,70 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_be_reg_1"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_be_reg_0"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_31"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_30"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_29"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_28"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_27"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_26"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_25"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_24"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_23"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_22"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_21"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_20"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_19"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_18"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_17"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_16"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_15"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_14"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_13"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_12"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_11"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_10"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_9"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_8"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_7"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_6"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_5"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_4"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_0"
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_wrdbus_reg_31"
         BEL
@@ -6090,7 +6266,33 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_i"
         BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_3"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_2"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_be_i_0"
+        BEL
         "mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/data_timeout"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS161/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS161/DP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS62/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS62/DP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS162/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS162/DP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS61/SP"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS61/DP"
         BEL
         "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[0].ram32m_i_RAMA_D1"
         BEL
@@ -6346,7 +6548,167 @@ TIMEGRP clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0_0 = PIN
         BEL
         "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[9].ram32m_i_RAMD_D1"
         BEL
-        "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[9].ram32m_i_RAMD";
+        "microblaze_0/microblaze_0/Performance.Data_Flow_I/Register_File_I/Using_LUT6.All_RAM32M[9].ram32m_i_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS12_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS13_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS2_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS3_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS4_RAMD"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMA_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMA"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMB_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMB"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMD_D1"
+        BEL
+        "mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMD";
 PIN SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1_pins<0> = BEL
         "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1" PINNAME DIVCLK;
 PIN
@@ -6359,7 +6721,7 @@ TIMEGRP sys_clk_pin = PIN "SP6_BUFIO2_INSERT_PLL1_ML_BUFIO2_1_pins<0>" PIN
 TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 66.6667 MHz HIGH 50%;
 TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PERIOD TIMEGRP
         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" TS_sys_clk_pin
-        HIGH 50%;
+        * 0.375 HIGH 50%;
 PIN fpga_0_rst_1_sys_rst_pin_pins<0> = BEL "fpga_0_rst_1_sys_rst_pin" PINNAME
         PAD;
 PIN "fpga_0_rst_1_sys_rst_pin_pins<0>" TIG;

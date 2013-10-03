@@ -86,30 +86,7 @@ LIBSCLEAN_TARGETS = microblaze_0_libsclean
 
 PROGRAMCLEAN_TARGETS = TestApp_Memory_microblaze_0_programclean TestApp_Peripheral_microblaze_0_programclean App_Communication_programclean 
 
-CORE_STATE_DEVELOPMENT_FILES = /cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/or_muxcy.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/or_gate128.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd \
-/cygdrive/c/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plbv46_slave_single.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_constant_pkg.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/shiftleft.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd \
-pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd
+CORE_STATE_DEVELOPMENT_FILES = 
 
 WRAPPER_NGC_FILES = implementation/microblaze_0_wrapper.ngc \
 implementation/mb_plb_wrapper.ngc \

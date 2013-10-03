@@ -64,371 +64,643 @@ Slack: 12.779ns (period - min period limit)
 ================================================================================
 Timing constraint: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = 
 PERIOD TIMEGRP         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" 
-TS_sys_clk_pin         HIGH 50%;
+TS_sys_clk_pin         * 0.375 HIGH 50%;
 
- 252800 paths analyzed, 9598 endpoints analyzed, 0 failing endpoints
+ 1815167 paths analyzed, 10167 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is  14.454ns.
+ Minimum period is  26.035ns.
 --------------------------------------------------------------------------------
 
-Paths for end point lmb_bram/lmb_bram/ramb16bwer_1 (RAMB16_X0Y8.ADDRA8), 166 paths
+Paths for end point mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA (SLICE_X2Y55.AX), 127770 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     0.545ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_1 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      14.368ns (Levels of Logic = 2)
-  Clock Path Skew:      0.023ns (0.550 - 0.527)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     13.964ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.881ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.020ns (0.333 - 0.353)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo to lmb_bram/lmb_bram/ramb16bwer_1
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y55.BQ      Tcko                  0.553   microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-    SLICE_X6Y44.B3       net (fanout=13)       3.314   microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-    SLICE_X6Y44.CMUX     Topbc                 0.907   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.force_jump31
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X27Y39.D1      net (fanout=32)       3.676   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X27Y39.DMUX    Tilo                  0.455   microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/if_pc<23>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc151
-    RAMB16_X0Y8.ADDRA8   net (fanout=18)       5.063   ilmb_LMB_ABus<22>
-    RAMB16_X0Y8.CLKA     Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_1
-                                                       lmb_bram/lmb_bram/ramb16bwer_1
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X8Y54.D5       net (fanout=11)       1.501   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X8Y54.D        Tilo                  0.333   mips_multi_cycle_0/N41
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[30].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X8Y51.CX       net (fanout=2)        0.975   mips_multi_cycle_0/N41
+    SLICE_X8Y51.CMUX     Tcxc                  0.267   mips_multi_cycle_0/N40
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X18Y47.CX      net (fanout=2)        1.838   mips_multi_cycle_0/N78
+    SLICE_X18Y47.CMUX    Tcxc                  0.255   mips_multi_cycle_0/N69
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X20Y48.C3      net (fanout=4)        0.852   mips_multi_cycle_0/N95
+    SLICE_X20Y48.CMUX    Tilo                  0.591   mdm_0/mdm_0/MDM_Core_I1/valid_access_2_reading
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y56.D2      net (fanout=4)        2.737   mips_multi_cycle_0/N123
+    SLICE_X14Y56.CMUX    Topdc                 0.644   mips_multi_cycle_0/N238
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X16Y59.C3      net (fanout=4)        1.113   mips_multi_cycle_0/N160
+    SLICE_X16Y59.CMUX    Tilo                  0.591   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<20>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X4Y58.CX       net (fanout=2)        1.843   mips_multi_cycle_0/N201
+    SLICE_X4Y58.CMUX     Tcxc                  0.267   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X4Y58.A1       net (fanout=1)        1.039   mips_multi_cycle_0/N246
+    SLICE_X4Y58.A        Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data110
+    SLICE_X2Y55.AX       net (fanout=2)        1.102   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<0>
+    SLICE_X2Y55.CLK      Tds                  -0.061   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<5>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA
     -------------------------------------------------  ---------------------------
-    Total                                     14.368ns (2.315ns logic, 12.053ns route)
-                                                       (16.1% logic, 83.9% route)
+    Total                                     25.881ns (6.877ns logic, 19.004ns route)
+                                                       (26.6% logic, 73.4% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     0.677ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_1 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      14.241ns (Levels of Logic = 2)
-  Clock Path Skew:      0.028ns (0.550 - 0.522)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     13.967ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.878ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.020ns (0.333 - 0.353)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i to lmb_bram/lmb_bram/ramb16bwer_1
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y55.BQ      Tcko                  0.633   microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/ex_dbg_pc_hit_single_step
-                                                       microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i
-    SLICE_X6Y44.B4       net (fanout=13)       3.107   microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i
-    SLICE_X6Y44.CMUX     Topbc                 0.907   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.force_jump31
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X27Y39.D1      net (fanout=32)       3.676   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X27Y39.DMUX    Tilo                  0.455   microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/if_pc<23>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc151
-    RAMB16_X0Y8.ADDRA8   net (fanout=18)       5.063   ilmb_LMB_ABus<22>
-    RAMB16_X0Y8.CLKA     Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_1
-                                                       lmb_bram/lmb_bram/ramb16bwer_1
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X8Y51.B5       net (fanout=11)       1.442   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X8Y51.B        Tilo                  0.333   mips_multi_cycle_0/N40
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[30].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X8Y51.D1       net (fanout=3)        0.729   mips_multi_cycle_0/N40
+    SLICE_X8Y51.CMUX     Topdc                 0.569   mips_multi_cycle_0/N40
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X18Y47.CX      net (fanout=2)        1.838   mips_multi_cycle_0/N78
+    SLICE_X18Y47.CMUX    Tcxc                  0.255   mips_multi_cycle_0/N69
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X20Y48.C3      net (fanout=4)        0.852   mips_multi_cycle_0/N95
+    SLICE_X20Y48.CMUX    Tilo                  0.591   mdm_0/mdm_0/MDM_Core_I1/valid_access_2_reading
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y56.D2      net (fanout=4)        2.737   mips_multi_cycle_0/N123
+    SLICE_X14Y56.CMUX    Topdc                 0.644   mips_multi_cycle_0/N238
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X16Y59.C3      net (fanout=4)        1.113   mips_multi_cycle_0/N160
+    SLICE_X16Y59.CMUX    Tilo                  0.591   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<20>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X4Y58.CX       net (fanout=2)        1.843   mips_multi_cycle_0/N201
+    SLICE_X4Y58.CMUX     Tcxc                  0.267   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X4Y58.A1       net (fanout=1)        1.039   mips_multi_cycle_0/N246
+    SLICE_X4Y58.A        Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data110
+    SLICE_X2Y55.AX       net (fanout=2)        1.102   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<0>
+    SLICE_X2Y55.CLK      Tds                  -0.061   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<5>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA
     -------------------------------------------------  ---------------------------
-    Total                                     14.241ns (2.395ns logic, 11.846ns route)
-                                                       (16.8% logic, 83.2% route)
+    Total                                     25.878ns (7.179ns logic, 18.699ns route)
+                                                       (27.7% logic, 72.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     0.964ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_1 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.954ns (Levels of Logic = 2)
-  Clock Path Skew:      0.028ns (0.550 - 0.522)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     13.973ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.872ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.020ns (0.333 - 0.353)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc to lmb_bram/lmb_bram/ramb16bwer_1
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y55.AQ      Tcko                  0.548   microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-    SLICE_X6Y44.A2       net (fanout=16)       2.911   microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-    SLICE_X6Y44.CMUX     Topac                 0.901   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/Mmux_FPGA_TARGET.force_jump211
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X27Y39.D1      net (fanout=32)       3.676   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X27Y39.DMUX    Tilo                  0.455   microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/if_pc<23>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc151
-    RAMB16_X0Y8.ADDRA8   net (fanout=18)       5.063   ilmb_LMB_ABus<22>
-    RAMB16_X0Y8.CLKA     Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_1
-                                                       lmb_bram/lmb_bram/ramb16bwer_1
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.CMUX    Tilo                  0.458   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC
+    SLICE_X14Y48.C2      net (fanout=1)        1.929   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<28>
+    SLICE_X14Y48.C       Tilo                  0.374   mips_multi_cycle_0/N52
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS211
+    SLICE_X12Y45.A2      net (fanout=20)       1.595   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<28>
+    SLICE_X12Y45.A       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0_SW0
+    SLICE_X14Y47.B6      net (fanout=1)        0.657   mips_multi_cycle_0/N255
+    SLICE_X14Y47.B       Tilo                  0.373   mips_multi_cycle_0/N77
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y47.D1      net (fanout=4)        0.779   mips_multi_cycle_0/N77
+    SLICE_X14Y47.CMUX    Topdc                 0.644   mips_multi_cycle_0/N77
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X20Y48.CX      net (fanout=2)        1.450   mips_multi_cycle_0/N96
+    SLICE_X20Y48.CMUX    Tcxc                  0.267   mdm_0/mdm_0/MDM_Core_I1/valid_access_2_reading
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y56.D2      net (fanout=4)        2.737   mips_multi_cycle_0/N123
+    SLICE_X14Y56.CMUX    Topdc                 0.644   mips_multi_cycle_0/N238
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X16Y59.C3      net (fanout=4)        1.113   mips_multi_cycle_0/N160
+    SLICE_X16Y59.CMUX    Tilo                  0.591   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<20>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X4Y58.CX       net (fanout=2)        1.843   mips_multi_cycle_0/N201
+    SLICE_X4Y58.CMUX     Tcxc                  0.267   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X4Y58.A1       net (fanout=1)        1.039   mips_multi_cycle_0/N246
+    SLICE_X4Y58.A        Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data110
+    SLICE_X2Y55.AX       net (fanout=2)        1.102   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<0>
+    SLICE_X2Y55.CLK      Tds                  -0.061   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<5>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS1_RAMA
     -------------------------------------------------  ---------------------------
-    Total                                     13.954ns (2.304ns logic, 11.650ns route)
-                                                       (16.5% logic, 83.5% route)
+    Total                                     25.872ns (7.173ns logic, 18.699ns route)
+                                                       (27.7% logic, 72.3% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point lmb_bram/lmb_bram/ramb16bwer_0 (RAMB16_X0Y10.ADDRA8), 166 paths
+Paths for end point mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA (SLICE_X6Y55.AX), 127770 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.062ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_0 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.843ns (Levels of Logic = 2)
-  Clock Path Skew:      0.015ns (0.542 - 0.527)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     14.066ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.768ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.031ns (0.322 - 0.353)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo to lmb_bram/lmb_bram/ramb16bwer_0
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y55.BQ      Tcko                  0.553   microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-    SLICE_X6Y44.B3       net (fanout=13)       3.314   microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-    SLICE_X6Y44.CMUX     Topbc                 0.907   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.force_jump31
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X27Y39.D1      net (fanout=32)       3.676   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X27Y39.DMUX    Tilo                  0.455   microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/if_pc<23>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc151
-    RAMB16_X0Y10.ADDRA8  net (fanout=18)       4.538   ilmb_LMB_ABus<22>
-    RAMB16_X0Y10.CLKA    Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_0
-                                                       lmb_bram/lmb_bram/ramb16bwer_0
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X8Y54.D5       net (fanout=11)       1.501   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X8Y54.D        Tilo                  0.333   mips_multi_cycle_0/N41
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[30].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X8Y51.CX       net (fanout=2)        0.975   mips_multi_cycle_0/N41
+    SLICE_X8Y51.CMUX     Tcxc                  0.267   mips_multi_cycle_0/N40
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X18Y47.CX      net (fanout=2)        1.838   mips_multi_cycle_0/N78
+    SLICE_X18Y47.CMUX    Tcxc                  0.255   mips_multi_cycle_0/N69
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X20Y48.C3      net (fanout=4)        0.852   mips_multi_cycle_0/N95
+    SLICE_X20Y48.CMUX    Tilo                  0.591   mdm_0/mdm_0/MDM_Core_I1/valid_access_2_reading
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y56.D2      net (fanout=4)        2.737   mips_multi_cycle_0/N123
+    SLICE_X14Y56.CMUX    Topdc                 0.644   mips_multi_cycle_0/N238
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X16Y59.C3      net (fanout=4)        1.113   mips_multi_cycle_0/N160
+    SLICE_X16Y59.CMUX    Tilo                  0.591   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<20>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X4Y58.CX       net (fanout=2)        1.843   mips_multi_cycle_0/N201
+    SLICE_X4Y58.CMUX     Tcxc                  0.267   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X4Y58.A1       net (fanout=1)        1.039   mips_multi_cycle_0/N246
+    SLICE_X4Y58.A        Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data110
+    SLICE_X6Y55.AX       net (fanout=2)        0.989   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<0>
+    SLICE_X6Y55.CLK      Tds                  -0.061   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RT_ADDR[4]_read_port_5_OUT<5>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA
     -------------------------------------------------  ---------------------------
-    Total                                     13.843ns (2.315ns logic, 11.528ns route)
-                                                       (16.7% logic, 83.3% route)
+    Total                                     25.768ns (6.877ns logic, 18.891ns route)
+                                                       (26.7% logic, 73.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.194ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_0 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.716ns (Levels of Logic = 2)
-  Clock Path Skew:      0.020ns (0.542 - 0.522)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     14.069ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.765ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.031ns (0.322 - 0.353)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i to lmb_bram/lmb_bram/ramb16bwer_0
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y55.BQ      Tcko                  0.633   microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/ex_dbg_pc_hit_single_step
-                                                       microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i
-    SLICE_X6Y44.B4       net (fanout=13)       3.107   microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i
-    SLICE_X6Y44.CMUX     Topbc                 0.907   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.force_jump31
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X27Y39.D1      net (fanout=32)       3.676   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X27Y39.DMUX    Tilo                  0.455   microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/if_pc<23>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc151
-    RAMB16_X0Y10.ADDRA8  net (fanout=18)       4.538   ilmb_LMB_ABus<22>
-    RAMB16_X0Y10.CLKA    Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_0
-                                                       lmb_bram/lmb_bram/ramb16bwer_0
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X8Y51.B5       net (fanout=11)       1.442   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X8Y51.B        Tilo                  0.333   mips_multi_cycle_0/N40
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[30].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X8Y51.D1       net (fanout=3)        0.729   mips_multi_cycle_0/N40
+    SLICE_X8Y51.CMUX     Topdc                 0.569   mips_multi_cycle_0/N40
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X18Y47.CX      net (fanout=2)        1.838   mips_multi_cycle_0/N78
+    SLICE_X18Y47.CMUX    Tcxc                  0.255   mips_multi_cycle_0/N69
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X20Y48.C3      net (fanout=4)        0.852   mips_multi_cycle_0/N95
+    SLICE_X20Y48.CMUX    Tilo                  0.591   mdm_0/mdm_0/MDM_Core_I1/valid_access_2_reading
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y56.D2      net (fanout=4)        2.737   mips_multi_cycle_0/N123
+    SLICE_X14Y56.CMUX    Topdc                 0.644   mips_multi_cycle_0/N238
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X16Y59.C3      net (fanout=4)        1.113   mips_multi_cycle_0/N160
+    SLICE_X16Y59.CMUX    Tilo                  0.591   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<20>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X4Y58.CX       net (fanout=2)        1.843   mips_multi_cycle_0/N201
+    SLICE_X4Y58.CMUX     Tcxc                  0.267   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X4Y58.A1       net (fanout=1)        1.039   mips_multi_cycle_0/N246
+    SLICE_X4Y58.A        Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data110
+    SLICE_X6Y55.AX       net (fanout=2)        0.989   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<0>
+    SLICE_X6Y55.CLK      Tds                  -0.061   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RT_ADDR[4]_read_port_5_OUT<5>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA
     -------------------------------------------------  ---------------------------
-    Total                                     13.716ns (2.395ns logic, 11.321ns route)
-                                                       (17.5% logic, 82.5% route)
+    Total                                     25.765ns (7.179ns logic, 18.586ns route)
+                                                       (27.9% logic, 72.1% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.481ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_0 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.429ns (Levels of Logic = 2)
-  Clock Path Skew:      0.020ns (0.542 - 0.522)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     14.075ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.759ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.031ns (0.322 - 0.353)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc to lmb_bram/lmb_bram/ramb16bwer_0
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y55.AQ      Tcko                  0.548   microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-    SLICE_X6Y44.A2       net (fanout=16)       2.911   microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-    SLICE_X6Y44.CMUX     Topac                 0.901   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/Mmux_FPGA_TARGET.force_jump211
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X27Y39.D1      net (fanout=32)       3.676   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X27Y39.DMUX    Tilo                  0.455   microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/if_pc<23>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc151
-    RAMB16_X0Y10.ADDRA8  net (fanout=18)       4.538   ilmb_LMB_ABus<22>
-    RAMB16_X0Y10.CLKA    Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_0
-                                                       lmb_bram/lmb_bram/ramb16bwer_0
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.CMUX    Tilo                  0.458   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC
+    SLICE_X14Y48.C2      net (fanout=1)        1.929   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<28>
+    SLICE_X14Y48.C       Tilo                  0.374   mips_multi_cycle_0/N52
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS211
+    SLICE_X12Y45.A2      net (fanout=20)       1.595   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<28>
+    SLICE_X12Y45.A       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0_SW0
+    SLICE_X14Y47.B6      net (fanout=1)        0.657   mips_multi_cycle_0/N255
+    SLICE_X14Y47.B       Tilo                  0.373   mips_multi_cycle_0/N77
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y47.D1      net (fanout=4)        0.779   mips_multi_cycle_0/N77
+    SLICE_X14Y47.CMUX    Topdc                 0.644   mips_multi_cycle_0/N77
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1
+    SLICE_X20Y48.CX      net (fanout=2)        1.450   mips_multi_cycle_0/N96
+    SLICE_X20Y48.CMUX    Tcxc                  0.267   mdm_0/mdm_0/MDM_Core_I1/valid_access_2_reading
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW0
+    SLICE_X14Y56.D2      net (fanout=4)        2.737   mips_multi_cycle_0/N123
+    SLICE_X14Y56.CMUX    Topdc                 0.644   mips_multi_cycle_0/N238
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X16Y59.C3      net (fanout=4)        1.113   mips_multi_cycle_0/N160
+    SLICE_X16Y59.CMUX    Tilo                  0.591   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<20>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X4Y58.CX       net (fanout=2)        1.843   mips_multi_cycle_0/N201
+    SLICE_X4Y58.CMUX     Tcxc                  0.267   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X4Y58.A1       net (fanout=1)        1.039   mips_multi_cycle_0/N246
+    SLICE_X4Y58.A        Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/dmem_write_data<14>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data110
+    SLICE_X6Y55.AX       net (fanout=2)        0.989   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<0>
+    SLICE_X6Y55.CLK      Tds                  -0.061   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RT_ADDR[4]_read_port_5_OUT<5>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS11_RAMA
     -------------------------------------------------  ---------------------------
-    Total                                     13.429ns (2.304ns logic, 11.125ns route)
-                                                       (17.2% logic, 82.8% route)
+    Total                                     25.759ns (7.173ns logic, 18.586ns route)
+                                                       (27.8% logic, 72.2% route)
 
 --------------------------------------------------------------------------------
 
-Paths for end point lmb_bram/lmb_bram/ramb16bwer_2 (RAMB16_X0Y28.ADDRA13), 216 paths
+Paths for end point mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1 (SLICE_X18Y53.CI), 124390 paths
 --------------------------------------------------------------------------------
-Slack (setup path):     1.256ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_2 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.652ns (Levels of Logic = 2)
-  Clock Path Skew:      0.018ns (0.453 - 0.435)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     14.581ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1 (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.214ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.070ns (0.410 - 0.480)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo to lmb_bram/lmb_bram/ramb16bwer_2
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X20Y55.BQ      Tcko                  0.553   microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-    SLICE_X6Y44.B3       net (fanout=13)       3.314   microblaze_0/microblaze_0/Performance.Decode_I/ex_Interrupt_Brk_combo
-    SLICE_X6Y44.CMUX     Topbc                 0.907   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.force_jump31
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X22Y39.B4      net (fanout=32)       2.732   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X22Y39.B       Tilo                  0.373   mb_plb_M_ABus<51>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc91
-    RAMB16_X0Y28.ADDRA13 net (fanout=17)       5.373   ilmb_LMB_ABus<17>
-    RAMB16_X0Y28.CLKA    Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_2
-                                                       lmb_bram/lmb_bram/ramb16bwer_2
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X10Y53.D5      net (fanout=11)       1.412   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X10Y53.CMUX    Topdc                 0.644   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg2<31>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data221_SW0_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data221_SW0
+    SLICE_X14Y53.D3      net (fanout=4)        0.871   mips_multi_cycle_0/N54
+    SLICE_X14Y53.CMUX    Topdc                 0.644   mips_multi_cycle_0/N50
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X18Y52.D3      net (fanout=4)        1.373   mips_multi_cycle_0/N80
+    SLICE_X18Y52.CMUX    Topdc                 0.644   mips_multi_cycle_0/N101
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X30Y52.C4      net (fanout=4)        1.479   mips_multi_cycle_0/N101
+    SLICE_X30Y52.CMUX    Tilo                  0.608   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/GND_18_o_command[0]_equal_18_o
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X28Y57.CX      net (fanout=2)        1.679   mips_multi_cycle_0/N127
+    SLICE_X28Y57.CMUX    Tcxc                  0.267   mips_multi_cycle_0/N170
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6
+    SLICE_X26Y59.C4      net (fanout=4)        1.002   mips_multi_cycle_0/N170
+    SLICE_X26Y59.CMUX    Tilo                  0.608   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/SHIFT_inv_shift14
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6
+    SLICE_X22Y59.C3      net (fanout=4)        0.888   mips_multi_cycle_0/N209
+    SLICE_X22Y59.CMUX    Tilo                  0.608   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<17>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW7_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW7
+    SLICE_X22Y59.A1      net (fanout=1)        1.075   mips_multi_cycle_0/N253
+    SLICE_X22Y59.A       Tilo                  0.373   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<17>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data222
+    SLICE_X18Y53.CI      net (fanout=2)        1.196   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<29>
+    SLICE_X18Y53.CLK     Tds                   0.182   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RT_ADDR[4]_read_port_5_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1
     -------------------------------------------------  ---------------------------
-    Total                                     13.652ns (2.233ns logic, 11.419ns route)
-                                                       (16.4% logic, 83.6% route)
+    Total                                     25.214ns (8.235ns logic, 16.979ns route)
+                                                       (32.7% logic, 67.3% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.388ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_2 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.525ns (Levels of Logic = 2)
-  Clock Path Skew:      0.023ns (0.453 - 0.430)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     14.591ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1 (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.204ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.070ns (0.410 - 0.480)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i to lmb_bram/lmb_bram/ramb16bwer_2
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X18Y55.BQ      Tcko                  0.633   microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/ex_dbg_pc_hit_single_step
-                                                       microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i
-    SLICE_X6Y44.B4       net (fanout=13)       3.107   microblaze_0/microblaze_0/Performance.Use_Debug_Logic.Debug_Perf/Performace_Debug_Control.ex_dbg_pc_hit_i
-    SLICE_X6Y44.CMUX     Topbc                 0.907   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.force_jump31
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X22Y39.B4      net (fanout=32)       2.732   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X22Y39.B       Tilo                  0.373   mb_plb_M_ABus<51>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc91
-    RAMB16_X0Y28.ADDRA13 net (fanout=17)       5.373   ilmb_LMB_ABus<17>
-    RAMB16_X0Y28.CLKA    Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_2
-                                                       lmb_bram/lmb_bram/ramb16bwer_2
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X10Y53.D5      net (fanout=11)       1.412   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X10Y53.CMUX    Topdc                 0.644   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg2<31>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data221_SW0_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data221_SW0
+    SLICE_X14Y53.D3      net (fanout=4)        0.871   mips_multi_cycle_0/N54
+    SLICE_X14Y53.CMUX    Topdc                 0.644   mips_multi_cycle_0/N50
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X18Y52.C3      net (fanout=4)        1.399   mips_multi_cycle_0/N80
+    SLICE_X18Y52.CMUX    Tilo                  0.608   mips_multi_cycle_0/N101
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X30Y52.C4      net (fanout=4)        1.479   mips_multi_cycle_0/N101
+    SLICE_X30Y52.CMUX    Tilo                  0.608   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/GND_18_o_command[0]_equal_18_o
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X28Y57.CX      net (fanout=2)        1.679   mips_multi_cycle_0/N127
+    SLICE_X28Y57.CMUX    Tcxc                  0.267   mips_multi_cycle_0/N170
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6
+    SLICE_X26Y59.C4      net (fanout=4)        1.002   mips_multi_cycle_0/N170
+    SLICE_X26Y59.CMUX    Tilo                  0.608   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/SHIFT_inv_shift14
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6
+    SLICE_X22Y59.C3      net (fanout=4)        0.888   mips_multi_cycle_0/N209
+    SLICE_X22Y59.CMUX    Tilo                  0.608   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<17>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW7_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW7
+    SLICE_X22Y59.A1      net (fanout=1)        1.075   mips_multi_cycle_0/N253
+    SLICE_X22Y59.A       Tilo                  0.373   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<17>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data222
+    SLICE_X18Y53.CI      net (fanout=2)        1.196   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<29>
+    SLICE_X18Y53.CLK     Tds                   0.182   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RT_ADDR[4]_read_port_5_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1
     -------------------------------------------------  ---------------------------
-    Total                                     13.525ns (2.313ns logic, 11.212ns route)
-                                                       (17.1% logic, 82.9% route)
+    Total                                     25.204ns (8.199ns logic, 17.005ns route)
+                                                       (32.5% logic, 67.5% route)
 
 --------------------------------------------------------------------------------
-Slack (setup path):     1.675ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc (FF)
-  Destination:          lmb_bram/lmb_bram/ramb16bwer_2 (RAM)
-  Requirement:          14.999ns
-  Data Path Delay:      13.238ns (Levels of Logic = 2)
-  Clock Path Skew:      0.023ns (0.453 - 0.430)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.109ns
+Slack (setup path):     14.591ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1 (RAM)
+  Requirement:          39.999ns
+  Data Path Delay:      25.204ns (Levels of Logic = 10)
+  Clock Path Skew:      -0.070ns (0.410 - 0.480)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.134ns
 
-  Clock Uncertainty:          0.109ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
+  Clock Uncertainty:          0.134ns  ((TSJ^2 + DJ^2)^1/2) / 2 + PE
     Total System Jitter (TSJ):  0.070ns
-    Discrete Jitter (DJ):       0.205ns
+    Discrete Jitter (DJ):       0.258ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc to lmb_bram/lmb_bram/ramb16bwer_2
+  Maximum Data Path at Slow Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X19Y55.AQ      Tcko                  0.548   microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-    SLICE_X6Y44.A2       net (fanout=16)       2.911   microblaze_0/microblaze_0/Performance.Decode_I/ex_Take_Intr_or_Exc
-    SLICE_X6Y44.CMUX     Topac                 0.901   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/ex_jump_q
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/Mmux_FPGA_TARGET.force_jump211
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4
-    SLICE_X22Y39.B4      net (fanout=32)       2.732   microblaze_0/microblaze_0/Performance.Decode_I/jump_logic_I1/FPGA_TARGET.MUXCY_JUMP_CARRY4/O
-    SLICE_X22Y39.B       Tilo                  0.373   mb_plb_M_ABus<51>
-                                                       microblaze_0/microblaze_0/Performance.Decode_I/PC_Module_I/Mmux_new_pc91
-    RAMB16_X0Y28.ADDRA13 net (fanout=17)       5.373   ilmb_LMB_ABus<17>
-    RAMB16_X0Y28.CLKA    Trcck_ADDRA           0.400   lmb_bram/lmb_bram/ramb16bwer_2
-                                                       lmb_bram/lmb_bram/ramb16bwer_2
+    RAMB8_X0Y29.DOBDO5   Trcko_DOB             2.950   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM
+    SLICE_X22Y53.C1      net (fanout=49)       4.455   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<21>
+    SLICE_X22Y53.C       Tilo                  0.374   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5_RAMC_D1
+    SLICE_X12Y45.B6      net (fanout=2)        1.549   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RS_ADDR[4]_read_port_2_OUT<29>
+    SLICE_X12Y45.B       Tilo                  0.333   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mmux_RS221
+    SLICE_X10Y53.D5      net (fanout=11)       1.412   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<29>
+    SLICE_X10Y53.CMUX    Topdc                 0.644   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/slv_reg2<31>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data221_SW0_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data221_SW0
+    SLICE_X14Y53.C3      net (fanout=4)        0.897   mips_multi_cycle_0/N54
+    SLICE_X14Y53.CMUX    Tilo                  0.608   mips_multi_cycle_0/N50
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[28].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X18Y52.D3      net (fanout=4)        1.373   mips_multi_cycle_0/N80
+    SLICE_X18Y52.CMUX    Topdc                 0.644   mips_multi_cycle_0/N101
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2_F
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[26].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW2
+    SLICE_X30Y52.C4      net (fanout=4)        1.479   mips_multi_cycle_0/N101
+    SLICE_X30Y52.CMUX    Tilo                  0.608   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/GND_18_o_command[0]_equal_18_o
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[24].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW3
+    SLICE_X28Y57.CX      net (fanout=2)        1.679   mips_multi_cycle_0/N127
+    SLICE_X28Y57.CMUX    Tcxc                  0.267   mips_multi_cycle_0/N170
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[22].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6
+    SLICE_X26Y59.C4      net (fanout=4)        1.002   mips_multi_cycle_0/N170
+    SLICE_X26Y59.CMUX    Tilo                  0.608   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/SHIFT_inv_shift14
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[20].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW6
+    SLICE_X22Y59.C3      net (fanout=4)        0.888   mips_multi_cycle_0/N209
+    SLICE_X22Y59.CMUX    Tilo                  0.608   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<17>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW7_G
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW7
+    SLICE_X22Y59.A1      net (fanout=1)        1.075   mips_multi_cycle_0/N253
+    SLICE_X22Y59.A       Tilo                  0.373   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/rs<17>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data222
+    SLICE_X18Y53.CI      net (fanout=2)        1.196   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<29>
+    SLICE_X18Y53.CLK     Tds                   0.182   mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/RT_ADDR[4]_read_port_5_OUT<29>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS15_RAMC_D1
     -------------------------------------------------  ---------------------------
-    Total                                     13.238ns (2.222ns logic, 11.016ns route)
-                                                       (16.8% logic, 83.2% route)
+    Total                                     25.204ns (8.199ns logic, 17.005ns route)
+                                                       (32.5% logic, 67.5% route)
 
 --------------------------------------------------------------------------------
 
 Hold Paths: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PERIOD TIMEGRP
         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" TS_sys_clk_pin
-        HIGH 50%;
+        * 0.375 HIGH 50%;
 --------------------------------------------------------------------------------
 
-Paths for end point USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0 (SLICE_X22Y13.AI), 1 path
+Paths for end point mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i (SLICE_X6Y44.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.249ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_addrack_i (FF)
+  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.250ns (Levels of Logic = 0)
+  Clock Path Skew:      0.001ns (0.042 - 0.041)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_addrack_i to mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X7Y45.AQ       Tcko                  0.198   mb_plb_Sl_addrAck<2>
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_addrack_i
+    SLICE_X6Y44.CE       net (fanout=9)        0.144   mb_plb_Sl_addrAck<2>
+    SLICE_X6Y44.CLK      Tckce       (-Th)     0.092   mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i
+                                                       mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i
+    -------------------------------------------------  ---------------------------
+    Total                                      0.250ns (0.106ns logic, 0.144ns route)
+                                                       (42.4% logic, 57.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0 (SLICE_X14Y46.AI), 1 path
 --------------------------------------------------------------------------------
 Slack (hold path):      0.255ns (requirement - (clock path skew + uncertainty - data path))
   Source:               USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_1 (FF)
   Destination:          USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0 (FF)
   Requirement:          0.000ns
   Data Path Delay:      0.257ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.043 - 0.041)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Clock Path Skew:      0.002ns (0.044 - 0.042)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
   Clock Uncertainty:    0.000ns
 
   Minimum Data Path at Fast Process Corner: USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_1 to USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X23Y13.AQ      Tcko                  0.198   USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_4
+    SLICE_X15Y46.AQ      Tcko                  0.198   USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_4
                                                        USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_1
-    SLICE_X22Y13.AI      net (fanout=2)        0.029   USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_1
-    SLICE_X22Y13.CLK     Tdh         (-Th)    -0.030   USB_UART/USB_UART/UARTLITE_CORE_I/rx_Data<6>
+    SLICE_X14Y46.AI      net (fanout=2)        0.029   USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_1
+    SLICE_X14Y46.CLK     Tdh         (-Th)    -0.030   USB_UART/USB_UART/UARTLITE_CORE_I/rx_Data<6>
                                                        USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_0_0
     -------------------------------------------------  ---------------------------
     Total                                      0.257ns (0.228ns logic, 0.029ns route)
@@ -436,87 +708,60 @@ Slack (hold path):      0.255ns (requirement - (clock path skew + uncertainty - 
 
 --------------------------------------------------------------------------------
 
-Paths for end point mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4 (SLICE_X27Y23.SR), 1 path
+Paths for end point mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/Addr_Counters[3].FDRE_I (SLICE_X26Y48.CE), 1 path
 --------------------------------------------------------------------------------
-Slack (hold path):      0.324ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               mb_plb/mb_plb/GEN_SPLB_RST[2].I_SPLB_RST (FF)
-  Destination:          mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4 (FF)
+Slack (hold path):      0.257ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/data_Exists_I (FF)
+  Destination:          mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/Addr_Counters[3].FDRE_I (FF)
   Requirement:          0.000ns
-  Data Path Delay:      0.319ns (Levels of Logic = 0)
-  Clock Path Skew:      -0.005ns (0.089 - 0.094)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
+  Data Path Delay:      0.259ns (Levels of Logic = 0)
+  Clock Path Skew:      0.002ns (0.046 - 0.044)
+  Source Clock:         clk_25_0000MHz rising at 0.000ns
+  Destination Clock:    clk_25_0000MHz rising at 39.999ns
   Clock Uncertainty:    0.000ns
 
-  Minimum Data Path at Fast Process Corner: mb_plb/mb_plb/GEN_SPLB_RST[2].I_SPLB_RST to mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4
+  Minimum Data Path at Fast Process Corner: mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/data_Exists_I to mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/Addr_Counters[3].FDRE_I
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X29Y22.CQ      Tcko                  0.198   mb_plb_SPLB_Rst<2>
-                                                       mb_plb/mb_plb/GEN_SPLB_RST[2].I_SPLB_RST
-    SLICE_X27Y23.SR      net (fanout=59)       0.252   mb_plb_SPLB_Rst<2>
-    SLICE_X27Y23.CLK     Tcksr       (-Th)     0.131   mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg<7>
-                                                       mips_multi_cycle_0/mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4
+    SLICE_X27Y48.AQ      Tcko                  0.198   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/data_Exists_I
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/data_Exists_I
+    SLICE_X26Y48.CE      net (fanout=4)        0.169   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/data_Exists_I
+    SLICE_X26Y48.CLK     Tckce       (-Th)     0.108   mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/Addr<3>
+                                                       mdm_0/mdm_0/MDM_Core_I1/JTAG_CONTROL_I/Have_UARTs.TX_FIFO_I/Addr_Counters[3].FDRE_I
     -------------------------------------------------  ---------------------------
-    Total                                      0.319ns (0.067ns logic, 0.252ns route)
-                                                       (21.0% logic, 79.0% route)
-
---------------------------------------------------------------------------------
-
-Paths for end point USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0 (SLICE_X22Y13.CI), 1 path
---------------------------------------------------------------------------------
-Slack (hold path):      0.327ns (requirement - (clock path skew + uncertainty - data path))
-  Source:               USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_5 (FF)
-  Destination:          USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0 (FF)
-  Requirement:          0.000ns
-  Data Path Delay:      0.329ns (Levels of Logic = 0)
-  Clock Path Skew:      0.002ns (0.043 - 0.041)
-  Source Clock:         clk_66_6667MHz rising at 0.000ns
-  Destination Clock:    clk_66_6667MHz rising at 14.999ns
-  Clock Uncertainty:    0.000ns
-
-  Minimum Data Path at Fast Process Corner: USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_5 to USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0
-    Location             Delay type         Delay(ns)  Physical Resource
-                                                       Logical Resource(s)
-    -------------------------------------------------  -------------------
-    SLICE_X23Y13.AMUX    Tshcko                0.244   USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_4
-                                                       USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_5
-    SLICE_X22Y13.CI      net (fanout=2)        0.035   USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/fifo_din_5
-    SLICE_X22Y13.CLK     Tdh         (-Th)    -0.050   USB_UART/USB_UART/UARTLITE_CORE_I/rx_Data<6>
-                                                       USB_UART/USB_UART/UARTLITE_CORE_I/UARTLITE_RX_I/SRL_FIFO_I/I_SRL_FIFO_RBU_F/DYNSHREG_F_I/Mshreg_Dout_4_0
-    -------------------------------------------------  ---------------------------
-    Total                                      0.329ns (0.294ns logic, 0.035ns route)
-                                                       (89.4% logic, 10.6% route)
+    Total                                      0.259ns (0.090ns logic, 0.169ns route)
+                                                       (34.7% logic, 65.3% route)
 
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 = PERIOD TIMEGRP
         "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" TS_sys_clk_pin
-        HIGH 50%;
+        * 0.375 HIGH 50%;
 --------------------------------------------------------------------------------
-Slack: 11.154ns (period - min period limit)
-  Period: 14.999ns
+Slack: 36.154ns (period - min period limit)
+  Period: 39.999ns
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
   Physical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKA
   Logical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKA
-  Location pin: RAMB16_X0Y10.CLKA
-  Clock network: clk_66_6667MHz
+  Location pin: RAMB16_X0Y12.CLKA
+  Clock network: clk_25_0000MHz
 --------------------------------------------------------------------------------
-Slack: 11.154ns (period - min period limit)
-  Period: 14.999ns
+Slack: 36.154ns (period - min period limit)
+  Period: 39.999ns
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKB(Fmax))
   Physical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKB
   Logical resource: lmb_bram/lmb_bram/ramb16bwer_0/CLKB
-  Location pin: RAMB16_X0Y10.CLKB
-  Clock network: clk_66_6667MHz
+  Location pin: RAMB16_X0Y12.CLKB
+  Clock network: clk_25_0000MHz
 --------------------------------------------------------------------------------
-Slack: 11.154ns (period - min period limit)
-  Period: 14.999ns
+Slack: 36.154ns (period - min period limit)
+  Period: 39.999ns
   Min period limit: 3.845ns (260.078MHz) (Trper_CLKA(Fmax))
   Physical resource: lmb_bram/lmb_bram/ramb16bwer_1/CLKA
   Logical resource: lmb_bram/lmb_bram/ramb16bwer_1/CLKA
-  Location pin: RAMB16_X0Y8.CLKA
-  Clock network: clk_66_6667MHz
+  Location pin: RAMB16_X0Y14.CLKA
+  Clock network: clk_25_0000MHz
 --------------------------------------------------------------------------------
 
 
@@ -527,8 +772,8 @@ Derived Constraints for TS_sys_clk_pin
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_sys_clk_pin                 |     15.000ns|      4.999ns|     14.454ns|            0|            0|            0|       252800|
-| TS_clock_generator_0_clock_gen|     15.000ns|     14.454ns|          N/A|            0|            0|       252800|            0|
+|TS_sys_clk_pin                 |     15.000ns|      4.999ns|      9.763ns|            0|            0|            0|      1815167|
+| TS_clock_generator_0_clock_gen|     40.000ns|     26.035ns|          N/A|            0|            0|      1815167|            0|
 | erator_0_SIG_PLL0_CLKOUT0     |             |             |             |             |             |             |             |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
@@ -544,7 +789,7 @@ Clock to Setup on destination clock fpga_0_clk_1_sys_clk_pin
                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock            |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ------------------------+---------+---------+---------+---------+
-fpga_0_clk_1_sys_clk_pin|   14.454|         |         |         |
+fpga_0_clk_1_sys_clk_pin|   26.035|         |         |         |
 ------------------------+---------+---------+---------+---------+
 
 
@@ -553,23 +798,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 252800 paths, 0 nets, and 11269 connections
+Constraints cover 1815167 paths, 0 nets, and 13287 connections
 
 Design statistics:
-   Minimum period:  14.454ns{1}   (Maximum frequency:  69.185MHz)
+   Minimum period:  26.035ns{1}   (Maximum frequency:  38.410MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Thu Oct 03 14:15:06 2013 
+Analysis completed Thu Oct 03 16:52:36 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 258 MB
+Peak Memory Usage: 267 MB
 
 
 
