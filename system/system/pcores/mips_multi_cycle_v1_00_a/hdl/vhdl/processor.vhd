@@ -38,10 +38,10 @@ begin
 	drive_output_signals: process(processor_enable)
 	begin
 		if processor_enable = '1' then
-			imem_address    <= (others => '0');
-			dmem_address    <= (others => '0');
+			imem_address <= (others => '0');
+			dmem_address <= (others => '0');
 			dmem_address_wr <= (others => '0');
-			dmem_data_out   <= X"00001100";
+			dmem_data_out <= X"00001100";
 		end if;
 	end process;
 

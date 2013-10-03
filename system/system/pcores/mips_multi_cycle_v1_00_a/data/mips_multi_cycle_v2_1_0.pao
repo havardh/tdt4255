@@ -1,7 +1,7 @@
 ##############################################################################
-## Filename:          C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/data/mips_multi_cycle_v2_1_0.pao
+## Filename:          C:\Users\runarbol\Desktop\tdt4255\system\system\pcores/mips_multi_cycle_v1_00_a/data/mips_multi_cycle_v2_1_0.pao
 ## Description:       Peripheral Analysis Order
-## Date:              Thu Oct 03 11:25:22 2013 (by Create and Import Peripheral Wizard)
+## Date:              Thu Oct 03 11:58:47 2013 (by Create and Import Peripheral Wizard)
 ##############################################################################
 
 lib proc_common_v3_00_a proc_common_pkg vhdl
@@ -16,3 +16,15 @@ lib plbv46_slave_single_v1_01_a plb_slave_attachment vhdl
 lib plbv46_slave_single_v1_01_a plbv46_slave_single vhdl
 lib mips_multi_cycle_v1_00_a user_logic vhdl
 lib mips_multi_cycle_v1_00_a mips_multi_cycle vhdl
+lib mips_multi_cycle_v1_00_a adder vhdl
+lib mips_multi_cycle_v1_00_a alu vhdl
+lib mips_multi_cycle_v1_00_a alu_1bit vhdl
+lib mips_multi_cycle_v1_00_a com vhdl
+lib mips_multi_cycle_v1_00_a full_adder vhdl
+lib mips_multi_cycle_v1_00_a memory vhdl
+lib mips_multi_cycle_v1_00_a mips_constant_pkg vhdl
+lib mips_multi_cycle_v1_00_a processor vhdl
+lib mips_multi_cycle_v1_00_a register_file vhdl
+lib mips_multi_cycle_v1_00_a shiftleft vhdl
+lib mips_multi_cycle_v1_00_a sign_extend vhdl
+lib mips_multi_cycle_v1_00_a toplevel vhdl
