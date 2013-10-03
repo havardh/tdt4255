@@ -1,0 +1,10 @@
+-batch 
+-create mips_multi_cycle 
+-ver 1.00.a 
+-dir "C:\Users\runarbol\Desktop\tdt4255\system\system" 
+-lang vhdl 
+-bus plbv46 s 
+-reg 5 
+-xps 
+-ise 
+-driver 

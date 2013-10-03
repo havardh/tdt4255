@@ -74,7 +74,6 @@ netlist: $(POSTSYN_NETLIST)
 libs: $(LIBRARIES)
 
 program: $(ALL_USER_ELF_FILES)
-	@echo "No user software applications specified"
 
 initprogram: $(BRAMINIT_ELF_FILES)
 
@@ -143,11 +142,54 @@ $(LIBRARIES): $(MHSFILE) $(MSSFILE) __xps/libgen.opt
 	libgen $(LIBGEN_OPTIONS) $(MSSFILE)
 
 
+microblaze_0_libsclean:
+	rm -rf microblaze_0/
+
+#################################################################
+# SOFTWARE APPLICATION TESTAPP_MEMORY_MICROBLAZE_0
+#################################################################
+
+TestApp_Memory_microblaze_0_program: $(CYG_TESTAPP_MEMORY_MICROBLAZE_0_OUTPUT) 
+
+$(CYG_TESTAPP_MEMORY_MICROBLAZE_0_OUTPUT) : $(TESTAPP_MEMORY_MICROBLAZE_0_SOURCES) $(TESTAPP_MEMORY_MICROBLAZE_0_HEADERS) $(TESTAPP_MEMORY_MICROBLAZE_0_LINKER_SCRIPT) \
+                    $(LIBRARIES) __xps/testapp_memory_microblaze_0_compiler.opt
+	@mkdir -p $(TESTAPP_MEMORY_MICROBLAZE_0_OUTPUT_DIR) 
+	$(TESTAPP_MEMORY_MICROBLAZE_0_CC) $(TESTAPP_MEMORY_MICROBLAZE_0_CC_OPT) $(TESTAPP_MEMORY_MICROBLAZE_0_SOURCES) -o $(CYG_TESTAPP_MEMORY_MICROBLAZE_0_OUTPUT) \
+	$(TESTAPP_MEMORY_MICROBLAZE_0_OTHER_CC_FLAGS) $(TESTAPP_MEMORY_MICROBLAZE_0_INCLUDES) $(TESTAPP_MEMORY_MICROBLAZE_0_LIBPATH) \
+	$(TESTAPP_MEMORY_MICROBLAZE_0_CFLAGS) $(TESTAPP_MEMORY_MICROBLAZE_0_LFLAGS) 
+	$(TESTAPP_MEMORY_MICROBLAZE_0_CC_SIZE) $(CYG_TESTAPP_MEMORY_MICROBLAZE_0_OUTPUT) 
+	@echo ""
+
+TestApp_Memory_microblaze_0_programclean:
+	rm -f $(TESTAPP_MEMORY_MICROBLAZE_0_OUTPUT) 
+
+#################################################################
+# SOFTWARE APPLICATION TESTAPP_PERIPHERAL_MICROBLAZE_0
+#################################################################
+
+TestApp_Peripheral_microblaze_0_program: $(CYG_TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) 
+
+$(CYG_TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) : $(TESTAPP_PERIPHERAL_MICROBLAZE_0_SOURCES) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_HEADERS) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_LINKER_SCRIPT) \
+                    $(LIBRARIES) __xps/testapp_peripheral_microblaze_0_compiler.opt
+	@mkdir -p $(TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT_DIR) 
+	$(TESTAPP_PERIPHERAL_MICROBLAZE_0_CC) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_CC_OPT) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_SOURCES) -o $(CYG_TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) \
+	$(TESTAPP_PERIPHERAL_MICROBLAZE_0_OTHER_CC_FLAGS) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_INCLUDES) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_LIBPATH) \
+	$(TESTAPP_PERIPHERAL_MICROBLAZE_0_CFLAGS) $(TESTAPP_PERIPHERAL_MICROBLAZE_0_LFLAGS) 
+	$(TESTAPP_PERIPHERAL_MICROBLAZE_0_CC_SIZE) $(CYG_TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) 
+	@echo ""
+
+TestApp_Peripheral_microblaze_0_programclean:
+	rm -f $(TESTAPP_PERIPHERAL_MICROBLAZE_0_OUTPUT) 
+
 #################################################################
 # BOOTLOOP ELF FILES
 #################################################################
 
 
+
+$(MICROBLAZE_0_BOOTLOOP): $(MICROBLAZE_BOOTLOOP)
+	@mkdir -p $(BOOTLOOP_DIR)
+	cp -f $(MICROBLAZE_BOOTLOOP) $(MICROBLAZE_0_BOOTLOOP)
 
 #################################################################
 # HARDWARE IMPLEMENTATION FLOW
@@ -170,7 +212,7 @@ $(SYSTEM_BIT):
 	@echo "This project has been instantiated in Xilinx ISE Project Navigator. Please use ProjNav to generate the bitstream. "
 
 $(DOWNLOAD_BIT): $(SYSTEM_BIT) $(BRAMINIT_ELF_FILES) __xps/bitinit.opt
-	# @cp -f implementation/$(SYSTEM)_bd.bmm .
+	@cp -f implementation/$(SYSTEM)_bd.bmm .
 	@echo "*********************************************"
 	@echo "Initializing BRAM contents of the bitstream"
 	@echo "*********************************************"
