@@ -32,12 +32,100 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="processor.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="processor.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="processor.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="processor_tb.fdo"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="toplevel.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="toplevel.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="toplevel.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
-  <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
+  <transforms xmlns="http://www.xilinx.com/XMLSchema">
+    <transform xil_pn:end_ts="1380813639" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1380813639">
+      <status xil_pn:value="SuccessfullyRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380813757" xil_pn:in_ck="-5912931048585592109" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1380813757">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../hdl/vhdl/adder.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/alu.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/alu_1bit.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/alu_control.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/asserts.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/com.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/control_unit.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/full_adder.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/memory.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/mips_constant_pkg.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/mips_multi_cycle.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/processor.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/processor_tb.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/register_file.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/shiftleft.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/sign_extend.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/toplevel.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/user_logic.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plbv46_slave_single.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/or_gate128.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/or_muxcy.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1380813640" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8774242310017619531" xil_pn:start_ts="1380813640">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380813640" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8299669813291917513" xil_pn:start_ts="1380813640">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380813640" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-1785307757365512182" xil_pn:start_ts="1380813640">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1380813757" xil_pn:in_ck="-5912931048585592109" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1380813757">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="../../hdl/vhdl/adder.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/alu.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/alu_1bit.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/alu_control.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/asserts.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/com.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/control_unit.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/full_adder.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/memory.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/mips_constant_pkg.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/mips_multi_cycle.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/processor.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/processor_tb.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/register_file.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/shiftleft.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/sign_extend.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/toplevel.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/user_logic.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plbv46_slave_single.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/family_support.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/ipif_pkg.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/or_gate128.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/or_muxcy.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd"/>
+      <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1380813759" xil_pn:in_ck="-5912931048585592109" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="889151390353550919" xil_pn:start_ts="1380813757">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="processor_tb.fdo"/>
+      <outfile xil_pn:name="work"/>
+    </transform>
+  </transforms>
 
 </generated_project>

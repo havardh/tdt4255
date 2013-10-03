@@ -56,6 +56,9 @@ Parsing architecture <Behavioral> of entity <register_file>.
 Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/control_unit.vhd" into library work
 Parsing entity <control_unit>.
 Parsing architecture <Behavioral> of entity <control_unit>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/alu_control.vhd" into library work
+Parsing entity <alu_control>.
+Parsing architecture <Behavioral> of entity <alu_control>.
 Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\../../hdl/vhdl/alu.vhd" into library work
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
@@ -72,7 +75,7 @@ Total CPU time to Xst completion: 3.16 secs
  
 --> 
 
-Total memory usage is 184232 kilobytes
+Total memory usage is 184168 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

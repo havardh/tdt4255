@@ -28,7 +28,7 @@ architecture Behavioral of control_unit is
 
 	-- Control unit states
 	type const_state is (FETCH, EXECUTE, STALL);
-	signal state : const_state := FETCH;
+	signal state : const_state := STALL;
 	signal next_state : const_state; 
 	
 	-- opcodes

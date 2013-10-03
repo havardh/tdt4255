@@ -119,7 +119,9 @@ architecture Behavioral of processor is
 	-- Program counter registers
 	signal PC : std_logic_vector(31 downto 0)     := (others => '0');
 	signal PC_ADD : std_logic_vector(31 downto 0);
-	
+	signal PC_JUMP : std_logic_vector(31 downto 0);
+	signal PC_BRANCH : std_logic_vector(31 downto 0);	
+	signal PC_NEXT : std_logic_vector(31 downto 0);	
 	
 	signal sign_extended : std_logic_vector(31 downto 0);
 	signal shifted : std_logic_vector(31 downto 0);
@@ -176,16 +178,44 @@ begin
 			cin => '0',
 			r   => PC_ADD
 		);
+		
+	PC_JUMP <= PC_NEXT(31 downto 26) & imem_data_in(25 downto 0);
+	
+	-- Brach adder
+	pc_add_branch: adder 
+		generic map (
+			N => 32
+		)
+		port map (
+			x   => PC_NEXT,
+			Y   => sign_extended,
+			cin => '0',
+			r   => PC_BRANCH
+		);
 	
 	-- Latch the value of the correct PC_* register to PC on rising edge of the pc_latch
 	-- signal
 	next_pc_latch: process (PC_ADD, pc_latch) 
 	begin
 		if rising_edge(pc_latch) then
-			PC <= PC_ADD;
+			PC <= PC_NEXT;
 		end if;
 	end process;
-
+	
+	-- PC_NEXT muxes combined into one process
+	pc_mux: process (jump, branch, flags, PC_JUMP, PC_BRANCH, PC_ADD)
+	begin
+		if jump = '1' then
+			PC_NEXT <= PC_JUMP;
+		else
+			if branch = '1' and flags.Zero = '1' then
+				PC_NEXT <= PC_BRANCH;
+			else 
+				PC_NEXT <= PC_ADD;
+			end if;
+		end if;
+	end process;
+	
 	-- Drive processor outputs only when the processor itself is enabled.
 	-- As the signals are muxed in toplevel this is strictly not needed by it 
 	-- is done for good measure.

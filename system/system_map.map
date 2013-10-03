@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -2
 Mapper Version : spartan6 -- $Revision: 1.52.76.2 $
-Mapped Date    : Thu Oct 03 16:50:37 2013
+Mapped Date    : Thu Oct 03 17:10:31 2013
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to
@@ -78,7 +78,7 @@ Phase 12.5  Local Placement Optimization
 Phase 12.5  Local Placement Optimization (Checksum:371a47b3) REAL time: 1 mins 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:bcdf15d7) REAL time: 1 mins 1 secs 
+Phase 13.34  Placement Validation (Checksum:bcdf15d7) REAL time: 1 mins 
 
 Total REAL time to Placer completion: 1 mins 1 secs 
 Total CPU  time to Placer completion: 1 mins 1 secs 

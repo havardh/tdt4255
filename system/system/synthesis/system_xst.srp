@@ -1136,12 +1136,12 @@ mips_multi_cycle_0/mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROC
 =========================================================================
 
 
-Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 25.50 secs
+Total REAL time to Xst completion: 26.00 secs
+Total CPU time to Xst completion: 25.49 secs
  
 --> 
 
-Total memory usage is 294560 kilobytes
+Total memory usage is 295072 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    5 (   0 filtered)
