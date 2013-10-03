@@ -30,23 +30,23 @@ begin
 			if (func = add) then 
 				ALU_INPUT <= (Op1 => '1', others => '0'); -- 0100
 			elsif (func = sub) then
-				ALU_INPUT <= (Op1 => '1', Op2 => '1', others => '0'); - 0110
+				ALU_INPUT <= (Op1 => '1', Op2 => '1', others => '0'); -- 0110
 			elsif (func = bitand) then
-				ALU_INPUT <= (others => '0'); - 0000
+				ALU_INPUT <= (others => '0'); -- 0000
 			elsif (func = bitor) then
-				ALU_INPUT <= (Op0 => '1', others => '0'); - 1000
+				ALU_INPUT <= (Op0 => '1', others => '0'); -- 1000
 			elsif (func = slt) then
-				ALU_INPUT <= (op0 => '1', Op1 => '1', others => '0'); - 1100
+				ALU_INPUT <= (op0 => '1', Op1 => '1', others => '0'); -- 1100
 			end if;
 			
 		elsif (ALU_OP = ALUOP_LOAD_STORE) then
-			ALU_INPUT <= (Op1 => '1', others => '0'); - 0100
+			ALU_INPUT <= (Op1 => '1', others => '0'); -- 0100
 			
 		elsif (ALU_OP = ALUOP_BRANCH) then
-			ALU_INPUT <= (Op1 => '1', Op2 => '1', others => '0'); - 0110
+			ALU_INPUT <= (Op1 => '1', Op2 => '1', others => '0'); -- 0110
 		
 		elsif (ALU_OP = ALUOP_LDI) then
-			ALU_INPUT <= (Op3 => '1', others => '0'); - 0001
+			ALU_INPUT <= (Op3 => '1', others => '0'); -- 0001
 			
 		end if;
 	end process;
