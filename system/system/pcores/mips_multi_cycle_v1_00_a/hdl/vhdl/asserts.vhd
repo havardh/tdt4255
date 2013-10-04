@@ -38,6 +38,6 @@ package body asserts is
     -- Assert that two std logic vectors are equal
     procedure assertEqual(actual : std_logic_vector; expected : std_logic_vector) is
     begin
-        assert ( actual =  expected ) report printReport(actual, expected) severity note;
+        assert ( actual =  expected ) report printReport(actual, expected) severity warning;
     end assertEqual;
 end ASSERTS;
