@@ -105,20 +105,33 @@ begin
     begin        
         enable <= '1';
 
+        -- Control unit tests:
+        -- 
+        -- The tests below all follow the same format:
+        --  - First the unit it reset, by setting reset high waiting a cyle, pulling it low and
+        --    waiting an other cycle. After this we know that the unit is in the FETCH state
+        --  - Then we set the opcode to test and wait for an other cycle
+        --  - We are now in EXECUTE and we assert that all the signals are correct.
+        --  - For normal instructions we now expect to be in FETCH and we assert that destructive 
+        --    signals are pulled low. And we set a undefined opcode.
+        --  - In the next cycle we assume all singals except pc_latch is low, as this indicates that
+        --    we're back in EXECUTE
+
         -- R-Type instructions
         reset <= '1';
         wait for clk_period*1;
         reset <= '0';
         wait for clk_period*1;
+        assert (false) report "Testing R-Type instructions" severity note;
 
         -- Set instruction and wait for FETCH->EXECUTE transistion
         opcode <= "000000";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
         assertEqual(output, "110000010");
-        opcode <= "111111";
         -- Make sure all write enable and latch singals are disabled in EXECUTE->FETCH transition
         wait for clk_period*1;
+        opcode <= "111111";
         assertEqual(output, "010000000");
         wait for clk_period*1;
         assertEqual(output, "100000000");
@@ -128,6 +141,7 @@ begin
         wait for clk_period*1;
         reset <= '0';
         wait for clk_period*1;
+        assert (false) report "Testing load word" severity note;
 
         -- Set intruction and wait for FETCH->EXECUTE
         opcode <= "100011";
@@ -137,8 +151,8 @@ begin
         -- Make sure values are held into the STALL state
         wait for clk_period*1;
         assertEqual(output, "100110110");
-        opcode <= "111111";
         wait for clk_period*1;
+        opcode <= "111111";
         assertEqual(output, "000110100");
         wait for clk_period*1;
         assertEqual(output, "100000000");
@@ -149,6 +163,7 @@ begin
         wait for clk_period*1;
         reset <= '0';
         wait for clk_period*1;
+        assert (false) report "Testing store word" severity note;
 
         -- Set intruction and wait for FETCH->EXECUTE
         opcode <= "101011";
@@ -158,8 +173,8 @@ begin
         -- Make sure values are held into STALL state
         wait for clk_period*1;
         assertEqual(output, "100001100");
-        opcode <= "111111";
         wait for clk_period*1;
+        opcode <= "111111";
         assertEqual(output, "000000100");
         wait for clk_period*1;
         assertEqual(output, "100000000");
@@ -170,14 +185,15 @@ begin
         wait for clk_period*1;
         reset <= '0';
         wait for clk_period*1;
+        assert (false) report "Testing load upper immideate" severity note;
 
         -- Set instruction and wait for FETCH->EXECUTE
         opcode <= "001111";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
         assertEqual(output, "100000110");
-        opcode <= "111111";
         wait for clk_period*1;
+        opcode <= "111111";
         assertEqual(output, "000000100");
         wait for clk_period*1;
         assertEqual(output, "100000000");
@@ -188,14 +204,15 @@ begin
         wait for clk_period*1;
         reset <= '0';
         wait for clk_period*1;
+        assert (false) report "Testing branch if equal" severity note;
 
         -- Set instruction and wait for FETCH->EXECUTE
         opcode <= "000100";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
         assertEqual(output, "111000000");
-        opcode <= "111111";
         wait for clk_period*1;
+        opcode <= "111111";
         assertEqual(output, "011000000");
         wait for clk_period*1;
         assertEqual(output, "100000000");
@@ -205,14 +222,15 @@ begin
         wait for clk_period*1;
         reset <= '0';
         wait for clk_period*1;
+        assert (false) report "Testing jump" severity note;
 
         -- Set instruction and wait for FETCH->EXECUTE
         opcode <= "000010";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
         assertEqual(output, "110000001");
-        opcode <= "111111";
         wait for clk_period*1;
+        opcode <= "111111";
         assertEqual(output, "010000001");
         wait for clk_period*1;
         assertEqual(output, "100000000");

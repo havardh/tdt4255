@@ -6,7 +6,7 @@ SOURCES = mips_constant_pkg.vhd asserts.vhd sign_extend.vhd control_unit.vhd ful
 
 # Test benches in order of execution
 #TESTS = control_unit_tb.vhd alu_control.vhd processor_tb.vhd
-TESTS = control_unit_tb.vhd
+TESTS = control_unit_tb.vhd alu_control_tb.vhd processor_tb.vhd
 
 OBJECTS = $(SOURCES:.vhd=.o) $(TESTS:.vhd=.o)
 TEST_BINARIES = $(TESTS:.vhd=)
