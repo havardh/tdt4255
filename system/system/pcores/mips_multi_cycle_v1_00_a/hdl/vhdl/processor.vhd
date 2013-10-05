@@ -195,9 +195,9 @@ begin
         );
     
     -- Latch the value of the correct PC_* register to PC on rising edge clk if the pc_latch signal is high
-    next_pc_latch: process (PC_NEXT, clk, pc_latch) 
+    next_pc_latch: process (PC_NEXT, pc_latch) 
     begin
-        if rising_edge(clk) and pc_latch = '1' then
+        if rising_edge(pc_latch) then
             PC <= PC_NEXT;
         end if;
     end process;
@@ -205,7 +205,6 @@ begin
     -- PC_NEXT muxes combined into one process
     pc_mux: process (clk, jump, branch, flags, PC_JUMP, PC_BRANCH, PC_ADD)
     begin
-		if falling_edge(clk) then
         if jump = '1' then
             PC_NEXT <= PC_JUMP;
         else
@@ -215,7 +214,6 @@ begin
                 PC_NEXT <= PC_ADD;
             end if;
         end if;
-		  end if;
     end process;
     
     -- Drive processor outputs only when the processor itself is enabled.

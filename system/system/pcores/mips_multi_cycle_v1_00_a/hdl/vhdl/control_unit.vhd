@@ -62,7 +62,7 @@ begin
     control_unit_state_machine: process(state, opcode)
     begin
         case state is
-            when STATE_FETCH =>assert (false) report "state_fetch" severity note;
+            when STATE_FETCH =>-- assert (false) report "state_fetch" severity note;
                 mem_write <= '0';
                 reg_write <= '0';
                 --pc_latch <= '0';
@@ -72,7 +72,7 @@ begin
             when STATE_EXECUTE =>
                 case opcode is
                     when op_alu =>
-							   assert (false) report "op_alu" severity note;
+							   -- assert (false) report "op_alu" severity note;
                         reg_dst <= '1';
                         branch <= '0';
                         mem_read <= '0';
@@ -87,7 +87,7 @@ begin
                         next_state <= STATE_FETCH;
                     
                     when op_lw =>
-						  assert (false) report "op_lw" severity note;
+						  -- assert (false) report "op_lw" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '1';
@@ -101,7 +101,7 @@ begin
                         next_state <= STATE_STALL;
                     
                     when op_sw =>
-						  assert (false) report "op_sw" severity note;
+						  -- assert (false) report "op_sw" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '0';
@@ -115,7 +115,7 @@ begin
                         next_state <= STATE_STALL;
                         
                     when op_lui =>
-						  assert (false) report "op_lui" severity note;
+						  -- assert (false) report "op_lui" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '0';
@@ -130,7 +130,7 @@ begin
                         next_state <= STATE_FETCH;
                         
                     when op_beq =>
-						  assert (false) report "op_beq" severity note;
+						  -- assert (false) report "op_beq" severity note;
                         reg_dst <= '1';
                         branch <= '1';
                         mem_read <= '0';
@@ -145,7 +145,7 @@ begin
                         next_state <= STATE_FETCH;
                         
                     when op_j =>
-						  assert (false) report "op_jump" severity note;
+						  -- assert (false) report "op_jump" severity note;
                         reg_dst <= '1';
                         branch <= '0';
                         mem_read <= '0';
@@ -160,7 +160,7 @@ begin
                         next_state <= STATE_FETCH;
                     
                     when others =>
-						  assert (false) report "op_others" severity note;
+						  -- assert (false) report "op_others" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '0';
@@ -175,7 +175,7 @@ begin
                         next_state <= STATE_FETCH;                                
                 end case;
                 
-            when STATE_STALL => assert (false) report "state_stall" severity note;
+            when STATE_STALL => -- assert (false) report "state_stall" severity note;
                 --pc_latch <= '1';
                 next_state <= STATE_FETCH;
 
