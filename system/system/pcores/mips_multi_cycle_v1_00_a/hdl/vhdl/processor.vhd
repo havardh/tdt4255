@@ -46,7 +46,8 @@ architecture Behavioral of processor is
             alu_src    : out std_logic;
             reg_write  : out std_logic;
             jump       : out std_logic;
-            pc_latch   : out std_logic := '0'
+            pc_latch   : out std_logic := '0';
+            link       : out std_logic
          );
     end component;
     
@@ -115,6 +116,7 @@ architecture Behavioral of processor is
     signal branch           : std_logic := '0';
     signal mem_read         : std_logic := '0';
     signal jump             : std_logic := '0';   
+    signal link             : std_logic := '0';
     signal reg_write_data   : std_logic_vector(31 downto 0); 
     
     -- Program counter registers
@@ -138,6 +140,8 @@ architecture Behavioral of processor is
     signal alu_input : ALU_INPUT;
     signal flags : ALU_FLAGS;
 
+    constant LINK_REG : std_logic_vector(4 downto 0) := "11111";
+
 begin
     
     -- control unit
@@ -156,7 +160,8 @@ begin
             reg_write => reg_write,
             alu_src => alu_src,
             alu_op => alu_op,
-            jump => jump
+            jump => jump,
+            link => link
         );
     
     -- Alu control unit
@@ -245,22 +250,30 @@ begin
         );
         
     -- Switch which register is set as the write register
-    reg_write_mux: process(reg_dst, imem_data_in) 
+    reg_write_mux: process(reg_dst, imem_data_in, link) 
     begin
-        if reg_dst = '1' then
-            rd_addr <= imem_data_in(15 downto 11);
-        else
-            rd_addr <= imem_data_in(20 downto 16);
+        if link = '1' then
+            rd_addr <= LINK_REG;
+        else 
+            if reg_dst = '1' then
+                rd_addr <= imem_data_in(15 downto 11);
+            else
+                rd_addr <= imem_data_in(20 downto 16);
+            end if;
         end if;
     end process;
         
     -- mem_to_reg mux, selects what data is sent to the write register
-    data_write_mux: process(dmem_data_in, alu_out, mem_to_reg)
+    data_write_mux: process(dmem_data_in, alu_out, mem_to_reg, link)
     begin
-        if mem_to_reg = '1' then
-            reg_write_data <= dmem_data_in;
-        else
-            reg_write_data <= alu_out;
+        if link = '1' then
+            reg_write_data <= PC_ADD;
+        else 
+            if mem_to_reg = '1' then
+                reg_write_data <= dmem_data_in;
+            else
+                reg_write_data <= alu_out;
+            end if;
         end if;
     end process;
     

@@ -17,16 +17,17 @@ architecture Behavior of control_unit_tb is
             reset : in  std_logic;
             opcode : in  std_logic_vector(5 downto 0);
             enable : in std_logic;
-            reg_dst : OUT  std_logic;
-            branch : OUT  std_logic;
-            mem_read : OUT  std_logic;
-            mem_to_reg : OUT  std_logic;
-            alu_op : OUT  ALU_OP;
-            mem_write : OUT  std_logic;
-            alu_src : OUT  std_logic;
-            reg_write : OUT  std_logic;
-            jump : OUT  std_logic;
-            pc_latch : OUT std_logic
+            reg_dst : out  std_logic;
+            branch : out  std_logic;
+            mem_read : out  std_logic;
+            mem_to_reg : out  std_logic;
+            alu_op : out  ALU_OP;
+            mem_write : out  std_logic;
+            alu_src : out  std_logic;
+            reg_write : out  std_logic;
+            jump : out  std_logic;
+            pc_latch : out std_logic;
+            link : out std_logic
         );
     end component;
     
@@ -37,7 +38,7 @@ architecture Behavior of control_unit_tb is
     signal opcode : std_logic_vector(5 downto 0) := (others => '0');
     signal enable : std_logic := '0';
 
-     --Outputs
+     --outputs
     signal reg_dst    : std_logic;
     signal branch     : std_logic;
     signal mem_read   : std_logic;
@@ -47,12 +48,13 @@ architecture Behavior of control_unit_tb is
     signal reg_write  : std_logic;
     signal jump       : std_logic;
     signal pc_latch   : std_logic;
+    signal link       : std_logic;
     signal alu_op     : ALU_OP;
 
-    -- In order to ease debugging we map the 8 control signals (excluding alu_op) to this
-    -- single vector, hence we can do a single assert per test case insted of 7
+    -- In order to ease debugging we map the 9 control signals (excluding alu_op) to this
+    -- single vector, hence we can do a single assert per test case insted of 9
     -- The mapping is shown at the start of the test bench below
-    signal output : std_logic_vector (8 downto 0);
+    signal output : std_logic_vector (9 downto 0);
 
     -- Clock period definitions
     constant clk_period : time := 10 ns;
@@ -75,10 +77,12 @@ begin
             alu_src => alu_src,
             reg_write => reg_write,
             jump => jump,
-            pc_latch => pc_latch
+            pc_latch => pc_latch,
+            link => link
         );
 
     -- mapping output vector
+    output(9) <= link;
     output(8) <= pc_latch;
     output(7) <= reg_dst;
     output(6) <= branch;
@@ -126,15 +130,15 @@ begin
 
         -- Set instruction and wait for FETCH->EXECUTE transistion
         opcode <= "000000";
-        wait for clk_period*1;
+        wait for clk_period;
         -- Assert values and reset instruction to undefined
-        assertEqual(output, "110000010");
+        assertEqual(output, "0010000010");
         -- Make sure all write enable and latch singals are disabled in EXECUTE->FETCH transition
-        wait for clk_period*1;
+        wait for clk_period;
         opcode <= "111111";
-        assertEqual(output, "010000000");
-        wait for clk_period*1;
-        assertEqual(output, "100000000");
+        assertEqual(output, "0110000000");
+        wait for clk_period;
+        assertEqual(output, "0000000000");
 
         -- Load word
         reset <= '1';
@@ -145,17 +149,17 @@ begin
 
         -- Set intruction and wait for FETCH->EXECUTE
         opcode <= "100011";
-        wait for clk_period*1;
+        wait for clk_period;
         -- Assert values
-        assertEqual(output, "000110110");
+        assertEqual(output, "0000110110");
         -- Make sure values are held into the STALL state
         wait for clk_period*1;
-        assertEqual(output, "100110110");
+        assertEqual(output, "0000110110");
         wait for clk_period*1;
         opcode <= "111111";
-        assertEqual(output, "000110100");
+        assertEqual(output, "0100110100");
         wait for clk_period*1;
-        assertEqual(output, "100000000");
+        assertEqual(output, "0000000000");
         
 
         -- Store word
@@ -169,15 +173,15 @@ begin
         opcode <= "101011";
         wait for clk_period*1;
         -- Assert values and reset instruction
-        assertEqual(output, "000001100");
+        assertEqual(output, "0000001100");
         -- Make sure values are held into STALL state
         wait for clk_period*1;
-        assertEqual(output, "100001100");
+        assertEqual(output, "0000001100");
         wait for clk_period*1;
         opcode <= "111111";
-        assertEqual(output, "000000100");
+        assertEqual(output, "0100000100");
         wait for clk_period*1;
-        assertEqual(output, "100000000");
+        assertEqual(output, "0000000000");
 
 
         -- Load upper immideate
@@ -191,12 +195,12 @@ begin
         opcode <= "001111";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
-        assertEqual(output, "100000110");
+        assertEqual(output, "0000000110");
         wait for clk_period*1;
         opcode <= "111111";
-        assertEqual(output, "000000100");
+        assertEqual(output, "0100000100");
         wait for clk_period*1;
-        assertEqual(output, "100000000");
+        assertEqual(output, "0000000000");
 
 
         -- Branch if equal
@@ -210,12 +214,12 @@ begin
         opcode <= "000100";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
-        assertEqual(output, "111000000");
+        assertEqual(output, "0011000000");
         wait for clk_period*1;
         opcode <= "111111";
-        assertEqual(output, "011000000");
+        assertEqual(output, "0111000000");
         wait for clk_period*1;
-        assertEqual(output, "100000000");
+        assertEqual(output, "0000000000");
 
         -- Jump
         reset <= '1';
@@ -228,12 +232,30 @@ begin
         opcode <= "000010";
         wait for clk_period*1;
         -- Assert values and reset instruction to undefined
-        assertEqual(output, "110000001");
+        assertEqual(output, "0010000001");
         wait for clk_period*1;
         opcode <= "111111";
-        assertEqual(output, "010000001");
+        assertEqual(output, "0110000001");
         wait for clk_period*1;
-        assertEqual(output, "100000000");
+        assertEqual(output, "0000000000");
+
+        -- Jump and link
+        reset <= '1';
+        wait for clk_period*1;
+        reset <= '0';
+        wait for clk_period*1;
+        assert (false) report "Testing jump and link" severity note;
+
+        -- Set instruction and wait for FETCH->EXECUTE
+        opcode <= "000011";
+        wait for clk_period;
+        -- Assert values and reset instruction to undefined
+        assertEqual(output, "1010000011");
+        wait for clk_period;
+        opcode <= "111111";
+        assertEqual(output, "1110000001");
+        wait for clk_period*1;
+        assertEqual(output, "0000000000");
 
         wait;
 

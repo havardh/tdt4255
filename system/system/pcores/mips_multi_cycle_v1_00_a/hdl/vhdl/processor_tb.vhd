@@ -262,6 +262,23 @@ begin
         assertEqual(dmem_data_out, X"00000001");
         wait for clk_period;
 
+        -- Test Jump And Link    
+        assert( false ) report "Test Jump And Link" severity note;
+        wait for clk_period;
+        imem_data_in <= X"08000002"; -- j 2
+        wait for clk_period*1.5;
+        assertEqual(imem_address, X"00000002");
+
+        wait for clk_period;
+        imem_data_in <= X"0C000008"; -- jal 8
+        wait for clk_period*1.5;
+        assertEqual(imem_address, X"00000008");
+
+        wait for clk_period*0.5;
+        imem_data_in <= X"AC3F0000"; -- sw $31, 0($zero)
+        wait for clk_period;
+        assertEqual(dmem_data_out, X"00000003");
+        wait for clk_period;
 
         wait;
 
