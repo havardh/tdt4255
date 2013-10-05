@@ -76,7 +76,7 @@ architecture Behavioral of processor is
 
     component adder is         
         generic (
-            N: natural
+            N: natural := 32
         );
         port(
             x    : in std_logic_vector (31 downto 0);
@@ -105,22 +105,22 @@ architecture Behavioral of processor is
         );
     end component;
 
-    -- Control unit signals
-    signal mem_write_enable : std_logic := '0';
-    signal pc_latch         : std_logic := '0';
-    signal data_write       : std_logic := '0';
-    signal reg_dst          : std_logic := '0';
-    signal mem_to_reg       : std_logic := '0';
-    signal reg_write        : std_logic := '0';
-    signal alu_src          : std_logic := '0';
-    signal alu_op           : ALU_OP;
-    signal branch           : std_logic := '0';
-    signal mem_read         : std_logic := '0';
-    signal jump             : std_logic := '0';   
-    signal link             : std_logic := '0';
-    signal reg_write_data   : std_logic_vector(31 downto 0); 
+    -- Control unit and alu control signals
+    signal ctrl_mem_write        : std_logic := '0';
+    signal ctrl_pc_latch         : std_logic := '0';
+    signal ctrl_reg_dst          : std_logic := '0';
+    signal ctrl_mem_to_reg       : std_logic := '0';
+    signal ctrl_reg_write        : std_logic := '0';
+    signal ctrl_alu_src          : std_logic := '0';
+    signal ctrl_branch           : std_logic := '0';
+    signal ctrl_mem_read         : std_logic := '0';
+    signal ctrl_jump             : std_logic := '0';   
+    signal ctrl_link             : std_logic := '0';
+    signal ctrl_jump_alu_result  : std_logic := '0';
+    signal ctrl_alu_op           : ALU_OP;
+    signal ctrl_alu_input        : ALU_INPUT;
 
-    signal jump_alu_result  : std_logic := '0';
+
     
     -- Program counter registers
     signal PC        : std_logic_vector(31 downto 0) := (others => '0');
@@ -129,20 +129,24 @@ architecture Behavioral of processor is
     signal PC_BRANCH : std_logic_vector(31 downto 0) := (others => '0');    
     signal PC_NEXT   : std_logic_vector(31 downto 0) := (others => '0');    
     
+    -- Sign extended low 16 bits of instruction
     signal sign_extended : std_logic_vector(31 downto 0);
-    signal shifted       : std_logic_vector(31 downto 0);
-    signal instr_shifted : std_logic_vector(31 downto 0);
-    
-    signal rd_addr : std_logic_vector(4 downto 0);
-    
-    -- ALU
-    signal alu_out : std_logic_vector(31 downto 0);
-    signal rt : std_logic_vector(31 downto 0);
-    signal rs : std_logic_vector(31 downto 0);
-    signal alu_in_y : std_logic_vector(31 downto 0);
-    signal alu_input : ALU_INPUT;
-    signal flags : ALU_FLAGS;
+    -- Input to register write
+    signal reg_write_data : std_logic_vector(31 downto 0);     
+    signal reg_write_addr : std_logic_vector(4 downto 0);
+   
+    -- Register file read outputs
+    signal reg_rt : std_logic_vector(31 downto 0);
+    signal reg_rs : std_logic_vector(31 downto 0);
 
+    -- ALU output
+    signal alu_out   : std_logic_vector(31 downto 0);
+    -- ALU y input
+    signal alu_in_y  : std_logic_vector(31 downto 0);
+    -- ALU flags
+    signal alu_flags : ALU_FLAGS;
+
+    -- Number of the link register
     constant LINK_REG : std_logic_vector(4 downto 0) := "11111";
 
 begin
@@ -150,37 +154,47 @@ begin
     -- control unit
     ctrl_unit : control_unit
         port map (
-            clk => clk,
-            reset => reset,
+            -- Inputs
+            clk    => clk,
+            reset  => reset,
             opcode => imem_data_in(31 downto 26),
             enable => processor_enable,
-            branch => branch,
-            mem_read => mem_read,
-            pc_latch => pc_latch,
-            mem_write => mem_write_enable,
-            reg_dst => reg_dst,
-            mem_to_reg => mem_to_reg,
-            reg_write => reg_write,
-            alu_src => alu_src,
-            alu_op => alu_op,
-            jump => jump,
-            link => link
+            
+            -- Control outputs
+            branch     => ctrl_branch,
+            mem_read   => ctrl_mem_read,
+            pc_latch   => ctrl_pc_latch,
+            mem_write  => ctrl_mem_write,
+            reg_dst    => ctrl_reg_dst,
+            mem_to_reg => ctrl_mem_to_reg,
+            reg_write  => ctrl_reg_write,
+            alu_src    => ctrl_alu_src,
+            jump       => ctrl_jump,
+            link       => ctrl_link,
+            alu_op     => ctrl_alu_op
         );
     
     -- Alu control unit
     alu_ctrl : alu_control
         port map (
-            alu_op          => alu_op,
+            -- ALU OP from control unit, function from instruction
+            alu_op          => ctrl_alu_op,
             func            => imem_data_in(5 downto 0),
-            alu_input       => alu_input,
-            jump_alu_result => jump_alu_result
+
+            -- Control outputs
+            alu_input       => ctrl_alu_input,
+            jump_alu_result => ctrl_jump_alu_result
         );
+
+
+    -- Sign extend the low 16 bits of the instruction
+    signex: sign_extend port map(
+        a => imem_data_in(15 downto 0),
+        r => sign_extended
+    );
     
-    -- PC incrementer
+    -- PC incrementer, used to calculate PC_ADD = PC+1
     pc_add_one: adder 
-        generic map (
-            N => 32
-        )
         port map (
             x   => PC,
             Y   => X"00000001",
@@ -188,38 +202,63 @@ begin
             r   => PC_ADD
         );
         
-    -- Jump address concatinate
+    -- Create PC_JUMP by concatinating PC_ADD and 26 bits from the instruction
     PC_JUMP <= PC_ADD(31 downto 26) & imem_data_in(25 downto 0);
     
-    -- Brach adder
+    -- Calculate PC_BRANCH by adding PC_ADD and the sign extended low 16 bits of instruction
     pc_add_branch: adder 
-        generic map (
-            N => 32
-        )
         port map (
             x   => PC_ADD,
             Y   => sign_extended,
             cin => '0',
             r   => PC_BRANCH
         );
+
+    -- Registers            
+    regfile: register_file 
+        port map(
+            clk        => clk,
+            reset      => reset,
+
+            -- Write back
+            rw         => ctrl_reg_write,
+            write_data => reg_write_data,
+            rd_addr    => reg_write_addr,
+
+            -- Read
+            rs_addr    => imem_data_in(25 downto 21),
+            rt_addr    => imem_data_in(20 downto 16),
+            rs         => reg_rs,
+            rt         => reg_rt
+        );
+
+    -- ALU
+    alu1: alu port map(
+        x      => reg_rs,
+        y      => alu_in_y,
+        alu_in => ctrl_alu_input,
+        r      => alu_out,
+        flags  => alu_flags
+    );
+
     
-    -- Latch the value of the correct PC_* register to PC on rising edge clk if the pc_latch signal is high
-    next_pc_latch: process (PC_NEXT, pc_latch) 
+    -- Latch the current value of PC_NEXT to PC as the control unit pulls pc_latch high
+    next_pc_latch: process (PC_NEXT, ctrl_pc_latch) 
     begin
-        if rising_edge(pc_latch) then
+        if rising_edge(ctrl_pc_latch) then
             PC <= PC_NEXT;
         end if;
     end process;
     
-    -- PC_NEXT muxes combined into one process
-    pc_mux: process (clk, jump, jump_alu_result, branch, flags, PC_JUMP, PC_BRANCH, PC_ADD)
+    -- pc_mux combines the three muxes used to select next PC value into a single process
+    pc_mux: process (clk, ctrl_jump, ctrl_jump_alu_result, ctrl_branch, alu_flags, PC_JUMP, PC_BRANCH, PC_ADD)
     begin
-        if jump_alu_result = '1' then
+        if ctrl_jump_alu_result = '1' then
             PC_NEXT <= alu_out;
-        elsif jump = '1' then
+        elsif ctrl_jump = '1' then
             PC_NEXT <= PC_JUMP;
         else
-            if branch = '1' and flags.Zero = '1' then
+            if ctrl_branch = '1' and alu_flags.Zero = '1' then
                 PC_NEXT <= PC_BRANCH;
             else 
                 PC_NEXT <= PC_ADD;
@@ -230,52 +269,40 @@ begin
     -- Drive processor outputs only when the processor itself is enabled.
     -- As the signals are muxed in toplevel this is strictly not needed by it 
     -- is done for good measure.
-    drive_output_signals: process(processor_enable, PC, alu_out, rt, mem_write_enable)
+    drive_output_signals: process(processor_enable, PC, alu_out, reg_rt, ctrl_mem_write)
     begin
         if processor_enable = '1' then
             imem_address <= PC;
             dmem_address <= alu_out;
             dmem_address_wr <= alu_out;
-            dmem_data_out <= rt;
-            dmem_write_enable <= mem_write_enable;
+            dmem_data_out <= reg_rt;
+            dmem_write_enable <= ctrl_mem_write;
         end if;
     end process;
 
-    -- Registers            
-    regfile: register_file 
-        port map(
-            clk        => clk,
-            reset      => reset,
-            rw         => reg_write,
-            rs_addr    => imem_data_in(25 downto 21),
-            rt_addr    => imem_data_in(20 downto 16),
-            rd_addr    => rd_addr,
-            write_data => reg_write_data,
-            rs         => rs,
-            rt         => rt
-        );
+    
         
     -- Switch which register is set as the write register
-    reg_write_mux: process(reg_dst, imem_data_in, link) 
+    reg_write_mux: process(ctrl_reg_dst, imem_data_in, ctrl_link) 
     begin
-        if link = '1' then
-            rd_addr <= LINK_REG;
+        if ctrl_link = '1' then
+            reg_write_addr <= LINK_REG;
         else 
-            if reg_dst = '1' then
-                rd_addr <= imem_data_in(15 downto 11);
+            if ctrl_reg_dst = '1' then
+                reg_write_addr <= imem_data_in(15 downto 11);
             else
-                rd_addr <= imem_data_in(20 downto 16);
+                reg_write_addr <= imem_data_in(20 downto 16);
             end if;
         end if;
     end process;
         
     -- mem_to_reg mux, selects what data is sent to the write register
-    data_write_mux: process(dmem_data_in, alu_out, mem_to_reg, link)
+    data_write_mux: process(dmem_data_in, alu_out, ctrl_mem_to_reg, ctrl_link)
     begin
-        if link = '1' then
+        if ctrl_link = '1' then
             reg_write_data <= PC_ADD;
         else 
-            if mem_to_reg = '1' then
+            if ctrl_mem_to_reg = '1' then
                 reg_write_data <= dmem_data_in;
             else
                 reg_write_data <= alu_out;
@@ -283,28 +310,15 @@ begin
         end if;
     end process;
     
-    -- Signextend the low 16 bits of the instruction
-    signex: sign_extend port map(
-        a => imem_data_in(15 downto 0),
-        r => sign_extended
-    );
-
-    -- ALU
-    alu1: alu port map(
-        x      => rs,
-        y      => alu_in_y,
-        alu_in => alu_input,
-        r      => alu_out,
-        flags  => flags
-    );
+    
         
     -- Mux Y input of ALU
-    alu_in_mux: process(rt, sign_extended, alu_src) 
+    alu_in_mux: process(reg_rt, sign_extended, ctrl_alu_src) 
     begin
-        if alu_src = '1' then
+        if ctrl_alu_src = '1' then
             alu_in_y <= sign_extended;
         else 
-            alu_in_y <= rt;
+            alu_in_y <= reg_rt;
         end if;
     end process;
     
