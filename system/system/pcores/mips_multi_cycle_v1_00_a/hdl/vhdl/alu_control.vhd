@@ -34,7 +34,7 @@ begin
 			elsif (func = BITOR) then
 				ALU_INPUT <= (Op0 => '1', others => '0');
 			elsif (func = SLT) then
-				ALU_INPUT <= (op0 => '1', Op1 => '1', others => '0');
+				ALU_INPUT <= (op0 => '1', Op1 => '1', Op2 => '1', others => '0');
 			end if;
 			
 		elsif (alu_op = ALUOP_LOAD_STORE) then

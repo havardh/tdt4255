@@ -81,7 +81,7 @@ begin
         func <= "101010";
         wait for 1 ns;
         assert (ALU_INPUT.Op3 = '0') report "Op3 fail in slt-test" severity note;
-        assert (ALU_INPUT.Op2 = '0') report "Op2 fail in slt-test" severity note;
+        assert (ALU_INPUT.Op2 = '1') report "Op2 fail in slt-test" severity note;
         assert (ALU_INPUT.Op1 = '1') report "Op1 fail in slt-test" severity note;
         assert (ALU_INPUT.Op0 = '1') report "Op0 fail in slt-test" severity note;
 
