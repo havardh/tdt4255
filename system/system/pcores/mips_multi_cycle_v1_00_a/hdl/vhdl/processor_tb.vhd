@@ -280,6 +280,17 @@ begin
         assertEqual(dmem_data_out, X"00000003");
         wait for clk_period;
 
+        -- Test Jump Register
+        assert( false ) report "Test Jump Register" severity note;
+        wait for clk_period;        
+        imem_data_in <= X"3C05000F"; -- lui $5, 15
+        wait for clk_period;
+
+        wait for clk_period;
+        imem_data_in <= X"00A00008"; -- jr $5
+        wait for clk_period*1.5;
+        assertEqual(imem_address, X"000F0000");
+
         wait;
 
    end process;

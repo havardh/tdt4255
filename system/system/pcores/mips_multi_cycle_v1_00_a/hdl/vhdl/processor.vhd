@@ -53,9 +53,10 @@ architecture Behavioral of processor is
     
     component alu_control is
         port ( 
-            alu_op    : in ALU_OP;
-            func      : in STD_LOGIC_VECTOR (5 downto 0);
-            alu_input : out ALU_INPUT
+            alu_op          : in ALU_OP;
+            func            : in STD_LOGIC_VECTOR (5 downto 0);
+            alu_input       : out ALU_INPUT;
+            jump_alu_result : out std_logic
         );
     end component;
     
@@ -118,6 +119,8 @@ architecture Behavioral of processor is
     signal jump             : std_logic := '0';   
     signal link             : std_logic := '0';
     signal reg_write_data   : std_logic_vector(31 downto 0); 
+
+    signal jump_alu_result  : std_logic := '0';
     
     -- Program counter registers
     signal PC        : std_logic_vector(31 downto 0) := (others => '0');
@@ -167,9 +170,10 @@ begin
     -- Alu control unit
     alu_ctrl : alu_control
         port map (
-            alu_op    => alu_op,
-            func      => imem_data_in(5 downto 0),
-            alu_input => alu_input
+            alu_op          => alu_op,
+            func            => imem_data_in(5 downto 0),
+            alu_input       => alu_input,
+            jump_alu_result => jump_alu_result
         );
     
     -- PC incrementer
@@ -208,9 +212,11 @@ begin
     end process;
     
     -- PC_NEXT muxes combined into one process
-    pc_mux: process (clk, jump, branch, flags, PC_JUMP, PC_BRANCH, PC_ADD)
+    pc_mux: process (clk, jump, jump_alu_result, branch, flags, PC_JUMP, PC_BRANCH, PC_ADD)
     begin
-        if jump = '1' then
+        if jump_alu_result = '1' then
+            PC_NEXT <= alu_out;
+        elsif jump = '1' then
             PC_NEXT <= PC_JUMP;
         else
             if branch = '1' and flags.Zero = '1' then
