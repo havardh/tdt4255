@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-10-01T14:29:05</DateModified>
+  <DateModified>2013-10-05T15:26:43</DateModified>
   <ModuleName>system</ModuleName>
-  <SummaryTimeStamp>2013-10-01T14:22:12</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/runarbol/Desktop/tdt4255-new/system/iseconfig/system.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/runarbol/Desktop/tdt4255-new/system\</ImplementationReportsDirectory>
-  <DateInitialized>2013-09-30T09:17:01</DateInitialized>
+  <SummaryTimeStamp>2013-10-03T12:08:46</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/runarbol/Desktop/tdt4255/system/iseconfig/system.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/runarbol/Desktop/tdt4255/system\</ImplementationReportsDirectory>
+  <DateInitialized>2013-10-03T12:03:05</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
-  <XMP_File>C:/Users/runarbol/Desktop/tdt4255-new/system/system/system.xmp</XMP_File>
+  <XMP_File>C:/Users/runarbol/Desktop/tdt4255/system/system/system.xmp</XMP_File>
  </header>
  <body>
   <viewgroup label="Design Overview" >
@@ -23,7 +23,7 @@
    <view inputState="Translated" program="map" locator="MAP_IOB_TABLE" contextTags="FPGA_ONLY" type="IOBProperties" file="system_map.xrpt" label="IOB Properties" />
    <view inputState="Translated" program="map" contextTags="FPGA_ONLY" hidden="true" type="Control_Sets" file="system_map.xrpt" label="Control Set Information" />
    <view inputState="Translated" program="map" locator="MAP_MODULE_HIERARCHY" contextTags="FPGA_ONLY" type="Module_Utilization" file="system_map.xrpt" label="Module Level Utilization" />
-   <view inputState="Mapped" program="par" locator="CONSTRAINT_TABLE" contextTags="FPGA_ONLY" type="ConstraintsData" file="system.ptwx" showConstraints="0" label="Timing Constraints" translator="ptwxToTableXML.xslt" />
+   <view inputState="Mapped" program="par" locator="CONSTRAINT_TABLE" contextTags="FPGA_ONLY" type="ConstraintsData" file="system.ptwx" label="Timing Constraints" translator="ptwxToTableXML.xslt" />
    <view inputState="Mapped" program="par" locator="PAR_PINOUT_BY_PIN_NUMBER" contextTags="FPGA_ONLY" type="PinoutData" file="system_par.xrpt" label="Pinout Report" />
    <view inputState="Mapped" program="par" locator="PAR_CLOCK_TABLE" contextTags="FPGA_ONLY" type="ClocksData" file="system_par.xrpt" label="Clock Report" />
    <view inputState="Mapped" program="par" contextTags="FPGA_ONLY,EDK_OFF" type="Timing_Analyzer" file="system.twx" label="Static Timing" />
@@ -31,17 +31,17 @@
    <view inputState="Fitted" program="taengine" contextTags="CPLD_ONLY,EDK_OFF" hidden="true" type="EXTERNAL_HTML" file="system_html/tim/report.htm" label="CPLD Timing Report" />
   </viewgroup>
   <viewgroup label="XPS Errors and Warnings" >
-   <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\__xps\ise\_xmsgs\platgen.xmsgs" label="Platgen Messages" />
-   <view program="libgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\__xps\ise\_xmsgs\libgen.xmsgs" label="Libgen Messages" />
-   <view program="simgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\__xps\ise\_xmsgs\simgen.xmsgs" label="Simgen Messages" />
-   <view program="bitinit" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\__xps\ise\_xmsgs\bitinit.xmsgs" label="BitInit Messages" />
+   <view program="platgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255/system/system\__xps\ise\_xmsgs\platgen.xmsgs" label="Platgen Messages" />
+   <view program="libgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255/system/system\__xps\ise\_xmsgs\libgen.xmsgs" label="Libgen Messages" />
+   <view program="simgen" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255/system/system\__xps\ise\_xmsgs\simgen.xmsgs" label="Simgen Messages" />
+   <view program="bitinit" WrapMessages="true" contextTags="EDK_ON" hidden="false" type="MessageList" hideColumns="Filtered" file="C:/Users/runarbol/Desktop/tdt4255/system/system\__xps\ise\_xmsgs\bitinit.xmsgs" label="BitInit Messages" />
   </viewgroup>
   <viewgroup label="XPS Reports" >
-   <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\platgen.log" label="Platgen Log File" />
-   <view inputState="PreSynthesized" program="libgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\libgen.log" label="Libgen Log File" />
-   <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\simgen.log" label="Simgen Log File" />
-   <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\bitinit.log" label="BitInit Log File" />
-   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255-new/system/system\system.log" label="System Log File" />
+   <view inputState="PreSynthesized" program="platgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255/system/system\platgen.log" label="Platgen Log File" />
+   <view inputState="PreSynthesized" program="libgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255/system/system\libgen.log" label="Libgen Log File" />
+   <view inputState="PreSynthesized" program="simgen" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255/system/system\simgen.log" label="Simgen Log File" />
+   <view inputState="PreSynthesized" program="bitinit" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255/system/system\bitinit.log" label="BitInit Log File" />
+   <view inputState="PreSynthesized" program="system" contextTags="EDK_ON" hidden="false" type="Secondary_Report" file="C:/Users/runarbol/Desktop/tdt4255/system/system\system.log" label="System Log File" />
   </viewgroup>
   <viewgroup label="Errors and Warnings" >
    <view program="pn" WrapMessages="true" contextTags="EDK_OFF" type="MessageList" hideColumns="Filtered, New" file="_xmsgs/pn_parser.xmsgs" label="Parser Messages" />

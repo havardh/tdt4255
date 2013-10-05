@@ -1,0 +1,378 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav
+T_opt
+Z1 VB?8BaSdabhJkdJ18iaPF]3
+Z2 04 12 8 work processor_tb behavior 1
+Z3 =1-00215a613036-5250121f-224-dec
+Z4 o-quiet -auto_acc_if_foreign -work work +acc
+Z5 n@_opt
+Z6 OE;O;6.6d;45
+Z7 dC:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav
+Eadder
+Z8 w1380974902
+Z9 DPx4 ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z10 DPx4 ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+R7
+Z11 8../../hdl/vhdl/adder.vhd
+Z12 F../../hdl/vhdl/adder.vhd
+l0
+L33
+Z13 VUkGLGcZ=KO6YWd]Ka;o120
+Z14 OE;C;6.6d;45
+31
+Z15 o-explicit -93
+Z16 tExplicit 1
+Z17 !s100 MC16gUE;:VACLmO2:0I8g3
+Abehavioral
+Z18 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 10 full_adder 0 22 TMmHk2WPngD]<Iaizz=Ma1
+Z19 DPx22 C:\modeltech_6.6d\ieee 11 numeric_std 0 22 =NSdli^?T5OD8;4F<blj<3
+Z20 DPx22 C:\modeltech_6.6d\ieee 14 std_logic_1164 0 22 GH1=`jDDBJ=`LM;:Ak`kf2
+Z21 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 5 adder 0 22 UkGLGcZ=KO6YWd]Ka;o120
+31
+Z22 Mx2 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+Z23 Mx1 22 C:\modeltech_6.6d\ieee 11 numeric_std
+l58
+L44
+Z24 Vf]Y:4_M]Y5hG`6k7]<IdE1
+R14
+R15
+R16
+Z25 !s100 ;4cW_;;^@`bD0ZjWIPoMU2
+Ealu
+R8
+Z26 DPx4 work 17 mips_constant_pkg 0 22 2ZNon8zUEF[>`E=jh9YH00
+R9
+R10
+R7
+Z27 8../../hdl/vhdl/alu.vhd
+Z28 F../../hdl/vhdl/alu.vhd
+l0
+L36
+Z29 VCQ>Ih>^_X:RMPA3L>mH=j1
+R14
+31
+R15
+R16
+Z30 !s100 m:z=BJPEiYaD=?7fWPQIc0
+Abehavioral
+Z31 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 8 alu_1bit 0 22 OFja5Az;9W_c1C^90dD2O2
+Z32 DPx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 17 mips_constant_pkg 0 22 2ZNon8zUEF[>`E=jh9YH00
+R19
+R20
+Z33 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 3 alu 0 22 CQ>Ih>^_X:RMPA3L>mH=j1
+31
+Z34 Mx3 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+Z35 Mx2 22 C:\modeltech_6.6d\ieee 11 numeric_std
+Z36 Mx1 97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 17 mips_constant_pkg
+l68
+L47
+Z37 V1Ce5aEJkYMPeg3Z@6kUY33
+R14
+R15
+R16
+Z38 !s100 23UcV149`ZXOcFo6WG]Oc2
+Ealu_1bit
+R8
+R10
+R7
+Z39 8../../hdl/vhdl/alu_1bit.vhd
+Z40 F../../hdl/vhdl/alu_1bit.vhd
+l0
+L32
+Z41 VOFja5Az;9W_c1C^90dD2O2
+R14
+31
+R15
+R16
+Z42 !s100 `LFFVnEK1Vb6EVYnoM]AT3
+Abehavioral
+R18
+R20
+R31
+31
+Z43 Mx1 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+l65
+L49
+Z44 V?Cl40RY::zfjI<8noS:i50
+R14
+R15
+R16
+Z45 !s100 IRM97U]?SoB`Y;<850An71
+Ealu_control
+Z46 w1380974967
+R26
+R10
+R7
+Z47 8../../hdl/vhdl/alu_control.vhd
+Z48 F../../hdl/vhdl/alu_control.vhd
+l0
+L7
+Z49 VS4KgaLIMYI;T>SP:obi6L3
+R14
+31
+R15
+R16
+Z50 !s100 HTG6jXC4gFX_SNh7M;h^C1
+Abehavioral
+R32
+R20
+Z51 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 11 alu_control 0 22 S4KgaLIMYI;T>SP:obi6L3
+31
+R22
+R36
+l23
+L15
+Z52 VZnMR8gd>JBZ7Fc9L_J[OX3
+R14
+R15
+R16
+Z53 !s100 7fQIRofLiEm=g<``hM55G0
+Passerts
+Z54 DPx22 C:\modeltech_6.6d\ieee 16 std_logic_textio 0 22 8ONYdGiICLK<GeVc1o<IF0
+R20
+Z55 DPx21 C:\modeltech_6.6d\std 6 textio 0 22 m2KQDRRhmF833<<DjYdL70
+31
+b1
+Z56 Mx3 21 C:\modeltech_6.6d\std 6 textio
+R22
+Z57 Mx1 22 C:\modeltech_6.6d\ieee 16 std_logic_textio
+R46
+R7
+Z58 8../../hdl/vhdl/asserts.vhd
+Z59 F../../hdl/vhdl/asserts.vhd
+l0
+L12
+Z60 V;VVJl_cfDLKES46FH6b:h0
+R14
+b1
+R15
+R16
+Z61 !s100 RlT^1BGk7]7iUTDalCHoi1
+Bbody
+Z62 DBx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 7 asserts 0 22 ;VVJl_cfDLKES46FH6b:h0
+R54
+R20
+R55
+31
+R56
+R22
+R57
+l0
+L16
+Z63 VnbUDXRGGaU>I9MXC2OWHd1
+R14
+R15
+R16
+nbody
+Z64 !s100 UG7ZJabfzE3i<[QY:z[=F2
+Econtrol_unit
+Z65 w1380975863
+R26
+R10
+R7
+Z66 8../../hdl/vhdl/control_unit.vhd
+Z67 F../../hdl/vhdl/control_unit.vhd
+l0
+L8
+Z68 V::gWAN`9Qg=LP_<A`ZRCl2
+R14
+31
+R15
+R16
+Z69 !s100 3hULmm6EQ^_C[9Z`@;5B`1
+Abehavioral
+R32
+R20
+Z70 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 12 control_unit 0 22 ::gWAN`9Qg=LP_<A`ZRCl2
+31
+R22
+R36
+l41
+L27
+Z71 VSVU`2D@0jd<i4id?CemMm3
+R14
+R15
+R16
+Z72 !s100 L=1Jz62NIG5[EZULJ_nRQ2
+Efull_adder
+R8
+R9
+R10
+R7
+Z73 8../../hdl/vhdl/full_adder.vhd
+Z74 F../../hdl/vhdl/full_adder.vhd
+l0
+L33
+Z75 VTMmHk2WPngD]<Iaizz=Ma1
+R14
+31
+R15
+R16
+Z76 !s100 ^`l^^Ui_Q1V>EaR0gz7AP3
+Abehavioral
+R19
+R20
+R18
+31
+R22
+R23
+l47
+L43
+Z77 VY;Uk^5KA]?1OcZJDc:TfI3
+R14
+R15
+R16
+Z78 !s100 [8z9P?GWKmfGXn^enXj:;0
+Pmips_constant_pkg
+R20
+31
+R43
+R8
+R7
+Z79 8../../hdl/vhdl/mips_constant_pkg.vhd
+Z80 F../../hdl/vhdl/mips_constant_pkg.vhd
+l0
+L10
+Z81 V2ZNon8zUEF[>`E=jh9YH00
+R14
+R15
+R16
+Z82 !s100 iUCDS>fZWcjSP92Z=MH<f2
+Eprocessor
+Z83 w1380978520
+R26
+R9
+R10
+R7
+Z84 8../../hdl/vhdl/processor.vhd
+Z85 F../../hdl/vhdl/processor.vhd
+l0
+L14
+Z86 VM=X`hSenGd_Lb33O7Ym[S2
+R14
+31
+R15
+R16
+Z87 !s100 >aLAX0`jFgX]j[4RT0Km`3
+Abehavioral
+R33
+Z88 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 11 sign_extend 0 22 2J;S[6z?S[WhOOSXj]m>:1
+Z89 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 13 register_file 0 22 ]4Z2QQf[gAOe22LNI[AZW1
+R21
+R51
+R70
+R32
+R19
+R20
+Z90 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 9 processor 0 22 M=X`hSenGd_Lb33O7Ym[S2
+31
+R34
+R35
+R36
+l141
+L32
+Z91 VfJg_@@D6?oYfN@_bWad3K2
+R14
+R15
+R16
+Z92 !s100 kb2JAZRz[2>R7^ehRXdkd0
+Eprocessor_tb
+Z93 w1380979213
+R54
+R55
+Z94 DPx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 7 asserts 0 22 ;VVJl_cfDLKES46FH6b:h0
+R19
+R20
+31
+R7
+Z95 8../../hdl/vhdl/processor_tb.vhd
+Z96 F../../hdl/vhdl/processor_tb.vhd
+l0
+L12
+Z97 VP0;M937]k=E^QJ:ZR7QAi1
+R14
+R15
+R16
+Z98 !s100 edKaFj_hl4Gj6L7L>]fc`0
+Abehavior
+R90
+R54
+R55
+R94
+R19
+R20
+Z99 DEx97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 12 processor_tb 0 22 P0;M937]k=E^QJ:ZR7QAi1
+31
+Z100 Mx5 22 C:\modeltech_6.6d\ieee 14 std_logic_1164
+Z101 Mx4 22 C:\modeltech_6.6d\ieee 11 numeric_std
+Z102 Mx3 97 C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work 7 asserts
+Z103 Mx2 21 C:\modeltech_6.6d\std 6 textio
+R57
+l51
+L15
+Z104 VJaT[kPYZl@U2n4Ok70kbS3
+R14
+R15
+R16
+Z105 !s100 UA3gZM[OcejVVoHX_8Y5k2
+Eregister_file
+R8
+R26
+R9
+R10
+R7
+Z106 8../../hdl/vhdl/register_file.vhd
+Z107 F../../hdl/vhdl/register_file.vhd
+l0
+L36
+Z108 V]4Z2QQf[gAOe22LNI[AZW1
+R14
+31
+R15
+R16
+Z109 !s100 27PSd2dmMZZMX<nF`i5@_2
+Abehavioral
+R32
+R19
+R20
+R89
+31
+R34
+R35
+R36
+l58
+L51
+Z110 VF1?NG:mNU`X<34JGdf^d92
+R14
+R15
+R16
+Z111 !s100 3zoBBacDi9:lLQRaYERf:2
+Esign_extend
+R8
+R10
+R7
+Z112 8../../hdl/vhdl/sign_extend.vhd
+Z113 F../../hdl/vhdl/sign_extend.vhd
+l0
+L32
+Z114 V2J;S[6z?S[WhOOSXj]m>:1
+R14
+31
+R15
+R16
+Z115 !s100 e9dfiLBKi`P1HG:VAY[A=0
+Abehavioral
+R20
+R88
+31
+R43
+l41
+L39
+Z116 VK[4l=^jLCg;VOR38Go28>1
+R14
+R15
+R16
+Z117 !s100 cXCRelF]m`:hFXiJoeBHn1

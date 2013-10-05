@@ -1,8 +1,8 @@
 /*****************************************************************************
-* Filename:          M:\tdt4255\system\system/drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle_selftest.c
+* Filename:          C:\Users\runarbol\Desktop\tdt4255\system\system/drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle_selftest.c
 * Version:           1.00.a
 * Description:       Contains a diagnostic self-test function for the mips_multi_cycle driver
-* Date:              Mon Sep 30 08:37:47 2013 (by Create and Import Peripheral Wizard)
+* Date:              Thu Oct 03 11:25:25 2013 (by Create and Import Peripheral Wizard)
 *****************************************************************************/
 
 
@@ -57,14 +57,6 @@ XStatus MIPS_MULTI_CYCLE_SelfTest(void * baseaddr_p)
   xil_printf("******************************\n\r");
   xil_printf("* User Peripheral Self Test\n\r");
   xil_printf("******************************\n\n\r");
-
-  /*
-   * Reset the device to get it back to the default state
-   */
-  xil_printf("Soft reset test...\n\r");
-  MIPS_MULTI_CYCLE_mReset(baseaddr);
-  xil_printf("   - write 0x%08x to software reset register\n\r", SOFT_RESET);
-  xil_printf("   - soft reset passed\n\n\r");
 
   /*
    * Write to user logic slave module register(s) and read back

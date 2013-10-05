@@ -10,21 +10,18 @@ TABLE OF CONTENTS
 ================================================================================
 Peripheral Summary:
 
-  XPS project / EDK repository               : M:\tdt4255\system\system
+  XPS project / EDK repository               : C:\Users\runarbol\Desktop\tdt4255\system\system
   logical library name                       : mips_multi_cycle_v1_00_a
   top name                                   : mips_multi_cycle
   version                                    : 1.00.a
   type                                       : PLB (v4.6) slave
   features                                   : slave attachment
-                                               soft reset
                                                user s/w registers
 
 Address Block for User Logic and IPIF Predefined Services
 
   user logic slave space                     : C_BASEADDR + 0x00000000
                                              : C_BASEADDR + 0x000000FF
-  software reset space                       : C_BASEADDR + 0x00000100
-                                             : C_BASEADDR + 0x000001FF
 
 
 ================================================================================
@@ -291,5 +288,5 @@ proc_common_v3_00_a
 	No documentation for this library
 
 plbv46_slave_single_v1_01_a
-	M:\tdt4255\system\system\C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plbv46_slave_single_v1_01_a\doc\plbv46_slave_single.pdf
+	C:\Users\runarbol\Desktop\tdt4255\system\system\C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\plbv46_slave_single_v1_01_a\doc\plbv46_slave_single.pdf
 

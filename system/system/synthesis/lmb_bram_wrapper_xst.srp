@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "lmb_bram_wrapper_xst.prj"
-Verilog Include Directory          : {"M:\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -56,10 +56,10 @@ Cores Search Directories           : {../implementation/lmb_bram_wrapper}
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" into library lmb_bram_elaborate_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" into library lmb_bram_elaborate_v1_00_a
 Parsing entity <lmb_bram_elaborate>.
 Parsing architecture <STRUCTURE> of entity <lmb_bram_elaborate>.
-Parsing VHDL file "\tdt4255\system\system\synthesis\../hdl/lmb_bram_wrapper.vhd" into library work
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\synthesis\../hdl/lmb_bram_wrapper.vhd" into library work
 Parsing entity <lmb_bram_wrapper>.
 Parsing architecture <STRUCTURE> of entity <lmb_bram_wrapper>.
 
@@ -70,21 +70,21 @@ Parsing architecture <STRUCTURE> of entity <lmb_bram_wrapper>.
 Elaborating entity <lmb_bram_wrapper> (architecture <STRUCTURE>) from library <work>.
 
 Elaborating entity <lmb_bram_elaborate> (architecture <STRUCTURE>) with generics from library <lmb_bram_elaborate_v1_00_a>.
-WARNING:HDLCompiler:89 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" Line 42: <ramb16bwer> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/Users/runarbol/Desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" Line 42: <ramb16bwer> remains a black-box since it has no binding entity.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <lmb_bram_wrapper>.
-    Related source file is "/tdt4255/system/system/hdl/lmb_bram_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255/system/system/hdl/lmb_bram_wrapper.vhd".
     Set property "KEEP_HIERARCHY = YES".
     Summary:
 	no macro.
 Unit <lmb_bram_wrapper> synthesized.
 
 Synthesizing Unit <lmb_bram_elaborate>.
-    Related source file is "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd".
         C_MEMSIZE = 32768
         C_PORT_DWIDTH = 32
         C_PORT_AWIDTH = 32
@@ -111,38 +111,38 @@ WARNING:Xst:647 - Input <BRAM_Addr_A<0:16>> is never used. This port will be pre
 WARNING:Xst:647 - Input <BRAM_Addr_A<30:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BRAM_Addr_B<0:16>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BRAM_Addr_B<30:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 522: Output port <DOPA> of the instance <ramb16bwer_0> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 522: Output port <DOPB> of the instance <ramb16bwer_0> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 551: Output port <DOPA> of the instance <ramb16bwer_1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 551: Output port <DOPB> of the instance <ramb16bwer_1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 580: Output port <DOPA> of the instance <ramb16bwer_2> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 580: Output port <DOPB> of the instance <ramb16bwer_2> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 609: Output port <DOPA> of the instance <ramb16bwer_3> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 609: Output port <DOPB> of the instance <ramb16bwer_3> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 638: Output port <DOPA> of the instance <ramb16bwer_4> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 638: Output port <DOPB> of the instance <ramb16bwer_4> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 667: Output port <DOPA> of the instance <ramb16bwer_5> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 667: Output port <DOPB> of the instance <ramb16bwer_5> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 696: Output port <DOPA> of the instance <ramb16bwer_6> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 696: Output port <DOPB> of the instance <ramb16bwer_6> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 725: Output port <DOPA> of the instance <ramb16bwer_7> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 725: Output port <DOPB> of the instance <ramb16bwer_7> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 754: Output port <DOPA> of the instance <ramb16bwer_8> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 754: Output port <DOPB> of the instance <ramb16bwer_8> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 783: Output port <DOPA> of the instance <ramb16bwer_9> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 783: Output port <DOPB> of the instance <ramb16bwer_9> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 812: Output port <DOPA> of the instance <ramb16bwer_10> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 812: Output port <DOPB> of the instance <ramb16bwer_10> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 841: Output port <DOPA> of the instance <ramb16bwer_11> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 841: Output port <DOPB> of the instance <ramb16bwer_11> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 870: Output port <DOPA> of the instance <ramb16bwer_12> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 870: Output port <DOPB> of the instance <ramb16bwer_12> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 899: Output port <DOPA> of the instance <ramb16bwer_13> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 899: Output port <DOPB> of the instance <ramb16bwer_13> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 928: Output port <DOPA> of the instance <ramb16bwer_14> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 928: Output port <DOPB> of the instance <ramb16bwer_14> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 957: Output port <DOPA> of the instance <ramb16bwer_15> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "//samba.idi.ntnu.no/runarbol/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 957: Output port <DOPB> of the instance <ramb16bwer_15> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 522: Output port <DOPA> of the instance <ramb16bwer_0> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 522: Output port <DOPB> of the instance <ramb16bwer_0> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 551: Output port <DOPA> of the instance <ramb16bwer_1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 551: Output port <DOPB> of the instance <ramb16bwer_1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 580: Output port <DOPA> of the instance <ramb16bwer_2> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 580: Output port <DOPB> of the instance <ramb16bwer_2> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 609: Output port <DOPA> of the instance <ramb16bwer_3> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 609: Output port <DOPB> of the instance <ramb16bwer_3> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 638: Output port <DOPA> of the instance <ramb16bwer_4> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 638: Output port <DOPB> of the instance <ramb16bwer_4> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 667: Output port <DOPA> of the instance <ramb16bwer_5> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 667: Output port <DOPB> of the instance <ramb16bwer_5> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 696: Output port <DOPA> of the instance <ramb16bwer_6> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 696: Output port <DOPB> of the instance <ramb16bwer_6> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 725: Output port <DOPA> of the instance <ramb16bwer_7> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 725: Output port <DOPB> of the instance <ramb16bwer_7> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 754: Output port <DOPA> of the instance <ramb16bwer_8> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 754: Output port <DOPB> of the instance <ramb16bwer_8> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 783: Output port <DOPA> of the instance <ramb16bwer_9> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 783: Output port <DOPB> of the instance <ramb16bwer_9> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 812: Output port <DOPA> of the instance <ramb16bwer_10> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 812: Output port <DOPB> of the instance <ramb16bwer_10> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 841: Output port <DOPA> of the instance <ramb16bwer_11> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 841: Output port <DOPB> of the instance <ramb16bwer_11> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 870: Output port <DOPA> of the instance <ramb16bwer_12> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 870: Output port <DOPB> of the instance <ramb16bwer_12> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 899: Output port <DOPA> of the instance <ramb16bwer_13> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 899: Output port <DOPB> of the instance <ramb16bwer_13> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 928: Output port <DOPA> of the instance <ramb16bwer_14> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 928: Output port <DOPB> of the instance <ramb16bwer_14> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 957: Output port <DOPA> of the instance <ramb16bwer_15> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/hdl/elaborate/lmb_bram_elaborate_v1_00_a/hdl/vhdl/lmb_bram_elaborate.vhd" line 957: Output port <DOPB> of the instance <ramb16bwer_15> is unconnected or connected to loadless signal.
     Summary:
 	no macro.
 Unit <lmb_bram_elaborate> synthesized.
@@ -358,12 +358,12 @@ Cross Clock Domains Report:
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.88 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.46 secs
  
 --> 
 
-Total memory usage is 268832 kilobytes
+Total memory usage is 267616 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    5 (   0 filtered)

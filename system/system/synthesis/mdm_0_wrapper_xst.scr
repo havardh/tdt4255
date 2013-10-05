@@ -10,4 +10,4 @@ run
 -hierarchy_separator /
 -iobuf NO
 -sd {../implementation/mdm_0_wrapper}
--vlgincdir {"C:\Users\runarbol\Desktop\tdt4255-new\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+-vlgincdir {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }

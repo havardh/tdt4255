@@ -63,10 +63,10 @@ LinkerScript: TestApp_Peripheral_microblaze_0/src/TestApp_Peripheral_LinkScr.ld
 ProgCCFlags: 
 CompileInXps: 1
 NonXpsApp: 0
-SwProj: communication
+SwProj: App_Communication
 Processor: microblaze_0
-Executable: communication/executable.elf
-Source: Communication/src/main.c
+Executable: App_Communication/executable.elf
+Source: App_Communication/src/main.c
 Header: drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle.h
 DefaultInit: executable
 InitBram: 1
@@ -78,7 +78,7 @@ ProfileFlag: 0
 ProgStart: 
 StackSize: 
 HeapSize: 
-LinkerScript: communication/communication_linker_script.ld
+LinkerScript: App_Communication/App_Communication_linker_script.ld
 ProgCCFlags: 
 CompileInXps: 1
 NonXpsApp: 0

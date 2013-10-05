@@ -7,7 +7,7 @@
   <File Type="MHS" URL="../../system.mhs" />
   <File Type="SimgenOpt" URL="../simgen.opt" />
   <File Type="LibgenOpt" URL="../libgen.opt" />
-  <File Type="ELF" URL="../../communication/executable.elf" />
+  <File Type="ELF" URL="../../App_Communication/executable.elf" />
 
 
 </Simulation_deps>

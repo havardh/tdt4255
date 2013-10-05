@@ -35,7 +35,7 @@
 -- Filename:          mips_multi_cycle.vhd
 -- Version:           1.00.a
 -- Description:       Top level design, instantiates library components and user logic.
--- Date:              Mon Sep 30 08:37:36 2013 (by Create and Import Peripheral Wizard)
+-- Date:              Thu Oct 03 11:25:22 2013 (by Create and Import Peripheral Wizard)
 -- VHDL Standard:     VHDL'93
 ------------------------------------------------------------------------------
 -- Naming Conventions:
@@ -65,7 +65,6 @@ use ieee.std_logic_unsigned.all;
 library proc_common_v3_00_a;
 use proc_common_v3_00_a.proc_common_pkg.all;
 use proc_common_v3_00_a.ipif_pkg.all;
-use proc_common_v3_00_a.soft_reset;
 
 library plbv46_slave_single_v1_01_a;
 use plbv46_slave_single_v1_01_a.plbv46_slave_single;
@@ -229,17 +228,13 @@ architecture IMP of mips_multi_cycle is
   -- Array of base/high address pairs for each address range
   ------------------------------------------
   constant ZERO_ADDR_PAD                  : std_logic_vector(0 to 31) := (others => '0');
-  constant USER_SLV_BASEADDR              : std_logic_vector     := C_BASEADDR or X"00000000";
-  constant USER_SLV_HIGHADDR              : std_logic_vector     := C_BASEADDR or X"000000FF";
-  constant RST_BASEADDR                   : std_logic_vector     := C_BASEADDR or X"00000100";
-  constant RST_HIGHADDR                   : std_logic_vector     := C_BASEADDR or X"000001FF";
+  constant USER_SLV_BASEADDR              : std_logic_vector     := C_BASEADDR;
+  constant USER_SLV_HIGHADDR              : std_logic_vector     := C_HIGHADDR;
 
   constant IPIF_ARD_ADDR_RANGE_ARRAY      : SLV64_ARRAY_TYPE     := 
     (
       ZERO_ADDR_PAD & USER_SLV_BASEADDR,  -- user logic slave space base address
-      ZERO_ADDR_PAD & USER_SLV_HIGHADDR,  -- user logic slave space high address
-      ZERO_ADDR_PAD & RST_BASEADDR,       -- soft reset space base address
-      ZERO_ADDR_PAD & RST_HIGHADDR        -- soft reset space high address
+      ZERO_ADDR_PAD & USER_SLV_HIGHADDR   -- user logic slave space high address
     );
 
   ------------------------------------------
@@ -247,12 +242,10 @@ architecture IMP of mips_multi_cycle is
   ------------------------------------------
   constant USER_SLV_NUM_REG               : integer              := 5;
   constant USER_NUM_REG                   : integer              := USER_SLV_NUM_REG;
-  constant RST_NUM_CE                     : integer              := 1;
 
   constant IPIF_ARD_NUM_CE_ARRAY          : INTEGER_ARRAY_TYPE   := 
     (
-      0  => pad_power2(USER_SLV_NUM_REG), -- number of ce for user logic slave space
-      1  => RST_NUM_CE                    -- number of ce for soft reset space
+      0  => pad_power2(USER_SLV_NUM_REG)  -- number of ce for user logic slave space
     );
 
   ------------------------------------------
@@ -270,17 +263,10 @@ architecture IMP of mips_multi_cycle is
   constant IPIF_SLV_DWIDTH                : integer              := C_SPLB_NATIVE_DWIDTH;
 
   ------------------------------------------
-  -- Width of triggered reset in bus clocks
-  ------------------------------------------
-  constant RESET_WIDTH                    : integer              := 4;
-
-  ------------------------------------------
   -- Index for CS/CE
   ------------------------------------------
   constant USER_SLV_CS_INDEX              : integer              := 0;
   constant USER_SLV_CE_INDEX              : integer              := calc_start_ce_index(IPIF_ARD_NUM_CE_ARRAY, USER_SLV_CS_INDEX);
-  constant RST_CS_INDEX                   : integer              := 1;
-  constant RST_CE_INDEX                   : integer              := calc_start_ce_index(IPIF_ARD_NUM_CE_ARRAY, RST_CS_INDEX);
 
   constant USER_CE_INDEX                  : integer              := USER_SLV_CE_INDEX;
 
@@ -300,9 +286,6 @@ architecture IMP of mips_multi_cycle is
   signal ipif_Bus2IP_CS                 : std_logic_vector(0 to ((IPIF_ARD_ADDR_RANGE_ARRAY'length)/2)-1);
   signal ipif_Bus2IP_RdCE               : std_logic_vector(0 to calc_num_ce(IPIF_ARD_NUM_CE_ARRAY)-1);
   signal ipif_Bus2IP_WrCE               : std_logic_vector(0 to calc_num_ce(IPIF_ARD_NUM_CE_ARRAY)-1);
-  signal rst_Bus2IP_Reset               : std_logic;
-  signal rst_IP2Bus_WrAck               : std_logic;
-  signal rst_IP2Bus_Error               : std_logic;
   signal user_Bus2IP_RdCE               : std_logic_vector(0 to USER_NUM_REG-1);
   signal user_Bus2IP_WrCE               : std_logic_vector(0 to USER_NUM_REG-1);
   signal user_IP2Bus_Data               : std_logic_vector(0 to USER_SLV_DWIDTH-1);
@@ -390,28 +373,6 @@ begin
     );
 
   ------------------------------------------
-  -- instantiate soft_reset
-  ------------------------------------------
-  SOFT_RESET_I : entity proc_common_v3_00_a.soft_reset
-    generic map
-    (
-      C_SIPIF_DWIDTH                 => IPIF_SLV_DWIDTH,
-      C_RESET_WIDTH                  => RESET_WIDTH
-    )
-    port map
-    (
-      Bus2IP_Reset                   => ipif_Bus2IP_Reset,
-      Bus2IP_Clk                     => ipif_Bus2IP_Clk,
-      Bus2IP_WrCE                    => ipif_Bus2IP_WrCE(RST_CE_INDEX),
-      Bus2IP_Data                    => ipif_Bus2IP_Data,
-      Bus2IP_BE                      => ipif_Bus2IP_BE,
-      Reset2IP_Reset                 => rst_Bus2IP_Reset,
-      Reset2Bus_WrAck                => rst_IP2Bus_WrAck,
-      Reset2Bus_Error                => rst_IP2Bus_Error,
-      Reset2Bus_ToutSup              => open
-    );
-
-  ------------------------------------------
   -- instantiate User Logic
   ------------------------------------------
   USER_LOGIC_I : entity mips_multi_cycle_v1_00_a.user_logic
@@ -431,7 +392,7 @@ begin
       -- MAP USER PORTS ABOVE THIS LINE ------------------
 
       Bus2IP_Clk                     => ipif_Bus2IP_Clk,
-      Bus2IP_Reset                   => rst_Bus2IP_Reset,
+      Bus2IP_Reset                   => ipif_Bus2IP_Reset,
       Bus2IP_Data                    => ipif_Bus2IP_Data,
       Bus2IP_BE                      => ipif_Bus2IP_BE,
       Bus2IP_RdCE                    => user_Bus2IP_RdCE,
@@ -445,20 +406,10 @@ begin
   ------------------------------------------
   -- connect internal signals
   ------------------------------------------
-  IP2BUS_DATA_MUX_PROC : process( ipif_Bus2IP_CS, user_IP2Bus_Data ) is
-  begin
-
-    case ipif_Bus2IP_CS is
-      when "10" => ipif_IP2Bus_Data <= user_IP2Bus_Data;
-      when "01" => ipif_IP2Bus_Data <= (others => '0');
-      when others => ipif_IP2Bus_Data <= (others => '0');
-    end case;
-
-  end process IP2BUS_DATA_MUX_PROC;
-
-  ipif_IP2Bus_WrAck <= user_IP2Bus_WrAck or rst_IP2Bus_WrAck;
+  ipif_IP2Bus_Data <= user_IP2Bus_Data;
+  ipif_IP2Bus_WrAck <= user_IP2Bus_WrAck;
   ipif_IP2Bus_RdAck <= user_IP2Bus_RdAck;
-  ipif_IP2Bus_Error <= user_IP2Bus_Error or rst_IP2Bus_Error;
+  ipif_IP2Bus_Error <= user_IP2Bus_Error;
 
   user_Bus2IP_RdCE <= ipif_Bus2IP_RdCE(USER_CE_INDEX to USER_CE_INDEX+USER_NUM_REG-1);
   user_Bus2IP_WrCE <= ipif_Bus2IP_WrCE(USER_CE_INDEX to USER_CE_INDEX+USER_NUM_REG-1);

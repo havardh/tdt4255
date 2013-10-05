@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "mips_multi_cycle_0_wrapper_xst.prj"
-Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255-new\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -86,57 +86,54 @@ Parsing architecture <implementation> of entity <plb_slave_attachment>.
 Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plbv46_slave_single.vhd" into library plbv46_slave_single_v1_01_a
 Parsing entity <plbv46_slave_single>.
 Parsing architecture <implementation> of entity <plbv46_slave_single>.
-Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/soft_reset.vhd" into library proc_common_v3_00_a
-Parsing entity <soft_reset>.
-Parsing architecture <implementation> of entity <soft_reset>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <user_logic>.
 Parsing architecture <IMP> of entity <user_logic>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <mips_multi_cycle>.
 Parsing architecture <IMP> of entity <mips_multi_cycle>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <adder>.
 Parsing architecture <Behavioral> of entity <adder>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_constant_pkg.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_constant_pkg.vhd" into library mips_multi_cycle_v1_00_a
 Parsing package <MIPS_CONSTANT_PKG>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <alu>.
 Parsing architecture <Behavioral> of entity <alu>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <alu_1bit>.
 Parsing architecture <Behavioral> of entity <alu_1bit>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <alu_control>.
-Parsing architecture <Behavioral> of entity <alu_control>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <com>.
 Parsing architecture <Behavioral> of entity <com>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" into library mips_multi_cycle_v1_00_a
-Parsing entity <control_unit>.
-Parsing architecture <Behavioral> of entity <control_unit>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <full_adder>.
 Parsing architecture <Behavioral> of entity <full_adder>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <memory>.
 Parsing architecture <Behavioral> of entity <memory>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <processor>.
 Parsing architecture <Behavioral> of entity <processor>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <register_file>.
 Parsing architecture <Behavioral> of entity <register_file>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/shiftleft.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/shiftleft.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <shiftleft>.
 Parsing architecture <Behavioral> of entity <shiftleft>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <sign_extend>.
 Parsing architecture <Behavioral> of entity <sign_extend>.
-Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd" into library mips_multi_cycle_v1_00_a
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd" into library mips_multi_cycle_v1_00_a
 Parsing entity <toplevel>.
 Parsing architecture <Behavioral> of entity <toplevel>.
-Parsing VHDL file "\Users\runarbol\Desktop\tdt4255-new\system\system\synthesis\../hdl/mips_multi_cycle_0_wrapper.vhd" into library work
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <control_unit>.
+Parsing architecture <Behavioral> of entity <control_unit>.
+Parsing VHDL file "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd" into library mips_multi_cycle_v1_00_a
+Parsing entity <alu_control>.
+Parsing architecture <Behavioral> of entity <alu_control>.
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\synthesis\../hdl/mips_multi_cycle_0_wrapper.vhd" into library work
 Parsing entity <mips_multi_cycle_0_wrapper>.
 Parsing architecture <STRUCTURE> of entity <mips_multi_cycle_0_wrapper>.
 
@@ -174,72 +171,64 @@ Elaborating entity <pselect_f> (architecture <imp>) with generics from library <
 
 Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
 
-Elaborating entity <pselect_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
-
 Elaborating entity <or_gate128> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
 
 Elaborating entity <or_muxcy> (architecture <implementation>) with generics from library <proc_common_v3_00_a>.
 INFO:HDLCompiler:679 - "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd" Line 711. Case statement is complete. others clause is never selected
 WARNING:HDLCompiler:1127 - "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd" Line 1025: Assignment to start_data_phase ignored, since the identifier is never used
 
-Elaborating entity <soft_reset> (architecture <implementation>) with generics from library <proc_common_v3_00_a>.
+Elaborating entity <counter_f> (architecture <imp>) with generics from library <proc_common_v3_00_a>.
 
 Elaborating entity <user_logic> (architecture <IMP>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <toplevel> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <com> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
-INFO:HDLCompiler:679 - "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" Line 231. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd" Line 231. Case statement is complete. others clause is never selected
 
 Elaborating entity <memory> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <processor> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <control_unit> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 192: ctrl_reset should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 194: running should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" Line 67: opcode should be on the sensitivity list of the process
+INFO:HDLCompiler:679 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd" Line 169. Case statement is complete. others clause is never selected
+
+Elaborating entity <alu_control> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <adder> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <full_adder> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 195: pc should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 196: alu_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 197: alu_out should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 198: rt should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" Line 199: mem_write_enable should be on the sensitivity list of the process
+
+Elaborating entity <register_file> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <sign_extend> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-
-Elaborating entity <shiftleft> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-
-Elaborating entity <alu_control> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <alu> (architecture <Behavioral>) with generics from library <mips_multi_cycle_v1_00_a>.
 
 Elaborating entity <alu_1bit> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-
-Elaborating entity <register_file> (architecture <Behavioral>) from library <mips_multi_cycle_v1_00_a>.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153. All outputs of instance <control> of block <control_unit> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 201. All outputs of instance <add4> of block <adder> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 210. All outputs of instance <add_jump> of block <adder> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 242. All outputs of instance <signex> of block <sign_extend> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 248. All outputs of instance <shift2_singex> of block <shiftleft> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 254. All outputs of instance <shift2_instr> of block <shiftleft> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 260. All outputs of instance <aluctl> of block <alu_control> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 267. All outputs of instance <alu1> of block <alu> are unconnected in block <processor>. Underlying logic will be removed.
-WARNING:Xst:2972 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 286. All outputs of instance <regfile> of block <register_file> are unconnected in block <processor>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <mips_multi_cycle_0_wrapper>.
-    Related source file is "/users/runarbol/desktop/tdt4255-new/system/system/hdl/mips_multi_cycle_0_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255/system/system/hdl/mips_multi_cycle_0_wrapper.vhd".
     Summary:
 	no macro.
 Unit <mips_multi_cycle_0_wrapper> synthesized.
 
 Synthesizing Unit <mips_multi_cycle>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_BASEADDR = "10000100010000011000000000000000"
-        C_HIGHADDR = "10000100010000011011111111111111"
+        C_HIGHADDR = "10000100010000011111111111111111"
         C_SPLB_AWIDTH = 32
         C_SPLB_DWIDTH = 32
         C_SPLB_NUM_MASTERS = 2
@@ -248,25 +237,25 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
         C_SPLB_P2P = 0
         C_SPLB_SUPPORT_BURSTS = 0
         C_SPLB_SMALLEST_MASTER = 32
-        C_SPLB_CLK_PERIOD_PS = 15000
-        C_INCLUDE_DPHASE_TIMER = 0
+        C_SPLB_CLK_PERIOD_PS = 40000
+        C_INCLUDE_DPHASE_TIMER = 1
         C_FAMILY = "spartan6"
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 318: Output port <Bus2IP_Addr> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 318: Output port <Bus2IP_RNW> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 395: Output port <Reset2Bus_ToutSup> of the instance <SOFT_RESET_I> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 301: Output port <Bus2IP_Addr> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 301: Output port <Bus2IP_CS> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd" line 301: Output port <Bus2IP_RNW> of the instance <PLBV46_SLAVE_SINGLE_I> is unconnected or connected to loadless signal.
     Summary:
-	inferred   1 Multiplexer(s).
+	no macro.
 Unit <mips_multi_cycle> synthesized.
 
 Synthesizing Unit <plbv46_slave_single>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plbv46_slave_single.vhd".
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000100010000011000000000000000","0000000000000000000000000000000010000100010000011000000011111111","0000000000000000000000000000000010000100010000011000000100000000","0000000000000000000000000000000010000100010000011000000111111111")
-        C_ARD_NUM_CE_ARRAY = (8,1)
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000100010000011000000000000000","0000000000000000000000000000000010000100010000011111111111111111")
+        C_ARD_NUM_CE_ARRAY = (8)
         C_SPLB_P2P = 0
         C_BUS2CORE_CLK_RATIO = 1
-        C_INCLUDE_DPHASE_TIMER = 0
+        C_INCLUDE_DPHASE_TIMER = 1
         C_SPLB_MID_WIDTH = 1
         C_SPLB_NUM_MASTERS = 2
         C_SPLB_AWIDTH = 32
@@ -294,8 +283,8 @@ Unit <plbv46_slave_single> synthesized.
 
 Synthesizing Unit <plb_slave_attachment>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd".
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000100010000011000000000000000","0000000000000000000000000000000010000100010000011000000011111111","0000000000000000000000000000000010000100010000011000000100000000","0000000000000000000000000000000010000100010000011000000111111111")
-        C_ARD_NUM_CE_ARRAY = (8,1)
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000100010000011000000000000000","0000000000000000000000000000000010000100010000011111111111111111")
+        C_ARD_NUM_CE_ARRAY = (8)
         C_PLB_NUM_MASTERS = 2
         C_PLB_MID_WIDTH = 1
         C_SPLB_P2P = 0
@@ -303,14 +292,15 @@ Synthesizing Unit <plb_slave_attachment>.
         C_IPIF_ABUS_WIDTH = 32
         C_IPIF_DBUS_WIDTH = 32
         C_DPHASE_TIMEOUT = 128
-        C_INCLUDE_DPHASE_TIMER = 0
+        C_INCLUDE_DPHASE_TIMER = 1
         C_FAMILY = "spartan6"
 WARNING:Xst:647 - Input <PLB_UABus<0:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+INFO:Xst:3010 - "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd" line 1201: Output port <Count_Out> of the instance <INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER> is unconnected or connected to loadless signal.
+    Register <sl_rdcomp_i> equivalent to <rd_clear_sl_busy> has been removed
+    Register <sl_rddack_i> equivalent to <rd_clear_sl_busy> has been removed
     Register <set_sl_busy> equivalent to <sl_addrack_i> has been removed
     Register <wr_clear_sl_busy> equivalent to <sl_wrdack_i> has been removed
     Register <sl_wrcomp_i> equivalent to <sl_wrdack_i> has been removed
-    Register <sl_rdcomp_i> equivalent to <rd_clear_sl_busy> has been removed
-    Register <sl_rddack_i> equivalent to <rd_clear_sl_busy> has been removed
     Found 32-bit register for signal <plb_wrdbus_reg>.
     Found 1-bit register for signal <plb_masterid_reg>.
     Found 1-bit register for signal <plb_rnw_reg>.
@@ -333,27 +323,26 @@ WARNING:Xst:647 - Input <PLB_UABus<0:31>> is never used. This port will be prese
     Found 1-bit register for signal <bus2ip_rnw_i>.
     Found 4-bit register for signal <bus2ip_be_i>.
     Found 32-bit register for signal <bus2ip_addr_i>.
+    Found 1-bit register for signal <data_timeout>.
     Found 4-bit register for signal <plb_be_reg>.
     Summary:
-	inferred 192 D-type flip-flop(s).
-	inferred  11 Multiplexer(s).
+	inferred 193 D-type flip-flop(s).
+	inferred  12 Multiplexer(s).
 Unit <plb_slave_attachment> synthesized.
 
 Synthesizing Unit <plb_address_decoder>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd".
         C_BUS_AWIDTH = 32
-        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000100010000011000000000000000","0000000000000000000000000000000010000100010000011000000011111111","0000000000000000000000000000000010000100010000011000000100000000","0000000000000000000000000000000010000100010000011000000111111111")
-        C_ARD_NUM_CE_ARRAY = (8,1)
+        C_ARD_ADDR_RANGE_ARRAY = ("0000000000000000000000000000000010000100010000011000000000000000","0000000000000000000000000000000010000100010000011111111111111111")
+        C_ARD_NUM_CE_ARRAY = (8)
         C_SPLB_P2P = 0
         C_FAMILY = "nofamily"
 WARNING:Xst:647 - Input <Address_In_Erly<0:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Address_Valid_Erly> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <Bus_RNW_Erly> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 5-bit register for signal <addr_out_s_h>.
-    Found 1-bit register for signal <MEM_DECODE_GEN[0].GEN_PLB_SHARED.cs_out_s_h<0>>.
-    Found 1-bit register for signal <cs_out_i<0>>.
-    Found 1-bit register for signal <MEM_DECODE_GEN[1].GEN_PLB_SHARED.cs_out_s_h<1>>.
-    Found 1-bit register for signal <cs_out_i<1>>.
+    Found 1-bit register for signal <MEM_DECODE_GEN[0].GEN_PLB_SHARED.cs_out_s_h>.
+    Found 1-bit register for signal <cs_out_i>.
     Found 1-bit register for signal <decode_hit_reg>.
     Found 1-bit register for signal <rdce_out_i<0>>.
     Found 1-bit register for signal <wrce_out_i<0>>.
@@ -371,20 +360,18 @@ WARNING:Xst:647 - Input <Bus_RNW_Erly> is never used. This port will be preserve
     Found 1-bit register for signal <wrce_out_i<6>>.
     Found 1-bit register for signal <rdce_out_i<7>>.
     Found 1-bit register for signal <wrce_out_i<7>>.
-    Found 1-bit register for signal <rdce_out_i<8>>.
-    Found 1-bit register for signal <wrce_out_i<8>>.
     Found 1-bit register for signal <rnw_s_h>.
     Summary:
-	inferred  29 D-type flip-flop(s).
+	inferred  25 D-type flip-flop(s).
 Unit <plb_address_decoder> synthesized.
 
 Synthesizing Unit <pselect_f_1>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 24
+        C_AB = 17
         C_AW = 32
         C_BAR = "10000100010000011000000000000000"
         C_FAMILY = "nofamily"
-WARNING:Xst:647 - Input <A<24:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <A<17:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Summary:
 	inferred   1 Multiplexer(s).
 Unit <pselect_f_1> synthesized.
@@ -469,20 +456,9 @@ Synthesizing Unit <pselect_f_9>.
 	inferred   1 Multiplexer(s).
 Unit <pselect_f_9> synthesized.
 
-Synthesizing Unit <pselect_f_10>.
-    Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd".
-        C_AB = 24
-        C_AW = 32
-        C_BAR = "10000100010000011000000100000000"
-        C_FAMILY = "nofamily"
-WARNING:Xst:647 - Input <A<24:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Summary:
-	inferred   1 Multiplexer(s).
-Unit <pselect_f_10> synthesized.
-
 Synthesizing Unit <or_gate128>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/or_gate128.vhd".
-        C_OR_WIDTH = 2
+        C_OR_WIDTH = 1
         C_BUS_WIDTH = 1
         C_USE_LUT_OR = false
     Summary:
@@ -491,25 +467,24 @@ Unit <or_gate128> synthesized.
 
 Synthesizing Unit <or_muxcy>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/or_muxcy.vhd".
-        C_NUM_BITS = 2
+        C_NUM_BITS = 1
     Summary:
 	no macro.
 Unit <or_muxcy> synthesized.
 
-Synthesizing Unit <soft_reset>.
-    Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/soft_reset.vhd".
-        C_SIPIF_DWIDTH = 32
-        C_RESET_WIDTH = 4
-WARNING:Xst:647 - Input <Bus2IP_Data<0:27>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <Bus2IP_BE<0:2>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit register for signal <reset_trig>.
-    Found 1-bit register for signal <sw_rst_cond_d1>.
+Synthesizing Unit <counter_f>.
+    Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/proc_common_v3_00_a/hdl/vhdl/counter_f.vhd".
+        C_NUM_BITS = 8
+        C_FAMILY = "nofamily"
+    Found 9-bit register for signal <INFERRED_GEN.icount_out>.
+    Found 9-bit subtractor for signal <INFERRED_GEN.icount_out[8]_GND_27_o_mux_5_OUT> created at line 292.
     Summary:
-	inferred   2 D-type flip-flop(s).
-Unit <soft_reset> synthesized.
+	inferred   1 Adder/Subtractor(s).
+	inferred   9 D-type flip-flop(s).
+Unit <counter_f> synthesized.
 
 Synthesizing Unit <user_logic>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/user_logic.vhd".
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_SLV_DWIDTH = 32
@@ -525,7 +500,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
 Unit <user_logic> synthesized.
 
 Synthesizing Unit <toplevel>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/toplevel.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
     Summary:
@@ -533,7 +508,7 @@ Synthesizing Unit <toplevel>.
 Unit <toplevel> synthesized.
 
 Synthesizing Unit <com>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/com.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
         INPUT_BUS_WIDTH = 32
@@ -567,7 +542,7 @@ Synthesizing Unit <com>.
 Unit <com> synthesized.
 
 Synthesizing Unit <memory>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/memory.vhd".
         N = 32
         M = 8
 WARNING:Xst:647 - Input <W_ADDR<31:8>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -581,58 +556,265 @@ WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and l
 Unit <memory> synthesized.
 
 Synthesizing Unit <processor>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd".
         MEM_ADDR_BUS = 32
         MEM_DATA_BUS = 32
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <branch> of the instance <control> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <mem_read> of the instance <control> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <mem_write> of the instance <control> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <jump> of the instance <control> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 153: Output port <pc_latch> of the instance <control> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 201: Output port <COUT> of the instance <add4> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 210: Output port <R> of the instance <add_jump> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 210: Output port <COUT> of the instance <add_jump> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 254: Output port <R> of the instance <shift2_instr> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 267: Output port <FLAGS_Carry> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 267: Output port <FLAGS_Overflow> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 267: Output port <FLAGS_Zero> of the instance <alu1> is unconnected or connected to loadless signal.
-INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 267: Output port <FLAGS_Negative> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 142: Output port <branch> of the instance <ctrl_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 142: Output port <mem_read> of the instance <ctrl_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 142: Output port <jump> of the instance <ctrl_unit> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 169: Output port <COUT> of the instance <pc_add_four> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 244: Output port <FLAGS_Carry> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 244: Output port <FLAGS_Overflow> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 244: Output port <FLAGS_Zero> of the instance <alu1> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd" line 244: Output port <FLAGS_Negative> of the instance <alu1> is unconnected or connected to loadless signal.
     Found 32-bit register for signal <PC>.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <imem_address<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_address<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_data_out<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <dmem_write_enable>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
     Summary:
 	inferred  32 D-type flip-flop(s).
+	inferred  97 Latch(s).
+	inferred   3 Multiplexer(s).
 Unit <processor> synthesized.
 
+Synthesizing Unit <control_unit>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/control_unit.vhd".
+    Found 2-bit register for signal <state>.
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Power Up State     | fetch                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 1-bit latch for signal <mem_write>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg_write>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <pc_latch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <reg_dst>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <branch>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <mem_read>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_op<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_op<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_src>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <jump>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred  10 Latch(s).
+	inferred   3 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <control_unit> synthesized.
+
+Synthesizing Unit <alu_control>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_control.vhd".
+    Found 1-bit 4-to-1 multiplexer for signal <alu_input_Op0_alu_input_Op0_MUX_184_o> created at line 27.
+    Found 1-bit 4-to-1 multiplexer for signal <alu_input_Op0_alu_input_Op0_MUX_194_o> created at line 27.
+    Found 1-bit 4-to-1 multiplexer for signal <alu_input_Op0_alu_input_Op0_MUX_204_o> created at line 27.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_input_Op1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_input_Op2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_input_Op3>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alu_input_Op0>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   4 Latch(s).
+	inferred  25 Multiplexer(s).
+Unit <alu_control> synthesized.
+
+Synthesizing Unit <adder>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/adder.vhd".
+        N = 32
+    Summary:
+	no macro.
+Unit <adder> synthesized.
+
 Synthesizing Unit <full_adder>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd".
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/full_adder.vhd".
     Summary:
 Unit <full_adder> synthesized.
 
-Synthesizing Unit <alu_1bit>.
-    Related source file is "c:/users/runarbol/desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd".
+Synthesizing Unit <register_file>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/register_file.vhd".
+WARNING:Xst:647 - Input <RESET> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32x32-bit dual-port RAM <Mram_REGS> for signal <REGS>.
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Multiplexer(s).
+Unit <register_file> synthesized.
+
+Synthesizing Unit <sign_extend>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/sign_extend.vhd".
     Summary:
 	no macro.
+Unit <sign_extend> synthesized.
+
+Synthesizing Unit <alu>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd".
+        N = 32
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 71: Output port <SET> of the instance <BEGIN_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[1].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[2].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[3].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[4].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[5].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[6].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[7].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[8].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[9].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[10].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[11].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[12].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[13].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[14].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[15].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[16].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[17].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[18].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[19].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[20].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[21].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[22].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[23].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[24].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[25].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[26].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[27].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[28].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[29].NEXT_ALU1B> is unconnected or connected to loadless signal.
+INFO:Xst:3010 - "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu.vhd" line 86: Output port <SET> of the instance <GEN_ALU[30].NEXT_ALU1B> is unconnected or connected to loadless signal.
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <alu> synthesized.
+
+Synthesizing Unit <alu_1bit>.
+    Related source file is "c:/users/runarbol/desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/alu_1bit.vhd".
+    Summary:
+	inferred   5 Multiplexer(s).
 Unit <alu_1bit> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 4
  256x32-bit dual-port RAM                              : 2
-# Registers                                            : 48
- 1-bit register                                        : 20
- 2-bit register                                        : 4
+ 32x32-bit dual-port RAM                               : 2
+# Adders/Subtractors                                   : 1
+ 9-bit subtractor                                      : 1
+# Registers                                            : 47
+ 1-bit register                                        : 19
+ 2-bit register                                        : 3
  3-bit register                                        : 1
  32-bit register                                       : 15
  4-bit register                                        : 3
  5-bit register                                        : 1
- 8-bit register                                        : 2
- 9-bit register                                        : 2
-# Multiplexers                                         : 128
- 1-bit 2-to-1 multiplexer                              : 119
+ 8-bit register                                        : 4
+ 9-bit register                                        : 1
+# Latches                                              : 111
+ 1-bit latch                                           : 111
+# Multiplexers                                         : 321
+ 1-bit 2-to-1 multiplexer                              : 304
+ 1-bit 4-to-1 multiplexer                              : 3
  2-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 8
-# FSMs                                                 : 1
+ 32-bit 2-to-1 multiplexer                             : 12
+ 5-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+# Xors                                                 : 129
+ 1-bit xor2                                            : 129
 
 =========================================================================
 
@@ -667,24 +849,64 @@ INFO:Xst:3040 - The RAM <Mram_MEM> will be implemented as a BLOCK RAM, absorbing
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
 Unit <memory> synthesized (advanced).
+
+Synthesizing (advanced) Unit <register_file>.
+INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <RW>            | high     |
+    |     addrA          | connected to signal <RD_ADDR>       |          |
+    |     diA            | connected to signal <WRITE_DATA>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <RS_ADDR>       |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_REGS1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     clkA           | connected to signal <CLK>           | rise     |
+    |     weA            | connected to signal <RW>            | high     |
+    |     addrA          | connected to signal <RD_ADDR>       |          |
+    |     diA            | connected to signal <WRITE_DATA>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 32-bit                    |          |
+    |     addrB          | connected to signal <RT_ADDR>       |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <register_file> synthesized (advanced).
 WARNING:Xst:2677 - Node <addr_out_s_h_4> of sequential type is unconnected in block <plb_address_decoder>.
 WARNING:Xst:2677 - Node <addr_out_s_h_3> of sequential type is unconnected in block <plb_address_decoder>.
-WARNING:Xst:2677 - Node <PC_0> of sequential type is unconnected in block <processor>.
-WARNING:Xst:2677 - Node <PC_1> of sequential type is unconnected in block <processor>.
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 2
+# RAMs                                                 : 4
  256x32-bit dual-port block RAM                        : 2
-# Registers                                            : 517
- Flip-Flops                                            : 517
-# Multiplexers                                         : 118
- 1-bit 2-to-1 multiplexer                              : 109
+ 32x32-bit dual-port distributed RAM                   : 2
+# Adders/Subtractors                                   : 1
+ 9-bit subtractor                                      : 1
+# Registers                                            : 518
+ Flip-Flops                                            : 518
+# Multiplexers                                         : 311
+ 1-bit 2-to-1 multiplexer                              : 294
+ 1-bit 4-to-1 multiplexer                              : 3
  2-bit 2-to-1 multiplexer                              : 1
- 32-bit 2-to-1 multiplexer                             : 8
-# FSMs                                                 : 1
+ 32-bit 2-to-1 multiplexer                             : 12
+ 5-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+# Xors                                                 : 129
+ 1-bit xor2                                            : 129
 
 =========================================================================
 
@@ -723,39 +945,9 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_4> has a 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_3> has a constant value of 0 in block <plb_slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_2> has a constant value of 0 in block <plb_slave_attachment>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <master_id_1> has a constant value of 0 in block <plb_slave_attachment>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <PC_31> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_30> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_29> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_28> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_27> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_26> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_25> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_24> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_23> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_22> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_21> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_20> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_19> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_18> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_17> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_16> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_15> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_14> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_13> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_12> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_11> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_10> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_9> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_8> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_7> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_6> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_5> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_4> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_3> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PC_2> has a constant value of 0 in block <processor>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <GEN_FOR_SHARED.addr_cntl_cs> in Unit <plb_slave_attachment> is equivalent to the following FF/Latch, which will be removed : <addr_cycle_flush> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
+Optimizing FSM <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/FSM_0> on signal <state[1:3]> with user encoding.
 -------------------
  State | Encoding
 -------------------
@@ -768,6 +960,15 @@ Optimizing FSM <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/FSM
  110   | 110
  111   | 111
 -------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/FSM_1> on signal <state[1:2]> with user encoding.
+---------------------
+ State   | Encoding
+---------------------
+ fetch   | 00
+ execute | 01
+ stall   | 10
+---------------------
 
 Optimizing unit <mips_multi_cycle_0_wrapper> ...
 
@@ -775,13 +976,27 @@ Optimizing unit <plb_slave_attachment> ...
 
 Optimizing unit <plb_address_decoder> ...
 
-Optimizing unit <soft_reset> ...
+Optimizing unit <counter_f> ...
 
 Optimizing unit <user_logic> ...
 
 Optimizing unit <toplevel> ...
 
 Optimizing unit <com> ...
+
+Optimizing unit <processor> ...
+
+Optimizing unit <control_unit> ...
+
+Optimizing unit <alu_control> ...
+
+Optimizing unit <alu> ...
+
+Optimizing unit <adder> ...
+WARNING:Xst:1710 - FF/Latch <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_0> (without init value) has a constant value of 0 in block <mips_multi_cycle_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_mwrerr_i_1> (without init value) has a constant value of 0 in block <mips_multi_cycle_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_0> (without init value) has a constant value of 0 in block <mips_multi_cycle_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_mrderr_i_1> (without init value) has a constant value of 0 in block <mips_multi_cycle_0_wrapper>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_0> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_1> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_2> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
@@ -814,7 +1029,13 @@ WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACH
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_addr_i_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/bus2ip_rnw_i> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
@@ -826,7 +1047,8 @@ WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACH
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_5> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_6> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_7> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/cs_out_i_0> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN<0>.GEN_PLB_SHARED.cs_out_s_h_0> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_0> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_1> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_2> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
@@ -851,58 +1073,132 @@ WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_20> of sequent
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/write_addr_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
-WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/tdt4255_toplevel/TDT4255_COM/read_addr_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/write_addr_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/read_addr_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/dmem_address_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/imem_address_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_31> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_30> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_29> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_28> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_27> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_26> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_25> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_24> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_23> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_22> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_21> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_20> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_19> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_18> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_17> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_16> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_15> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_14> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_13> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_12> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_11> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_10> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_9> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_8> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/jump> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
+WARNING:Xst:2677 - Node <mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/branch> of sequential type is unconnected in block <mips_multi_cycle_0_wrapper>.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mips_multi_cycle_0_wrapper, actual ratio is 5.
+Found area constraint ratio of 100 (+ 0) on block mips_multi_cycle_0_wrapper, actual ratio is 7.
 
 Final Macro Processing ...
 
@@ -910,8 +1206,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 342
- Flip-Flops                                            : 342
+# Registers                                            : 340
+ Flip-Flops                                            : 340
 
 =========================================================================
 
@@ -934,20 +1230,28 @@ Top Level Output File Name         : mips_multi_cycle_0_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 269
+# BELS                             : 841
 #      GND                         : 1
-#      LUT2                        : 60
-#      LUT3                        : 86
-#      LUT4                        : 49
-#      LUT5                        : 21
-#      LUT6                        : 51
+#      INV                         : 3
+#      LUT2                        : 10
+#      LUT3                        : 148
+#      LUT4                        : 95
+#      LUT5                        : 78
+#      LUT6                        : 396
+#      MUXF7                       : 109
 #      VCC                         : 1
-# FlipFlops/Latches                : 342
-#      FD                          : 13
-#      FDR                         : 211
-#      FDRE                        : 118
-# RAMS                             : 1
-#      RAMB8BWER                   : 1
+# FlipFlops/Latches                : 401
+#      FD                          : 12
+#      FDR                         : 198
+#      FDRE                        : 124
+#      FDS                         : 6
+#      LD                          : 61
+# RAMS                             : 16
+#      RAM32M                      : 10
+#      RAM32X1D                    : 4
+#      RAMB8BWER                   : 2
+# Clock Buffers                    : 1
+#      BUFG                        : 1
 
 Device utilization summary:
 ---------------------------
@@ -956,16 +1260,18 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             342  out of  18224     1%  
- Number of Slice LUTs:                  267  out of   9112     2%  
-    Number used as Logic:               267  out of   9112     2%  
+ Number of Slice Registers:             401  out of  18224     2%  
+ Number of Slice LUTs:                  778  out of   9112     8%  
+    Number used as Logic:               730  out of   9112     8%  
+    Number used as Memory:               48  out of   2176     2%  
+       Number used as RAM:               48
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    375
-   Number with an unused Flip Flop:      33  out of    375     8%  
-   Number with an unused LUT:           108  out of    375    28%  
-   Number of fully used LUT-FF pairs:   234  out of    375    62%  
-   Number of unique control sets:        16
+ Number of LUT Flip Flop pairs used:    879
+   Number with an unused Flip Flop:     478  out of    879    54%  
+   Number with an unused LUT:           101  out of    879    11%  
+   Number of fully used LUT-FF pairs:   300  out of    879    34%  
+   Number of unique control sets:        24
 
 IO Utilization: 
  Number of IOs:                         201
@@ -974,6 +1280,7 @@ IO Utilization:
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     32     3%  
     Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -993,11 +1300,20 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-----------------------------------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                                             | Load  |
------------------------------------+-----------------------------------------------------------------------------------+-------+
-SPLB_Clk                           | NONE(mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rearbitrate_i)| 343   |
------------------------------------+-----------------------------------------------------------------------------------+-------+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                                                                                                                                                             | Clock buffer(FF name)                                                                             | Load  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-------+
+SPLB_Clk                                                                                                                                                                                                                 | NONE(mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/data_timeout)                    | 348   |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/processor_enable                                                                                                                                            | BUFG                                                                                              | 49    |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch                                                                                                                                    | NONE(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_7)                     | 8     |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd1                                                                                                                              | NONE(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/mem_write)      | 2     |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2                                                                                                                              | NONE(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/alu_op_1)       | 5     |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state[1]_PWR_45_o_Mux_34_o(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/Mmux_state[1]_PWR_45_o_Mux_34_o11:O)| NONE(*)(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch)    | 1     |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/Mmux_GND_49_o_PWR_48_o_MUX_180_o1:O) | NONE(*)(mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op0)| 4     |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+-------+
+(*) These 2 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1008,8 +1324,8 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 6.341ns (Maximum Frequency: 157.704MHz)
-   Minimum input arrival time before clock: 3.298ns
+   Minimum period: 19.966ns (Maximum Frequency: 50.086MHz)
+   Minimum input arrival time before clock: 2.803ns
    Maximum output required time after clock: 0.633ns
    Maximum combinational path delay: No path found
 
@@ -1019,51 +1335,105 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'SPLB_Clk'
-  Clock period: 6.341ns (frequency: 157.704MHz)
-  Total number of paths / destination ports: 2930 / 684
+  Clock period: 19.966ns (frequency: 50.086MHz)
+  Total number of paths / destination ports: 725713 / 787
 -------------------------------------------------------------------------
-Delay:               6.341ns (Levels of Logic = 4)
-  Source:            mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_6 (FF)
-  Destination:       mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1 (FF)
+Delay:               19.966ns (Levels of Logic = 12)
+  Source:            mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (RAM)
+  Destination:       mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5 (RAM)
   Source Clock:      SPLB_Clk rising
   Destination Clock: SPLB_Clk rising
 
-  Data Path: mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_6 to mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_1
+  Data Path: mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM to mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS5
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.633   1.299  mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_6 (mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/plb_abus_reg_6)
-     LUT6:I0->O            4   0.373   1.182  mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].GEN_PLB_SHARED.MEM_SELECT_I/Mmux_CS114 (mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].GEN_PLB_SHARED.MEM_SELECT_I/Mmux_CS113)
-     LUT4:I0->O            6   0.364   0.876  mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].GEN_PLB_SHARED.MEM_SELECT_I/Mmux_CS115 (mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/address_match_early)
-     LUT5:I4->O            2   0.373   0.726  mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].PER_CE_GEN[4].MULTIPLE_CES_THIS_CS_GEN.CE_I/Mmux_CS11 (mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/ce_expnd_i<4>)
-     LUT4:I3->O            1   0.373   0.000  mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4_rstpot (mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4_rstpot)
-     FD:D                      0.142          mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/I_DECODER/rdce_out_i_4
+     RAMB8BWER:CLKBRDCLK->DOBDO2   52   2.950   2.438  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/INST_MEM/Mram_MEM (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/instr_data<18>)
+     LUT5:I0->O            8   0.373   0.944  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_alu_in_y1101_1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_alu_in_y1101)
+     LUT4:I3->O            3   0.373   1.054  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_alu_in_y271 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_in_y<4>)
+     LUT6:I3->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[2].NEXT_ALU1B/FULLADDER_ALU/COUT1_SW1 (N44)
+     LUT5:I4->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[4].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<4>)
+     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[6].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<6>)
+     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[8].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<8>)
+     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[10].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<10>)
+     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[12].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<12>)
+     LUT6:I5->O            3   0.373   0.766  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[14].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<14>)
+     LUT6:I5->O            7   0.373   0.910  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[16].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<16>)
+     LUT6:I5->O           11   0.373   1.039  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/GEN_ALU[18].NEXT_ALU1B/FULLADDER_ALU/COUT1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu1/COUT_AUX<18>)
+     LUT5:I4->O            2   0.373   0.725  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/Mmux_reg_write_data142 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/reg_write_data<21>)
+     RAM32M:DIB1               0.152          mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/regfile/Mram_REGS14
     ----------------------------------------
-    Total                      6.341ns (2.258ns logic, 4.083ns route)
-                                       (35.6% logic, 64.4% route)
+    Total                     19.966ns (7.578ns logic, 12.388ns route)
+                                       (38.0% logic, 62.0% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch'
+  Clock period: 4.012ns (frequency: 249.252MHz)
+  Total number of paths / destination ports: 36 / 8
+-------------------------------------------------------------------------
+Delay:               4.012ns (Levels of Logic = 2)
+  Source:            mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_2 (FF)
+  Destination:       mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_7 (FF)
+  Source Clock:      mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch rising
+  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch rising
+
+  Data Path: mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_2 to mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_7
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               6   0.633   1.164  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_2 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_2)
+     LUT3:I0->O            2   0.373   1.327  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/pc_add_four/GEN_ADDER[3].NEXT_FA/Mxor_R_xo<0>11 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/pc_add_four/N24)
+     LUT6:I1->O            1   0.373   0.000  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/pc_add_four/GEN_ADDER[7].NEXT_FA/Mxor_R_xo<0>1 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_ADD<7>)
+     FD:D                      0.142          mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/PC_7
+    ----------------------------------------
+    Total                      4.012ns (1.521ns logic, 2.491ns route)
+                                       (37.9% logic, 62.1% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o'
+  Clock period: 5.324ns (frequency: 187.839MHz)
+  Total number of paths / destination ports: 7 / 4
+-------------------------------------------------------------------------
+Delay:               5.324ns (Levels of Logic = 2)
+  Source:            mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2 (LATCH)
+  Destination:       mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2 (LATCH)
+  Source Clock:      mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o falling
+  Destination Clock: mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o falling
+
+  Data Path: mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2 to mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LD:G->Q             281   0.748   3.036  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2)
+     LUT5:I0->O            1   0.373   0.682  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/Mmux_alu_input_Op0_alu_input_Op0_MUX_194_o2_SW0 (N16)
+     LUT6:I5->O            1   0.373   0.000  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/Mmux_alu_input_Op0_alu_input_Op0_MUX_194_o2 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op0_alu_input_Op0_MUX_194_o)
+     LD:D                      0.112          mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/alu_input_Op2
+    ----------------------------------------
+    Total                      5.324ns (1.606ns logic, 3.718ns route)
+                                       (30.2% logic, 69.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'SPLB_Clk'
-  Total number of paths / destination ports: 417 / 417
+  Total number of paths / destination ports: 391 / 391
 -------------------------------------------------------------------------
-Offset:              3.298ns (Levels of Logic = 1)
+Offset:              2.803ns (Levels of Logic = 1)
   Source:            SPLB_Rst (PAD)
-  Destination:       mips_multi_cycle_0/USER_LOGIC_I/slv_reg0_0 (FF)
+  Destination:       mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/bus_data_out_0 (FF)
   Destination Clock: SPLB_Clk rising
 
-  Data Path: SPLB_Rst to mips_multi_cycle_0/USER_LOGIC_I/slv_reg0_0
+  Data Path: SPLB_Rst to mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/bus_data_out_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT2:I0->O          112   0.373   2.245  mips_multi_cycle_0/SOFT_RESET_I/Reset2IP_Reset1 (mips_multi_cycle_0/rst_Bus2IP_Reset)
-     FDRE:R                    0.541          mips_multi_cycle_0/USER_LOGIC_I/slv_reg1_31
+     LUT4:I0->O           32   0.364   1.519  mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/_n0071_inv_011 (mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/_n0071_inv_0)
+     FDR:R                     0.541          mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/bus_data_out_31
     ----------------------------------------
-    Total                      3.298ns (1.053ns logic, 2.245ns route)
-                                       (31.9% logic, 68.1% route)
+    Total                      2.803ns (1.284ns logic, 1.519ns route)
+                                       (45.8% logic, 54.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'SPLB_Clk'
-  Total number of paths / destination ports: 44 / 44
+  Total number of paths / destination ports: 40 / 40
 -------------------------------------------------------------------------
 Offset:              0.633ns (Levels of Logic = 0)
   Source:            mips_multi_cycle_0/PLBV46_SLAVE_SINGLE_I/I_SLAVE_ATTACHMENT/sl_rddbus_i_0 (FF)
@@ -1085,24 +1455,82 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock SPLB_Clk
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+SPLB_Clk                                                                                               |   19.966|         |         |         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o|         |   16.352|         |         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd1            |    2.464|         |         |         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2            |         |   16.132|         |         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/processor_enable                          |         |    3.066|         |         |
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+SPLB_Clk                                                                                               |         |         |    5.723|         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o|         |         |    5.324|         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2            |         |         |    2.691|         |
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch
+-------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                     | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                         |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------------+---------+---------+---------+---------+
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch|    4.012|         |         |         |
+-------------------------------------------------------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state[1]_PWR_45_o_Mux_34_o
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-SPLB_Clk       |    6.341|         |         |         |
+SPLB_Clk       |         |         |    2.157|         |
 ---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd1
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SPLB_Clk       |    6.377|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+SPLB_Clk       |         |         |    4.962|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/TDT4255_COM/processor_enable
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+                                                                                                       | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                                                                                           |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
+SPLB_Clk                                                                                               |         |         |   29.505|         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/alu_ctrl/GND_49_o_PWR_48_o_MUX_180_o|         |         |   25.891|         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/pc_latch                  |         |         |    1.688|         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd1            |         |         |    1.541|         |
+mips_multi_cycle_0/USER_LOGIC_I/MIPS_MULTI_CYCLE/MIPS_SC_PROCESSOR/ctrl_unit/state_FSM_FFd2            |         |         |   25.671|         |
+-------------------------------------------------------------------------------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 10.00 secs
-Total CPU time to Xst completion: 9.52 secs
+Total REAL time to Xst completion: 30.00 secs
+Total CPU time to Xst completion: 30.51 secs
  
 --> 
 
-Total memory usage is 281248 kilobytes
+Total memory usage is 307360 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  231 (   0 filtered)
-Number of infos    :   19 (   0 filtered)
+Number of warnings :  388 (   0 filtered)
+Number of infos    :   48 (   0 filtered)
 

@@ -78,35 +78,35 @@
 
 /******************************************************************/
 
-/* Definitions for driver MIPS_KULT */
-#define XPAR_MIPS_KULT_NUM_INSTANCES 1
+/* Definitions for driver MIPS_MULTI_CYCLE */
+#define XPAR_MIPS_MULTI_CYCLE_NUM_INSTANCES 1
 
-/* Definitions for peripheral MIPS_KULT_0 */
-#define XPAR_MIPS_KULT_0_DEVICE_ID 0
-#define XPAR_MIPS_KULT_0_BASEADDR 0x84418000
-#define XPAR_MIPS_KULT_0_HIGHADDR 0x8441BFFF
+/* Definitions for peripheral MIPS_MULTI_CYCLE_0 */
+#define XPAR_MIPS_MULTI_CYCLE_0_DEVICE_ID 0
+#define XPAR_MIPS_MULTI_CYCLE_0_BASEADDR 0x84418000
+#define XPAR_MIPS_MULTI_CYCLE_0_HIGHADDR 0x8441FFFF
 
 
 /******************************************************************/
 
 /* Definitions for bus frequencies */
-#define XPAR_CPU_DPLB_FREQ_HZ 66666667
-#define XPAR_CPU_IPLB_FREQ_HZ 66666667
+#define XPAR_CPU_DPLB_FREQ_HZ 25000000
+#define XPAR_CPU_IPLB_FREQ_HZ 25000000
 /******************************************************************/
 
 /* Canonical definitions for bus frequencies */
-#define XPAR_PROC_BUS_0_FREQ_HZ 66666667
+#define XPAR_PROC_BUS_0_FREQ_HZ 25000000
 /******************************************************************/
 
-#define XPAR_CPU_CORE_CLOCK_FREQ_HZ 66666667
-#define XPAR_MICROBLAZE_CORE_CLOCK_FREQ_HZ 66666667
+#define XPAR_CPU_CORE_CLOCK_FREQ_HZ 25000000
+#define XPAR_MICROBLAZE_CORE_CLOCK_FREQ_HZ 25000000
 
 /******************************************************************/
 
 
 /* Definitions for peripheral MICROBLAZE_0 */
 #define XPAR_MICROBLAZE_0_SCO 0
-#define XPAR_MICROBLAZE_0_FREQ 66666667
+#define XPAR_MICROBLAZE_0_FREQ 25000000
 #define XPAR_MICROBLAZE_0_DATA_SIZE 32
 #define XPAR_MICROBLAZE_0_DYNAMIC_BUS_SIZING 1
 #define XPAR_MICROBLAZE_0_FAULT_TOLERANT 0
@@ -307,7 +307,7 @@
 #define XPAR_CPU_ID 0
 #define XPAR_MICROBLAZE_ID 0
 #define XPAR_MICROBLAZE_SCO 0
-#define XPAR_MICROBLAZE_FREQ 66666667
+#define XPAR_MICROBLAZE_FREQ 25000000
 #define XPAR_MICROBLAZE_DATA_SIZE 32
 #define XPAR_MICROBLAZE_DYNAMIC_BUS_SIZING 1
 #define XPAR_MICROBLAZE_FAULT_TOLERANT 0

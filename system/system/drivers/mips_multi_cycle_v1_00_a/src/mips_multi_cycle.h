@@ -1,8 +1,8 @@
 /*****************************************************************************
-* Filename:          M:\tdt4255\system\system/drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle.h
+* Filename:          C:\Users\runarbol\Desktop\tdt4255\system\system/drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle.h
 * Version:           1.00.a
 * Description:       mips_multi_cycle Driver Header File
-* Date:              Mon Sep 30 08:37:47 2013 (by Create and Import Peripheral Wizard)
+* Date:              Thu Oct 03 11:25:25 2013 (by Create and Import Peripheral Wizard)
 *****************************************************************************/
 
 #ifndef MIPS_MULTI_CYCLE_H
@@ -31,19 +31,6 @@
 #define MIPS_MULTI_CYCLE_SLV_REG2_OFFSET (MIPS_MULTI_CYCLE_USER_SLV_SPACE_OFFSET + 0x00000008)
 #define MIPS_MULTI_CYCLE_SLV_REG3_OFFSET (MIPS_MULTI_CYCLE_USER_SLV_SPACE_OFFSET + 0x0000000C)
 #define MIPS_MULTI_CYCLE_SLV_REG4_OFFSET (MIPS_MULTI_CYCLE_USER_SLV_SPACE_OFFSET + 0x00000010)
-
-/**
- * Software Reset Space Register Offsets
- * -- RST : software reset register
- */
-#define MIPS_MULTI_CYCLE_SOFT_RST_SPACE_OFFSET (0x00000100)
-#define MIPS_MULTI_CYCLE_RST_REG_OFFSET (MIPS_MULTI_CYCLE_SOFT_RST_SPACE_OFFSET + 0x00000000)
-
-/**
- * Software Reset Masks
- * -- SOFT_RESET : software reset
- */
-#define SOFT_RESET (0x0000000A)
 
 /**************************** Type Definitions *****************************/
 
@@ -128,22 +115,6 @@
  	Xil_In32((BaseAddress) + (MIPS_MULTI_CYCLE_SLV_REG3_OFFSET) + (RegOffset))
 #define MIPS_MULTI_CYCLE_mReadSlaveReg4(BaseAddress, RegOffset) \
  	Xil_In32((BaseAddress) + (MIPS_MULTI_CYCLE_SLV_REG4_OFFSET) + (RegOffset))
-
-/**
- *
- * Reset MIPS_MULTI_CYCLE via software.
- *
- * @param   BaseAddress is the base address of the MIPS_MULTI_CYCLE device.
- *
- * @return  None.
- *
- * @note
- * C-style signature:
- * 	void MIPS_MULTI_CYCLE_mReset(Xuint32 BaseAddress)
- *
- */
-#define MIPS_MULTI_CYCLE_mReset(BaseAddress) \
- 	Xil_Out32((BaseAddress)+(MIPS_MULTI_CYCLE_RST_REG_OFFSET), SOFT_RESET)
 
 /************************** Function Prototypes ****************************/
 

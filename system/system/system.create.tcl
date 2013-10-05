@@ -1,4 +1,4 @@
-cd M:/tdt4255/system/system
+cd C:/Users/runarbol/Desktop/tdt4255/system/system
 if { [xload new system.xmp] != 0 } {
   exit -1
 }

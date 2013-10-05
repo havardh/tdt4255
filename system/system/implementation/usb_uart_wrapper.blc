@@ -6,8 +6,8 @@ xc6slx16csg324-2 -intstyle silent -i -sd .. usb_uart_wrapper.ngc
 ../usb_uart_wrapper.ngc
 
 Reading NGO file
-"M:/tdt4255/system/system/implementation/usb_uart_wrapper/usb_uart_wrapper.ngc"
-...
+"C:/Users/runarbol/Desktop/tdt4255/system/system/implementation/usb_uart_wrapper
+/usb_uart_wrapper.ngc" ...
 
 Partition Implementation Status
 -------------------------------
@@ -20,7 +20,7 @@ NGCBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 139408 kilobytes
+Total memory usage is 139472 kilobytes
 
 Writing NGC file "../usb_uart_wrapper.ngc" ...
 Total REAL time to NGCBUILD completion:  2 sec

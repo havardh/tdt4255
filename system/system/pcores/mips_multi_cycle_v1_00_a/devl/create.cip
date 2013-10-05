@@ -1,6 +1,7 @@
 CipWiz::SetVersion "12.4";
 CipWiz::SetFlow "CREATE";
-CipWiz::SetParameter "ProjectDir" "M:\tdt4255\system\system";
+CipWiz::SetParameter "ProjectDir" "C:\Users\runarbol\Desktop\tdt4255\system\system";
+CipWiz::SetParameter "IpLongDescription" "Multicyle MIPS core implemented as exercise 1 in TDT4255.";
 CipWiz::SetParameter "IpName" "mips_multi_cycle";
 CipWiz::SetParameter "IpVersion" "1.00.a";
 CipWiz::SetParameter "HdlLanguage" "1";
@@ -11,7 +12,7 @@ CipWiz::SetParameter "IncludeSoftwareDriverFile" "TRUE";
 CipWiz::SetParameter "IncludeBFMSimulationFile" "FALSE";
 CipWiz::SetParameter "IncludeSlaveAttachmentSupport" "TRUE";
 CipWiz::SetParameter "IncludeMasterAttachmentSupport" "FALSE";
-CipWiz::SetParameter "IncludeMirResetRegister" "TRUE";
+CipWiz::SetParameter "IncludeMirResetRegister" "FALSE";
 CipWiz::SetParameter "IncludeFifoSupport" "FALSE";
 CipWiz::SetParameter "IncludeInterruptSupport" "FALSE";
 CipWiz::SetParameter "IncludeDMASupport" "FALSE";

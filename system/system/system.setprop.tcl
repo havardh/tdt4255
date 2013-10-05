@@ -1,9 +1,6 @@
-cd C:/Users/runarbol/Desktop/tdt4255-new/system/system
+cd C:/Users/runarbol/Desktop/tdt4255/system/system
 if { [ catch { xload xmp system.xmp } result ] } {
   exit 10
-}
-if { [xset hier top] != 0 } {
-  exit -1
 }
 set bMisMatch false
 set xpsArch [xget arch]

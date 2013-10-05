@@ -26,7 +26,7 @@
 -- Filename:          user_logic.vhd
 -- Version:           1.00.a
 -- Description:       User logic.
--- Date:              Mon Sep 30 08:37:36 2013 (by Create and Import Peripheral Wizard)
+-- Date:              Thu Oct 03 11:25:22 2013 (by Create and Import Peripheral Wizard)
 -- VHDL Standard:     VHDL'93
 ------------------------------------------------------------------------------
 -- Naming Conventions:
@@ -128,14 +128,16 @@ end entity user_logic;
 architecture IMP of user_logic is
 
   --USER signal declarations added here, as needed for user logic
-	component toplevel
-		port (clk            : in STD_LOGIC;
-            reset          : in STD_LOGIC;
-            command        : in  STD_LOGIC_VECTOR (0 to 31);
-            bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
-            bus_data_in    : in  STD_LOGIC_VECTOR (0 to 31);
-            status         : out  STD_LOGIC_VECTOR (0 to 31);
-            bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31));
+	component toplevel is
+		port(
+			clk            : in STD_LOGIC;
+			reset          : in STD_LOGIC;
+			command        : in  STD_LOGIC_VECTOR (0 to 31);
+			bus_address_in : in  STD_LOGIC_VECTOR (0 to 31);
+			bus_data_in    : in  STD_LOGIC_VECTOR (0 to 31);
+			status         : out  STD_LOGIC_VECTOR (0 to 31);
+			bus_data_out   : out  STD_LOGIC_VECTOR (0 to 31)
+		); 
 	end component;
 
   ------------------------------------------
@@ -155,9 +157,7 @@ architecture IMP of user_logic is
 begin
 
   --USER logic implementation added here
-  
-	
-	tdt4255_toplevel: toplevel port map (
+	MIPS_MULTI_CYCLE : toplevel port map (
 		clk => Bus2IP_Clk,
 		reset => Bus2IP_Reset,
 		command => slv_reg0,
@@ -166,7 +166,6 @@ begin
 		status => slv_reg3,
 		bus_data_out => slv_reg4
 	);
-  
 
   ------------------------------------------
   -- Example code to read/write user logic slave model s/w accessible registers
@@ -194,7 +193,7 @@ begin
   -- implement slave model software accessible register(s)
   SLAVE_REG_WRITE_PROC : process( Bus2IP_Clk ) is
   begin
-	
+
     if Bus2IP_Clk'event and Bus2IP_Clk = '1' then
       if Bus2IP_Reset = '1' then
         slv_reg0 <= (others => '0');
@@ -228,7 +227,7 @@ begin
   end process SLAVE_REG_WRITE_PROC;
 
   -- implement slave model software accessible register(s) read mux
-  SLAVE_REG_READ_PROC : process( slv_reg_read_sel, slv_reg3, slv_reg4 ) is
+  SLAVE_REG_READ_PROC : process( slv_reg_read_sel, slv_reg0, slv_reg1, slv_reg2, slv_reg3, slv_reg4 ) is
   begin
 
     case slv_reg_read_sel is
