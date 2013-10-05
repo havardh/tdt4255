@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-10-01T12:08:09</DateModified>
+  <DateModified>2013-10-05T15:25:39</DateModified>
   <ModuleName>mips_multi_cycle</ModuleName>
-  <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav/iseconfig/mips_multi_cycle.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/runarbol/Desktop/tdt4255-new/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav\</ImplementationReportsDirectory>
-  <DateInitialized>2013-09-30T08:42:01</DateInitialized>
+  <SummaryTimeStamp>2013-10-03T11:49:22</SummaryTimeStamp>
+  <SavedFilePath>C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav/iseconfig/mips_multi_cycle.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/devl/projnav\</ImplementationReportsDirectory>
+  <DateInitialized>2013-10-03T11:36:01</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>
  <body>

@@ -2,10 +2,10 @@ Release 12.4 ngdbuild M.81d (nt64)
 Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
 
 Command Line: C:\Xilinx\12.4\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
--intstyle ise -dd _ngo -sd ../hardware -nt timestamp -uc system/data/system.ucf
--bm edkBmmFile.bmm -p xc6slx16-csg324-2 system.ngc system.ngd
+-intstyle ise -dd _ngo -nt timestamp -uc system/data/system.ucf -bm
+edkBmmFile.bmm -p xc6slx16-csg324-2 system.ngc system.ngd
 
-Reading NGO file "C:/Users/runarbol/Desktop/tdt4255-new/system/system.ngc" ...
+Reading NGO file "C:/Users/runarbol/Desktop/tdt4255/system/system.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -24,7 +24,7 @@ INFO:ConstraintSystem:178 - TNM 'sys_clk_pin', used in period specification
    groups and period specifications were generated at the PLL_ADV output(s): 
    CLKOUT0: <TIMESPEC TS_clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0 =
    PERIOD "clock_generator_0_clock_generator_0_SIG_PLL0_CLKOUT0" TS_sys_clk_pin
-   HIGH 50%>
+   * 0.375 HIGH 50%>
 
 Done...
 
@@ -51,7 +51,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   3
 
-Total memory usage is 161164 kilobytes
+Total memory usage is 162764 kilobytes
 
 Writing NGD file "system.ngd" ...
 Total REAL time to NGDBUILD completion:  6 sec

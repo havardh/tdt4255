@@ -126,7 +126,7 @@ begin
   mips_multi_cycle_0 : mips_multi_cycle
     generic map (
       C_BASEADDR => X"84418000",
-      C_HIGHADDR => X"8441bfff",
+      C_HIGHADDR => X"8441ffff",
       C_SPLB_AWIDTH => 32,
       C_SPLB_DWIDTH => 32,
       C_SPLB_NUM_MASTERS => 2,
@@ -135,8 +135,8 @@ begin
       C_SPLB_P2P => 0,
       C_SPLB_SUPPORT_BURSTS => 0,
       C_SPLB_SMALLEST_MASTER => 32,
-      C_SPLB_CLK_PERIOD_PS => 15000,
-      C_INCLUDE_DPHASE_TIMER => 0,
+      C_SPLB_CLK_PERIOD_PS => 40000,
+      C_INCLUDE_DPHASE_TIMER => 1,
       C_FAMILY => "spartan6"
     )
     port map (

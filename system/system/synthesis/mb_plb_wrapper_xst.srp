@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "mb_plb_wrapper_xst.prj"
-Verilog Include Directory          : {"M:\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -292,7 +292,7 @@ Parsing architecture <implementation> of entity <plb_p2p>.
 Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plb_v46_v1_05_a/hdl/vhdl/plb_v46.vhd" into library plb_v46_v1_05_a
 Parsing entity <plb_v46>.
 Parsing architecture <simulation> of entity <plb_v46>.
-Parsing VHDL file "\tdt4255\system\system\synthesis\../hdl/mb_plb_wrapper.vhd" into library work
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\synthesis\../hdl/mb_plb_wrapper.vhd" into library work
 Parsing entity <mb_plb_wrapper>.
 Parsing architecture <STRUCTURE> of entity <mb_plb_wrapper>.
 
@@ -374,7 +374,7 @@ WARNING:Xst:2972 - "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/plb
 =========================================================================
 
 Synthesizing Unit <mb_plb_wrapper>.
-    Related source file is "/tdt4255/system/system/hdl/mb_plb_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255/system/system/hdl/mb_plb_wrapper.vhd".
     Summary:
 	no macro.
 Unit <mb_plb_wrapper> synthesized.
@@ -1061,12 +1061,12 @@ PLB_Clk        |    5.952|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 24.48 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 11.06 secs
  
 --> 
 
-Total memory usage is 286624 kilobytes
+Total memory usage is 286688 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   24 (   0 filtered)

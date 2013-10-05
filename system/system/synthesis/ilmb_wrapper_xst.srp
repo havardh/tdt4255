@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "ilmb_wrapper_xst.prj"
-Verilog Include Directory          : {"M:\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -59,7 +59,7 @@ Cores Search Directories           : {../implementation/ilmb_wrapper}
 Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/lmb_v10_v1_00_a/hdl/vhdl/lmb_v10.vhd" into library lmb_v10_v1_00_a
 Parsing entity <lmb_v10>.
 Parsing architecture <IMP> of entity <lmb_v10>.
-Parsing VHDL file "\tdt4255\system\system\synthesis\../hdl/ilmb_wrapper.vhd" into library work
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\synthesis\../hdl/ilmb_wrapper.vhd" into library work
 Parsing entity <ilmb_wrapper>.
 Parsing architecture <STRUCTURE> of entity <ilmb_wrapper>.
 
@@ -78,7 +78,7 @@ WARNING:HDLCompiler:89 - "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcor
 =========================================================================
 
 Synthesizing Unit <ilmb_wrapper>.
-    Related source file is "/tdt4255/system/system/hdl/ilmb_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255/system/system/hdl/ilmb_wrapper.vhd".
     Summary:
 	no macro.
 Unit <ilmb_wrapper> synthesized.
@@ -317,12 +317,12 @@ LMB_Clk        |    2.202|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 4.26 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.94 secs
  
 --> 
 
-Total memory usage is 265056 kilobytes
+Total memory usage is 264480 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    2 (   0 filtered)

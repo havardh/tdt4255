@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "usb_uart_wrapper_xst.prj"
-Verilog Include Directory          : {"M:\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -432,7 +432,7 @@ Parsing architecture <imp> of entity <uartlite_core>.
 Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/xps_uartlite_v1_01_a/hdl/vhdl/xps_uartlite.vhd" into library xps_uartlite_v1_01_a
 Parsing entity <xps_uartlite>.
 Parsing architecture <imp> of entity <xps_uartlite>.
-Parsing VHDL file "\tdt4255\system\system\synthesis\../hdl/usb_uart_wrapper.vhd" into library work
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\synthesis\../hdl/usb_uart_wrapper.vhd" into library work
 Parsing entity <usb_uart_wrapper>.
 Parsing architecture <STRUCTURE> of entity <usb_uart_wrapper>.
 
@@ -500,7 +500,7 @@ WARNING:HDLCompiler:634 - "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pco
 =========================================================================
 
 Synthesizing Unit <usb_uart_wrapper>.
-    Related source file is "/tdt4255/system/system/hdl/usb_uart_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255/system/system/hdl/usb_uart_wrapper.vhd".
     Summary:
 	no macro.
 Unit <usb_uart_wrapper> synthesized.
@@ -511,7 +511,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/p
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
 WARNING:Xst:37 - Detected unknown constraint/property "sigis". This constraint/property is not supported by the current software release and will be ignored.
         C_FAMILY = "spartan6"
-        C_SPLB_CLK_FREQ_HZ = 66666667
+        C_SPLB_CLK_FREQ_HZ = 25000000
         C_BASEADDR = "10000100000000000000000000000000"
         C_HIGHADDR = "10000100000000001111111111111111"
         C_SPLB_AWIDTH = 32
@@ -547,7 +547,7 @@ Unit <xps_uartlite> synthesized.
 Synthesizing Unit <uartlite_core>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/xps_uartlite_v1_01_a/hdl/vhdl/uartlite_core.vhd".
         C_DATA_BITS = 8
-        C_SPLB_CLK_FREQ_HZ = 66666667
+        C_SPLB_CLK_FREQ_HZ = 25000000
         C_BAUDRATE = 115200
         C_USE_PARITY = 0
         C_ODD_PARITY = 0
@@ -572,13 +572,13 @@ Unit <uartlite_core> synthesized.
 
 Synthesizing Unit <baudrate>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/xps_uartlite_v1_01_a/hdl/vhdl/baudrate.vhd".
-        C_RATIO = 36
+        C_RATIO = 14
     Found 1-bit register for signal <EN_16x_Baud>.
-    Found 6-bit register for signal <count>.
-    Found 6-bit subtractor for signal <GND_11_o_GND_11_o_sub_2_OUT<5:0>> created at line 162.
+    Found 4-bit register for signal <count>.
+    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_2_OUT<3:0>> created at line 162.
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred   7 D-type flip-flop(s).
+	inferred   5 D-type flip-flop(s).
 Unit <baudrate> synthesized.
 
 Synthesizing Unit <uartlite_rx>.
@@ -791,11 +791,11 @@ Synthesizing Unit <plb_slave_attachment>.
         C_FAMILY = "spartan6"
 WARNING:Xst:647 - Input <PLB_UABus<0:31>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 INFO:Xst:3010 - "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd" line 1201: Output port <Count_Out> of the instance <INCLUDE_DATA_PHASE_WDT.I_DPTO_COUNTER> is unconnected or connected to loadless signal.
-    Register <wr_clear_sl_busy> equivalent to <sl_wrdack_i> has been removed
-    Register <sl_wrcomp_i> equivalent to <sl_wrdack_i> has been removed
-    Register <set_sl_busy> equivalent to <sl_addrack_i> has been removed
     Register <sl_rdcomp_i> equivalent to <rd_clear_sl_busy> has been removed
     Register <sl_rddack_i> equivalent to <rd_clear_sl_busy> has been removed
+    Register <set_sl_busy> equivalent to <sl_addrack_i> has been removed
+    Register <wr_clear_sl_busy> equivalent to <sl_wrdack_i> has been removed
+    Register <sl_wrcomp_i> equivalent to <sl_wrdack_i> has been removed
     Found 32-bit register for signal <plb_wrdbus_reg>.
     Found 1-bit register for signal <plb_masterid_reg>.
     Found 1-bit register for signal <plb_rnw_reg>.
@@ -936,15 +936,14 @@ HDL Synthesis Report
 Macro Statistics
 # Adders/Subtractors                                   : 3
  3-bit subtractor                                      : 1
- 6-bit subtractor                                      : 1
+ 4-bit subtractor                                      : 1
  9-bit subtractor                                      : 1
 # Registers                                            : 150
  1-bit register                                        : 100
  2-bit register                                        : 3
  3-bit register                                        : 2
  32-bit register                                       : 5
- 4-bit register                                        : 6
- 6-bit register                                        : 1
+ 4-bit register                                        : 7
  8-bit register                                        : 32
  9-bit register                                        : 1
 # Comparators                                          : 2
@@ -999,7 +998,7 @@ Macro Statistics
  9-bit subtractor                                      : 1
 # Counters                                             : 2
  3-bit down counter                                    : 1
- 6-bit down counter                                    : 1
+ 4-bit down counter                                    : 1
 # Registers                                            : 278
  Flip-Flops                                            : 278
 # Shift Registers                                      : 18
@@ -1162,8 +1161,8 @@ Unit <usb_uart_wrapper> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 144
- Flip-Flops                                            : 144
+# Registers                                            : 142
+ Flip-Flops                                            : 142
 # Shift Registers                                      : 1
  16-bit shift register                                 : 1
 
@@ -1188,22 +1187,22 @@ Top Level Output File Name         : usb_uart_wrapper.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 136
+# BELS                             : 133
 #      GND                         : 1
 #      INV                         : 2
-#      LUT2                        : 20
+#      LUT2                        : 18
 #      LUT3                        : 21
-#      LUT4                        : 18
-#      LUT5                        : 25
-#      LUT6                        : 27
+#      LUT4                        : 20
+#      LUT5                        : 24
+#      LUT6                        : 25
 #      MUXCY_L                     : 10
 #      MUXF7                       : 1
 #      VCC                         : 1
 #      XORCY                       : 10
-# FlipFlops/Latches                : 145
-#      FD                          : 23
+# FlipFlops/Latches                : 143
+#      FD                          : 24
 #      FDE                         : 1
-#      FDR                         : 84
+#      FDR                         : 81
 #      FDRE                        : 20
 #      FDS                         : 13
 #      FDSE                        : 4
@@ -1217,18 +1216,18 @@ Selected Device : 6slx16csg324-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             145  out of  18224     0%  
- Number of Slice LUTs:                  132  out of   9112     1%  
-    Number used as Logic:               113  out of   9112     1%  
+ Number of Slice Registers:             143  out of  18224     0%  
+ Number of Slice LUTs:                  129  out of   9112     1%  
+    Number used as Logic:               110  out of   9112     1%  
     Number used as Memory:               19  out of   2176     0%  
        Number used as SRL:               19
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    194
-   Number with an unused Flip Flop:      49  out of    194    25%  
-   Number with an unused LUT:            62  out of    194    31%  
-   Number of fully used LUT-FF pairs:    83  out of    194    42%  
-   Number of unique control sets:        17
+ Number of LUT Flip Flop pairs used:    191
+   Number with an unused Flip Flop:      48  out of    191    25%  
+   Number with an unused LUT:            62  out of    191    32%  
+   Number of fully used LUT-FF pairs:    81  out of    191    42%  
+   Number of unique control sets:        16
 
 IO Utilization: 
  Number of IOs:                         204
@@ -1257,7 +1256,7 @@ Clock Information:
 -----------------------------------+--------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                  | Load  |
 -----------------------------------+--------------------------------------------------------+-------+
-SPLB_Clk                           | NONE(USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/data_timeout)| 164   |
+SPLB_Clk                           | NONE(USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/data_timeout)| 162   |
 -----------------------------------+--------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -1281,7 +1280,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'SPLB_Clk'
   Clock period: 5.423ns (frequency: 184.400MHz)
-  Total number of paths / destination ports: 1459 / 276
+  Total number of paths / destination ports: 1424 / 271
 -------------------------------------------------------------------------
 Delay:               5.423ns (Levels of Logic = 3)
   Source:            USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4 (FF)
@@ -1296,7 +1295,7 @@ Delay:               5.423ns (Levels of Logic = 3)
      FDR:C->Q              1   0.633   1.283  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/plb_abus_reg_4)
      LUT5:I0->O            5   0.373   1.442  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].GEN_PLB_SHARED.MEM_SELECT_I/Mmux_CS15 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].GEN_PLB_SHARED.MEM_SELECT_I/Mmux_CS14)
      LUT5:I0->O            4   0.373   0.804  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/I_DECODER/MEM_DECODE_GEN[0].GEN_PLB_SHARED.MEM_SELECT_I/Mmux_CS16 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/address_match_early)
-     LUT6:I5->O            1   0.373   0.000  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Mmux_GEN_FOR_SHARED.addr_cntl_ns_GND_30_o_MUX_216_o11 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/GEN_FOR_SHARED.addr_cntl_ns_GND_30_o_MUX_216_o)
+     LUT6:I5->O            1   0.373   0.000  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Mmux_GEN_FOR_SHARED.addr_cntl_ns_GND_30_o_MUX_210_o11 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/GEN_FOR_SHARED.addr_cntl_ns_GND_30_o_MUX_210_o)
      FD:D                      0.142          USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/GEN_FOR_SHARED.addr_cntl_cs
     ----------------------------------------
     Total                      5.423ns (1.894ns logic, 3.529ns route)
@@ -1315,7 +1314,7 @@ Offset:              2.722ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT3:I0->O            8   0.373   1.545  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Bus_Reset_clear_sl_busy_OR_90_o1 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Bus_Reset_clear_sl_busy_OR_90_o)
+     LUT3:I0->O            8   0.373   1.545  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Bus_Reset_clear_sl_busy_OR_85_o1 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Bus_Reset_clear_sl_busy_OR_85_o)
      LUT5:I0->O            1   0.373   0.000  USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/Mmux_sl_mbusy_i[0]_GND_30_o_mux_29_OUT11 (USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/sl_mbusy_i[0]_GND_30_o_mux_29_OUT<1>)
      FDR:D                     0.142          USB_UART/PLBV46_I/I_SLAVE_ATTACHMENT/sl_mbusy_i_0
     ----------------------------------------
@@ -1356,12 +1355,12 @@ SPLB_Clk       |    5.423|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 23.00 secs
-Total CPU time to Xst completion: 23.73 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 8.60 secs
  
 --> 
 
-Total memory usage is 287840 kilobytes
+Total memory usage is 285856 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  156 (   0 filtered)

@@ -27,7 +27,7 @@
  * in XPS.
  *
  * Your XPS project directory is at:
- *    \\samba.idi.ntnu.no\runarbol\tdt4255\system\system\
+ *    C:\Users\runarbol\Desktop\tdt4255\system\system\
  */
 
 

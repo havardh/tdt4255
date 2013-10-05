@@ -29,7 +29,7 @@ TABLE OF CONTENTS
 ---- Source Parameters
 Input Format                       : MIXED
 Input File Name                    : "microblaze_0_wrapper_xst.prj"
-Verilog Include Directory          : {"M:\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
+Verilog Include Directory          : {"C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\" "C:\Xilinx\12.4\ISE_DS\EDK\hw\XilinxProcessorIPLib\pcores\" }
 
 ---- Target Parameters
 Target Device                      : xc6slx16csg324-2
@@ -335,7 +335,7 @@ Parsing architecture <IMP> of entity <mmu>.
 Parsing VHDL file "C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/microblaze_v8_00_b/hdl/vhdl/microblaze.vhd" into library microblaze_v8_00_b
 Parsing entity <MicroBlaze>.
 Parsing architecture <IMP> of entity <microblaze>.
-Parsing VHDL file "\tdt4255\system\system\synthesis\../hdl/microblaze_0_wrapper.vhd" into library work
+Parsing VHDL file "\Users\runarbol\Desktop\tdt4255\system\system\synthesis\../hdl/microblaze_0_wrapper.vhd" into library work
 Parsing entity <microblaze_0_wrapper>.
 Parsing architecture <STRUCTURE> of entity <microblaze_0_wrapper>.
 
@@ -444,7 +444,7 @@ Elaborating entity <MMU> (architecture <IMP>) with generics from library <microb
 =========================================================================
 
 Synthesizing Unit <microblaze_0_wrapper>.
-    Related source file is "/tdt4255/system/system/hdl/microblaze_0_wrapper.vhd".
+    Related source file is "/users/runarbol/desktop/tdt4255/system/system/hdl/microblaze_0_wrapper.vhd".
     Summary:
 	no macro.
 Unit <microblaze_0_wrapper> synthesized.
@@ -452,7 +452,7 @@ Unit <microblaze_0_wrapper> synthesized.
 Synthesizing Unit <MicroBlaze>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/microblaze_v8_00_b/hdl/vhdl/microblaze.vhd".
         C_SCO = 0
-        C_FREQ = 66666667
+        C_FREQ = 25000000
         C_FAULT_TOLERANT = 0
         C_ECC_USE_CE_EXCEPTION = 0
         C_ENDIANNESS = 0
@@ -3154,12 +3154,12 @@ DCACHE_FSL_OUT_CLK|    9.015|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 144.00 secs
-Total CPU time to Xst completion: 143.80 secs
+Total REAL time to Xst completion: 47.00 secs
+Total CPU time to Xst completion: 47.61 secs
  
 --> 
 
-Total memory usage is 352224 kilobytes
+Total memory usage is 383136 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  824 (   0 filtered)

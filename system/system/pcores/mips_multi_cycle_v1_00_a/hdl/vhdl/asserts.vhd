@@ -1,24 +1,43 @@
+--
+-- Asserts is a package providing utility functions that eases the testing process
+--
+
+library std;
+use std.textio.all;
+
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_textio.all;
 
 package asserts is
-	procedure assertEqual(actual : std_logic_vector; expected : std_logic_vector; msg : string);
+    procedure assertEqual(actual : std_logic_vector; expected : std_logic_vector);
 end asserts;
 
 package body asserts is
-	function signalToString (v : std_logic_vector ) return string is
-	variable s : string ( 3 downto 1 );
-	variable r : string ( (v'left+1) downto (v'right+1) );
-	begin
-		for i in v'left downto v'right loop
-			s := std_logic'image(v(i));
-			r(i+1) := s(2);
-		end loop;
-		return r;
-	end signalToString;
 
-	procedure assertEqual (actual : std_logic_vector; expected : std_logic_vector; msg : string) is
-	begin
-        assert ( actual =  expected ) report "expected " & signalToString( actual ) & " to be equal to " & msg severity failure;
-	end assertEqual;
+    -- Print a report of actual and expected, and return a string that the assert itself will print
+    impure function printReport(actual : std_logic_vector; expected : std_logic_vector) return string is
+        variable outline : line;
+    begin
+        write(outline, string'("expected "));
+        
+        for i in actual'left downto actual'right loop
+            write(outline, actual(i));
+        end loop;
+
+        write(outline, string'(" to be equal to "));
+
+        -- not sure why, but we need to loop the constant interface backwards. (its just vhdl I guess)
+        for y in expected'right downto 0 loop
+            write(outline, expected(expected'right-y));
+        end loop;
+        writeline(output, outline);
+        return string'("failure");
+    end printReport;
+
+    -- Assert that two std logic vectors are equal
+    procedure assertEqual(actual : std_logic_vector; expected : std_logic_vector) is
+    begin
+        assert ( actual =  expected ) report printReport(actual, expected) severity warning;
+    end assertEqual;
 end ASSERTS;
