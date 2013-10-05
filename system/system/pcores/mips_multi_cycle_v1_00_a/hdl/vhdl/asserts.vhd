@@ -16,7 +16,7 @@ end asserts;
 package body asserts is
 
     -- Print a report of actual and expected, and return a string that the assert itself will print
-    function printReport(actual : std_logic_vector; expected : std_logic_vector) return string is
+    impure function printReport(actual : std_logic_vector; expected : std_logic_vector) return string is
         variable outline : line;
     begin
         write(outline, string'("expected "));
