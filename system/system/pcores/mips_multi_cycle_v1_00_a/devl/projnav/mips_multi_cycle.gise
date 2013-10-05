@@ -36,6 +36,8 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="toplevel.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="toplevel.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="toplevel.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_CMD" xil_pn:name="toplevel_tb.fdo"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_MODELSIM_LOG" xil_pn:name="vsim.wlf"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="work"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
@@ -43,8 +45,9 @@
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
     <transform xil_pn:end_ts="1380813639" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1380813639">
       <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1380813757" xil_pn:in_ck="-5912931048585592109" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1380813757">
+    <transform xil_pn:end_ts="1380979444" xil_pn:in_ck="5734348941815291805" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1380979444">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../hdl/vhdl/adder.vhd"/>
@@ -64,6 +67,7 @@
       <outfile xil_pn:name="../../hdl/vhdl/shiftleft.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/sign_extend.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/toplevel.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/toplevel_tb.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/user_logic.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd"/>
@@ -76,11 +80,11 @@
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1380813640" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8774242310017619531" xil_pn:start_ts="1380813640">
+    <transform xil_pn:end_ts="1380979444" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="4065487673068014710" xil_pn:start_ts="1380979444">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1380813640" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="8299669813291917513" xil_pn:start_ts="1380813640">
+    <transform xil_pn:end_ts="1380979444" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-5705608536093471500" xil_pn:start_ts="1380979444">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
@@ -88,7 +92,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1380813757" xil_pn:in_ck="-5912931048585592109" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1380813757">
+    <transform xil_pn:end_ts="1380979444" xil_pn:in_ck="5734348941815291805" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1380979444">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="../../hdl/vhdl/adder.vhd"/>
@@ -108,6 +112,7 @@
       <outfile xil_pn:name="../../hdl/vhdl/shiftleft.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/sign_extend.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/toplevel.vhd"/>
+      <outfile xil_pn:name="../../hdl/vhdl/toplevel_tb.vhd"/>
       <outfile xil_pn:name="../../hdl/vhdl/user_logic.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_address_decoder.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/plbv46_slave_single_v1_01_a/hdl/vhdl/plb_slave_attachment.vhd"/>
@@ -120,10 +125,11 @@
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/proc_common_pkg.vhd"/>
       <outfile xil_pn:name="C:/Xilinx/12.4/ISE_DS/EDK/hw/XilinxProcessorIPLib/pcores/proc_common_v3_00_a/hdl/vhdl/pselect_f.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1380813759" xil_pn:in_ck="-5912931048585592109" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="889151390353550919" xil_pn:start_ts="1380813757">
+    <transform xil_pn:end_ts="1380979445" xil_pn:in_ck="5734348941815291805" xil_pn:name="TRAN_MSimulateBehavioralModel" xil_pn:prop_ck="889151390353550919" xil_pn:start_ts="1380979444">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="processor_tb.fdo"/>
+      <outfile xil_pn:name="toplevel_tb.fdo"/>
+      <outfile xil_pn:name="vsim.wlf"/>
       <outfile xil_pn:name="work"/>
     </transform>
   </transforms>
