@@ -180,7 +180,7 @@ begin
         );
         
     -- Jump address concatinate
-    PC_JUMP <= PC_NEXT(31 downto 26) & imem_data_in(25 downto 0);
+    PC_JUMP <= PC_ADD(31 downto 26) & imem_data_in(25 downto 0);
     
     -- Brach adder
     pc_add_branch: adder 
@@ -188,7 +188,7 @@ begin
             N => 32
         )
         port map (
-            x   => PC_NEXT,
+            x   => PC_ADD,
             Y   => sign_extended,
             cin => '0',
             r   => PC_BRANCH
@@ -203,8 +203,9 @@ begin
     end process;
     
     -- PC_NEXT muxes combined into one process
-    pc_mux: process (jump, branch, flags.Zero, PC_JUMP, PC_BRANCH, PC_ADD)
+    pc_mux: process (clk, jump, branch, flags, PC_JUMP, PC_BRANCH, PC_ADD)
     begin
+		if falling_edge(clk) then
         if jump = '1' then
             PC_NEXT <= PC_JUMP;
         else
@@ -214,6 +215,7 @@ begin
                 PC_NEXT <= PC_ADD;
             end if;
         end if;
+		  end if;
     end process;
     
     -- Drive processor outputs only when the processor itself is enabled.
@@ -222,7 +224,7 @@ begin
     drive_output_signals: process(processor_enable, PC, alu_out, rt, mem_write_enable)
     begin
         if processor_enable = '1' then
-            imem_address <= PC(31 downto 0);
+            imem_address <= PC;
             dmem_address <= alu_out;
             dmem_address_wr <= alu_out;
             dmem_data_out <= rt;

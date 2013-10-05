@@ -41,31 +41,38 @@ architecture Behavioral of control_unit is
 begin
 
     -- State machine control process
-    control_unit_state_machine_control: process(clk, enable, next_state, reset)
+    control_unit_state_machine_control: process(clk, enable, reset)
     begin
         if rising_edge(clk) and enable = '1' then
             if reset = '1' then
                 state <= STATE_RESET;
-            else 
-                state <= next_state;
+            else 			
+					 if next_state = STATE_FETCH and state /= STATE_RESET then
+					    pc_latch <= '1';
+						 state <= next_state;
+					 else 
+						pc_latch <= '0';
+						 state <= next_state;
+					 end if;
             end if;
         end if;
     end process;
     
     -- Actual state machine
-    control_unit_state_machine: process(state)
+    control_unit_state_machine: process(state, opcode)
     begin
         case state is
-            when STATE_FETCH =>
+            when STATE_FETCH =>assert (false) report "state_fetch" severity note;
                 mem_write <= '0';
                 reg_write <= '0';
-                pc_latch <= '0';
+                --pc_latch <= '0';
                 
                 next_state <= STATE_EXECUTE;
                 
             when STATE_EXECUTE =>
                 case opcode is
                     when op_alu =>
+							   assert (false) report "op_alu" severity note;
                         reg_dst <= '1';
                         branch <= '0';
                         mem_read <= '0';
@@ -76,10 +83,11 @@ begin
                         reg_write <= '1';
                         jump <= '0';
                         
-                        pc_latch <= '1';
+                        --pc_latch <= '1';
                         next_state <= STATE_FETCH;
                     
                     when op_lw =>
+						  assert (false) report "op_lw" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '1';
@@ -93,6 +101,7 @@ begin
                         next_state <= STATE_STALL;
                     
                     when op_sw =>
+						  assert (false) report "op_sw" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '0';
@@ -106,6 +115,7 @@ begin
                         next_state <= STATE_STALL;
                         
                     when op_lui =>
+						  assert (false) report "op_lui" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '0';
@@ -116,10 +126,11 @@ begin
                         reg_write <= '1';
                         jump <= '0';
                         
-                        pc_latch <= '1';                        
+                        --pc_latch <= '1';                        
                         next_state <= STATE_FETCH;
                         
                     when op_beq =>
+						  assert (false) report "op_beq" severity note;
                         reg_dst <= '1';
                         branch <= '1';
                         mem_read <= '0';
@@ -130,10 +141,11 @@ begin
                         reg_write <= '0';
                         jump <= '0';
                         
-                        pc_latch <= '1';
+                        --pc_latch <= '1';
                         next_state <= STATE_FETCH;
                         
                     when op_j =>
+						  assert (false) report "op_jump" severity note;
                         reg_dst <= '1';
                         branch <= '0';
                         mem_read <= '0';
@@ -144,10 +156,11 @@ begin
                         reg_write <= '0';
                         jump <= '1';
                         
-                        pc_latch <= '1';
+                        --pc_latch <= '1';
                         next_state <= STATE_FETCH;
                     
                     when others =>
+						  assert (false) report "op_others" severity note;
                         reg_dst <= '0';
                         branch <= '0';
                         mem_read <= '0';
@@ -158,19 +171,19 @@ begin
                         reg_write <= '0';
                         jump <= '0';
                         
-                        pc_latch <= '1';
+                        --pc_latch <= '1';
                         next_state <= STATE_FETCH;                                
                 end case;
                 
-            when STATE_STALL => 
-                pc_latch <= '1';
+            when STATE_STALL => assert (false) report "state_stall" severity note;
+                --pc_latch <= '1';
                 next_state <= STATE_FETCH;
 
             -- Initial state, and state after reset has been toggled, do no harm and enter FETCH
             when STATE_RESET =>                
                 mem_write <= '0';
                 reg_write <= '0';
-                pc_latch <= '0';
+                --pc_latch <= '0';
                 next_state <= STATE_FETCH;
                 
         end case;
