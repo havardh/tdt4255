@@ -9,11 +9,6 @@
 # //  AND IS SUBJECT TO LICENSE TERMS.
 # //
 # vsim -do \{do \{processor_tb.fdo\}\} 
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 2
-#           Attempting to use alternate WLF file "./wlft5baxwf".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlft5baxwf
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Error: (vopt-19) Failed to access library 'work.{processor_tb' at "work.{processor_tb".
 # No such file or directory. (errno = ENOENT)
@@ -98,11 +93,6 @@ do processor_tb.fdo
 # -- Compiling entity processor_tb
 # -- Compiling architecture behavior of processor_tb
 # vsim -lib work -voptargs=\"+acc\" -t 1ps work.processor_tb 
-# ** Warning: (vsim-WLF-5000) WLF file currently in use: vsim.wlf
-#           File in use by:   Hostname:   ProcessID: 2
-#           Attempting to use alternate WLF file "./wlftc9i13x".
-# ** Warning: (vsim-WLF-5001) Could not open WLF file: vsim.wlf
-#           Using alternate file: ./wlftc9i13x
 # ** Note: (vsim-3812) Design is being optimized...
 # ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
 # Use vdir -l command to find such design units.
@@ -153,3 +143,405 @@ do processor_tb.fdo
 #    Time: 830 ns  Iteration: 0  Instance: /processor_tb
 # ** Note: Test Jump Register
 #    Time: 905 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Enable Toggle
+#    Time: 950 ns  Iteration: 0  Instance: /processor_tb
+# expected 00000000000011110000000000000000 to be equal to 00000000000000000000000000000000
+# ** Warning: failure
+#    Time: 965 ns  Iteration: 0  Instance: /processor_tb
+do processor_tb.fdo
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+# ** Warning: (vsim-31) Unable to unlink file "C:\Users\runarbol\Desktop\tdt4255\system\system\pcores\mips_multi_cycle_v1_00_a\devl\projnav\work/_opt4__lock".
+# No such file or directory. (errno = ENOENT)
+m SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extend
+# -- Compiling architecture behavioral of sign_extend
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity control_unit
+# -- Compiling architecture behavioral of control_unit
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behavioral of processor
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package textio
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling package asserts
+# -- Compiling package body asserts
+# -- Loading package asserts
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Loading package asserts
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.processor_tb 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.asserts(body)
+# Loading work.processor_tb(behavior)#1
+# Loading work.mips_constant_pkg
+# Loading work.processor(behavioral)#1
+# Loading work.control_unit(behavioral)#1
+# Loading work.alu_control(behavioral)#1
+# Loading work.sign_extend(behavioral)#1
+# Loading work.adder(behavioral)#1
+# Loading work.full_adder(behavioral)#1
+# Loading work.register_file(behavioral)#1
+# Loading work.alu(behavioral)#1
+# Loading work.alu_1bit(behavioral)#1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: Test Load Store
+#    Time: 100 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Load Word
+#    Time: 150 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Addition
+#    Time: 210 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Subtraction
+#    Time: 300 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test AND OR
+#    Time: 390 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test JUMP
+#    Time: 530 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Skip Branch
+#    Time: 555 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Forward Branch
+#    Time: 615 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Backward Branch
+#    Time: 655 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Set Less Than False
+#    Time: 695 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Set Less Than True
+#    Time: 760 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Jump And Link
+#    Time: 830 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Jump Register
+#    Time: 905 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Enable Toggle
+#    Time: 950 ns  Iteration: 0  Instance: /processor_tb
+# expected 00000000000011110000000000000000 to be equal to 00000000000000000000000000000000
+# ** Warning: failure
+#    Time: 965 ns  Iteration: 0  Instance: /processor_tb
+do processor_tb.fdo
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extend
+# -- Compiling architecture behavioral of sign_extend
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity control_unit
+# -- Compiling architecture behavioral of control_unit
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behavioral of processor
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package textio
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling package asserts
+# -- Compiling package body asserts
+# -- Loading package asserts
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Loading package asserts
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.processor_tb 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.asserts(body)
+# Loading work.processor_tb(behavior)#1
+# Loading work.mips_constant_pkg
+# Loading work.processor(behavioral)#1
+# Loading work.control_unit(behavioral)#1
+# Loading work.alu_control(behavioral)#1
+# Loading work.sign_extend(behavioral)#1
+# Loading work.adder(behavioral)#1
+# Loading work.full_adder(behavioral)#1
+# Loading work.register_file(behavioral)#1
+# Loading work.alu(behavioral)#1
+# Loading work.alu_1bit(behavioral)#1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: Test Load Store
+#    Time: 100 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Load Word
+#    Time: 150 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Addition
+#    Time: 210 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Subtraction
+#    Time: 300 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test AND OR
+#    Time: 390 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test JUMP
+#    Time: 530 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Skip Branch
+#    Time: 555 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Forward Branch
+#    Time: 615 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Backward Branch
+#    Time: 655 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Set Less Than False
+#    Time: 695 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Set Less Than True
+#    Time: 760 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Jump And Link
+#    Time: 830 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Jump Register
+#    Time: 905 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Enable Toggle
+#    Time: 950 ns  Iteration: 0  Instance: /processor_tb
+# expected 00000000000011110000000000000000 to be equal to 00000000000000000000000000000000
+# ** Warning: failure
+#    Time: 975 ns  Iteration: 0  Instance: /processor_tb
+do processor_tb.fdo
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity full_adder
+# -- Compiling architecture behavioral of full_adder
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling package mips_constant_pkg
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity alu_1bit
+# -- Compiling architecture behavioral of alu_1bit
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Compiling entity sign_extend
+# -- Compiling architecture behavioral of sign_extend
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity register_file
+# -- Compiling architecture behavioral of register_file
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity control_unit
+# -- Compiling architecture behavioral of control_unit
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu_control
+# -- Compiling architecture behavioral of alu_control
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity alu
+# -- Compiling architecture behavioral of alu
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity adder
+# -- Compiling architecture behavioral of adder
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mips_constant_pkg
+# -- Compiling entity processor
+# -- Compiling architecture behavioral of processor
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package textio
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_textio
+# -- Compiling package asserts
+# -- Compiling package body asserts
+# -- Loading package asserts
+# Model Technology ModelSim SE vcom 6.6d Compiler 2010.11 Nov  1 2010
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package textio
+# -- Loading package std_logic_textio
+# -- Loading package asserts
+# -- Compiling entity processor_tb
+# -- Compiling architecture behavior of processor_tb
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.processor_tb 
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Warning: (vopt-2009) At least one design unit was compiled with optimization level -O0 or -O1.
+# Use vdir -l command to find such design units.
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading std.textio(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.asserts(body)
+# Loading work.processor_tb(behavior)#1
+# Loading work.mips_constant_pkg
+# Loading work.processor(behavioral)#1
+# Loading work.control_unit(behavioral)#1
+# Loading work.alu_control(behavioral)#1
+# Loading work.sign_extend(behavioral)#1
+# Loading work.adder(behavioral)#1
+# Loading work.full_adder(behavioral)#1
+# Loading work.register_file(behavioral)#1
+# Loading work.alu(behavioral)#1
+# Loading work.alu_1bit(behavioral)#1
+# .main_pane.wave.interior.cs.body.pw.wf
+# .main_pane.structure.interior.cs.body.struct
+# .main_pane.objects.interior.cs.body.tree
+# ** Note: Test Load Store
+#    Time: 100 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Load Word
+#    Time: 150 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Addition
+#    Time: 210 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Subtraction
+#    Time: 300 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test AND OR
+#    Time: 390 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test JUMP
+#    Time: 530 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Skip Branch
+#    Time: 555 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Forward Branch
+#    Time: 615 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Backward Branch
+#    Time: 655 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Set Less Than False
+#    Time: 695 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Set Less Than True
+#    Time: 760 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Jump And Link
+#    Time: 830 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Jump Register
+#    Time: 905 ns  Iteration: 0  Instance: /processor_tb
+# ** Note: Test Enable Toggle
+#    Time: 950 ns  Iteration: 0  Instance: /processor_tb
+# expected 00000000000011110000000000000000 to be equal to 00000000000000000000000000000000
+# ** Warning: failure
+#    Time: 975 ns  Iteration: 0  Instance: /processor_tb
