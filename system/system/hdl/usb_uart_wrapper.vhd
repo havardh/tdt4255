@@ -138,7 +138,7 @@ begin
   USB_UART : xps_uartlite
     generic map (
       C_FAMILY => "spartan6",
-      C_SPLB_CLK_FREQ_HZ => 25000000,
+      C_SPLB_CLK_FREQ_HZ => 15000000,
       C_BASEADDR => X"84000000",
       C_HIGHADDR => X"8400ffff",
       C_SPLB_AWIDTH => 32,

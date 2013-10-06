@@ -37,21 +37,21 @@ END
 BEGIN plb_v46
  PARAMETER INSTANCE = mb_plb
  PARAMETER HW_VER = 1.05.a
- PORT PLB_Clk = clk_25_0000MHz
+ PORT PLB_Clk = clk_15_0000MHz
  PORT SYS_Rst = sys_bus_reset
 END
 
 BEGIN lmb_v10
  PARAMETER INSTANCE = ilmb
  PARAMETER HW_VER = 1.00.a
- PORT LMB_Clk = clk_25_0000MHz
+ PORT LMB_Clk = clk_15_0000MHz
  PORT SYS_Rst = sys_bus_reset
 END
 
 BEGIN lmb_v10
  PARAMETER INSTANCE = dlmb
  PARAMETER HW_VER = 1.00.a
- PORT LMB_Clk = clk_25_0000MHz
+ PORT LMB_Clk = clk_15_0000MHz
  PORT SYS_Rst = sys_bus_reset
 END
 
@@ -100,13 +100,13 @@ BEGIN clock_generator
  PARAMETER C_EXT_RESET_HIGH = 1
  PARAMETER HW_VER = 4.01.a
  PARAMETER C_CLKOUT0_BUF = TRUE
- PARAMETER C_CLKOUT0_FREQ = 25000000
+ PARAMETER C_CLKOUT0_FREQ = 15000000
  PARAMETER C_CLKOUT0_GROUP = NONE
  PARAMETER C_CLKOUT0_PHASE = 0
  PORT CLKIN = dcm_clk_s
  PORT RST = sys_rst_s
  PORT LOCKED = Dcm_all_locked
- PORT CLKOUT0 = clk_25_0000MHz
+ PORT CLKOUT0 = clk_15_0000MHz
 END
 
 BEGIN mdm
@@ -125,7 +125,7 @@ BEGIN proc_sys_reset
  PARAMETER INSTANCE = proc_sys_reset_0
  PARAMETER C_EXT_RESET_HIGH = 1
  PARAMETER HW_VER = 3.00.a
- PORT Slowest_sync_clk = clk_25_0000MHz
+ PORT Slowest_sync_clk = clk_15_0000MHz
  PORT Ext_Reset_In = sys_rst_s
  PORT MB_Debug_Sys_Rst = Debug_SYS_Rst
  PORT Dcm_locked = Dcm_all_locked

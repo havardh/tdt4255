@@ -129,10 +129,10 @@ Unit <clock_generator> synthesized.
 Synthesizing Unit <pll_module>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/clock_generator_v4_01_a/hdl/vhdl/pll_module.vhd".
         C_BANDWIDTH = "OPTIMIZED"
-        C_CLKFBOUT_MULT = 12
+        C_CLKFBOUT_MULT = 9
         C_CLKFBOUT_PHASE = 0.0
         C_CLKIN1_PERIOD = 15.0
-        C_CLKOUT0_DIVIDE = 32
+        C_CLKOUT0_DIVIDE = 40
         C_CLKOUT0_DUTY_CYCLE = 0.5
         C_CLKOUT0_PHASE = 0.0
         C_CLKOUT1_DIVIDE = 1
@@ -311,7 +311,7 @@ Total CPU time to Xst completion: 3.99 secs
  
 --> 
 
-Total memory usage is 265760 kilobytes
+Total memory usage is 266208 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   11 (   0 filtered)

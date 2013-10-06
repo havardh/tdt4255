@@ -452,7 +452,7 @@ Unit <microblaze_0_wrapper> synthesized.
 Synthesizing Unit <MicroBlaze>.
     Related source file is "c:/xilinx/12.4/ise_ds/edk/hw/xilinxprocessoriplib/pcores/microblaze_v8_00_b/hdl/vhdl/microblaze.vhd".
         C_SCO = 0
-        C_FREQ = 25000000
+        C_FREQ = 15000000
         C_FAULT_TOLERANT = 0
         C_ECC_USE_CE_EXCEPTION = 0
         C_ENDIANNESS = 0
@@ -3154,12 +3154,12 @@ DCACHE_FSL_OUT_CLK|    9.015|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 47.00 secs
-Total CPU time to Xst completion: 47.61 secs
+Total REAL time to Xst completion: 48.00 secs
+Total CPU time to Xst completion: 47.75 secs
  
 --> 
 
-Total memory usage is 383136 kilobytes
+Total memory usage is 382304 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  824 (   0 filtered)

@@ -119,8 +119,6 @@ architecture Behavioral of processor is
     signal ctrl_jump_alu_result  : std_logic := '0';
     signal ctrl_alu_op           : ALU_OP;
     signal ctrl_alu_input        : ALU_INPUT;
-
-
     
     -- Program counter registers
     signal PC        : std_logic_vector(31 downto 0) := (others => '0');

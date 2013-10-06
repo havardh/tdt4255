@@ -135,7 +135,7 @@ begin
       C_SPLB_P2P => 0,
       C_SPLB_SUPPORT_BURSTS => 0,
       C_SPLB_SMALLEST_MASTER => 32,
-      C_SPLB_CLK_PERIOD_PS => 40000,
+      C_SPLB_CLK_PERIOD_PS => 66667,
       C_INCLUDE_DPHASE_TIMER => 1,
       C_FAMILY => "spartan6"
     )
