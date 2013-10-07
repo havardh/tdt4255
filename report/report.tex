@@ -4,6 +4,7 @@
 \usepackage{newclude}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{rotating}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -16,7 +17,9 @@
   stringstyle=\color{mauve}
 }
 
-\title{Assignment 1TDT4255}
+\newcommand{\swtext}[1]{\begin{sideways}\bf{#1}\end{sideways}}
+
+\title{Assignment 1 TDT4255}
 \author{Anders Holter Bjørkto\\
 Runar Bergheim Olsen\\
 Håvard Wormdal Høiby}
@@ -24,14 +27,13 @@ Håvard Wormdal Høiby}
 \begin{document}
   \maketitle
 	\newpage
-
-	\include{abstract}
-	\tableofcontents
-	\include{introduction}
-	\include{solution}
-	\include{results}
-	\include{discussion}
-	\include{conclusion}
-	\include{bibliography}
+        \include{abstract}
+        \tableofcontents
+        \include{introduction}
+        \include{solution}
+        \include{results}
+        \include{discussion}
+        \include{conclusion}
+        \include{bibliography}
 
 \end{document}
