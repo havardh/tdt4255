@@ -1,0 +1,61 @@
+\section{Implementation on the FPGA}
+
+\subsection{Creating the bit file}
+The final bit file {\bf system\_download.bit} is included as a deliverable for easy testing of the project on a FPGA. But the file can also easly be create by following these steps.
+
+
+\begin{enumerate}
+	\item Open the ISE project located at:
+		{\bf system/system.xise}
+	\item Select the System file in the navigator
+  \item Right click on ``Update bit stream from ...``. This process takes a few minutes. 
+	\item The result is a file called {\bf system\_download.bit}
+\end{enumerate}
+
+
+\subsection{Uploading the code to the FPGA}
+Using the AvProg application installed on the LAB, the FPGA can be configured with the {\bf system\_download.bit} file.
+This is done by:
+
+\begin{enumerate}
+\item Opening the application and connecting to the Development board through the COM port.
+\item Selecting the {\bf system\_download.bit} file through the {\bf browse} dialog. 
+\item Pressing the {\bf Configure FPGA} button.
+\item Disconnecting the COM port. 
+\end{enumerate}  
+
+\subsection{Running code on the FPGA}
+After the FPGA is configured with the core the {\bf driver/host.py} program can be used to run programs.
+
+To run the {\bf toplevel\_test.hex} program execute the following commands from the root directory of the project.
+
+Note: the -p 3 switch must correspont to the COM port of the test pc. Refere to python driver/host.py -h
+
+\begin{verbatim}
+python driver/host.py -p 3 -i ./bin/toplevel_test.hex
+python driver/host.py -p 3 -c d 0x1 0x2
+python driver/host.py -p 3 -c d 0x2 0xa
+python driver/host.py -p 3 -c s
+-- wait some time
+python driver/host.py -p 3 -c s
+python driver/host.py -p 3 -r mem.out
+\end{verbatim}
+
+\subsection{Result from running the program}
+As in the (ref) chapter the expected output of the program {\bf toplevel\_test.hex} is as per table (ref).
+The following file snippet shows the result from running the program on the FPGA.
+
+
+\begin{verbatim}
+0x0 0x0
+0x1 0x2
+0x2 0xa
+0x3 0x0
+0x4 0x0
+0x5 0xc
+0x6 0xc
+0x7 0xc
+0x8 0x600000
+0x9
+0xa	0x0
+\end{verbatim}
