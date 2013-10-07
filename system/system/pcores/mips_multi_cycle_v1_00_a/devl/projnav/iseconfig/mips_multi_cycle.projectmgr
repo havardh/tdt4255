@@ -10,13 +10,13 @@
          <ClosedNode>/mips_multi_cycle - IMP C:|Users|runarbol|Desktop|tdt4255|system|system|pcores|mips_multi_cycle_v1_00_a|hdl|vhdl|mips_multi_cycle.vhd/PLBV46_SLAVE_SINGLE_I - plbv46_slave_single - implementation</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>mips_multi_cycle - IMP (C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd)</SelectedItem>
+         <SelectedItem>MIPS_SC_PROCESSOR - processor - Behavioral (C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020f000000020000000000000000000000000000000064ffffffff0000008100000000000000020000020f0000000100000000000000000000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>mips_multi_cycle - IMP (C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/mips_multi_cycle.vhd)</CurrentItem>
+      <CurrentItem>MIPS_SC_PROCESSOR - processor - Behavioral (C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
       <ClosedNodes>
@@ -27,13 +27,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>Check Syntax</SelectedItem>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000138000000010000000100000000000000000000000064ffffffff000000810000000000000001000001380000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem>Check Syntax</CurrentItem>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <ItemView guiview="File" >
       <ClosedNodes>
@@ -74,5 +74,49 @@
       <CurrentItem>Compile HDL Simulation Libraries</CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000011b0000011b01000000040100000002</SourceProcessView>
-   <CurrentView>Implementation</CurrentView>
+   <CurrentView>Behavioral Simulation</CurrentView>
+   <ItemView engineview="BehavioralSim" guiview="Source" compilemode="AutoCompile" >
+      <ClosedNodes>
+         <ClosedNodesVersion>2</ClosedNodesVersion>
+         <ClosedNode>/Unassigned User Library Modules/mips_multi_cycle - IMP/PLBV46_SLAVE_SINGLE_I - plbv46_slave_single - implementation</ClosedNode>
+         <ClosedNode>/Unassigned User Library Modules/mips_multi_cycle - IMP/USER_LOGIC_I - user_logic - IMP/MIPS_MULTI_CYCLE - toplevel - Behavioral/MIPS_SC_PROCESSOR - processor - Behavioral</ClosedNode>
+         <ClosedNode>/processor_tb - behavior C:|Users|runarbol|Desktop|tdt4255|system|system|pcores|mips_multi_cycle_v1_00_a|hdl|vhdl|processor_tb.vhd</ClosedNode>
+         <ClosedNode>/toplevel_tb - behavior C:|Users|runarbol|Desktop|tdt4255|system|system|pcores|mips_multi_cycle_v1_00_a|hdl|vhdl|toplevel_tb.vhd</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem>processor_tb - behavior (C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor_tb.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000020200000001000000010000006400000223000000020000000000000000000000000000000064ffffffff000000810000000000000002000002230000000100000000000000000000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem>processor_tb - behavior (C:/Users/runarbol/Desktop/tdt4255/system/system/pcores/mips_multi_cycle_v1_00_a/hdl/vhdl/processor_tb.vhd)</CurrentItem>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+         <ClosedNode>Design Utilities</ClosedNode>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem/>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000138000000010000000100000000000000000000000064ffffffff000000810000000000000001000001380000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem/>
+   </ItemView>
+   <ItemView engineview="BehavioralSim" sourcetype="DESUT_VHDL_ARCHITECTURE" guiview="Process" >
+      <ClosedNodes>
+         <ClosedNodesVersion>1</ClosedNodesVersion>
+      </ClosedNodes>
+      <SelectedItems>
+         <SelectedItem></SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000138000000010000000100000000000000000000000064ffffffff000000810000000000000001000001380000000100000000</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
+      <CurrentItem></CurrentItem>
+   </ItemView>
 </Project>
