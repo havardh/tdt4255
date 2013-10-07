@@ -3,4 +3,5 @@ hardware/transcript
 *.aux
 *.log
 *.toc
-*.pdf
+
+report/*pdf
