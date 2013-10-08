@@ -36,7 +36,7 @@ is jal is executed the address PC+1\footnote{The MIPS specification states PC+8,
 is not pipelined the branch delay slot was not implemented.} should be saved into r31.
 
 \paragraph{req\_write\_mux} This mux multiplexes the different inputs for which register to write to. 
-Possible values are x and y parts of the instruction and LINK\_REG used by the jal instruction. 
+Possible values are rt and rd parts of the instruction and LINK\_REG used by the jal instruction. 
 
 \paragraph{data\_write\_mux} This mux is responsible for choosing the correct input to write to the 
 register selected by the previous described mux. It selects the dmem\_data\_in bus for store instructions 
