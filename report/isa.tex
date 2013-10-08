@@ -37,8 +37,8 @@ I-Type instructions have half of the instruction word reserved for a immediate v
     \hline
     BEQ \$rs, \$rt, imm  & if \$rs == \$rt \$PC += 1 + imm & 000100 \\
     LUI \$rs, imm        & \$rs = imm $<<$ 16                & 001111 \\
-    SW \$rt, imm(\$rs)   & mem{\$rs+imm} = \$rt            & 101011 \\
-    LW \$rt, imm(\$rs)   & \$rt = mem{\$rs+imm}            & 100011 \\
+    SW \$rt, imm(\$rs)   & mem[\$rs+imm] = \$rt            & 101011 \\
+    LW \$rt, imm(\$rs)   & \$rt = mem[\$rs+imm]            & 100011 \\
     \hline
     
     \end{tabular}
@@ -56,8 +56,8 @@ J-Type instructions have an even larger immediate field with a width of 26 bits.
 
     Phonetic & Operation & Opcode \\
     \hline
-    J imm  & \$PC = (PC & 0xf0000000) | (imm $<<$ 2) & 000010 \\
-    JAL imm  & \$31 = PC + 1 \$PC = (PC & 0xf0000000) | (imm $<<$ 2) & 000011 \\
+    J imm  & \$PC = (PC \& 0xf0000000) | (imm $<<$ 2) & 000010 \\
+    JAL imm  & \$31 = PC + 1 \$PC = (PC \& 0xf0000000) | (imm $<<$ 2) & 000011 \\
     \hline
     
     \end{tabular}
