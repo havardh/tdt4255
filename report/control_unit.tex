@@ -27,8 +27,8 @@ The STALL state does nothing but holding the control signals asserted by EXECUTE
 The second part of the control unit is a sequential circuit that based on the current internal state of the unit aswell as the current opcode drives the control signals. An overview of the inputs and corresponding outputs can be found in table REF. In the table a dash indicates a don't care value, for output signals this indicates that the value that is already set will be hold in the given state. A more indepth explanation of what the different control singals do is given in the section covering the overall processor architecture. The most importan thing to note in this table is that in the FETCH state all destructive singals, signals that will cause data to be written, is pulled low. This is really important because upon entering EXECUTE the datapath will be unstable while signals propagate, and if a destrutive signal is high at that point grabage might be written to the registers or the memory. 
 
 
-\begin{table}
-    \begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l}
+\begin{table}[h]
+	\begin{tabular}{l|l|l|l|l|l|l|l|l|l|l|l}
     \swtext{State} & \swtext{Opcode} & \swtext{reg\_dst} & \swtext{branch}  & \swtext{mem\_to\_reg} & \swtext{alu\_op} & \swtext{mem\_write} & \swtext{reg\_write} & \swtext{alu\_src} & \swtext{jump} & \swtext{link} & \swtext{next\_state} \\
 
     \hline
