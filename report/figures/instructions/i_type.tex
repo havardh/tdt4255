@@ -1,0 +1,13 @@
+\begin{figure}[h]
+	\centering
+	\begin{bytefield}[endianness=big,bitwidth=0.03\linewidth]{32}
+		\bitheader{0-31} \\
+		\bitbox{6}{Opcode} &
+		\bitbox{5}{Rs} &
+		\bitbox{5}{Rt} &
+		\bitbox{16}{Immediate}
+	\end{bytefield}
+
+	\caption{I-Type instructions}
+	\label{fig:itype_format}
+\end{figure}
