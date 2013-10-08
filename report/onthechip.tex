@@ -29,10 +29,13 @@ After the FPGA is configured with the core the {\bf driver/host.py} program can 
 
 To run the {\bf toplevel\_test.hex} program execute the following commands from the root directory of the project.
 
-Note: the -p 3 switch must correspont to the COM port of the test pc. Refere to python driver/host.py -h
+Note 1: The -p 3 switch must correspont to the COM port of the test pc. Refere to python driver/host.py -h
+
+Note 2: Because of a late bug the first instruction in the program is not executed. To work around this a {\bf nop} instruction 
+is added at the start of the program
 
 \begin{verbatim}
-python driver/host.py -p 3 -i ./bin/toplevel_test.hex
+python driver/host.py -p 3 -i ./bin/toplevel_test_nop.hex
 python driver/host.py -p 3 -c d 0x1 0x2
 python driver/host.py -p 3 -c d 0x2 0xa
 python driver/host.py -p 3 -c s
@@ -44,7 +47,6 @@ python driver/host.py -p 3 -r mem.out
 \subsection{Result from running the program}
 As in the \ref{sec:exp_res} section the expected output of the program {\bf toplevel\_test.hex} is as per table \ref{table:exp_res}.
 The following file snippet shows the result from running the program on the FPGA.
-
 
 \begin{verbatim}
 0x0 0x0
