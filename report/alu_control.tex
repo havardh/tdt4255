@@ -8,7 +8,7 @@ The ALU control unit is used to tell the ALU what to do with its inputs. It take
 	\caption{The ALU control block}
 \end{figure}
 
-The alu\_input signal consists of four bits, op 0 through 3. Different combinations of high and low bits in this signal will tell the ALU what operation is to be applied to its inputs.  The different results alu\_func can be set to is shown in table \ref{table:alu_control_table}. Note that the order the operands of alu\_func are set up here is for convenience. As long as the operands is set correctly (e.g. op1 <= '1' others => '0' for an add), the order of representation is irrelevant. 
+The alu\_input signal consists of four bits, op 0 through 3. Different combinations of high and low bits in this signal will tell the ALU what operation is to be applied to its inputs.  The different results alu\_func can be set to is shown in table \ref{table:alu_control_table}. Note that the order the operands of alu\_func are set up here is for convenience. As long as the operands is set correctly (e.g. op1 $<=$ '1' others $=>$ '0' for an add), the order of representation is irrelevant. 
 
 \begin{table}
     \label{table:alu_control_table}
