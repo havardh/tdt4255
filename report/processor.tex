@@ -45,4 +45,20 @@ is stored in the LINK\_REG for the Jump And Link instruction.
 
 \subsubsection{Driving the outputs}
 
-\paragraph{drive\_output\_signals} This latch prevents the processor from driving its output signals when processor\_enable is not asserted. 
+\paragraph{drive\_output\_signals} This latch prevents the processor from driving its 
+output signals when processor\_enable is not asserted. 
+
+\subsubsection{Control Signals}
+
+The control unit outputs 10 different control signals. Each of these signals are connected to a component and alters either the datapath
+or how the PC changes before the next instruction. The {\bf ctrl\_jump} and {\bf ctrl\_branch} is connected to the {\bf pc\_mux} and 
+affects what value the next PC is given. The {\bf ctrl\_pc\_latch} drives the {\bf next\_pc\_latch} to tell it when to latch the pc. 
+The manipulation of the common datapath is done by most of the signals. The register file is controled with {\bf ctrl\_mem\_to\_reg}, 
+used for load instructions, {\bf ctrl\_reg\_dst} chooses the part of the instruction used to address the write in the register file, 
+{\bf ctrl\_req\_write} whether or not to write at all. The {\bf ctr\_alu\_op} sets up the ALU with aid of the ALU Control Unit, this
+signal can have one of the following values ALUOP\_LOAD\_STORE, ALUOP\_BRANCH, ALUOP\_FUNC, ALUOP\_LDI, refere to section (ref) for additional information.
+{\bf ctrl\_alu\_src} controls a mux choosing either the rt output from the register file or the sign extended version of the 16 high
+bits of the instruction. This configuration is used for jump instructions. Lastly in the datapath the {\bf ctrl\_mem\_write} lets the
+processor enable output on the bus connected to data memory. The final signal called {\bf ctrl\_link} implements the extra feature. 
+It is asserted when the {\bf jal} instruction is executed. This causes the muxes on the write address and data bus in to the set the PC+1
+as the data and the \$31 as address, resulting in the next instruction address being saved in the link register. 
