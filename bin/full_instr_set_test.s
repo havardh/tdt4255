@@ -21,27 +21,20 @@
 
 #    0xa 11101b # OR result
 #    0xb 10100b # AND result
-#    0xc 0x37   # 10th fib number 55
-#    0xd 0x1A6D # 20th fib number 6765
+#    0xc 0x11   # 0x10 + 1
+#    0xd 0x21   # 0x20 + 1
 #.memory_out_end:
 
 
 lw $1, 0($0) # Load constant one into memory
-j 13 # After function
+lw $1, 0($0) # Load constant one into memory
+j 7          # After function
 sw $1, 5($0) # Store 1 to 0x5, this will indicate that the jump failed
 
-# Begin fib function, assumes that 1 is $1 and the number of iterations are in $2
-add $4, $0, $0 # 0th fib number
-add $5, $1, $0
-
-add $6, $4, $5 
-add $4, $5, $0
-add $5, $6, $0
-sub $2, $2, $1
-slt $6, $2, $1 # Loop untill $6 == 0
-beq $6, $0, -6 # Jump back to $6 = $4 + $5
-add $2, $4, $0 # Store result in $2
+# Add one function, $2 is input $3 is output, expects $1 to be 1
+add $3, $2, $1
 jr $31         # Return to caller
+sw $1, 6($0)   # Write 1 to memory location 6 if jr fail
 
 # Begin test code
 lw $2, 3($0)
@@ -52,14 +45,14 @@ sw $4, 10($0)
 and $4, $2, $3
 sw $4, 11($0)
 
-# Calculate fibb numbers
-lw $2, 1($0)
-jal 3
-sw $2, 12($0) # Store 10th fib number to 0xc
+# Test JAL
+lw $2, 1($0)  # Load 
+jal 4
+sw $3, 12($0) # Store 10th fib number to 0xc
 
 lw $2, 2($0)
-jal 3
-sw $2, 13($0) # Store 20th fib number to 0xd
+jal 4
+sw $3, 13($0) # Store 20th fib number to 0xd
 
 beq $0, $0, -1 # Halt execution
 sw $1, 6($0)   # Store 1 to 0x6, this will indicate that the beq failed
