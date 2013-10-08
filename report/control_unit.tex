@@ -3,17 +3,17 @@
 \begin{figure}[h]
     \centering\includegraphics[scale=0.5]{figures/control_unit_block_symbol}
     \caption{Control Unit block symbol}
-    %\label{figure:ctrl_unit_block_symbol}    
+    \label{figure:ctrl_unit_block_symbol}    
 \end{figure}
-The control unit is in many ways the brain within our processor implementation. It is responsable for controlling how the data path behaves during the execution of the program. It does so by controlling a total of 10 different control signals. Figure REF shows a black box diagram of the control unit with only the input and output signals.
+The control unit is in many ways the brain within our processor implementation. It is responsable for controlling how the data path behaves during the execution of the program. It does so by controlling a total of 10 different control signals. Figure \ref{figure:ctrl_unit_block_symbol} shows a black box diagram of the control unit with only the input and output signals.
 
-In essence it is implemented as two parts, a syncronous state machine that updates the internal state of the control unit, and is an essensial part of a multi cycle design. The second, sequential, part is responsible for driving most control signals and is explained in detail later. The state machine have 4 possible states, RESET, FETCH, EXECUTE and STALL. Figure REF shows the four states, the transition conditions and the effect the transitions have on the pc\_latch control signal. In an effort to keep the figure as simple as possible the fact that transitions happen only on the rising edge of the clock cycle and only if the enable signal is asserted has been hidden from the transition conditions.
+In essence it is implemented as two parts, a syncronous state machine that updates the internal state of the control unit, and is an essensial part of a multi cycle design. The second, sequential, part is responsible for driving most control signals and is explained in detail later. The state machine have 4 possible states, RESET, FETCH, EXECUTE and STALL. Figure \ref{figure:ctrl_unit_state_machine} shows the four states, the transition conditions and the effect the transitions have on the pc\_latch control signal. In an effort to keep the figure as simple as possible the fact that transitions happen only on the rising edge of the clock cycle and only if the enable signal is asserted has been hidden from the transition conditions.
 
 
 \begin{figure}[h]
     \centering\includegraphics[scale=0.8]{figures/control_unit_state_machine}
     \caption{Control Unit state machine}
-    %\label{figure:ctrl_unit_state_machine}    
+    \label{figure:ctrl_unit_state_machine}    
 \end{figure}
 
 The RESET state is a special state the processor only enters when the reset signal is asserted, it is also the default state of the processor before it starts. It should be noted that the reset transitions have a higher priority than the others, hence if the reset signal is high the unit is forced into the RESET state.

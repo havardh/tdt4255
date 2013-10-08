@@ -1,16 +1,17 @@
 \subsection{ALU Control}
 
-The ALU control unit is used to tell the ALU what to do with its inputs. It takes the function part of the instruction and the alu\_op as inputs. The alu\_op is decided by the main control unit based on the opcode of the instruction. The ALU control has two outputs; alu\_func, a four-bit bus with operation details for the ALU, and jump\_alu\_result, used to determine whether or not to jump using the jr instruction. The alu control block is represented in figure \ref {fig:alu_control}
+The ALU control unit is used to tell the ALU what to do with its inputs. It takes the function part of the instruction and the alu\_op as inputs. The alu\_op is decided by the main control unit based on the opcode of the instruction. The ALU control has two outputs; alu\_func, a four-bit bus with operation details for the ALU, and jump\_alu\_result, used to determine whether or not to jump using the jr instruction. The alu control block is represented in figure \ref {fig:alu_control_block}
+
 \begin{figure}
-	\label{fig:alu_control}
+	\label{fig:alu_control_block}
 	\includegraphics{figures/alu_control}
 	\caption{The ALU control block}
 \end{figure}
 
-The alu\_input signal consists of four bits, op 0 through 3. Different combinations of high and low bits in this signal will tell the ALU what operation is to be applied to its inputs.  The different results alu\_func can be set to is shown in table \ref{table:alu_control_table}. Note that the order the operands of alu\_func are set up here is for convenience. As long as the operands is set correctly (e.g. op1 <= '1' others => '0' for an add), the order of representation is irrelevant. 
+The alu\_input signal consists of four bits, op 0 through 3. Different combinations of high and low bits in this signal will tell the ALU what operation is to be applied to its inputs.  The different results alu\_func can be set to is shown in table \ref{table:alu_control_table}. Note that the order the operands of alu\_func are set up here is for convenience. As long as the operands is set correctly (e.g. op1 $<=$ '1' others $=>$ '0' for an add), the order of representation is irrelevant. 
 
 \begin{table}
-	\label{table:alu_control_table}
+    \label{table:alu_control_table}
     \begin{tabular}{|l|l|l|l|}
     \hline
     alu\_op           				& \multicolumn {2}{ |c| }{function} 	        & alu\_func (op0, op1, op2, op3) \\ \hline
@@ -24,6 +25,7 @@ The alu\_input signal consists of four bits, op 0 through 3. Different combinati
     ALUOP\_BRANCH     				& \multicolumn {2}{ |c| }{X} 			& 0110                            \\ \hline
     ALUOP\_LDI        				& \multicolumn {2}{ |c| }{X} 			& 0001                            \\ \hline
     \end{tabular}
+    \caption{Resulting ALU functions based on opcode and function}
 \end{table}
 
 The jump register function is controlled from the ALU control unit. It will result in the same input control as add, but the constant being added to the input is always 0. This means that the register address the ALU returns is the same as it gets as input. 
