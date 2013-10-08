@@ -3,26 +3,26 @@
 In this assignment we have been introduced to the development of processors using 
 industrial grade tools. The task challenged us and showed how hardware design is
 very different from programming. And the workflow was quite different from what we
-where used to. The process requires more planning ahead, easy hacks would not help you.
+were used to. The process requires more planning ahead, easy hacks will not help you.
 But still we could apply what we knew about testing software to hardware testing 
-through testbenches. This provided a effective way to verify our design and concentrate
+through testbenches. This provided an effective way to verify our design and concentrate
 on the details of the implementation. 
 
-All the required functions for the assignment has been implemented and tested. And the
-overall design is clean with a separate of conserns for the three components developed. 
+All the required functions for the assignment has been implemented and tested. The
+overall design is clean with a separations of concerns for the three components developed. 
 New instructions can easly be added and the solution can work as a starting point for the
 next assignment. 
 
-The part of the assignment we lost the most time on was from a implemented design to a running
-program on the FPGA. And this part was estimated to take only 5\% of the whole process. 
+The part of the assignment we lost the most time on was from an implemented design to a running
+program on the FPGA. This part was estimated to take only 5\% of the whole process. 
 After a lot of trial and error, with a long turnaround time due to the tools, we managed to get 
-a working result on the FPGA. Luckly we had time in our schedule to put in some extra hours for this.
-The cause of this problem seemes to have been the clock frequency of the FPGA. It was running higher 
-than our core could handle and therefore no loads or store instructions had the time to complete. 
-The problem was solved by removing the whole implementation completely and incrementaly adding
+a working result on the FPGA. Luckily we had time in our schedule to put in some extra hours for this.
+The cause of this problem seems to have been the clock frequency of the FPGA. It was running higher 
+than our core could handle and therefore no load or store instructions had the time to complete. 
+The problem was solved by removing the whole implementation completely and incrementally adding
 it as we tested on the hardware. This has prepared us for the next assignment as we will try
 to get a working system early in the process and run tests on hardware throughout the development
 cycle. 
 
-As the clock frequency option was a bit hard to find we suggest to include it in the compendium
+As the clock frequency option was a bit hard to find we suggest including it in the compendium
 for next years assignments. 
