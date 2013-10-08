@@ -33,10 +33,10 @@ An assembly equivalent of the program can be found in attachment \ref{sec:assemb
 In summary the program loads 2 and 10 into register \$1 and \$2, adds them into \$3 and stores the value 12 into memory location 5, then it jumps over a couple of instrutions and stores 12 at location 6 and 7. At the end it loads a big immidiate value into \$3, stores it at location 8, adds 2 to the register stores it to location 9 and loops the add and store instruction. The last store instruction at location 10 should not be executed.
 
 \paragraph{Expected results}
-\label{sec:exp-res}
+\label{sec:exp_res}
 The expected result of running this program is the following memory layout. 
 \begin{table}[h]
-	\label{tab:exp-res}
+
 	\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|}
 		\hline
 		Address &  0 &  1 &  2 &  3 &  4 &  5 &  6 &  7 &  8 &  9 & 10 \\
@@ -45,6 +45,7 @@ The expected result of running this program is the following memory layout.
 		\hline
 	\end{tabular}
 	\caption{Expected memory layout}
+	\label{table:exp_res}
 \end{table}
 
 \paragraph{Actual results}
