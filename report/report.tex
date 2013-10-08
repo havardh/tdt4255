@@ -5,6 +5,8 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{bitfield}
 
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
@@ -17,7 +19,9 @@
   stringstyle=\color{mauve}
 }
 
-\title{Assignment 1TDT4255}
+\newcommand{\swtext}[1]{\begin{sideways}\bf{#1}\end{sideways}}
+
+\title{Assignment 1 TDT4255}
 \author{Anders Holter Bjørkto\\
 Runar Bergheim Olsen\\
 Håvard Wormdal Høiby}
@@ -25,6 +29,7 @@ Håvard Wormdal Høiby}
 \begin{document}
   \maketitle
 	\newpage
+<<<<<<< HEAD
 
 	\include{abstract}
 	\tableofcontents
@@ -35,5 +40,15 @@ Håvard Wormdal Høiby}
 	\include{conclusion}
 	\include{bibliography}
 	\include{attachments}
+=======
+        \include{abstract}
+        \tableofcontents
+        \include{introduction}
+        \include{solution}
+        \include{results}
+        \include{discussion}
+        \include{conclusion}
+        \include{bibliography}
+>>>>>>> extra_features
 
 \end{document}

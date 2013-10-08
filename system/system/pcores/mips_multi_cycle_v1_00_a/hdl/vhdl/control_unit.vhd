@@ -13,7 +13,6 @@ entity control_unit is
         enable     : in std_logic;
         reg_dst    : out std_logic;
         branch     : out std_logic;
-        mem_read   : out std_logic;
         mem_to_reg : out std_logic;
         alu_op     : out ALU_OP;
         mem_write  : out std_logic;
@@ -33,12 +32,12 @@ architecture Behavioral of control_unit is
     signal next_state : const_state; 
     
     -- opcodes
-    constant op_alu : std_logic_vector (5 downto 0) := "000000";
-    constant op_lw  : std_logic_vector (5 downto 0) := "100011";
-    constant op_sw  : std_logic_vector (5 downto 0) := "101011";
-    constant op_lui : std_logic_vector (5 downto 0) := "001111";
-    constant op_beq : std_logic_vector (5 downto 0) := "000100";
-    constant op_j   : std_logic_vector (5 downto 0) := "000010";
+    constant OP_ALU : std_logic_vector (5 downto 0) := "000000";
+    constant OP_LW  : std_logic_vector (5 downto 0) := "100011";
+    constant OP_SW  : std_logic_vector (5 downto 0) := "101011";
+    constant OP_LUI : std_logic_vector (5 downto 0) := "001111";
+    constant OP_BEQ : std_logic_vector (5 downto 0) := "000100";
+    constant OP_J   : std_logic_vector (5 downto 0) := "000010";
     constant OP_JAL : std_logic_vector (5 downto 0) := "000011";
 
 begin
@@ -49,14 +48,14 @@ begin
         if rising_edge(clk) and enable = '1' then
             if reset = '1' then
                 state <= STATE_RESET;
-            else 			
-				 if next_state = STATE_FETCH and state /= STATE_RESET then
-				    pc_latch <= '1';
-					state <= next_state;
-				 else 
-					pc_latch <= '0';
-					state <= next_state;
-				 end if;
+            else             
+                 if next_state = STATE_FETCH and state /= STATE_RESET then
+                    pc_latch <= '1';
+                    state <= next_state;
+                 else 
+                    pc_latch <= '0';
+                    state <= next_state;
+                 end if;
             end if;
         end if;
     end process;
@@ -73,10 +72,9 @@ begin
                 
             when STATE_EXECUTE =>
                 case opcode is
-                    when op_alu =>
+                    when OP_ALU =>
                         reg_dst <= '1';
                         branch <= '0';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
                         alu_op <= ALUOP_FUNC;
                         mem_write <= '0';
@@ -87,10 +85,9 @@ begin
                         
                         next_state <= STATE_FETCH;
                     
-                    when op_lw =>
+                    when OP_LW =>
                         reg_dst <= '0';
                         branch <= '0';
-                        mem_read <= '1';
                         mem_to_reg <= '1';
                         alu_op <= ALUOP_LOAD_STORE;
                         mem_write <= '0';
@@ -101,10 +98,9 @@ begin
                         
                         next_state <= STATE_STALL;
                     
-                    when op_sw =>
+                    when OP_SW =>
                         reg_dst <= '0';
                         branch <= '0';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
                         alu_op <= ALUOP_LOAD_STORE;
                         mem_write <= '1';
@@ -115,10 +111,9 @@ begin
                         
                         next_state <= STATE_STALL;
                         
-                    when op_lui =>
+                    when OP_LUI =>
                         reg_dst <= '0';
                         branch <= '0';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
                         alu_op <= ALUOP_LDI;
                         mem_write <= '0';
@@ -129,10 +124,9 @@ begin
                                                
                         next_state <= STATE_FETCH;
                         
-                    when op_beq =>
+                    when OP_BEQ =>
                         reg_dst <= '1';
                         branch <= '1';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
                         alu_op <= ALUOP_BRANCH;
                         mem_write <= '0';
@@ -143,10 +137,9 @@ begin
                         
                         next_state <= STATE_FETCH;
                         
-                    when op_j =>
+                    when OP_J =>
                         reg_dst <= '1';
                         branch <= '0';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
                         alu_op <= ALUOP_BRANCH;
                         mem_write <= '0';
@@ -160,7 +153,6 @@ begin
                     when OP_JAL =>
                         reg_dst <= '1';
                         branch <= '0';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
                         alu_op <= ALUOP_BRANCH;
                         mem_write <= '0';
@@ -174,9 +166,8 @@ begin
                     when others =>
                         reg_dst <= '0';
                         branch <= '0';
-                        mem_read <= '0';
                         mem_to_reg <= '0';
-                        alu_op <= ALUOP_BRANCH;
+                        alu_op <= ALUOP_FUNC;
                         mem_write <= '0';
                         alu_src <= '0';
                         reg_write <= '0';
@@ -190,12 +181,9 @@ begin
                 next_state <= STATE_FETCH;
 
             -- Initial state, and state after reset has been toggled, do no harm and enter FETCH
-            when STATE_RESET =>                
-                mem_write <= '0';
-                reg_write <= '0';
-                reg_dst <= '1';
+            when STATE_RESET =>      
+                reg_dst <= '0';
                 branch <= '0';
-                mem_read <= '0';
                 mem_to_reg <= '0';
                 alu_op <= ALUOP_FUNC;
                 mem_write <= '0';
@@ -203,8 +191,8 @@ begin
                 reg_write <= '0';
                 jump <= '0';
                 link <= '0';
-
-                next_state <= STATE_FETCH;
+                
+                next_state <= STATE_FETCH;                     
                 
         end case;
     end process;
