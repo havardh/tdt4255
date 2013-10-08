@@ -39,7 +39,6 @@ architecture Behavioral of processor is
             enable     : in std_logic;
             reg_dst    : out std_logic;
             branch     : out std_logic;
-            mem_read   : out std_logic;
             mem_to_reg : out std_logic;
             alu_op     : out ALU_OP;
             mem_write  : out std_logic;
@@ -55,8 +54,8 @@ architecture Behavioral of processor is
         port ( 
             alu_op          : in ALU_OP;
             func            : in STD_LOGIC_VECTOR (5 downto 0);
-            alu_input       : out ALU_INPUT;
-            jump_alu_result : out std_logic
+            alu_func        : out ALU_INPUT;
+            jump_result     : out std_logic
         );
     end component;
     
@@ -105,7 +104,7 @@ architecture Behavioral of processor is
         );
     end component;
 
-    -- Control unit and alu control signals
+    -- Control unit control signals
     signal ctrl_mem_write        : std_logic := '0';
     signal ctrl_pc_latch         : std_logic := '0';
     signal ctrl_reg_dst          : std_logic := '0';
@@ -113,12 +112,13 @@ architecture Behavioral of processor is
     signal ctrl_reg_write        : std_logic := '0';
     signal ctrl_alu_src          : std_logic := '0';
     signal ctrl_branch           : std_logic := '0';
-    signal ctrl_mem_read         : std_logic := '0';
     signal ctrl_jump             : std_logic := '0';   
     signal ctrl_link             : std_logic := '0';
-    signal ctrl_jump_alu_result  : std_logic := '0';
     signal ctrl_alu_op           : ALU_OP;
-    signal ctrl_alu_input        : ALU_INPUT;
+	 
+	 -- ALU Control unit control singal
+    signal alu_ctrl_jump_result  : std_logic := '0';
+    signal alu_ctrl_func         : ALU_INPUT;
     
     -- Program counter registers
     signal PC        : std_logic_vector(31 downto 0) := (others => '0');
@@ -160,7 +160,6 @@ begin
             
             -- Control outputs
             branch     => ctrl_branch,
-            mem_read   => ctrl_mem_read,
             pc_latch   => ctrl_pc_latch,
             mem_write  => ctrl_mem_write,
             reg_dst    => ctrl_reg_dst,
@@ -180,8 +179,8 @@ begin
             func            => imem_data_in(5 downto 0),
 
             -- Control outputs
-            alu_input       => ctrl_alu_input,
-            jump_alu_result => ctrl_jump_alu_result
+            alu_func        => alu_ctrl_func,
+            jump_result     => alu_ctrl_jump_result
         );
 
 
@@ -234,7 +233,7 @@ begin
     alu1: alu port map(
         x      => reg_rs,
         y      => alu_in_y,
-        alu_in => ctrl_alu_input,
+        alu_in => alu_ctrl_func,
         r      => alu_out,
         flags  => alu_flags
     );
@@ -249,9 +248,9 @@ begin
     end process;
     
     -- pc_mux combines the three muxes used to select next PC value into a single process
-    pc_mux: process (clk, ctrl_jump, ctrl_jump_alu_result, ctrl_branch, alu_flags, PC_JUMP, PC_BRANCH, PC_ADD)
+    pc_mux: process (clk, ctrl_jump, alu_ctrl_jump_result, ctrl_branch, alu_flags, PC_JUMP, PC_BRANCH, PC_ADD)
     begin
-        if ctrl_jump_alu_result = '1' then
+        if alu_ctrl_jump_result = '1' then
             PC_NEXT <= alu_out;
         elsif ctrl_jump = '1' then
             PC_NEXT <= PC_JUMP;
