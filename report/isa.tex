@@ -1,13 +1,13 @@
 \subsection{ISA}
 \label{sec:isa}
-As stated previously our MIPS implementation runs a subset of the MIPS instruction set. Some of the instructions are required by the exercise while two, namely JR and JAL, are implemented in addtion. The two jump instructions where chosen because they are essential if conventional functions are to be supported.
+As stated previously, our MIPS implementation runs a subset of the MIPS instruction set. Some of the instructions are required by the exercise while two, namely JR and JAL, are implemented in addtion. The two jump instructions were chosen because they are essential if conventional functions are to be supported.
 
-In MIPS all instructions have the same width, 32 bits, and can be categorized into three categories R-, I- and J-type instructions. The bit layout of each of the instruction types are given in the figures \ref{fig:rtype_format}, \ref{fig:itype_format} and \ref{fig:jtype_format}. The subset of instructions our processor supports falls within all of the three categories. 
+In MIPS all instructions have the same width, 32 bits, and can be categorized into three categories R-, I- and J-type instructions. The bit layout of each of the instruction types is given in the figures \ref{fig:rtype_format}, \ref{fig:itype_format} and \ref{fig:jtype_format}. The subset of instructions our processor supports falls within all of the three categories. 
 
 \paragraph{R-Type instructions}
-\input{figures/instructions/r_type}
-R-Type instructions have a total of three register fields, aswell as a function and shift field. Following this R-Type instruction coding is used for ALU operations as they have one destination and two source registers. There are however exceptions, such as the JR (Jump Register) instruction that is encoded as a R-Type instruction even thought it is a jump instruction. The R-Type instructions our implementation supports are show in table~\ref{table:rtype_instructions}.
+R-type instructions have a total of three register fields, as well as a function and shift field. Following this, R-Type instruction coding is used for ALU operations as they have one destination and two source registers. There are however exceptions, such as the JR (Jump Register) instruction which is encoded as an R-Type instruction even though it is a jump instruction. The R-Type instructions our implementation supports are shown in table~\ref{table:rtype_instructions}.
 
+\input{figures/instructions/r_type}
 \begin{table}[h]
     \begin{tabular}{l|l|l|l}
     Phonetic & Operation & Opcode & Function \\
@@ -27,9 +27,10 @@ R-Type instructions have a total of three register fields, aswell as a function 
 \end{table}
 
 \paragraph{I-Type instructions}
-\input{figures/instructions/i_type}
-I-Type instructions have half of the instruction word reserved for a immediate value, and hence only have room for two register designators. This encoding type is therefore used to map instructions that use immediate values, such as load immediate aswell as load and store word. The I-Type instructions our implementation supports are show in table~\ref{table:itype_instructions}.
+I-Type instructions have half of the instruction word reserved for an immediate value, and hence only have room for two register designators. This encoding type is therefore used to map instructions that use immediate values, such as load immediate as well as load and store word. The I-Type instructions our implementation supports are shown in table~\ref{table:itype_instructions}.
 
+
+\input{figures/instructions/i_type}
 \begin{table}[h]
     \begin{tabular}{l|l|l|l}
 
@@ -48,9 +49,9 @@ I-Type instructions have half of the instruction word reserved for a immediate v
 \end{table}
 
 \paragraph{J-Type instructions}
-\input{figures/instructions/j_type}
-J-Type instructions have an even larger immediate field with a width of 26 bits. This encoding is mainly used to encode various jump instructions. The J-Type instructions our implementation supports are show in table~\ref{table:jtype_instructions}.
+J-Type instructions have an even larger immediate field with a width of 26 bits. This encoding is mainly used to encode various jump instructions. The J-Type instructions our implementation supports are shown in table~\ref{table:jtype_instructions}.
 
+\input{figures/instructions/j_type}
 \begin{table}[h]
     \begin{tabular}{l|l|l|l}
 
