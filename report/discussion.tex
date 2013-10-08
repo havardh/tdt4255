@@ -16,7 +16,7 @@ next assignment.
 The part of the assignment we lost the most time on was from a implemented design to a running
 program on the FPGA. And this part was estimated to take only 5\% of the whole process. 
 After a lot of trial and error, with a long turnaround time due to the tools, we managed to get 
-a working result on the FPGA. Luckly we had time in our schedule to put in some extra hours for this.
+a working result on the FPGA. Luckily we had time in our schedule to put in some extra hours for this.
 The cause of this problem seemes to have been the clock frequency of the FPGA. It was running higher 
 than our core could handle and therefore no loads or store instructions had the time to complete. 
 The problem was solved by removing the whole implementation completely and incrementaly adding
@@ -26,3 +26,8 @@ cycle.
 
 As the clock frequency option was a bit hard to find we suggest to include it in the compendium
 for next years assignments. 
+
+In the final hours a bug relating to the PC register managed to sneak in, resulting in our processor always skipping the
+first instruction in memory. As it was not immediately obvious what caused the bug, and as the time untill the deadline was
+running out, the bug had to be left in. This is not a major bug however, more like a minor inconvienice, as it can easly be 
+solved by offsetting our programs by one address, and the rest of the processor is still functioning as intended.
