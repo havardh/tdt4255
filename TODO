@@ -1,2 +1,0 @@
-ctrl_alu_input => alu_ctrl_func
-ctrl_jump_alu_result => alu_ctrl_jump_result
