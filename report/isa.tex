@@ -17,7 +17,7 @@ R-Type instructions have a total of three register fields, aswell as a function 
     SUB \$rd, \$rs, \$rt & \$rd = \$rs - \$rd   & 000000 & 100011 \\ 
     AND \$rd, \$rs, \$rt & \$rd = \$rs and \$rd & 000000 & 100100 \\ 
     OR  \$rd, \$rs, \$rt & \$rd = \$rs or \$rd  & 000000 & 100101 \\  
-    SLT \$rd, \$rs, \$rt & if \$rs < \$rt \$rd = 1 else \$rd = 0  & 000000 & 101010 \\ 
+    SLT \$rd, \$rs, \$rt & if \$rs $<$ \$rt \$rd = 1 else \$rd = 0  & 000000 & 101010 \\ 
     JR  \$rs             & \$PC = \$rs          & 000000 & 001000 \\ 
     \hline
     \end{tabular}
@@ -36,7 +36,7 @@ I-Type instructions have half of the instruction word reserved for a immediate v
     Phonetic & Operation & Opcode \\
     \hline
     BEQ \$rs, \$rt, imm  & if \$rs == \$rt \$PC += 1 + imm & 000100 \\
-    LUI \$rs, imm        & \$rs = imm << 16                & 001111 \\
+    LUI \$rs, imm        & \$rs = imm $<<$ 16                & 001111 \\
     SW \$rt, imm(\$rs)   & mem{\$rs+imm} = \$rt            & 101011 \\
     LW \$rt, imm(\$rs)   & \$rt = mem{\$rs+imm}            & 100011 \\
     \hline
@@ -56,8 +56,8 @@ J-Type instructions have an even larger immediate field with a width of 26 bits.
 
     Phonetic & Operation & Opcode \\
     \hline
-    J imm  & \$PC = (PC & 0xf0000000) | (imm << 2) & 000010 \\
-    JAL imm  & \$31 = PC + 1 \$PC = (PC & 0xf0000000) | (imm << 2) & 000011 \\
+    J imm  & \$PC = (PC & 0xf0000000) | (imm $<<$ 2) & 000010 \\
+    JAL imm  & \$31 = PC + 1 \$PC = (PC & 0xf0000000) | (imm $<<$ 2) & 000011 \\
     \hline
     
     \end{tabular}
