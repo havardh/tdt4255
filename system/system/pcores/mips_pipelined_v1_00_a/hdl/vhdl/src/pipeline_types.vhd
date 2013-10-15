@@ -10,7 +10,7 @@ package pipeline_types is
 	type ctrl_ex_t is
 	record
 		alu_src : std_logic;
-		req_dst : std_logic;
+		reg_dst : std_logic;
 		alu_op : ALU_OP;
 	end record;
 		
@@ -24,7 +24,7 @@ package pipeline_types is
 	type ctrl_wb_t is
 	record
 		mem_to_reg : std_logic;
-		req_write : std_logic;
+		reg_write : std_logic;
 	end record;
 	
 	type pc_next_t is
@@ -69,7 +69,7 @@ package pipeline_types is
 		alu_result : std_logic_vector(N-1 downto 0);
 
 		write_mem_data : std_logic_vector(N-1 downto 0);
-		write_req_addr : std_logic_vector(4 downto 0);
+		write_reg_addr : std_logic_vector(4 downto 0);
 		
 	end record;
 
