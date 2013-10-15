@@ -1,11 +1,10 @@
 FLAGS = --ieee=synopsys --work=work -fexplicit
 
 # All sources, only dependecies to sources left in the list allowed
-
-SOURCES = src/mips_constant_pkg.vhd src/pipeline_types.vhd src/asserts.vhd src/full_adder.vhd src/adder.vhd src/stages/stage_pc_next.vhd src/control_unit.vhdm
+SOURCES = src/mips_constant_pkg.vhd src/pipeline_types.vhd src/asserts.vhd src/full_adder.vhd src/adder.vhd src/control_unit.vhd $(wildcard src/stages/*.vhd) $(wildcard src/registers/*.vhd)
 
 # Test benches in order of execution
-TESTS = tests/stages/stage_pc_next_tb.vhd tests/control_unit_tb.vhd
+TESTS = $(wildcard tests/*vhd)
 
 OBJECTS = $(SOURCES:.vhd=.o) $(TESTS:.vhd=.o)
 TEST_BINARIES = $(TESTS:.vhd=)
