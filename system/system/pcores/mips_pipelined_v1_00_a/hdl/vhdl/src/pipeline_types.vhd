@@ -1,3 +1,4 @@
+
 library ieee;
 use ieee.std_logic_1164.all;
 
@@ -24,7 +25,7 @@ package pipeline_types is
 	type ctrl_wb_t is
 	record
 		mem_to_reg : std_logic;
-		req_write : std_logic;
+		reg_write : std_logic;
 	end record;
 	
 	type pc_next_t is
