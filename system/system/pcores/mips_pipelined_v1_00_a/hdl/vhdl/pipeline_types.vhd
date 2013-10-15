@@ -27,7 +27,7 @@ package pipeline_types is
 		req_write : std_logic;
 	end record;
 	
-	type pcnext_t is
+	type pc_next_t is
 	record
 		jump : std_logic_vector(N-1 downto 0);
 		src : std_logic;
