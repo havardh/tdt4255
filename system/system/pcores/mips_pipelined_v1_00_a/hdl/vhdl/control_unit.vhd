@@ -11,14 +11,19 @@ entity control_unit is
         reset      : in std_logic; 
         opcode     : in std_logic_vector (5 DOWNTO 0);
         enable     : in std_logic;
-        reg_dst    : out std_logic;
-        branch     : out std_logic;
-        mem_to_reg : out std_logic;
-        alu_op     : out ALU_OP;
-        mem_write  : out std_logic;
-        alu_src    : out std_logic;
-        reg_write  : out std_logic;
-        jump       : out std_logic;
+
+				ctrl_ex    : out ctrl_ex_t;
+				ctrl_m     : out ctrl_m_t;	
+				ctrl_wb    : out ctrl_wb_t;
+				
+        --reg_dst    : out std_logic;
+        --branch     : out std_logic;
+        --mem_to_reg : out std_logic;
+        --alu_op     : out ALU_OP;
+        --mem_write  : out std_logic;
+        --alu_src    : out std_logic;
+        --reg_write  : out std_logic;
+        --jump       : out std_logic;
         pc_latch   : out std_logic := '0';
         link       : out std_logic
      );
