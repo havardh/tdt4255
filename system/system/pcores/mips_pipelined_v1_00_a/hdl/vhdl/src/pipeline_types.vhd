@@ -81,5 +81,12 @@ package pipeline_types is
 		mem_data : std_logic_vector(N-1 downto 0);
 		alu_data : std_logic_vector(N-1 downto 0);
 	end record;
+
+	type wb_t is
+	record
+		reg_write : std_logic;
+		write_data : std_logic_vector(N-1 downto 0);
+		write_addr : std_logic_vector(4 downto 0);
+	end record;
 	
 end pipeline_types;
