@@ -2,11 +2,10 @@ FLAGS = --ieee=synopsys --work=work -fexplicit
 
 # All sources, only dependecies to sources left in the list allowed
 
-SOURCES = mips_constant_pkg.vhd pipeline_types.vhd asserts.vhd sign_extend.vhd control_unit.vhd full_adder.vhd adder.vhd alu_1bit.vhd alu.vhd register_file.vhd alu_control.vhd processor.vhd 
+SOURCES = src/mips_constant_pkg.vhd src/pipeline_types.vhd src/asserts.vhd src/full_adder.vhd src/adder.vhd src/stages/stage_pc_next.vhd
 
 # Test benches in order of execution
-#TESTS = control_unit_tb.vhd alu_control.vhd processor_tb.vhd
-TESTS = control_unit_tb.vhd alu_control_tb.vhd processor_tb.vhd
+TESTS = tests/stages/stage_pc_next_tb.vhd tests/stages/control_unit_tb.vhd
 
 OBJECTS = $(SOURCES:.vhd=.o) $(TESTS:.vhd=.o)
 TEST_BINARIES = $(TESTS:.vhd=)
@@ -23,7 +22,7 @@ all: $(OBJECTS)
 
 # Generic elaborate and run target for test benches
 $(TEST_BINARIES): $(OBJECTS)
-	ghdl --elab-run $(FLAGS) $@ --stop-time=1000ns --vcd=$@_trace.vcd
+	ghdl --elab-run $(FLAGS) $(notdir $@) --stop-time=1000ns --vcd=$(notdir $@_trace.vcd)
 	#gtkwave $@_trace.vcd
 
 # Build all objects
@@ -33,4 +32,4 @@ build: $(OBJECTS)
 tests: $(TEST_BINARIES)
 
 clean:
-	rm -rf *.o e~* work* *.vcd *~ $(OBJECTS) $(BINARIES)
+	rm -rf *.o e~* work* *.vcd *~ $(notdir $(BINARIES))
