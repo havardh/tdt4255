@@ -1,7 +1,8 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-use works.mips_constat_pkg.all;
+use work.mips_constant_pkg.all;
+use work.pipeline_types.all;
 
 entity stage_ex is
 	generic (
@@ -9,7 +10,7 @@ entity stage_ex is
 		);
 	port (
 		input : in idex_t;
-		output: out exmem_t;
+		output: out exmem_t
 	);
 end stage_ex; 
 
@@ -38,7 +39,7 @@ architecture behavorial of stage_ex is
 
 	-- ALU control signals
 	signal alu_input 			: ALU_INPUT;
-	signal alu_ctrl_jump_result : std.logic := 0;
+	signal alu_ctrl_jump_result : std_logic := '0';
 	
 	-- ALU signals
 	signal alu_in_y : std_logic_vector (N-1 downto 0);	
@@ -48,7 +49,7 @@ architecture behavorial of stage_ex is
 	output.ctrl_wb 		  <= input.ctrl_wb;
 	output.branch_target  <= input.branch_target;
 	output.jump_target 	  <= input.jump_target;
-	output.ctrl_m 		  <= input.ctrl.m;
+	output.ctrl_m 		  <= input.ctrl_m;
 	output.write_mem_data <= input.reg2;
 	
 	-- ALU control unit
@@ -75,17 +76,18 @@ architecture behavorial of stage_ex is
 	alu_input_mux: process(input.reg2, input.sign_extended, input.ctrl_ex.alu_src)
 	begin
 		if input.ctrl_ex.alu_src = '0' then
-			alu_input_y <= input.reg2;
+			alu_in_y <= input.reg2;
 		else 
-			alu_input_y <= input.sign_extended;
+			alu_in_y <= input.sign_extended;
 		end if;
 	end process;
 	
 	reg_write_mux: process(input.write_reg_addr_i_type, input.write_reg_addr_r_type, input.ctrl_ex.reg_dst)
 	begin
 		if input.ctrl_ex.reg_dst = '0' then
-			output.write_reg_addr <= input.write_reg_i_type;
+			output.write_reg_addr <= input.write_reg_addr_i_type;
 		else 
-			output.write_reg_addr <= input.write_reg_r_type;
+			output.write_reg_addr <= input.write_reg_addr_r_type;
 		end if;
 	end process;
+end architecture;
