@@ -13,7 +13,6 @@ entity stage_instruction_decode is
 		-- Component Control
 		clk : in std_logic;
 		reset : in std_logic;
-		processor_enable : in std_logic;
 		-- Write Back
 		wb : in wb_t;
 		-- Stage Input
@@ -27,18 +26,16 @@ architecture Behavioral of stage_instruction_decode is
 
 	component control_unit is
 		port (
-        clk        : in std_logic;
-        reset      : in std_logic;
         opcode     : in std_logic_vector (5 DOWNTO 0);
-        enable     : in std_logic;
 
 				ctrl_ex    : out ctrl_ex_t;
 				ctrl_m     : out ctrl_m_t;
-				ctrl_wb    : out ctrl_wb_t;
+				ctrl_wb    : out ctrl_wb_t
 		);
 	end component;
 
 	component register_file is
+		port (
 		clk        : in std_logic;
 		reset      : in std_logic;
 		rw         : in std_logic;
@@ -58,15 +55,28 @@ architecture Behavioral of stage_instruction_decode is
 		);
 	end component;
 
+	component adder is         
+		generic (
+			N: natural := 32
+		);
+		port(
+			x    : in std_logic_vector (31 downto 0);
+			y    : in std_logic_vector (31 downto 0);
+			cin  : in std_logic;
+			cout : out std_logic;
+			r    : out std_logic_vector (31 downto 0)
+		);
+	end component;
+
+	signal sign_extended : std_logic_vector(31 downto 0);
+	
+
 begin
 
 	cu: control_unit
 		port map (
 			-- Component Control
-			clk        => clk,
-			reset      => reset,
 			opcode     => ifid.instruction(31 downto 26),
-			enable     => processor_enable,
 
 			-- Control signals
 			ctrl_ex    => idex.ctrl_ex,
@@ -95,12 +105,24 @@ begin
 	se : sign_extend
 		port map(
 			a => ifid.instruction(15 downto 0),
-			r => idex.sign_extended
+			r => sign_extended
 		);
 
+	branch: adder
+		port map (
+			x => ifid.pc_incremented,
+			y => sign_extended,
+			cin => '0',
+			r => idex.branch_target
+		);
+
+	-- Jump Target is High bits of PC concatenated with the address portion of
+	-- the instruction
+	idex.jump_target <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
+	idex.sign_extended <= sign_extended;
 	-- I-Type instructions writes to register in rt (20-16) part of instruction
-	idex.write_reg_addr_i_type => ifid.instruction(20 downto 16);
+	idex.write_reg_addr_i_type <= ifid.instruction(20 downto 16);
 	-- R-Type instructions writes to register in rd (15-11) part of instruction
-	idex.write_reg_addr_r_type => ifid.instruction(15 downto 11);
+	idex.write_reg_addr_r_type <= ifid.instruction(15 downto 11);
 
 end Behavioral;
