@@ -29,6 +29,10 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
 
+use work.asserts.all;
+use work.mips_constant_pkg.all;
+use work.pipeline_types.all;
+
 ENTITY toplevel_tb IS
 END toplevel_tb;
  
@@ -109,6 +113,50 @@ ARCHITECTURE behavior OF toplevel_tb IS
 	constant CMD_RD	  : std_logic_vector(0 to 31) := "00000000000000000000000000000010";
 	constant CMD_WD	  : std_logic_vector(0 to 31) := "00000000000000000000000000000011";
 	constant CMD_RUN	: std_logic_vector(0 to 31) := "00000000000000000000000000000100";
+	
+	-- Shorthand for writing data and instructions
+	procedure writeData(
+	    signal bus_command : out std_logic_vector(31 downto 0); 
+	    signal bus_address : out std_logic_vector(31 downto 0); 
+	    signal bus_data : out std_logic_vector(31 downto 0);
+	    command : std_logic_vector(31 downto 0);
+	    address : std_logic_vector(31 downto 0); 
+	    data : std_logic_vector(31 downto 0))
+    is
+    
+	begin
+	    bus_command <= command;					
+        bus_address <= address;
+        bus_data <= data;
+        wait for clk_period*3;
+          
+        bus_command <= command;					
+        bus_address <= zero;
+        bus_data <= zero;
+        wait for clk_period*3;
+    end procedure;
+    
+    -- Shorthand for writing data and instructions
+	procedure assertDataMemory(
+	    signal bus_command : out std_logic_vector(31 downto 0); 
+	    signal bus_address : out std_logic_vector(31 downto 0); 
+	    signal bus_data : in std_logic_vector(31 downto 0);
+	    address : in std_logic_vector(31 downto 0); 
+	    expected : in std_logic_vector(31 downto 0))
+    is
+        variable actual : std_logic_vector(31 downto 0);
+	begin
+	    bus_command <= CMD_RD;					
+        bus_address <= address;
+        wait for clk_period*3;
+        actual := bus_data;
+          
+        bus_command <= command;					
+        bus_address <= zero;
+        wait for clk_period*3;
+        
+        --assertEqual(actual, expected);
+    end procedure;
 
 BEGIN
  
@@ -140,213 +188,15 @@ BEGIN
     -- hold reset state for 20 ns.
     wait for 20 ns;	
 
-    -- insert stimulus here 
+    command <= CMD_WD;
+    bus_address_in <= X"00000001";
+    bus_data_in <= X"01010101";
+
+    --writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000001", X"11001101");
+
+    --assertDataMemory(command, bus_address_in, bus_data_out, X"00000001", X"11001100");
     
-		-- INSTR: WRITE DATA TO DMEM
-		command <= CMD_WD;					
-    bus_address_in <= addr1;
-    bus_data_in <= data1;
-    wait for clk_period*3;
-      
-    command <= CMD_IDLE;					
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    command <= CMD_WD;					
-    bus_address_in <= addr2;
-    bus_data_in <= data2;
-    wait for clk_period*3;
-      
-    command <= CMD_IDLE;					
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 0
-		command <= CMD_WI;					
-    bus_address_in <= zero;
-    bus_data_in <= ins0;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;					
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 1
-    command <= CMD_WI;          
-    bus_address_in <= addr1;
-    bus_data_in <= ins1;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 2
-    command <= CMD_WI;          
-    bus_address_in <= addr2;
-    bus_data_in <= ins2;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 3
-    command <= CMD_WI;          
-    bus_address_in <= addr3;
-    bus_data_in <= ins3;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 4
-    command <= CMD_WI;          
-    bus_address_in <= addr4;
-    bus_data_in <= ins4;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 5
-    command <= CMD_WI;          
-    bus_address_in <= addr5;
-    bus_data_in <= ins5;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 6
-    command <= CMD_WI;          
-    bus_address_in <= addr6;
-    bus_data_in <= ins6;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 7
-    command <= CMD_WI;          
-    bus_address_in <= addr7;
-    bus_data_in <= ins7;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 8
-    command <= CMD_WI;          
-    bus_address_in <= addr8;
-    bus_data_in <= ins8;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 9
-    command <= CMD_WI;          
-    bus_address_in <= addr9;
-    bus_data_in <= ins9;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 10
-    command <= CMD_WI;          
-    bus_address_in <= addr10;
-    bus_data_in <= ins10;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 11
-    command <= CMD_WI;          
-    bus_address_in <= addr11;
-    bus_data_in <= ins11;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 12
-    command <= CMD_WI;          
-    bus_address_in <= addr12;
-    bus_data_in <= ins12;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 13
-    command <= CMD_WI;          
-    bus_address_in <= addr13;
-    bus_data_in <= ins13;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 14
-    command <= CMD_WI;          
-    bus_address_in <= addr14;
-    bus_data_in <= ins14;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Add instruction 15
-    command <= CMD_WI;          
-    bus_address_in <= addr15;
-    bus_data_in <= ins15;
-    wait for clk_period*3;
-
-    command <= CMD_IDLE;          
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-    wait for clk_period*3;
-
-    -- Run CPU!
-		command <= CMD_RUN;					
-    bus_address_in <= zero;
-    bus_data_in <= zero;
-		wait for clk_period*100;
-
-    wait;
-    
+    wait ;
  end process;
 
 END;

@@ -103,7 +103,7 @@ architecture Behaviour of processor is
     signal wb_out : wb_t;
     
     -- Program counters
-    signal pc_current, pc_incremented, pc_next : std_logic_vector(N-1 downto 0);
+    signal pc_current, pc_incremented, pc_next : std_logic_vector(N-1 downto 0) := X"00000000";
     
     signal pc_next_in : pc_next_t;
 begin
