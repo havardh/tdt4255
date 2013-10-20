@@ -33,6 +33,7 @@ architecture Behaviour of processor is
             clk            : in std_logic;
             reset          : in std_logic;
             pc_next        : in pc_next_t;
+            enable         : in std_logic;
 
             pc_current     : out std_logic_vector(N-1 downto 0);
             pc_incremented : out std_logic_vector(N-1 downto 0)
@@ -116,6 +117,7 @@ begin
         clk => clk, 
         reset => reset, 
         pc_next => pc_next_in,
+        enable => processor_enable,
         
         pc_current => pc_current,
         pc_incremented => pc_incremented
@@ -140,11 +142,13 @@ begin
     
     -- MEM stage
     dmem_address <= exmem_out.alu_result;
+    dmem_address_wr <= exmem_out.alu_result;
     dmem_data_out <= exmem_out.write_mem_data;
     dmem_write_enable <= exmem_out.ctrl_m.mem_write;
     memwb_in.mem_data <= dmem_data_in;
     memwb_in.alu_data <= exmem_out.alu_result;
     memwb_in.ctrl_wb <= exmem_out.ctrl_wb;
+    memwb_in.write_reg_addr <= exmem_out.write_reg_addr;
     
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(exmem_out)

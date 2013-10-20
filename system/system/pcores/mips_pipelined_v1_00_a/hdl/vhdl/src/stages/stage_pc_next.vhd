@@ -10,6 +10,7 @@ entity stage_pc_next is
 		clk            : in std_logic;
 		reset          : in std_logic;
 		pc_next        : in pc_next_t;
+		enable         : in std_logic;
 
 		pc_current     : out std_logic_vector(N-1 downto 0);
 		pc_incremented : out std_logic_vector(N-1 downto 0)
@@ -37,7 +38,7 @@ architecture Behaviour of stage_pc_next is
 	constant SRC_JUMP        : std_logic := '1';
 
 	-- Current PC register
-	signal pc : std_logic_vector(N-1 downto 0);
+	signal pc : std_logic_vector(N-1 downto 0) := X"00000000";
 
 	-- Incremented PC value from internal adder
 	signal pc_inc : std_logic_vector(N-1 downto 0);
@@ -57,11 +58,11 @@ begin
 		);
 
 	-- Latch next PC value on rising clock edge, value depending on input signal.
-	pc_latcher : process(clk, pc_inc, pc_next)
+	pc_latcher : process(clk, reset, pc_inc, pc_next)
 	begin
 		if reset = '1' then
 			pc <= X"00000000";
-		elsif rising_edge(clk) then
+		elsif rising_edge(clk) and enable = '1' then
 			if pc_next.src = SRC_JUMP then
 				pc <= pc_next.jump;
 			else

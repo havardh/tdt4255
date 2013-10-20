@@ -16,6 +16,7 @@ architecture behavior of stage_pc_next_tb is
 			clk            : in std_logic;
 			reset          : in std_logic;
 			pc_next        : in pc_next_t;
+			enable         : in std_logic;
 
 			pc_current     : out std_logic_vector(31 downto 0);
 			pc_incremented : out std_logic_vector(31 downto 0)
@@ -25,6 +26,7 @@ architecture behavior of stage_pc_next_tb is
     --Inputs and outputs
     signal clk            : std_logic;
 	signal reset          : std_logic;
+	signal enable         : std_logic;
 	signal pc_next        : pc_next_t := (src => '0', jump => (others => '0'));
 	signal pc_current     : std_logic_vector(31 downto 0);
 	signal pc_incremented : std_logic_vector(31 downto 0);
@@ -56,6 +58,7 @@ begin
     -- Stimulus process
     stim_proc: process
     begin
+    	enable <= '1';
 
 		pc_next <= (src => '0', jump => (others => '0'));
 

@@ -15,7 +15,7 @@ end entity;
 
 architecture Behaviour of register_idex is
 begin
-	latch : process(input, clk)
+	latch : process(input, reset, clk)
 	begin
 		if reset = '1' then
 			-- Clear all damaging signals, in effect creating a noop
