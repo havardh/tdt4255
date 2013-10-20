@@ -126,6 +126,7 @@ package body asserts is
         
         assertEqual(actual.mem_data, expected.mem_data, string'("memwb.mem_data"));
         assertEqual(actual.alu_data, expected.alu_data, string'("memwb.alu_data"));
+        assertEqual(actual.write_reg_addr, expected.write_reg_addr, string'("memwb.write_reg_addr"));
     end procedure;
     
     -- Assert that two ctrl_ex records are equal

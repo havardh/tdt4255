@@ -78,8 +78,9 @@ package pipeline_types is
     record
         ctrl_wb : ctrl_wb_t;
 
-        mem_data : std_logic_vector(N-1 downto 0);
-        alu_data : std_logic_vector(N-1 downto 0);
+        mem_data       : std_logic_vector(N-1 downto 0);
+        alu_data       : std_logic_vector(N-1 downto 0);
+        write_reg_addr : std_logic_vector(4 downto 0);
     end record;
 
     type wb_t is
