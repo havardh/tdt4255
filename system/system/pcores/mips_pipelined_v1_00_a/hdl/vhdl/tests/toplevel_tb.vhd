@@ -122,7 +122,7 @@ begin
         -- 0x05 sw $1, 1($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010001");
 
-        -- 0x06
+        -- 0x06 add $2, $1, $1
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00211020");
 
         -- 0x0B sw $2, 2($0)

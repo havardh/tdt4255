@@ -49,11 +49,12 @@ architecture Behaviour of processor is
     
     component stage_id is
     port (
-        clk   : in std_logic;
-        reset : in std_logic;
-        wb    : in wb_t;
-        ifid  : in ifid_t;
-        idex  : out idex_t
+        clk        : in std_logic;
+        reset      : in std_logic;
+				ctrl_stall : in std_logic;
+        wb         : in wb_t;
+        ifid       : in ifid_t;
+        idex       : out idex_t
     );
     end component;
     
@@ -100,13 +101,30 @@ architecture Behaviour of processor is
         output: out memwb_t        
     );
     end component;
-    
+
+		component hazard_detection_unit is
+			port(
+				idex_rt : in std_logic_vector(4 downto 0);
+				idex_mem_read : in std_logic;
+				ifid_rt : in std_logic_vector(4 downto 0);
+				ifid_rs : in std_logic_vector(4 downto 0);
+				pc_stall : out std_logic;
+				ifid_stall : out std_logic;
+				ctrl_stall : out std_logic
+		  );
+		end component;
+
+    signal enable : std_logic;
     -- Pipeline register signals
     signal ifid_in, ifid_out : ifid_t;
     signal idex_in, idex_out : idex_t;
     signal exmem_in, exmem_out : exmem_t;
     signal memwb_in, memwb_out : memwb_t;
-    
+
+		-- Stall signal from hazard unit to id stage
+		signal ctrl_stall : std_logic;
+		signal pc_stall : std_logic;
+		
     -- Out singals from wb stage to reg file
     signal wb_out : wb_t;
     
@@ -124,7 +142,7 @@ begin
         clk => clk, 
         reset => reset, 
         pc_next => pc_next_in,
-        enable => processor_enable,
+        enable => enable,
         
         pc_current => pc_current,
         pc_incremented => pc_incremented
@@ -135,6 +153,7 @@ begin
     id_stage : stage_id port map(
         clk => clk,
         reset => reset,
+				ctrl_stall => ctrl_stall,
         ifid => ifid_out,
         idex => idex_in,
         
@@ -143,10 +162,20 @@ begin
     );
 
 		wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
-    
+
+		hdu : hazard_detection_unit port map(
+				idex_rt       => idex_out.read_reg_rt_addr,
+				idex_mem_read => idex_out.ctrl_m.mem_read,
+				ifid_rt       => ifid_out.instruction(24 downto 20),
+				ifid_rs       => ifid_out.instruction(20 downto 16),
+				pc_stall      => pc_stall,
+				--ifid_write => 
+				ctrl_stall    => ctrl_stall
+		);
+		
     -- IF Stage
     imem_address <= pc_current;
-    ifid_in.instruction <= imem_data_in;    
+    ifid_in.instruction <= imem_data_in;
     ifid_in.pc_incremented <= pc_incremented;
     
     -- MEM stage
@@ -173,8 +202,14 @@ begin
             pc_next_in.src <= '0';
         end if;
     end process;
-    
 
-        
+		pc_stall_p : process(pc_stall, processor_enable)
+		begin
+			if pc_stall = '1' then
+				enable <= '0';
+			else
+				enable <= processor_enable;
+			end if;
+		end process;
     
 end architecture;

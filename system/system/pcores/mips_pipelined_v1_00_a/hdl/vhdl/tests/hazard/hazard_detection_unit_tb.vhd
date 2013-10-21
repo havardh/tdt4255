@@ -21,8 +21,8 @@ architecture Behavioral of hazard_detection_unit_tb is
 			ifid_rt : in std_logic_vector(4 downto 0);
 			ifid_rs : in std_logic_vector(4 downto 0);
 
-			pc_write : out std_logic;
-			ifid_write : out std_logic;
+			pc_stall : out std_logic;
+			ifid_stall : out std_logic;
 			ctrl_stall : out std_logic
 		);
 		end component;
@@ -31,8 +31,8 @@ architecture Behavioral of hazard_detection_unit_tb is
 		signal idex_mem_read : std_logic;
 		signal ifid_rt       : std_logic_vector(4 downto 0);
 		signal ifid_rs       : std_logic_vector(4 downto 0);
-		signal pc_write      : std_logic;
-		signal ifid_write    : std_logic;
+		signal pc_stall      : std_logic;
+		signal ifid_stall    : std_logic;
 		signal ctrl_stall    : std_logic;
 		
 begin
@@ -43,8 +43,8 @@ begin
 			idex_mem_read => idex_mem_read,
 			ifid_rt => ifid_rt,
 			ifid_rs => ifid_rs,
-			pc_write => pc_write,
-			ifid_write => ifid_write,
+			pc_stall => pc_stall,
+			ifid_stall => ifid_stall,
 			ctrl_stall => ctrl_stall
 		);
 
@@ -62,7 +62,7 @@ begin
 
 		-- Tests
 
-		-- When idex.rt == ifid.rs a stall should happen
+		-- Stall when idex.rt == ifid.rs 
 		idex_mem_read <= '1';
 		idex_rt <= "00100";
 		ifid_rs <= "00100";
@@ -72,7 +72,7 @@ begin
 			report "idex.rt == ifid.rs => ctrl_stall == 1"
 			severity warning;
 
-		-- When idex.rt == ifid.rt a stall should happen
+		-- Stall when idex.rt == ifid.rt
 		idex_mem_read <= '1';
 		idex_rt <= "00110";
 		ifid_rs <= "01100";
@@ -82,7 +82,7 @@ begin
 			report "idex.rt == ifid.rt => ctrl_stall == 1"
 			severity warning;
 
-		-- When mem_read is low a stall should not happen
+		-- No stall when mem_read is low
 		idex_mem_read <= '0';
 		idex_rt <= "00110";
 		ifid_rs <= "01100";
@@ -92,7 +92,7 @@ begin
 			report "mem_read == 0 => ctrl_stall == 0"
 			severity warning;
 
-		-- When idex.rt != ifid.rt and ifid.rs no stall should happen
+		-- No stall When idex.rt != ifid.rt and ifid.rs
 		idex_mem_read <= '1';
 		idex_rt <= "10110";
 		ifid_rs <= "01100";

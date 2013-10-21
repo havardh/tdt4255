@@ -14,8 +14,8 @@ entity hazard_detection_unit is
 		ifid_rt : in std_logic_vector(4 downto 0);
 		ifid_rs : in std_logic_vector(4 downto 0);
 
-		pc_write : out std_logic;
-		ifid_write : out std_logic;
+		pc_stall : out std_logic;
+		ifid_stall : out std_logic;
 		ctrl_stall : out std_logic
 	);
 end hazard_detection_unit;
