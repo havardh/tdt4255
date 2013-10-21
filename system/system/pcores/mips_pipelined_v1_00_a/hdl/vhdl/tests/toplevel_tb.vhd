@@ -126,13 +126,16 @@ begin
         -- 0x02 sw $1, 1($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"AC010001");
 
-        -- 0x03-5 add $1, $1, $1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00210820");
+        -- 0x03 add $2, $1, $0
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00201020");
+        -- 0x04 add $1, $2, $1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00410820");
+        -- 0x05-06 add $1, $1, $1
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00210820");
 
         -- 0x06 sw $1, 2($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010002");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"AC010002");
         
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	
