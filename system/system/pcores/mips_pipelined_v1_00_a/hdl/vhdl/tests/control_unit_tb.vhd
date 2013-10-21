@@ -39,7 +39,7 @@ architecture Behavior of control_unit_tb is
 	constant J   : std_logic_vector (5 downto 0) := "000010"; -- X"2";
 	--constant JAL : std_logic_vector (5 downto 0) := X"000011";
 
-	signal output : std_logic_vector(6 downto 0);
+	signal output : std_logic_vector(7 downto 0);
 
 	
 begin
@@ -54,11 +54,12 @@ begin
 			ctrl_wb => ctrl_wb
 		);
 
-	output(6) <= ctrl_ex.reg_dst;
-	output(5) <= ctrl_ex.alu_src;
-	output(4) <= ctrl_m.jump;
-	output(3) <= ctrl_m.branch;
-	output(2) <= ctrl_m.mem_write;
+	output(7) <= ctrl_ex.reg_dst;
+	output(6) <= ctrl_ex.alu_src;
+	output(5) <= ctrl_m.jump;
+	output(4) <= ctrl_m.branch;
+	output(3) <= ctrl_m.mem_write;
+	output(2) <= ctrl_m.mem_read;
 	output(1) <= ctrl_wb.mem_to_reg;
 	output(0) <= ctrl_wb.reg_write;
 	
@@ -72,7 +73,7 @@ begin
 		-- Alu
 		opcode <= ALU;
 		wait for 1 ns;
-		assertEqual(output, "1000001");
+		assertEqual(output, "10000001");
 		assert(ctrl_ex.alu_op = ALUOP_FUNC)
 			report "alu_op should be ALUOP_FUNC"
 			severity warning;
@@ -80,7 +81,7 @@ begin
 		-- Load word
 		opcode <= LW;
 		wait for 1 ns;
-		assertEqual(output, "0100011");
+		assertEqual(output, "01000111");
 		assert(ctrl_ex.alu_op = ALUOP_LOAD_STORE)
 			report "alu_op should be ALUOP_LOAD_STORE"
 			severity warning;
@@ -88,7 +89,7 @@ begin
 		-- Store word
 		opcode <= SW;
 		wait for 1 ns;
-		assertEqual(output, "0100100");
+		assertEqual(output, "01001000");
 		assert(ctrl_ex.alu_op = ALUOP_LOAD_STORE)
 			report "alu_op should be ALUOP_LOAD_STORE"
 			severity warning;
@@ -96,7 +97,7 @@ begin
 		-- Load upper immideate
 		opcode <= LUI;
 		wait for 1 ns;
-		assertEqual(output, "0100001");
+		assertEqual(output, "01000001");
 		assert(ctrl_ex.alu_op = ALUOP_LDI)
 			report "alu_op should be ALUOP_LDI"
 			severity warning;
@@ -104,7 +105,7 @@ begin
 		-- Branch if equal
 		opcode <= BEQ;
 		wait for 1 ns;
-		assertEqual(output, "0001000");
+		assertEqual(output, "00010000");
 		assert(ctrl_ex.alu_op = ALUOP_BRANCH)
 			report "alu_op should be ALUOP_BRANCH"
 			severity warning;
@@ -112,7 +113,7 @@ begin
 		-- Jump
 		opcode <= J;
 		wait for 1 ns;
-		assertEqual(output, "0010000");
+		assertEqual(output, "00100000");
 		assert(ctrl_ex.alu_op = ALUOP_FUNC)
 			report "alu_op should be ALUOP_FUNC"
 			severity warning;

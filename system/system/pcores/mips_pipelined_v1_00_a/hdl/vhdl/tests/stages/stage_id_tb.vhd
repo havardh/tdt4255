@@ -180,12 +180,12 @@ begin
 		-- Test Load (I-type)
 		ifid.instruction <= "10001100000010100000000000000000";
 		wait for 1 ns;
-		assertEqual(idex.write_reg_addr_i_type, "01010");
+		assertEqual(idex.read_reg_rs_addr, "01010");
 
 		-- Test Add (R-Type)
 		ifid.instruction <= "00000000000000000011000000100000";
 		wait for 1 ns;
-		assertEqual(idex.write_reg_addr_r_type, "00110");
+		assertEqual(idex.write_reg_rd_addr, "00110");
 
 		
     -----------------------
