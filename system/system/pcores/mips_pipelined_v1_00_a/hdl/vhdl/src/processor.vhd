@@ -47,7 +47,7 @@ architecture Behaviour of processor is
         );
     end component;
     
-    component stage_instruction_decode is
+    component stage_id is
     port (
         clk   : in std_logic;
         reset : in std_logic;
@@ -125,7 +125,7 @@ begin
     
     ex_stage : stage_ex port map(input => idex_out, output => exmem_in);
     
-    id_stage : stage_instruction_decode port map(
+    id_stage : stage_id port map(
         clk => clk,
         reset => reset,
         ifid => ifid_out,

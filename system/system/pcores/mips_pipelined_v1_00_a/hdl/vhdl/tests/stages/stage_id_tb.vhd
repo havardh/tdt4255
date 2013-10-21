@@ -7,12 +7,12 @@ use work.mips_constant_pkg.all;
 use work.pipeline_types.all;
 use work.asserts.all;
 
-entity stage_instruction_decode_tb is
-end stage_instruction_decode_tb;
+entity stage_id_tb is
+end stage_id_tb;
 
-architecture Behavior of stage_instruction_decode_tb is 
+architecture Behavior of stage_id_tb is 
 
-	component stage_instruction_decode is
+	component stage_id is
 	port (
 		clk : in std_logic;
 		reset : in std_logic;
@@ -42,7 +42,7 @@ architecture Behavior of stage_instruction_decode_tb is
 
 begin
 	
-	uut: stage_instruction_decode
+	uut: stage_id
 	  port map (
 			clk => clk,
 			reset => reset,

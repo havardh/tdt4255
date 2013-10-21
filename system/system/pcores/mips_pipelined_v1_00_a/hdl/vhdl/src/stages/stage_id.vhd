@@ -6,7 +6,7 @@ library work;
 use work.mips_constant_pkg.all;
 use work.pipeline_types.all;
 
-entity stage_instruction_decode is
+entity stage_id is
 	generic (
 		N : integer := 32);
 	port (
@@ -20,9 +20,9 @@ entity stage_instruction_decode is
 		-- Stage Output
 		idex : out idex_t
 		);
-end stage_instruction_decode;
+end stage_id;
 
-architecture Behavioral of stage_instruction_decode is
+architecture Behavioral of stage_id is
 
 	component control_unit is
 		port (
