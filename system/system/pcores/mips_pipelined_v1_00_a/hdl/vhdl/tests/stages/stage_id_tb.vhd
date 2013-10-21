@@ -17,6 +17,7 @@ architecture Behavior of stage_id_tb is
 		clk : in std_logic;
 		reset : in std_logic;
 		
+		ctrl_stall : in std_logic;
 		wb : in wb_t;
 		ifid : in ifid_t;
 		idex : out idex_t
@@ -31,6 +32,7 @@ architecture Behavior of stage_id_tb is
 	signal reset : std_logic;
 
 	-- Input
+	signal stall          : std_logic; 
 	signal wb             : wb_t;
 	signal ifid           : ifid_t;
 
@@ -47,6 +49,7 @@ begin
 			clk => clk,
 			reset => reset,
 
+			ctrl_stall => stall,
 			wb => wb,
 			ifid => ifid,
 			idex => idex
@@ -78,6 +81,7 @@ begin
 		wb.write_addr <= (others => '0');
 		ifid.instruction <= (others => '0');
 		ifid.pc_incremented <= (others => '0');
+		stall <= '0';
 
 		-- Reset all
 		reset <= '1';
@@ -118,7 +122,6 @@ begin
 		assertEqual(idex.reg1, X"00000000");
 		assertEqual(idex.reg2, X"00000001");
 
-		wait;
 		
 		------------------------
 		-- Test Branch Target --
@@ -198,6 +201,42 @@ begin
 		assertEqual(ctrl_output, "1000001");
 		assert(idex.ctrl_ex.alu_op = ALUOP_FUNC)
 			report "alu_up was not forwared correctly"
+			severity warning;
+
+		----------------
+		-- Test Stall --
+		----------------
+
+		-- Should not write to reg when stall is asserted
+		ifid.instruction <= "00000000001000010000100000000000";
+		stall <= '1';
+		wait for 1 ns;
+		assert(idex.ctrl_wb.reg_write = '0')
+			report "reg_write should be 0 for stall"
+			severity warning;
+
+		-- Should not write to reg when stall is asserted
+		ifid.instruction <= X"AC010001";
+		stall <= '1';
+		wait for 1 ns;
+		assert (idex.ctrl_m.mem_write = '0')
+			report "mem_write should be 0 for stall"
+			severity warning;
+
+		-- Should write to reg when stall is not asserted
+		ifid.instruction <= "00000000001000010000100000000000";
+		stall <= '0';
+		wait for 1 ns;
+		assert(idex.ctrl_wb.reg_write = '1')
+			report "reg_write should be 1 for non stall"
+			severity warning;
+
+		-- Should write to reg when stall is not asserted
+		ifid.instruction <= X"AC010001";
+		stall <= '0';
+		wait for 1 ns;
+		assert (idex.ctrl_m.mem_write = '1')
+			report "mem_write should be 1 for non stall"
 			severity warning;
 				
 		wait;

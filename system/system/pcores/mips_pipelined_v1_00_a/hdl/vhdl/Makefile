@@ -10,7 +10,7 @@ src/memory.vhd src/com.vhd src/register_file.vhd src/toplevel.vhd
 
 # Test benches in order of execution
 # $(wildcard tests/*vhd) $(wildcard tests/stages/*vhd)
-TESTS = $(wildcard tests/hazard/*vhd)
+TESTS = $(wildcard tests/hazard/*vhd) tests/stages/stage_id_tb.vhd
 
 OBJECTS = $(SOURCES:.vhd=.o) $(TESTS:.vhd=.o)
 TEST_BINARIES = $(TESTS:.vhd=)

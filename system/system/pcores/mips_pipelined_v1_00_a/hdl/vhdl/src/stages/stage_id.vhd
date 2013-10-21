@@ -13,6 +13,8 @@ entity stage_id is
 		-- Component Control
 		clk : in std_logic;
 		reset : in std_logic;
+
+		ctrl_stall : in std_logic;
 		-- Write Back
 		wb : in wb_t;
 		-- Stage Input
@@ -27,7 +29,7 @@ architecture Behavioral of stage_id is
 	component control_unit is
 		port (
         opcode     : in std_logic_vector (5 DOWNTO 0);
-
+				
 				ctrl_ex    : out ctrl_ex_t;
 				ctrl_m     : out ctrl_m_t;
 				ctrl_wb    : out ctrl_wb_t
@@ -69,6 +71,10 @@ architecture Behavioral of stage_id is
 	end component;
 
 	signal sign_extended : std_logic_vector(31 downto 0);
+
+	signal ctrl_ex : ctrl_ex_t;
+	signal ctrl_m  : ctrl_m_t;
+	signal ctrl_wb : ctrl_wb_t;
 	
 
 begin
@@ -79,9 +85,9 @@ begin
 			opcode     => ifid.instruction(31 downto 26),
 
 			-- Control signals
-			ctrl_ex    => idex.ctrl_ex,
-			ctrl_m     => idex.ctrl_m,
-			ctrl_wb    => idex.ctrl_wb
+			ctrl_ex    => ctrl_ex,
+			ctrl_m     => ctrl_m,
+			ctrl_wb    => ctrl_wb
 		);
 
 	rf : register_file
@@ -116,14 +122,29 @@ begin
 			r => idex.branch_target
 		);
 
+	stall: process(ctrl_stall, ctrl_ex, ctrl_m, ctrl_wb)
+	begin
+		if ctrl_stall = '0' then
+			idex.ctrl_ex <= ctrl_ex;
+			idex.ctrl_m  <= ctrl_m;
+			idex.ctrl_wb <= ctrl_wb;
+		else
+			idex.ctrl_m.mem_write  <= '0';
+			idex.ctrl_m.jump       <= '0';
+			idex.ctrl_m.branch     <= '0';
+			idex.ctrl_wb.reg_write <= '0';
+		end if;
+	end process;
+	
+	
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
-	idex.jump_target <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
+	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
-	-- Assume R-type instructions, let execute handle this 
-	idex.read_reg_rt_addr <= ifid.instruction(24 downto 20);
-	idex.read_reg_rs_addr <= ifid.instruction(20 downto 16);
+	-- Assume R-type instructions, let execute handle this
+	idex.read_reg_rt_addr  <= ifid.instruction(24 downto 20);
+	idex.read_reg_rs_addr  <= ifid.instruction(20 downto 16);
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
 
 end Behavioral;
