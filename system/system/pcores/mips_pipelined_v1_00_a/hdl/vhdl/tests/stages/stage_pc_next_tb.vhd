@@ -40,6 +40,7 @@ begin
 		clk => clk,
 		reset => reset,
 		pc_next => pc_next,
+		enable => enable,
 
 		pc_current => pc_current,
 		pc_incremented => pc_incremented
