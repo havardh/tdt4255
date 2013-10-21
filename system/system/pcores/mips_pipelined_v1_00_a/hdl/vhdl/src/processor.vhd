@@ -57,6 +57,13 @@ architecture Behaviour of processor is
     );
     end component;
     
+    component stage_wb is
+    port (
+				input  : in memwb_t;
+        output : out wb_t
+    );
+    end component;
+    
     -- Pipeline registers
     component register_ifid is
     port(
@@ -134,6 +141,8 @@ begin
         -- Write back signals from the write back stage
         wb => wb_out
     );
+
+		wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
     
     -- IF Stage
     imem_address <= pc_current;
@@ -165,19 +174,7 @@ begin
         end if;
     end process;
     
-    -- WB stage
-    wb_out.reg_write <= memwb_out.ctrl_wb.reg_write;
-    wb_out.write_addr <= memwb_out.write_reg_addr;
-    
-    -- Register write data mux, TODO extract out of processor
-    write_data_mux : process(memwb_out)
-    begin
-        if memwb_out.ctrl_wb.mem_to_reg = '1' then
-            wb_out.write_data <= memwb_out.mem_data;
-        else 
-            wb_out.write_data <= memwb_out.alu_data;
-        end if;
-    end process;
+
         
     
 end architecture;
