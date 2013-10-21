@@ -116,10 +116,6 @@ begin
         -- Write 5 to data memory location 0
         writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
         
-        
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"8C010000");
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00641020");
-
         -- 0x00 lw $1, 0($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
 
@@ -134,19 +130,27 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00210820");
 
-        -- 0x06 sw $1, 2($0)
+        -- 0x07 sw $1, 2($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"AC010002");
+        -- 0x08 sw $2, 3($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000008", X"AC020003");
+        
+        -- 0x9 or $3, $2, $1 0x28 or 0x5 = 0x2D
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000009", X"00411825");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000A", X"AC030004"); -- $1 and $2 as expected, but result is wrong. We need a stage_ex testbench
         
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	
-        wait for clk_period*30;	
+        wait for clk_period*40;	
         command <= CMD_NONE;
         wait for clk_period;
 
-        -- Assert that the 5 has been written to both 0 and 1
+        -- Assert that the data memory contains what we expect
         assertData(command, bus_address_in, bus_data_out, X"00000000", X"00000005");
         assertData(command, bus_address_in, bus_data_out, X"00000001", X"00000005");
         assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000028"); -- (5+5)+(5+5)
+        assertData(command, bus_address_in, bus_data_out, X"00000003", X"00000005");
+        assertData(command, bus_address_in, bus_data_out, X"00000004", X"0000002D");
 
 
         wait;
