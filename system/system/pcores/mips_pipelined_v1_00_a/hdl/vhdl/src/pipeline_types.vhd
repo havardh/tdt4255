@@ -20,7 +20,7 @@ package pipeline_types is
         jump : std_logic;
         branch : std_logic;        
         mem_write : std_logic;
-		read_mem : std_logic;
+        mem_read : std_logic;
     end record;
 
     type ctrl_wb_t is
@@ -55,8 +55,8 @@ package pipeline_types is
         
         sign_extended : std_logic_vector(N-1 downto 0);
         
-		read_reg_rs_addr : std_logic_vector(4 downto 0);
-        read_reg_rt_addr : std_logic_vector(4 downto 0);
+        read_reg_rs_addr  : std_logic_vector(4 downto 0);
+        read_reg_rt_addr  : std_logic_vector(4 downto 0);
         write_reg_rd_addr : std_logic_vector(4 downto 0);
     end record;
     
