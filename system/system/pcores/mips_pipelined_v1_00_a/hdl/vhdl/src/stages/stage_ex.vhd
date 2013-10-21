@@ -48,9 +48,9 @@ architecture behavorial of stage_ex is
 	signal alu_input 			: ALU_INPUT;
 	signal alu_ctrl_jump_result : std_logic := '0';
 	
-	-- ALU signals
-	signal alu_forward_a_in : std_logic_vector (N-1 downto 0);
-	signal alu_forward_b_in : std_logic_vector (N-1 downto 0);
+	-- Internal reg 1 and 2 signals after forwarding
+	signal reg_1_internal : std_logic_vector (N-1 downto 0);
+	signal reg_2_internal : std_logic_vector (N-1 downto 0);
 	
 	-- Final ALU B input after alusrc mux	
 	signal alu_b_in         : std_logic_vector (N-1 downto 0);
@@ -61,7 +61,7 @@ architecture behavorial of stage_ex is
 	output.branch_target  <= input.branch_target;
 	output.jump_target 	  <= input.jump_target;
 	output.ctrl_m 		  <= input.ctrl_m;
-	output.write_mem_data <= input.reg2;
+	output.write_mem_data <= reg_2_internal;
 	
 	-- ALU control unit
 	alu_ctrl: alu_control
@@ -78,7 +78,7 @@ architecture behavorial of stage_ex is
 	-- ALU
 	alu1: alu
 		port map (
-			x 		=> alu_forward_a_in,
+			x 		=> reg_1_internal,
 			y 		=> alu_b_in,
 			alu_in 	=> alu_input,
 			r 		=> output.alu_result,
@@ -90,11 +90,11 @@ architecture behavorial of stage_ex is
 	begin
 		case forwarding_a is
 			when "10" =>
-				alu_forward_a_in <= ex_mem_rd;
+				reg_1_internal <= ex_mem_rd;
 			when "01" =>
-				alu_forward_a_in <= mem_wb_rd;
+				reg_1_internal <= mem_wb_rd;
 			when others =>
-				alu_forward_a_in <= input.reg1;
+				reg_1_internal <= input.reg1;
 		end case;
 	end process;
 		
@@ -103,19 +103,19 @@ architecture behavorial of stage_ex is
 	begin
 		case forwarding_b is 
 			when "10" =>
-				alu_forward_b_in <= ex_mem_rd;
+				reg_2_internal <= ex_mem_rd;
 			when "01" =>
-				alu_forward_b_in <= mem_wb_rd;
+				reg_2_internal <= mem_wb_rd;
 			when others =>
-				alu_forward_b_in <= input.reg2;
+				reg_2_internal <= input.reg2;
 		end case;
 	end process;			
 		
 	-- ALU src mux
-	alu_input_mux: process(alu_forward_b_in, input.sign_extended, input.ctrl_ex.alu_src)
+	alu_input_mux: process(reg_2_internal, input.sign_extended, input.ctrl_ex.alu_src)
 	begin
 		if input.ctrl_ex.alu_src = '0' then
-			alu_b_in <= alu_forward_b_in;
+			alu_b_in <= reg_2_internal;
 		else 
 			alu_b_in <= input.sign_extended;
 		end if;
@@ -124,7 +124,7 @@ architecture behavorial of stage_ex is
 	reg_write_mux: process(input.read_reg_rs_addr, input.write_reg_rd_addr, input.ctrl_ex.reg_dst)
 	begin
 		if input.ctrl_ex.reg_dst = '0' then
-			output.write_reg_addr <= input.read_reg_rs_addr;
+			output.write_reg_addr <= input.read_reg_rt_addr;
 		else 
 			output.write_reg_addr <= input.write_reg_rd_addr;
 		end if;

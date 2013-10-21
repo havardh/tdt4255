@@ -211,7 +211,7 @@ begin
 
 	
 	-- Forwarding unit
-	id_ex_register_rt <= idex_out.read_reg_rt_addr when idex_out.ctrl_ex.alu_src = '1' else "00000";
+	id_ex_register_rt <= idex_out.read_reg_rt_addr;
 	forward : forwarding_unit
 		port map(
 			id_ex_register_rs => idex_out.read_reg_rs_addr,

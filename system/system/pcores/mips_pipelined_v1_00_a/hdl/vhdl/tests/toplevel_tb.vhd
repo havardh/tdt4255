@@ -115,22 +115,25 @@ begin
     begin		
         -- Write 5 to data memory location 0
         writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
+        
+        
+        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"8C010000");
+        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00641020");
 
         -- 0x00 lw $1, 0($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
 
-        -- 0x05 sw $1, 1($0)
+        -- 0x02 sw $1, 1($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"AC010001");
 
-        -- 0x06 add $1, $1, $1
+        -- 0x03-5 add $1, $1, $1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00210820");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"00210820");
 
-        -- 0x0B sw $1, 2($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000D", X"AC010002");
-
-
+        -- 0x06 sw $1, 2($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010002");
+        
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	
         wait for clk_period*30;	
@@ -140,7 +143,7 @@ begin
         -- Assert that the 5 has been written to both 0 and 1
         assertData(command, bus_address_in, bus_data_out, X"00000000", X"00000005");
         assertData(command, bus_address_in, bus_data_out, X"00000001", X"00000005");
-        --assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000028"); -- (5+5)+(5+5)
+        assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000028"); -- (5+5)+(5+5)
 
 
         wait;

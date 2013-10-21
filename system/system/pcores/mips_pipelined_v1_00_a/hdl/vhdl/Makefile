@@ -27,7 +27,7 @@ all: $(OBJECTS)
 # Generic elaborate and run target for test benches
 $(TEST_BINARIES): $(OBJECTS)
 	ghdl --elab-run $(FLAGS) $(notdir $@) --stop-time=10000ns --vcd=$(notdir $@_trace.vcd)
-	#gtkwave $@_trace.vcd
+	#gtkwave $(notdir $@_trace.vcd)
 
 # Build all objects
 build: $(OBJECTS)
