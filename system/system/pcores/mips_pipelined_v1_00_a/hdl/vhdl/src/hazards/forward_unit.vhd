@@ -16,26 +16,37 @@ end entity;
 
 architecture b of forwarding_unit is
 begin
-	process	(id_ex_register_rs, id_ex_register_rt, ex_mem_register_rd, mem_wb_register_rd, ex_mem_reg_write, mem_wb_reg_write)
+	-- Input A (RT) hazards
+	process	(id_ex_register_rs, ex_mem_register_rd, mem_wb_register_rd, ex_mem_reg_write, mem_wb_reg_write)
 	begin  
 		-- type 1a hazard
-		if (ex_mem_reg_write = '1' AND (ex_mem_register_rd /= "00000") AND (ex_mem_register_rd = id_ex_register_rs)) then
+		if (ex_mem_reg_write = '1' AND ex_mem_register_rd /= "00000" AND ex_mem_register_rd = id_ex_register_rs) then
+			--assert(false) report "A = 10" severity note;
 			forwarding_A <= "10";
 		-- type 2a hazard
-		elsif (mem_wb_reg_write	= '1' AND (mem_wb_register_rd /= "00000") AND (mem_wb_register_rd = id_ex_register_rs)) then 
+		elsif (mem_wb_reg_write	= '1' AND mem_wb_register_rd /= "00000" AND mem_wb_register_rd = id_ex_register_rs) then 
+			--assert(false) report "A = 01" severity note;
 			forwarding_A <= "01";
 		else 
+			--assert(false) report "A = 00" severity note;
 			forwarding_A <= "00";
 		end if;
+	end process;
 		
+	-- Input B (RS) hazards
+	process	(id_ex_register_rt, ex_mem_register_rd, mem_wb_register_rd, ex_mem_reg_write, mem_wb_reg_write)
+	begin
 		-- type 1b hazard
 		if (ex_mem_reg_write = '1' AND ex_mem_register_rd /= "00000" AND ex_mem_register_rd = id_ex_register_rt) then
+			--assert(false) report "B = 10" severity note;
 			forwarding_B <= "10";
 		-- type 2b hazard
 		elsif (mem_wb_reg_write	= '1' AND (mem_wb_register_rd /= "00000") AND (mem_wb_register_rd = id_ex_register_rt)) then 
+			--assert(false) report "B = 01" severity note;
 			forwarding_B <= "01"; 
 		else 
+			--assert(false) report "B = 00" severity note;
 			forwarding_B <= "00";
-		end if;
+		end if;		
 	end process;
 end architecture;

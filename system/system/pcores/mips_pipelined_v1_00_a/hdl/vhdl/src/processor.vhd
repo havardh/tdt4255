@@ -27,6 +27,20 @@ end processor;
 
 architecture Behaviour of processor is
 
+	-- Forwarding unit
+	component forwarding_unit is
+		port (
+			id_ex_register_rs  : in std_logic_vector (4 downto 0);
+			id_ex_register_rt  : in std_logic_vector (4 downto 0);
+			ex_mem_register_rd : in std_logic_vector (4 downto 0);
+			mem_wb_register_rd : in std_logic_vector (4 downto 0);
+			ex_mem_reg_write   : in std_logic;
+			mem_wb_reg_write   : in std_logic;
+			forwarding_a       : out std_logic_vector (1 downto 0);
+			forwarding_b       : out std_logic_vector (1 downto 0)
+		);
+	end component;
+
     -- Pipeline stages
     component stage_pc_next is
         port (
@@ -42,8 +56,14 @@ architecture Behaviour of processor is
     
     component stage_ex is
         port (
-            input : in idex_t;
-            output: out exmem_t
+            input        : in idex_t;
+		
+			forwarding_a : in std_logic_vector(1 downto 0);
+			forwarding_b : in std_logic_vector(1 downto 0);
+			ex_mem_rd    : in std_logic_vector(N-1 downto 0);
+			mem_wb_rd    : in std_logic_vector(N-1 downto 0);
+		
+            output       : out exmem_t
         );
     end component;
     
@@ -111,9 +131,13 @@ architecture Behaviour of processor is
     signal wb_out : wb_t;
     
     -- Program counters
-    signal pc_current, pc_incremented, pc_next : std_logic_vector(N-1 downto 0) := X"00000000";
-    
+    signal pc_current, pc_incremented, pc_next : std_logic_vector(N-1 downto 0) := X"00000000";    
     signal pc_next_in : pc_next_t;
+    
+    -- Forwarding singals
+    signal forwarding_a, forwarding_b : std_logic_vector(1 downto 0);
+    signal mem_wb_rd : std_logic_vector(N-1 downto 0);
+    signal id_ex_register_rt : std_logic_vector(4 downto 0);
 begin
     ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
@@ -130,7 +154,16 @@ begin
         pc_incremented => pc_incremented
     );
     
-    ex_stage : stage_ex port map(input => idex_out, output => exmem_in);
+    ex_stage : stage_ex port map(
+    	input => idex_out, 
+    	output => exmem_in,
+    	
+    	forwarding_a => forwarding_a,
+    	forwarding_b => forwarding_b,
+    	ex_mem_rd => exmem_out.alu_result,
+    	-- wb_out holds memwb_out data after the mux
+    	mem_wb_rd => wb_out.write_data 
+    );
     
     id_stage : stage_id port map(
         clk => clk,
@@ -142,7 +175,7 @@ begin
         wb => wb_out
     );
 
-		wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
+	wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
     
     -- IF Stage
     imem_address <= pc_current;
@@ -175,6 +208,20 @@ begin
     end process;
     
 
+	
+	-- Forwarding unit
+	id_ex_register_rt <= idex_out.read_reg_rt_addr when idex_out.ctrl_ex.alu_src = '1' else "00000";
+	forward : forwarding_unit
+		port map(
+			id_ex_register_rs => idex_out.read_reg_rs_addr,
+			id_ex_register_rt => idex_out.read_reg_rt_addr, -- TODO Mask if rt=rd
+			ex_mem_register_rd => exmem_out.write_reg_addr,
+			mem_wb_register_rd => memwb_out.write_reg_addr,
+			ex_mem_reg_write => exmem_out.ctrl_wb.reg_write,
+			mem_wb_reg_write => memwb_out.ctrl_Wb.reg_write,
+			forwarding_a => forwarding_a,
+			forwarding_b => forwarding_b
+		);
         
     
 end architecture;

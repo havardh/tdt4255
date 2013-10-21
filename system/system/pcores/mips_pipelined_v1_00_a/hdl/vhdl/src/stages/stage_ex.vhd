@@ -7,9 +7,16 @@ use work.pipeline_types.all;
 entity stage_ex is
 	generic (
 		N: natural := 32
-		);
+	);
 	port (
-		input : in idex_t;
+		input     : in idex_t;
+		
+		-- Forwarding control signals and data
+		forwarding_a : in std_logic_vector(1 downto 0);
+		forwarding_b : in std_logic_vector(1 downto 0);
+		ex_mem_rd    : in std_logic_vector(N-1 downto 0);
+		mem_wb_rd    : in std_logic_vector(N-1 downto 0);
+		
 		output: out exmem_t
 	);
 end stage_ex; 
@@ -42,7 +49,11 @@ architecture behavorial of stage_ex is
 	signal alu_ctrl_jump_result : std_logic := '0';
 	
 	-- ALU signals
-	signal alu_in_y : std_logic_vector (N-1 downto 0);	
+	signal alu_forward_a_in : std_logic_vector (N-1 downto 0);
+	signal alu_forward_b_in : std_logic_vector (N-1 downto 0);
+	
+	-- Final ALU B input after alusrc mux	
+	signal alu_b_in         : std_logic_vector (N-1 downto 0);
 	
 	begin
 	-- signal relaying
@@ -67,18 +78,46 @@ architecture behavorial of stage_ex is
 	-- ALU
 	alu1: alu
 		port map (
-			x 		=> input.reg1,
-			y 		=> alu_in_y,
+			x 		=> alu_forward_a_in,
+			y 		=> alu_b_in,
 			alu_in 	=> alu_input,
 			r 		=> output.alu_result,
 			flags  	=> output.flags
 		);
-	alu_input_mux: process(input.reg2, input.sign_extended, input.ctrl_ex.alu_src)
+		
+	-- Forwarding ALU A input mux
+	alu_forward_a_in_mux : process(input.reg1, forwarding_a, ex_mem_rd, mem_wb_rd)
+	begin
+		case forwarding_a is
+			when "10" =>
+				alu_forward_a_in <= ex_mem_rd;
+			when "01" =>
+				alu_forward_a_in <= mem_wb_rd;
+			when others =>
+				alu_forward_a_in <= input.reg1;
+		end case;
+	end process;
+		
+	-- ALU B input mux
+	alu_forward_b_in_mux : process(input.reg2, forwarding_b, ex_mem_rd, mem_wb_rd)
+	begin
+		case forwarding_b is 
+			when "10" =>
+				alu_forward_b_in <= ex_mem_rd;
+			when "01" =>
+				alu_forward_b_in <= mem_wb_rd;
+			when others =>
+				alu_forward_b_in <= input.reg2;
+		end case;
+	end process;			
+		
+	-- ALU src mux
+	alu_input_mux: process(alu_forward_b_in, input.sign_extended, input.ctrl_ex.alu_src)
 	begin
 		if input.ctrl_ex.alu_src = '0' then
-			alu_in_y <= input.reg2;
+			alu_b_in <= alu_forward_b_in;
 		else 
-			alu_in_y <= input.sign_extended;
+			alu_b_in <= input.sign_extended;
 		end if;
 	end process;
 	

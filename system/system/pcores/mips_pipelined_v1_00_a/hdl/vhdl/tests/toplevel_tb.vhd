@@ -120,13 +120,15 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
 
         -- 0x05 sw $1, 1($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010001");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"AC010001");
 
-        -- 0x06
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00211020");
+        -- 0x06 add $1, $1, $1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"00210820");
 
-        -- 0x0B sw $2, 2($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000B", X"AC020002");
+        -- 0x0B sw $1, 2($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000D", X"AC010002");
 
 
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
@@ -138,7 +140,7 @@ begin
         -- Assert that the 5 has been written to both 0 and 1
         assertData(command, bus_address_in, bus_data_out, X"00000000", X"00000005");
         assertData(command, bus_address_in, bus_data_out, X"00000001", X"00000005");
-        assertData(command, bus_address_in, bus_data_out, X"00000002", X"0000000A");
+        --assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000028"); -- (5+5)+(5+5)
 
 
         wait;
