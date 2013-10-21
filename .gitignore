@@ -3,5 +3,6 @@ hardware/transcript
 *.aux
 *.log
 *.toc
-
+*.vcd
+*cf
 report/*pdf
