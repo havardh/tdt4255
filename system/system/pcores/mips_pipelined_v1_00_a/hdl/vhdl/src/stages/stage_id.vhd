@@ -120,9 +120,10 @@ begin
 	-- the instruction
 	idex.jump_target <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
-	-- I-Type instructions writes to register in rt (20-16) part of instruction
-	idex.write_reg_addr_i_type <= ifid.instruction(20 downto 16);
-	-- R-Type instructions writes to register in rd (15-11) part of instruction
-	idex.write_reg_addr_r_type <= ifid.instruction(15 downto 11);
+	
+	-- Assume R-type instructions, let execute handle this 
+	idex.read_reg_rt_addr <= ifid.instruction(24 downto 20);
+	idex.read_reg_rs_addr <= ifid.instruction(20 downto 16);
+	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
 
 end Behavioral;

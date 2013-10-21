@@ -100,8 +100,9 @@ package body asserts is
         assertEqual(actual.reg1, expected.reg1, string'("idex.reg1"));
         assertEqual(actual.reg2, expected.reg2, string'("idex.reg2"));
         assertEqual(actual.sign_extended, expected.sign_extended, string'("idex.sign_extended"));
-        assertEqual(actual.write_reg_addr_i_type, expected.write_reg_addr_i_type, string'("idex.write_reg_addr_i_type"));
-        assertEqual(actual.write_reg_addr_r_type, expected.write_reg_addr_r_type, string'("idex.write_reg_addr_r_type"));
+        assertEqual(actual.read_reg_rt_addr, expected.read_reg_rt_addr, string'("idex.read_reg_rt_addr"));
+        assertEqual(actual.read_reg_rs_addr, expected.read_reg_rs_addr, string'("idex.read_reg_rs_addr"));
+        assertEqual(actual.write_reg_rd_addr, expected.write_reg_rd_addr, string'("idex.write_reg_rd_addr"));
     end procedure;
     
     -- Assert that two IDEX records are equal
