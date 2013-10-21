@@ -90,6 +90,7 @@ architecture Behaviour of processor is
         input  : in ifid_t;
         clk    : in std_logic;
         reset  : in std_logic;
+        enable : in std_logic;
         output : out ifid_t        
     );
     end component;
@@ -139,10 +140,10 @@ architecture Behaviour of processor is
     signal mem_wb_rd : std_logic_vector(N-1 downto 0);
     signal id_ex_register_rt : std_logic_vector(4 downto 0);
 begin
-    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, output => ifid_out);
+    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, enable => processor_enable, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
     exmem_reg : register_exmem port map(input => exmem_in, clk => clk, reset => reset, output => exmem_out);
-    memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => reset, output => memwb_out);
+    memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => 'reset, output => memwb_out);
     
     pc_next_stage : stage_pc_next port map(
         clk => clk, 
@@ -214,7 +215,7 @@ begin
 	forward : forwarding_unit
 		port map(
 			id_ex_register_rs => idex_out.read_reg_rs_addr,
-			id_ex_register_rt => idex_out.read_reg_rt_addr, -- TODO Mask if rt=rd
+			id_ex_register_rt => id_ex_register_rt, -- TODO Mask if rt=rd
 			ex_mem_register_rd => exmem_out.write_reg_addr,
 			mem_wb_register_rd => memwb_out.write_reg_addr,
 			ex_mem_reg_write => exmem_out.ctrl_wb.reg_write,
