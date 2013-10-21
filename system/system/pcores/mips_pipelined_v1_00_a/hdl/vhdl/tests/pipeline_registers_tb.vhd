@@ -136,6 +136,14 @@ begin
         wait for clk_period*0.5;
         assertEqual(ifid_output, ifid_expected);
         
+        assert (false) report "Testing that reset correctly clears register" severity note;
+        ifid_expected <= (others => (others => '0'));
+        reset <= '1';
+        wait for clk_period*0.5;
+        reset <= '0';
+        assertEqual(ifid_output, ifid_expected);
+        wait for clk_period*0.5;
+        
         -- Test IDEX        
         assert (false) report "Testing IDEX register" severity note;
         idex_input <= (
@@ -172,14 +180,14 @@ begin
         wait for clk_period*0.5;
         assertEqual(idex_output, idex_expected);
             
-        assert (false) report "Testing that reset clears damaging control signals" severity note;
+        assert (false) report "Testing that reset clears ctrl_m and ctrl_wb signals" severity note;
         reset <= '1';
         idex_expected.ctrl_m <= (others => '0');
-        idex_expected.ctrl_wb.reg_write <= '0';
+        idex_expected.ctrl_wb <= (others => '0');
         wait for clk_period*0.5;
+        reset <= '0';
         assertEqual(idex_output, idex_expected);
-        
-        wait for clk_period*0.5; -- Wait til next rising for next test
+        wait for clk_period*0.5;
         
         -- Test EXMEM
         assert (false) report "Testing EXMEM register" severity note;
@@ -209,6 +217,15 @@ begin
         wait for clk_period*0.5;
         assertEqual(exmem_output, exmem_expected);
         
+        assert (false) report "Testing that reset clears ctrl_m and ctrl_wb signals" severity note;
+        reset <= '1';
+        exmem_expected.ctrl_m <= (others => '0');
+        exmem_expected.ctrl_wb <= (others => '0');
+        wait for clk_period*0.5;
+        reset <= '0';
+        assertEqual(exmem_output, exmem_expected);        
+        wait for clk_period*0.5;
+        
         -- Test MEMWB
         assert (false) report "Testing MEMWB register" severity note;
         memwb_input <= (
@@ -232,6 +249,14 @@ begin
         memwb_expected.mem_data <= (others => '1');
         wait for clk_period*0.5;
         assertEqual(memwb_output, memwb_expected);
+        
+        assert (false) report "Testing that reset clears ctrl_wb signals" severity note;
+        memwb_expected.ctrl_wb <= (others => '0');
+        reset <= '1';
+        wait for clk_period*0.5;
+        reset <= '0';
+        assertEqual(memwb_output, memwb_expected);        
+        wait for clk_period*0.5;
         
         wait;
     end process;

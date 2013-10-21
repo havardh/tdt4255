@@ -14,11 +14,17 @@ entity register_exmem is
 end entity;
 
 architecture Behaviour of register_exmem is
+	signal output_internal : exmem_t;
 begin
-	latch : process(input, clk)
+	output <= output_internal;
+	
+	latch : process(input, reset, clk)
 	begin
-		if rising_edge(clk) then
-			output <= input;
+		if reset = '1' then
+			output_internal.ctrl_m <= (others => '0');
+			output_internal.ctrl_wb <= (others => '0');
+		elsif rising_edge(clk) then
+			output_internal <= input;
 		end if;
 	end process;
 end architecture;

@@ -115,10 +115,10 @@ architecture Behaviour of processor is
     
     signal pc_next_in : pc_next_t;
 begin
-    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => '0', output => ifid_out);
-    idex_reg : register_idex port map(input => idex_in, clk => clk, reset => '0', output => idex_out);
-    exmem_reg : register_exmem port map(input => exmem_in, clk => clk, reset => '0', output => exmem_out);
-    memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => '0', output => memwb_out);
+    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, output => ifid_out);
+    idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
+    exmem_reg : register_exmem port map(input => exmem_in, clk => clk, reset => reset, output => exmem_out);
+    memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => reset, output => memwb_out);
     
     pc_next_stage : stage_pc_next port map(
         clk => clk, 
