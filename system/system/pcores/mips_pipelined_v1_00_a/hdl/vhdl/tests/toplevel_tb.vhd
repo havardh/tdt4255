@@ -115,30 +115,68 @@ begin
     begin		
         -- Write 5 to data memory location 0
         writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
-
+        
         -- 0x00 lw $1, 0($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
 
-        -- 0x05 sw $1, 1($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010001");
+        -- 0x02 sw $1, 1($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"AC010001");
 
-        -- 0x06 add $2, $1, $1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00211020");
+        -- 0x03 add $2, $1, $0
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00201020");
+        -- 0x04 add $1, $2, $1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00410820");
+        -- 0x05-06 add $1, $1, $1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"00210820");
 
-        -- 0x0B sw $2, 2($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000B", X"AC020002");
-
-
+        -- 0x07 sw $1, 2($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"AC010002");
+        -- 0x08 sw $2, 3($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000008", X"AC020003");
+        
+        -- 0x09 lui $10, 0x0F0F
+        -- 0011 11-- ---t tttt iiii iiii iiii iiii
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000009", X"3C0A0F0F");
+        -- 0x0A lui $11, 0xF0FF
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000A", X"3C0BF0FF");
+        
+        -- 0x0B sw $10, 4($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000B", X"AC0A0004");
+        -- 0x0C sw $11, 5($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000C", X"AC0B0005");
+        
+        -- 0x0D and $12, $10, $11
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000D", X"014B6024");
+                
+        -- 0x0E sw $12, 6($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000F", X"AC0C0006");
+        
+        -- 0x0D or $13, $10, $11
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"014B6825");
+        
+        -- 0x0E sw $13, 7($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000011", X"AC0D0007");
+        
+        -- 0x9 or $3, $2, $1 0x28 or 0x5 = 0x2D
+        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000009", X"00411825");
+        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000A", X"AC030004"); -- $1 and $2 as expected, but result is wrong. We need a stage_ex testbench
+        
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	
-        wait for clk_period*30;	
+        wait for clk_period*50;	
         command <= CMD_NONE;
         wait for clk_period;
 
-        -- Assert that the 5 has been written to both 0 and 1
+        -- Assert that the data memory contains what we expect
         assertData(command, bus_address_in, bus_data_out, X"00000000", X"00000005");
         assertData(command, bus_address_in, bus_data_out, X"00000001", X"00000005");
-        assertData(command, bus_address_in, bus_data_out, X"00000002", X"0000000A");
+        assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000028"); -- (5+5)+(5+5)
+        assertData(command, bus_address_in, bus_data_out, X"00000003", X"00000005");
+        assertData(command, bus_address_in, bus_data_out, X"00000004", X"0F0F0000");
+        assertData(command, bus_address_in, bus_data_out, X"00000005", X"F0FF0000");
+        assertData(command, bus_address_in, bus_data_out, X"00000006", X"000F0000");
+        assertData(command, bus_address_in, bus_data_out, X"00000007", X"FFFF0000");
 
 
         wait;

@@ -142,9 +142,9 @@ begin
 	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
-	-- Assume R-type instructions, let execute handle this
-	idex.read_reg_rt_addr  <= ifid.instruction(24 downto 20);
-	idex.read_reg_rs_addr  <= ifid.instruction(20 downto 16);
+	-- Assume R-type instructions, let execute handle this 
+	idex.read_reg_rs_addr <= ifid.instruction(25 downto 21);
+	idex.read_reg_rt_addr <= ifid.instruction(20 downto 16);
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
 
 end Behavioral;

@@ -14,15 +14,18 @@ entity register_idex is
 end entity;
 
 architecture Behaviour of register_idex is
+	signal output_internal : idex_t;
 begin
+	output <= output_internal;
+	
 	latch : process(input, reset, clk)
 	begin
 		if reset = '1' then
 			-- Clear all damaging signals, in effect creating a noop
-			output.ctrl_m <= (others => '0');
-			output.ctrl_wb.reg_write <= '0';
+			output_internal.ctrl_m <= (others => '0');
+			output_internal.ctrl_wb <= (others => '0');
 		elsif rising_edge(clk) then
-			output <= input;
+			output_internal <= input;
 		end if;
 	end process;
 end architecture;

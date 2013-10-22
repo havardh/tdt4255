@@ -8,17 +8,23 @@ entity register_ifid is
 		input  : in ifid_t;
 		clk    : in std_logic;
 		reset  : in std_logic;
+		enable : in std_logic;
 		
 		output : out ifid_t		
 	);
 end entity;
 
 architecture Behaviour of register_ifid is
+	signal output_internal : ifid_t := (others => (others => '0'));
 begin
-	latch : process(input, clk)
+	output <= output_internal;
+
+	latch : process(input, reset, clk)
 	begin
-		if rising_edge(clk) then
-			output <= input;
+		if reset = '1' then
+			output_internal <= (others => (others => '0'));
+		elsif rising_edge(clk) and enable = '1' then
+			output_internal <= input;
 		end if;
 	end process;
 end architecture;
