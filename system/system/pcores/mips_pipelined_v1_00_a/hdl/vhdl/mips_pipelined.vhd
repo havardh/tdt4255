@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
--- mips_multi_cycle.vhd - entity/architecture pair
+-- mips_pipelined.vhd - entity/architecture pair
 ------------------------------------------------------------------------------
 -- IMPORTANT:
 -- DO NOT MODIFY THIS FILE EXCEPT IN THE DESIGNATED SECTIONS.
@@ -32,10 +32,10 @@
 -- ***************************************************************************
 --
 ------------------------------------------------------------------------------
--- Filename:          mips_multi_cycle.vhd
+-- Filename:          mips_pipelined.vhd
 -- Version:           1.00.a
 -- Description:       Top level design, instantiates library components and user logic.
--- Date:              Thu Oct 03 11:25:22 2013 (by Create and Import Peripheral Wizard)
+-- Date:              Tue Oct 22 13:24:35 2013 (by Create and Import Peripheral Wizard)
 -- VHDL Standard:     VHDL'93
 ------------------------------------------------------------------------------
 -- Naming Conventions:
@@ -69,8 +69,8 @@ use proc_common_v3_00_a.ipif_pkg.all;
 library plbv46_slave_single_v1_01_a;
 use plbv46_slave_single_v1_01_a.plbv46_slave_single;
 
-library mips_multi_cycle_v1_00_a;
-use mips_multi_cycle_v1_00_a.user_logic;
+library mips_pipelined_v1_00_a;
+use mips_pipelined_v1_00_a.user_logic;
 
 ------------------------------------------------------------------------------
 -- Entity section
@@ -135,7 +135,7 @@ use mips_multi_cycle_v1_00_a.user_logic;
 --   Sl_MIRQ                      -- Slave interrupt indicator
 ------------------------------------------------------------------------------
 
-entity mips_multi_cycle is
+entity mips_pipelined is
   generic
   (
     -- ADD USER GENERICS BELOW THIS LINE ---------------
@@ -216,13 +216,13 @@ entity mips_multi_cycle is
   attribute SIGIS of SPLB_Clk      : signal is "CLK";
   attribute SIGIS of SPLB_Rst      : signal is "RST";
 
-end entity mips_multi_cycle;
+end entity mips_pipelined;
 
 ------------------------------------------------------------------------------
 -- Architecture section
 ------------------------------------------------------------------------------
 
-architecture IMP of mips_multi_cycle is
+architecture IMP of mips_pipelined is
 
   ------------------------------------------
   -- Array of base/high address pairs for each address range
@@ -375,7 +375,7 @@ begin
   ------------------------------------------
   -- instantiate User Logic
   ------------------------------------------
-  USER_LOGIC_I : entity mips_multi_cycle_v1_00_a.user_logic
+  USER_LOGIC_I : entity mips_pipelined_v1_00_a.user_logic
     generic map
     (
       -- MAP USER GENERICS BELOW THIS LINE ---------------

@@ -17,6 +17,7 @@ architecture behavior of pipeline_registers_tb is
             input: in ifid_t;
             clk  : in std_logic;
             reset  : in std_logic;
+            enable : in std_logic;
         
             output: out ifid_t        
         );
@@ -65,6 +66,7 @@ architecture behavior of pipeline_registers_tb is
     
     signal clk : std_logic;
     signal reset : std_logic;
+    signal enable : std_logic;
      
     constant clk_period : time := 10 ns;
     
@@ -76,6 +78,7 @@ begin
         input => ifid_input,
         clk => clk,
         reset => reset,
+        enable => enable,
         output => ifid_output
     );
     
@@ -112,7 +115,8 @@ begin
     -- Stimulus process
     stim_proc: process
     begin
-
+		enable <= '1';
+		
         -- Hold reset
         reset <= '1';
         wait for clk_period*2;
