@@ -121,7 +121,7 @@ architecture behavorial of stage_ex is
 		end if;
 	end process;
 	
-	reg_write_mux: process(input.read_reg_rs_addr, input.write_reg_rd_addr, input.ctrl_ex.reg_dst)
+	reg_write_mux: process(input.read_reg_rt_addr, input.write_reg_rd_addr, input.ctrl_ex.reg_dst)
 	begin
 		if input.ctrl_ex.reg_dst = '0' then
 			output.write_reg_addr <= input.read_reg_rt_addr;
