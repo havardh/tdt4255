@@ -51,7 +51,7 @@ architecture Behaviour of processor is
     port (
         clk        : in std_logic;
         reset      : in std_logic;
-				ctrl_stall : in std_logic;
+		  stall      : in std_logic;
         wb         : in wb_t;
         ifid       : in ifid_t;
         idex       : out idex_t
@@ -108,9 +108,7 @@ architecture Behaviour of processor is
 				idex_mem_read : in std_logic;
 				ifid_rt : in std_logic_vector(4 downto 0);
 				ifid_rs : in std_logic_vector(4 downto 0);
-				pc_stall : out std_logic;
-				ifid_stall : out std_logic;
-				ctrl_stall : out std_logic
+				stall : out std_logic
 		  );
 		end component;
 
@@ -122,8 +120,7 @@ architecture Behaviour of processor is
     signal memwb_in, memwb_out : memwb_t;
 
 		-- Stall signal from hazard unit to id stage
-		signal ctrl_stall : std_logic;
-		signal pc_stall : std_logic;
+		signal stall : std_logic;
 		
     -- Out singals from wb stage to reg file
     signal wb_out : wb_t;
@@ -153,7 +150,7 @@ begin
     id_stage : stage_id port map(
         clk => clk,
         reset => reset,
-				ctrl_stall => ctrl_stall,
+		  stall => stall,
         ifid => ifid_out,
         idex => idex_in,
         
@@ -168,9 +165,8 @@ begin
 				idex_mem_read => idex_out.ctrl_m.mem_read,
 				ifid_rt       => ifid_out.instruction(24 downto 20),
 				ifid_rs       => ifid_out.instruction(20 downto 16),
-				pc_stall      => pc_stall,
 				--ifid_write => 
-				ctrl_stall    => ctrl_stall
+				stall    => stall
 		);
 		
     -- IF Stage
@@ -187,6 +183,12 @@ begin
     memwb_in.alu_data <= exmem_out.alu_result;
     memwb_in.ctrl_wb <= exmem_out.ctrl_wb;
     memwb_in.write_reg_addr <= exmem_out.write_reg_addr;
+	 
+	 -- DEBUG
+	 idex_in.instruction <= ifid_out.instruction;
+	 exmem_in.instruction <= idex_out.instruction;
+	 memwb_in.instruction <= exmem_out.instruction;
+	 -- /DEBUG
     
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(exmem_out)
@@ -203,9 +205,9 @@ begin
         end if;
     end process;
 
-		pc_stall_p : process(pc_stall, processor_enable)
+		process(stall, processor_enable)
 		begin
-			if pc_stall = '1' then
+			if stall = '1' then
 				enable <= '0';
 			else
 				enable <= processor_enable;

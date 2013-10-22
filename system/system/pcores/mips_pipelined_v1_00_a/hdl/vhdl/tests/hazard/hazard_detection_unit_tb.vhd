@@ -20,10 +20,8 @@ architecture Behavioral of hazard_detection_unit_tb is
 			-- IF/ID stage input
 			ifid_rt : in std_logic_vector(4 downto 0);
 			ifid_rs : in std_logic_vector(4 downto 0);
-
-			pc_stall : out std_logic;
-			ifid_stall : out std_logic;
-			ctrl_stall : out std_logic
+			
+			stall : out std_logic
 		);
 		end component;
 
@@ -31,9 +29,7 @@ architecture Behavioral of hazard_detection_unit_tb is
 		signal idex_mem_read : std_logic;
 		signal ifid_rt       : std_logic_vector(4 downto 0);
 		signal ifid_rs       : std_logic_vector(4 downto 0);
-		signal pc_stall      : std_logic;
-		signal ifid_stall    : std_logic;
-		signal ctrl_stall    : std_logic;
+		signal stall         : std_logic;
 		
 begin
 
@@ -43,9 +39,7 @@ begin
 			idex_mem_read => idex_mem_read,
 			ifid_rt => ifid_rt,
 			ifid_rs => ifid_rs,
-			pc_stall => pc_stall,
-			ifid_stall => ifid_stall,
-			ctrl_stall => ctrl_stall
+			stall => stall
 		);
 
 
@@ -68,7 +62,7 @@ begin
 		ifid_rs <= "00100";
 		ifid_rt <= "00010";
 		wait for 1 ns;
-		assert (ctrl_stall = '1')
+		assert (stall = '1')
 			report "idex.rt == ifid.rs => ctrl_stall == 1"
 			severity warning;
 
@@ -78,7 +72,7 @@ begin
 		ifid_rs <= "01100";
 		ifid_rt <= "00110";
 		wait for 1 ns;
-		assert (ctrl_stall = '1')
+		assert (stall = '1')
 			report "idex.rt == ifid.rt => ctrl_stall == 1"
 			severity warning;
 
@@ -88,7 +82,7 @@ begin
 		ifid_rs <= "01100";
 		ifid_rt <= "00110";
 		wait for 1 ns;
-		assert (ctrl_stall = '0')
+		assert (stall = '0')
 			report "mem_read == 0 => ctrl_stall == 0"
 			severity warning;
 
@@ -98,7 +92,7 @@ begin
 		ifid_rs <= "01100";
 		ifid_rt <= "00110";
 		wait for 1 ns;
-		assert (ctrl_stall = '0')
+		assert (stall = '0')
 			report "idex.rt != ifid.rt and ifid.rs => ctrl_stall == 0"
 			severity warning;
 

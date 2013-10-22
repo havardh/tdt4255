@@ -14,7 +14,7 @@ entity stage_id is
 		clk : in std_logic;
 		reset : in std_logic;
 
-		ctrl_stall : in std_logic;
+		stall : in std_logic;
 		-- Write Back
 		wb : in wb_t;
 		-- Stage Input
@@ -122,9 +122,9 @@ begin
 			r => idex.branch_target
 		);
 
-	stall: process(ctrl_stall, ctrl_ex, ctrl_m, ctrl_wb)
+	process(stall, ctrl_ex, ctrl_m, ctrl_wb)
 	begin
-		if ctrl_stall = '0' then
+		if stall = '0' then
 			idex.ctrl_ex <= ctrl_ex;
 			idex.ctrl_m  <= ctrl_m;
 			idex.ctrl_wb <= ctrl_wb;

@@ -83,13 +83,16 @@ begin
 			processor_enable <= '1';
 			
 			-- Test load should produce stall
-			imem_data_in <= X"8C010000";
+			imem_data_in <= X"8C010000"; -- lw $1, 0($0)
 			wait for clk_period;
 			assert( dmem_write_enable = '0' ) report "Load did non cause stall" severity warning;
-			imem_data_in <= X"AC010001";
+			imem_data_in <= X"AC010001"; -- sw $1, 1($0)
+			wait for clk_period;
 			wait for clk_period;
 			assert( dmem_write_enable = '0' ) report "Load did non cause stall" severity warning;
-			imem_data_in <= X"00211020";
+			imem_data_in <= X"00211020"; -- add $2, $1, $1
+			wait for clk_period;
+			imem_data_in <= X"00111020"; -- add $1, $1, $1
 			wait for clk_period;
 			assert( dmem_write_enable = '1' ) report "Load did non cause stall" severity warning;
 			

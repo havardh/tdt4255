@@ -14,9 +14,7 @@ entity hazard_detection_unit is
 		ifid_rt : in std_logic_vector(4 downto 0);
 		ifid_rs : in std_logic_vector(4 downto 0);
 
-		pc_stall : out std_logic;
-		ifid_stall : out std_logic;
-		ctrl_stall : out std_logic
+		stall : out std_logic
 	);
 end hazard_detection_unit;
 
@@ -27,13 +25,13 @@ begin
 	process(idex_rt, idex_mem_read, ifid_rt, ifid_rs)
 	begin
 
-		if idex_mem_read = '0' then
-				ctrl_stall <= '0';
+		if idex_mem_read /= '1' then
+				stall <= '0';
 		else
 			if (idex_rt = ifid_rs) or (idex_rt = ifid_rt) then
-				ctrl_stall <= '1';
+				stall <= '1';
 			else
-				ctrl_stall <= '0';
+				stall <= '0';
 			end if;
 		end if;
 
