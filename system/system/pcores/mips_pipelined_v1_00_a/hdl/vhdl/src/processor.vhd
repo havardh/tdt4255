@@ -206,7 +206,7 @@ begin
 		
     
     -- IF Stage
-    imem_address <= pc_incremented;
+    imem_address <= pc_current;
     ifid_in.instruction <= imem_data_in;
     ifid_in.pc_incremented <= pc_incremented;
     

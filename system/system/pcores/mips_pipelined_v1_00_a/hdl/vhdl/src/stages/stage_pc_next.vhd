@@ -62,7 +62,7 @@ begin
 	begin
 		if reset = '1' then
 			pc <= X"00000000";
-		elsif rising_edge(clk) and enable = '1' then
+		elsif falling_edge(clk) and enable = '1' then
 			if pc_next.src = SRC_JUMP then
 				pc <= pc_next.jump;
 			else
