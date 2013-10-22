@@ -63,7 +63,6 @@ begin
 		if reset = '1' then
 			pc <= X"00000000";
 		elsif rising_edge(clk) and enable = '1' then
-			assert (false) report "PC" severity note;
 			if pc_next.src = SRC_JUMP then
 				pc <= pc_next.jump;
 			else
