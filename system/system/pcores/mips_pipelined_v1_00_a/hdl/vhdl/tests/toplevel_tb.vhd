@@ -86,7 +86,7 @@ architecture behavior of toplevel_tb is
         assertEqual(bus_data, expected);
         wait for clk_period*1;
     end procedure;
-
+    
 begin
  
     -- instantiate the Unit Under Test (UUT)
@@ -103,10 +103,10 @@ begin
     -- Clock process definitions
     clk_process :process
     begin
-        clk <= '0';
-        wait for clk_period/2;
-        clk <= '1';
-        wait for clk_period/2;
+	    clk <= '0';
+	    wait for clk_period/2;
+	    clk <= '1';
+	    wait for clk_period/2;
     end process;
  
 
@@ -158,9 +158,16 @@ begin
         -- 0x0E sw $13, 7($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000011", X"AC0D0007");
         
-        -- 0x9 or $3, $2, $1 0x28 or 0x5 = 0x2D
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000009", X"00411825");
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000A", X"AC030004"); -- $1 and $2 as expected, but result is wrong. We need a stage_ex testbench
+        -- 0x0F beq $0, $0, -1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000012", X"10001110");
+        
+        -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"AC0D0008");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0D0009");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D000A");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000B");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000C");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000019", X"AC0D000D");
         
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	
@@ -177,8 +184,14 @@ begin
         assertData(command, bus_address_in, bus_data_out, X"00000005", X"F0FF0000");
         assertData(command, bus_address_in, bus_data_out, X"00000006", X"000F0000");
         assertData(command, bus_address_in, bus_data_out, X"00000007", X"FFFF0000");
-
-
+        
+        assertData(command, bus_address_in, bus_data_out, X"00000008", X"FFFF0000");
+        assertData(command, bus_address_in, bus_data_out, X"00000009", X"FFFF0000");
+        assertData(command, bus_address_in, bus_data_out, X"0000000A", X"FFFF0000");
+        assertData(command, bus_address_in, bus_data_out, X"0000000B", X"00000000");
+        assertData(command, bus_address_in, bus_data_out, X"0000000C", X"00000000");
+        assertData(command, bus_address_in, bus_data_out, X"0000000D", X"00000000");
+        
         wait;
     end process;
 
