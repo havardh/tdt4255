@@ -117,7 +117,7 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
         
         -- 0x00 lw $1, 0($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"8C010000");
 
         -- 0x02 sw $1, 1($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"AC010001");
@@ -150,24 +150,24 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000D", X"014B6024");
                 
         -- 0x0E sw $12, 6($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000F", X"AC0C0006");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000E", X"AC0C0006");
         
-        -- 0x0D or $13, $10, $11
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"014B6825");
+        -- 0x0F or $13, $10, $11
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000F", X"014B6825");
         
-        -- 0x0E sw $13, 7($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000011", X"AC0D0007");
+        -- 0x10 sw $13, 7($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"AC0D0007");
         
-        -- 0x0F beq $0, $0, -1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000012", X"10001110");
+        -- 0x11 beq $0, $0, -1
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000011", X"10001110");
         
         -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"AC0D0008");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0D0009");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D000A");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000B");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000C");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000019", X"AC0D000D");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000012", X"AC0D0008");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"AC0D0009");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0D000A");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D000B");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000C");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000D");
         
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	

@@ -1,7 +1,8 @@
 
 library ieee;
 use ieee.std_logic_1164.ALL;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+--use ieee.numeric_std.all;
 
 use work.mips_constant_pkg.all;
 use work.pipeline_types.all;
@@ -147,7 +148,7 @@ architecture Behaviour of processor is
     signal wb_out : wb_t;
     
     -- Program counters
-    signal pc_current, pc_incremented, pc_next : std_logic_vector(N-1 downto 0) := X"00000000";    
+    signal pc_current, pc_incremented : std_logic_vector(N-1 downto 0) := X"00000000";    
     signal pc_next_in : pc_next_t;
     
     -- Forwarding singals
@@ -155,7 +156,7 @@ architecture Behaviour of processor is
     signal mem_wb_rd : std_logic_vector(N-1 downto 0);
     
 begin
-    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, enable => processor_enable, output => ifid_out);
+    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, enable => enable, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
     exmem_reg : register_exmem port map(input => exmem_in, clk => clk, reset => reset, output => exmem_out);
     memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => reset, output => memwb_out);
@@ -205,7 +206,7 @@ begin
 		
     
     -- IF Stage
-    imem_address <= pc_current;
+    imem_address <= pc_incremented;
     ifid_in.instruction <= imem_data_in;
     ifid_in.pc_incremented <= pc_incremented;
     
@@ -240,7 +241,9 @@ begin
         end if;
     end process;
 
-		process(stall, processor_enable)
+	--enable <= processor_enable;	
+
+		pc_stall: process(stall, processor_enable)
 		begin
 			if stall = '1' then
 				enable <= '0';
