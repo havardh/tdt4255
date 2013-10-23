@@ -67,7 +67,7 @@ SwProj: App_Communication
 Processor: microblaze_0
 Executable: App_Communication/executable.elf
 Source: App_Communication/src/main.c
-Header: drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle.h
+Header: drivers/mips_pipelined_v1_00_a/src/mips_pipelined.h
 DefaultInit: executable
 InitBram: 1
 Active: 1

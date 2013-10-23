@@ -8,7 +8,6 @@
   <File Type="UCF" URL="../../data\system.ucf" />
   <File Type="LibgenOpt" URL="../libgen.opt" />
   <File Type="BitinitOpt" URL="../bitinit.opt" />
-  <File Type="ELF" URL="../../App_Communication/executable.elf" />
 
 
 </Update_bits_deps>

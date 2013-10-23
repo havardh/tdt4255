@@ -1,13 +1,13 @@
 microblaze_0
 APP_COMMUNICATION_SOURCES = App_Communication/src/main.c 
-APP_COMMUNICATION_HEADERS = drivers/mips_multi_cycle_v1_00_a/src/mips_multi_cycle.h 
+APP_COMMUNICATION_HEADERS = drivers/mips_pipelined_v1_00_a/src/mips_pipelined.h 
 APP_COMMUNICATION_CC = mb-gcc
 APP_COMMUNICATION_CC_SIZE = mb-size
 APP_COMMUNICATION_CC_OPT = -O2
 APP_COMMUNICATION_CFLAGS = 
 APP_COMMUNICATION_CC_SEARCH = # -B
 APP_COMMUNICATION_LIBPATH = -L./microblaze_0/lib/ # -L
-APP_COMMUNICATION_INCLUDES = -I./microblaze_0/include/  -Idrivers/mips_multi_cycle_v1_00_a/src/ # -I
+APP_COMMUNICATION_INCLUDES = -I./microblaze_0/include/  -Idrivers/mips_pipelined_v1_00_a/src/ # -I
 APP_COMMUNICATION_LFLAGS = # -l
 APP_COMMUNICATION_LINKER_SCRIPT = App_Communication/App_Communication_linker_script.ld
 APP_COMMUNICATION_CC_DEBUG_FLAG =  -g 
