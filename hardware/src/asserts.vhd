@@ -44,9 +44,8 @@ package body asserts is
 
         write(outline, string'(" to be equal to "));
 
-        -- not sure why, but we need to loop the constant interface backwards. (its just vhdl I guess)
-        for y in expected'right downto 0 loop
-            write(outline, expected(expected'right-y));
+        for y in expected'left downto expected'right loop
+            write(outline, expected(y));
         end loop;
         writeline(output, outline);
         return string'("failure");
