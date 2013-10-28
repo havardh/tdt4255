@@ -14,6 +14,7 @@ use work.pipeline_types.all;
 
 package asserts is
     procedure assertEqual(actual : std_logic_vector; expected : std_logic_vector);
+    procedure assertEqual(actual : std_logic; expected : std_logic; message : string);
     
     procedure assertEqual(actual : ifid_t; expected : ifid_t);
     procedure assertEqual(actual : idex_t; expected : idex_t);
@@ -44,9 +45,15 @@ package body asserts is
 
         write(outline, string'(" to be equal to "));
 
-        for y in expected'left downto expected'right loop
-            write(outline, expected(y));
-        end loop;
+		if expected'left > expected'right then
+		    for y in expected'left downto expected'right loop
+		        write(outline, expected(y));
+		    end loop;
+	    else
+		    for y in expected'right downto expected'left loop
+		        write(outline, expected(expected'right-y));
+		    end loop;
+		end if;
         writeline(output, outline);
         return string'("failure");
     end printReport;

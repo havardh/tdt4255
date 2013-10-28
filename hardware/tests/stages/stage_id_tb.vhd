@@ -17,7 +17,7 @@ architecture Behavior of stage_id_tb is
 		clk : in std_logic;
 		reset : in std_logic;
 		
-		ctrl_stall : in std_logic;
+		stall : in std_logic;
 		wb : in wb_t;
 		ifid : in ifid_t;
 		idex : out idex_t
@@ -49,7 +49,7 @@ begin
 			clk => clk,
 			reset => reset,
 
-			ctrl_stall => stall,
+			stall => stall,
 			wb => wb,
 			ifid => ifid,
 			idex => idex
@@ -121,6 +121,15 @@ begin
     -- Verify that $1 is updated but $0 is not.
 		assertEqual(idex.reg1, X"00000000");
 		assertEqual(idex.reg2, X"00000001");
+		assertEqual(idex.equals, '0', "Comparator is not 0");
+		
+		-- Read the values of $zero and $zero with: add $1 $0 $0 // $0 = $0 + $1
+		wb.reg_write <= '0';
+		ifid.instruction <= "00000000000000000000000000000000";
+		wait for clk_period;
+		assertEqual(idex.reg1, X"00000000");
+		assertEqual(idex.reg2, X"00000000");
+		assertEqual(idex.equals, '1', "Comparator is not 1");
 
 		
 		------------------------
@@ -183,7 +192,7 @@ begin
 		-- Test Load (I-type)
 		ifid.instruction <= "10001100000010100000000000000000";
 		wait for 1 ns;
-		assertEqual(idex.read_reg_rs_addr, "01010");
+		assertEqual(idex.read_reg_rt_addr, "01010");
 
 		-- Test Add (R-Type)
 		ifid.instruction <= "00000000000000000011000000100000";
@@ -238,7 +247,7 @@ begin
 		assert (idex.ctrl_m.mem_write = '1')
 			report "mem_write should be 1 for non stall"
 			severity warning;
-				
+						
 		wait;
 	end process;
 		

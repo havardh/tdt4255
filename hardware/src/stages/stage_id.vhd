@@ -76,6 +76,7 @@ architecture Behavioral of stage_id is
 	signal ctrl_m  : ctrl_m_t;
 	signal ctrl_wb : ctrl_wb_t;
 	
+	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
 
 begin
 
@@ -104,8 +105,8 @@ begin
 			-- Read register
 			rs_addr    => ifid.instruction(25 downto 21),
 			rt_addr    => ifid.instruction(20 downto 16),
-			rs         => idex.reg1,
-			rt         => idex.reg2
+			rs         => reg1,
+			rt         => reg2
 		);
 
 	se : sign_extend
@@ -147,5 +148,10 @@ begin
 	idex.read_reg_rs_addr <= ifid.instruction(25 downto 21);
 	idex.read_reg_rt_addr <= ifid.instruction(20 downto 16);
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
+	
+	idex.equals <= '1' when (reg1 xor reg2) = X"00000000" else '0';
+	
+	idex.reg1 <= reg1;
+	idex.reg2 <= reg2;
 
 end Behavioral;
