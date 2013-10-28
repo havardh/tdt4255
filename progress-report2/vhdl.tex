@@ -1,0 +1,19 @@
+\section{VHDL implementation}
+
+\subsection{Required Implementation}
+The implementation is divided between several files. We got one file per hazard
+unit, forward, hazard detection and branch prediction unit. We've got one file
+for each of the four pipeline registers with the simple logic related to these,
+and finally a file per pipeline stage minus the memory stage which is implemented
+directly in the processor. 
+
+Of these everything except hazard detection related to conditional branches is 
+fully implemeneted and tested.
+
+\subsection{Additional Features}
+We are planning to implement the two extra instructions we did last time, jump
+and link and jump register. In addition to these we want to implement both
+shifting and rotating.
+
+For branch prediction we are going to make use of the state based system that 
+was presented in the lectures.
