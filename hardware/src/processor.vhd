@@ -193,15 +193,9 @@ begin
     pc_next_stage : stage_pc_next port map(
         clk => clk, 
         reset => reset, 
-		  
-		  --jump => jump_target,
-		  --src => pc_src,
         pc_opt => pc_next_in,
         enable => enable,
 		  stall => stall,
-        
-        --pc_current => pc_current,
-        --pc_incremented => pc_incremented
 		  
 		  pc => imem_address_out,
 		  pc_next => pc_next
@@ -217,8 +211,6 @@ begin
     	-- wb_out holds memwb_out data after the mux
     	mem_wb_rd => wb_out.write_data 
     );
-    
-	 --stall_or_flush <= stall or idex_in.ctrl_m.jump;
 	 
     id_stage : stage_id port map(
         clk => clk,
@@ -247,17 +239,15 @@ begin
 				idex_jump     => idex_out.ctrl_m.jump,
 				ifid_rt       => ifid_out.instruction(20 downto 16),
 				ifid_rs       => ifid_out.instruction(25 downto 21),
-				--ifid_write => 
 				stall    => stall,
 				flush    => flush
 		);
 		
     
     -- IF Stage
-    imem_address <= pc_next; --pc_current;
+    imem_address <= pc_next;
     ifid_in.instruction <= imem_data_in;
     ifid_in.pc_incremented <= pc_next; 
-	 -- pc_incremented;
     
     -- MEM stage
     dmem_address <= exmem_out.alu_result;
@@ -278,8 +268,7 @@ begin
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(jump, jump_target, idex_in, exmem_out)
     begin
-		  if idex_in.ctrl_m.jump = '1' then
-        --if jump = '1' then -- TODO: and prev ins == branch and taken
+		  if idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
 				pc_next_in.jump <= idex_in.jump_target;
             pc_next_in.src <= '1';
         elsif exmem_out.ctrl_m.branch = '1' and exmem_out.flags.zero = '1' then
@@ -292,15 +281,6 @@ begin
     end process;
 
 	enable <= processor_enable;	
-
-		--pc_stall: process(stall, processor_enable)
-		--begin
-		--	if stall = '1' then
-		--		enable <= '0';
-		--	else
-		--		enable <= processor_enable;
-		--	end if;
-		--end process;
 	
 	-- Forwarding unit
 	forward : forwarding_unit
@@ -320,7 +300,6 @@ begin
 			forwarding_c => forwarding_c,
 			forwarding_d => forwarding_d
 		);
-		--wb_register_rd => wb_out.write_data;
         
     
 end architecture;
