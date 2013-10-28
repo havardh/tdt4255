@@ -82,7 +82,9 @@ architecture Behavioral of toplevel is
 		dmem_address 		: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		dmem_address_wr	: out  STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0);
 		dmem_data_out		: out  STD_LOGIC_VECTOR (MEM_DATA_BUS-1 downto 0);
-		dmem_write_enable	: out  STD_LOGIC
+		dmem_write_enable	: out  STD_LOGIC;
+		
+		imem_address_out  : in STD_LOGIC_VECTOR (MEM_ADDR_BUS-1 downto 0)
 	);
 	end component;
 	
@@ -95,7 +97,9 @@ architecture Behavioral of toplevel is
 			WRITE_DATA	:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
 			MemWrite		:	in  STD_LOGIC;									-- Write Signal
 			ADDR			:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
-			READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
+			READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0);			-- Data read from memory
+			
+			OUT_ADDR	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
 		);
 	end component MEMORY;
 	
@@ -118,6 +122,8 @@ architecture Behavioral of toplevel is
 	signal dmem_write_data_com		: std_logic_vector(MEM_DATA_BUS-1 downto 0);
 	signal dmem_address_com			: std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
 	signal com_write_imem			: std_logic;
+	
+	signal imem_address_out       : std_logic_vector(MEM_ADDR_BUS-1 downto 0); 
 	
 begin
 
@@ -184,7 +190,9 @@ begin
 		WRITE_DATA	=> dmem_write_data_com,		-- DATA TO BE WRITTEN
 		ADDR		=> instr_addr,					-- ADDRESS TO BE READ
 		READ_DATA	=> instr_data,					-- DATA READ OUT
-		MemWrite	=> imem_write_enable_com
+		MemWrite	=> imem_write_enable_com,
+		
+		OUT_ADDR => imem_address_out
 	);
 	
 	MIPS_SC_PROCESSOR: processor 
@@ -196,9 +204,10 @@ begin
 		imem_address		=> instr_addr,
 		dmem_data_in		=> dmem_data_in,				-- DATA READ FROM THE MEMORY
 		dmem_address		=> dmem_address_proc,			-- ADDRESS TO BE READ
-		dmem_address_wr		=> dmem_address_wr_proc,		-- ADDRESS OF DATA TO BE WRITTEN
+		dmem_address_wr   => dmem_address_wr_proc,		-- ADDRESS OF DATA TO BE WRITTEN
 		dmem_data_out		=> dmem_write_data_proc,		-- DATA TO BE WRITTEN
-		dmem_write_enable	=> dmem_write_enable_proc
+		dmem_write_enable	=> dmem_write_enable_proc,
+		imem_address_out  => imem_address_out
 	);
 	
 end Behavioral;

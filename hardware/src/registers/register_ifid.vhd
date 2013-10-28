@@ -8,6 +8,7 @@ entity register_ifid is
 		input  : in ifid_t;
 		clk    : in std_logic;
 		reset  : in std_logic;
+		stall : in std_logic;
 		enable : in std_logic;
 		
 		output : out ifid_t		
@@ -23,7 +24,7 @@ begin
 	begin
 		if reset = '1' then
 			output_internal <= (others => (others => '0'));
-		elsif rising_edge(clk) and enable = '1' then
+		elsif rising_edge(clk) and stall = '0' and enable = '1' then
 			output_internal <= input;
 		end if;
 	end process;

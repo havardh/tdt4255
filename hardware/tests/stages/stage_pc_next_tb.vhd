@@ -15,11 +15,13 @@ architecture behavior of stage_pc_next_tb is
         port (
 			clk            : in std_logic;
 			reset          : in std_logic;
-			pc_next        : in pc_next_t;
+			pc_opt        : in pc_next_t;
 			enable         : in std_logic;
+			
+			stall : in std_logic;
 
-			pc_current     : out std_logic_vector(31 downto 0);
-			pc_incremented : out std_logic_vector(31 downto 0)
+			pc     : in std_logic_vector(31 downto 0);
+			pc_next	: out std_logic_vector(31 downto 0)
         );
     end component;
 
@@ -27,10 +29,10 @@ architecture behavior of stage_pc_next_tb is
     signal clk            : std_logic;
 	signal reset          : std_logic;
 	signal enable         : std_logic;
-	signal pc_next        : pc_next_t := (src => '0', jump => (others => '0'));
-	signal pc_current     : std_logic_vector(31 downto 0);
-	signal pc_incremented : std_logic_vector(31 downto 0);
-    
+	signal pc_opt	        : pc_next_t := (src => '0', jump => (others => '0'));
+	signal pc     : std_logic_vector(31 downto 0);
+	signal pc_next : std_logic_vector(31 downto 0);
+   signal stall : std_logic := '0';
     -- Clock period definitions
     constant clk_period : time := 10 ns;
  
@@ -39,11 +41,12 @@ begin
     uut: stage_pc_next PORT MAP (
 		clk => clk,
 		reset => reset,
-		pc_next => pc_next,
+		pc_opt => pc_opt,
 		enable => enable,
+		stall => stall,
 
-		pc_current => pc_current,
-		pc_incremented => pc_incremented
+		pc => pc,
+		pc_next => pc_next
     );
 
 	-- Clock process definitions
@@ -61,38 +64,39 @@ begin
     begin
     	enable <= '1';
 
-		pc_next <= (src => '0', jump => (others => '0'));
+
+		pc <= X"00000000";
+		pc_opt <= (src => '0', jump => (others => '0'));
 
 		-- Hold reset state
 		reset <= '1';
 		wait for clk_period*2;
 		reset <= '0';
-
+	
 		-- Assert that PC adding works
 		assert (false) report "Test initial value after reset" severity note;
-		assertEqual(pc_current, X"00000000");
-		assertEqual(pc_incremented, X"00000001");
+		wait for clk_period;
+		assertEqual(pc_next, X"00000001");
 
 		-- Assert that pc latches correctly when jump is false
-		pc_next <= (src => '0', jump => (others => '0'));
+		pc_opt <= (src => '0', jump => (others => '0'));
+		pc <= pc_next;
 		wait for clk_period;
 		assert (false) report "Test current latches next" severity note;
-		assertEqual(pc_current, X"00000001");
-		assertEqual(pc_incremented, X"00000002");
+		assertEqual(pc_next, X"00000002");
 
 		-- Assert that pc disregards jump address while source is still the incremented value
-		pc_next <= (src => '0', jump => X"F0000000");
+		pc_opt <= (src => '0', jump => X"F0000000");
+		pc <= pc_next;
 		wait for clk_period;
 		assert (false) report "Test jump is ignored if source is incrmented" severity note;
-		assertEqual(pc_current, X"00000002");
-		assertEqual(pc_incremented, X"00000003");
+		assertEqual(pc_next, X"00000003");
 
 		-- Assert the PC does jump if src is jump
-		pc_next <= (src => '1', jump => X"F0000000");
+		pc_opt <= (src => '1', jump => X"F0000000");
 		wait for clk_period;
 		assert (false) report "Test jump is taken if source is jump" severity note;
-		assertEqual(pc_current, X"F0000000");
-		assertEqual(pc_incremented, X"F0000001");
+		assertEqual(pc_next, X"F0000000");
 
 		-- Test that the unit correctly resets when reset is toggled
 		reset <= '1';
@@ -100,8 +104,7 @@ begin
 		reset <= '0';
 		
 		assert (false) report "Test reset" severity note;
-		assertEqual(pc_current, X"00000000");
-		assertEqual(pc_incremented, X"00000001");
+		assertEqual(pc_next, X"00000000");
 		
         wait;
     end process;

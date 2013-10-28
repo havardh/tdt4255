@@ -15,6 +15,7 @@ entity stage_id is
 		reset : in std_logic;
 
 		stall : in std_logic;
+		flush : in std_logic;
 		-- Write Back
 		wb : in wb_t;
 		-- Stage Input
@@ -22,6 +23,8 @@ entity stage_id is
 		-- Stage Output
 		idex : out idex_t;
 		
+		jump : out std_logic;
+		jump_target : out std_logic_vector(31 downto 0);
 		-- Forwarding signals
 		forwarding_C : in std_logic;
 		forwarding_D : in std_logic
@@ -36,7 +39,8 @@ architecture Behavioral of stage_id is
 				
 				ctrl_ex    : out ctrl_ex_t;
 				ctrl_m     : out ctrl_m_t;
-				ctrl_wb    : out ctrl_wb_t
+				ctrl_wb    : out ctrl_wb_t;
+				jump       : out std_logic
 		);
 	end component;
 
@@ -79,6 +83,8 @@ architecture Behavioral of stage_id is
 	signal ctrl_ex : ctrl_ex_t;
 	signal ctrl_m  : ctrl_m_t;
 	signal ctrl_wb : ctrl_wb_t;
+
+	signal ctrl_jump : std_logic;
 	
 	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
 
@@ -92,7 +98,9 @@ begin
 			-- Control signals
 			ctrl_ex    => ctrl_ex,
 			ctrl_m     => ctrl_m,
-			ctrl_wb    => ctrl_wb
+			ctrl_wb    => ctrl_wb,
+			
+			jump       => ctrl_jump
 		);
 
 	rf : register_file
@@ -127,15 +135,17 @@ begin
 			r => idex.branch_target
 		);
 
-	process(stall, ctrl_ex, ctrl_m, ctrl_wb)
+	process(stall, flush, ctrl_ex, ctrl_m, ctrl_wb)
 	begin
-		if stall = '0' then
+		if stall = '0' and flush = '0' then
 			idex.ctrl_ex <= ctrl_ex;
 			idex.ctrl_m  <= ctrl_m;
+			jump         <= ctrl_jump;
 			idex.ctrl_wb <= ctrl_wb;
 		else
 			idex.ctrl_m.mem_read  <= '0';
 			idex.ctrl_m.mem_write  <= '0';
+			jump                   <= '0';
 			idex.ctrl_m.jump       <= '0';
 			idex.ctrl_m.branch     <= '0';
 			idex.ctrl_wb.reg_write <= '0';
@@ -160,6 +170,7 @@ begin
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
 	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
+	jump_target        <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
 	-- Assume R-type instructions, let execute handle this 
