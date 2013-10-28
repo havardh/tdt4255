@@ -20,7 +20,12 @@ entity stage_id is
 		-- Stage Input
 		ifid : in ifid_t;
 		-- Stage Output
-		idex : out idex_t
+		idex : out idex_t;
+		
+		-- Forwarding signals
+		forwarding_C : in std_logic;
+		forwarding_D : in std_logic;
+		wb_write_data : in std_logic_vector(N-1 downto 0)
 		);
 end stage_id;
 
@@ -53,7 +58,7 @@ architecture Behavioral of stage_id is
 	component sign_extend is
 		port (
 			a : in std_logic_vector(15 downto 0);
-			r : out std_logic_vector(31 downto 0)
+			r : out std_logic_vector(N-1 downto 0)
 		);
 	end component;
 
@@ -62,20 +67,21 @@ architecture Behavioral of stage_id is
 			N: natural := 32
 		);
 		port(
-			x    : in std_logic_vector (31 downto 0);
-			y    : in std_logic_vector (31 downto 0);
+			x    : in std_logic_vector (N-1 downto 0);
+			y    : in std_logic_vector (N-1 downto 0);
 			cin  : in std_logic;
 			cout : out std_logic;
-			r    : out std_logic_vector (31 downto 0)
+			r    : out std_logic_vector (N-1 downto 0)
 		);
 	end component;
 
-	signal sign_extended : std_logic_vector(31 downto 0);
+	signal sign_extended : std_logic_vector(N-1 downto 0);
 
 	signal ctrl_ex : ctrl_ex_t;
 	signal ctrl_m  : ctrl_m_t;
 	signal ctrl_wb : ctrl_wb_t;
 	
+	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
 
 begin
 
@@ -104,8 +110,8 @@ begin
 			-- Read register
 			rs_addr    => ifid.instruction(25 downto 21),
 			rt_addr    => ifid.instruction(20 downto 16),
-			rs         => idex.reg1,
-			rt         => idex.reg2
+			rs         => reg1,
+			rt         => reg2
 		);
 
 	se : sign_extend
@@ -134,6 +140,20 @@ begin
 			idex.ctrl_m.jump       <= '0';
 			idex.ctrl_m.branch     <= '0';
 			idex.ctrl_wb.reg_write <= '0';
+		end if;
+	end process;
+	
+	process(reg1, reg2, forwarding_C, forwarding_D, wb_write_data) 
+	begin
+		if forwarding_C = '1' then
+			idex.reg1 <= wb_write_data;
+		else
+			idex.reg1 <= reg1;
+		end if;
+		if forwarding_D = '1' then
+			idex.reg2 <= wb_write_data;
+		else
+			idex.reg2 <= reg2;
 		end if;
 	end process;
 	
