@@ -160,16 +160,26 @@ begin
         -- 0x10 sw $13, 7($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000000F", X"AC0D0007");
         
+        -- 0x0A lui $15, 0x000F
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"3C0F000F");
+        
+        
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"000F7820");
+        
+        -- 0x0C sw $15, 8($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0F0008");
+               
+        
         -- 0x11 beq $0, $0, -1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"10001110");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"10001110");
         
         -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000011", X"AC0D0008");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000012", X"AC0D0009");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"AC0D000A");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0D000B");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D000C");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000D");
+--        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D0009");
+  --      writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000A");
+    --    writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000B");
+      --  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000C");
+        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000019", X"AC0D000D");
+           --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000001A", X"AC0D000E");
        
 		  
 		  
@@ -189,13 +199,17 @@ begin
         assertData(command, bus_address_in, bus_data_out, X"00000005", X"F0FF0000");
         assertData(command, bus_address_in, bus_data_out, X"00000006", X"000F0000");
         assertData(command, bus_address_in, bus_data_out, X"00000007", X"FFFF0000");
+        assertData(command, bus_address_in, bus_data_out, X"00000008", X"000F0000");
         
-        assertData(command, bus_address_in, bus_data_out, X"00000008", X"FFFF0000");
-        assertData(command, bus_address_in, bus_data_out, X"00000009", X"FFFF0000");
-        assertData(command, bus_address_in, bus_data_out, X"0000000A", X"FFFF0000");
-        assertData(command, bus_address_in, bus_data_out, X"0000000B", X"00000000");
-        assertData(command, bus_address_in, bus_data_out, X"0000000C", X"00000000");
+        --assertData(command, bus_address_in, bus_data_out, X"00000009", X"FFFF0000");
+        --assertData(command, bus_address_in, bus_data_out, X"0000000A", X"FFFF0000");
+        --assertData(command, bus_address_in, bus_data_out, X"0000000B", X"FFFF0000");
+        --assertData(command, bus_address_in, bus_data_out, X"0000000C", X"FFFF0000");
         assertData(command, bus_address_in, bus_data_out, X"0000000D", X"00000000");
+        assertData(command, bus_address_in, bus_data_out, X"0000000E", X"00000000");
+        assertData(command, bus_address_in, bus_data_out, X"0000000F", X"00000000");
+        
+        assert (false) report "Done" severity note;
         
         wait;
     end process;

@@ -154,12 +154,14 @@ begin
             ctrl_wb => (others => '1'), 
             ctrl_ex => (alu_op => (ALUOP_FUNC), others => '0'), 
             ctrl_m => (others => '1'), 
+            equals => '0',
             others => (others => '0')
         );
         idex_expected <= (
             ctrl_wb => (others => '1'), 
             ctrl_ex => (alu_op => (ALUOP_FUNC), others => '0'), 
             ctrl_m => (others => '1'), 
+            equals => '0',
             others => (others => '0')
         );
         wait for clk_period;
@@ -173,6 +175,7 @@ begin
             jump_target => X"11001100",
             
             ctrl_ex => (alu_op => (ALUOP_FUNC), others => '0'), 
+            equals => '0',
             others => (others => '0')
         );
         

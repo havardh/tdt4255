@@ -10,7 +10,13 @@ entity forwarding_unit is
 		ex_mem_reg_write: in std_logic;
 		mem_wb_reg_write: in std_logic;
 		forwarding_A : out std_logic_vector (1 downto 0);
-		forwarding_B : out std_logic_vector (1 downto 0)
+		forwarding_B : out std_logic_vector (1 downto 0);
+		
+		wb_register_rd : in std_logic_vector(4 downto 0);
+		if_id_register_rs : in std_logic_vector(4 downto 0);
+		if_id_register_rt : in std_logic_vector(4 downto 0); 
+		forwarding_C : out std_logic;
+		forwarding_D : out std_logic
 	);
 end entity;
 
@@ -42,5 +48,20 @@ begin
 		else 
 			forwarding_B <= "00";
 		end if;		
+	end process;
+	
+	process (if_id_register_rs, if_id_register_rt, wb_register_rd, mem_wb_reg_write) 
+	begin
+		if (mem_wb_reg_write = '1' AND if_id_register_rs /= "00000" AND if_id_register_rs = wb_register_rd) then
+		forwarding_C <= '1';
+		else
+			forwarding_C <= '0';
+		end if;
+
+		if (mem_wb_reg_write = '1' AND if_id_register_rt /= "00000" AND if_id_register_rt = wb_register_rd) then
+			forwarding_D <= '1';
+		else
+			forwarding_D <= '0';
+		end if;
 	end process;
 end architecture;

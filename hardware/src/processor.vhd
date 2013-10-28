@@ -40,7 +40,13 @@ architecture Behaviour of processor is
 			ex_mem_reg_write   : in std_logic;
 			mem_wb_reg_write   : in std_logic;
 			forwarding_a       : out std_logic_vector (1 downto 0);
-			forwarding_b       : out std_logic_vector (1 downto 0)
+			forwarding_b       : out std_logic_vector (1 downto 0);
+			
+			wb_register_rd     : in std_logic_vector(4 downto 0);
+			if_id_register_rs  : in std_logic_vector(4 downto 0);
+			if_id_register_rt  : in std_logic_vector(4 downto 0);  
+			forwarding_C       : out std_logic;
+			forwarding_D       : out std_logic
 		);
 	end component;
 
@@ -82,7 +88,11 @@ architecture Behaviour of processor is
         idex       : out idex_t;
 		 
 		  jump : out std_logic;
-		  jump_target : out std_logic_vector(N-1 downto 0)
+		  jump_target : out std_logic_vector(N-1 downto 0);
+        
+		-- Forwarding signals
+		forwarding_c : in std_logic;
+		forwarding_d : in std_logic
     );
     end component;
     
@@ -171,9 +181,9 @@ architecture Behaviour of processor is
     signal jump_target : std_logic_vector(N-1 downto 0);
 	 signal pc_src : std_logic;
 	 signal pc_next : std_logic_vector(N-1 downto 0) := X"00000000";
-	 
-	 -- TODO: Remove
-	  
+	 	  
+    signal forwarding_c, forwarding_d : std_logic;
+    
 begin
     ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, stall => stall, enable => processor_enable, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
@@ -222,7 +232,11 @@ begin
 		  jump => jump,
         
         -- Write back signals from the write back stage
-        wb => wb_out
+        wb => wb_out,
+        
+		-- Forwarding signals
+		forwarding_c => forwarding_c,
+		forwarding_d => forwarding_d        
     );
 
 		wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
@@ -298,8 +312,15 @@ begin
 			ex_mem_reg_write => exmem_out.ctrl_wb.reg_write,
 			mem_wb_reg_write => memwb_out.ctrl_Wb.reg_write,
 			forwarding_a => forwarding_a,
-			forwarding_b => forwarding_b
+			forwarding_b => forwarding_b,
+			
+			wb_register_rd => memwb_out.write_reg_addr,
+			if_id_register_rs => ifid_out.instruction(25 downto 21),
+			if_id_register_rt => ifid_out.instruction(20 downto 16),
+			forwarding_c => forwarding_c,
+			forwarding_d => forwarding_d
 		);
+		--wb_register_rd => wb_out.write_data;
         
     
 end architecture;
