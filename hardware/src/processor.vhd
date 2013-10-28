@@ -86,9 +86,6 @@ architecture Behaviour of processor is
         wb         : in wb_t;
         ifid       : in ifid_t;
         idex       : out idex_t;
-		 
-		  jump : out std_logic;
-		  jump_target : out std_logic_vector(N-1 downto 0);
         
 		-- Forwarding signals
 		forwarding_c : in std_logic;
@@ -177,8 +174,6 @@ architecture Behaviour of processor is
     signal mem_wb_rd : std_logic_vector(N-1 downto 0);
 	 
 	 -- Eager jump
-	 signal jump : std_logic;
-    signal jump_target : std_logic_vector(N-1 downto 0);
 	 signal pc_src : std_logic;
 	 signal pc_next : std_logic_vector(N-1 downto 0) := X"00000000";
 	 	  
@@ -219,9 +214,6 @@ begin
 		  flush => flush,
         ifid => ifid_out,
         idex => idex_in,
-		  
-		  jump_target => jump_target,
-		  jump => jump,
         
         -- Write back signals from the write back stage
         wb => wb_out,
@@ -266,7 +258,7 @@ begin
 	 -- /DEBUG
     
     -- PC next mux, TODO extract out of processor(?)
-    pc_next_in_mux : process(jump, jump_target, idex_in, exmem_out)
+    pc_next_in_mux : process(idex_in, exmem_out)
     begin
 		  if idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
 				pc_next_in.jump <= idex_in.jump_target;
@@ -295,7 +287,7 @@ begin
 			forwarding_b => forwarding_b,
 			
 			wb_register_rd => memwb_out.write_reg_addr,
-			if_id_register_rs => ifid_out.instruction(25 downto 21),
+			if_id_register_rs => ifid_out.instruction(25 downto 21),	
 			if_id_register_rt => ifid_out.instruction(20 downto 16),
 			forwarding_c => forwarding_c,
 			forwarding_d => forwarding_d

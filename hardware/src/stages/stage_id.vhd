@@ -39,8 +39,7 @@ architecture Behavioral of stage_id is
 				
 				ctrl_ex    : out ctrl_ex_t;
 				ctrl_m     : out ctrl_m_t;
-				ctrl_wb    : out ctrl_wb_t;
-				jump       : out std_logic
+				ctrl_wb    : out ctrl_wb_t
 		);
 	end component;
 
@@ -98,9 +97,7 @@ begin
 			-- Control signals
 			ctrl_ex    => ctrl_ex,
 			ctrl_m     => ctrl_m,
-			ctrl_wb    => ctrl_wb,
-			
-			jump       => ctrl_jump
+			ctrl_wb    => ctrl_wb
 		);
 
 	rf : register_file
@@ -140,12 +137,10 @@ begin
 		if stall = '0' and flush = '0' then
 			idex.ctrl_ex <= ctrl_ex;
 			idex.ctrl_m  <= ctrl_m;
-			jump         <= ctrl_jump;
 			idex.ctrl_wb <= ctrl_wb;
 		else
 			idex.ctrl_m.mem_read  <= '0';
 			idex.ctrl_m.mem_write  <= '0';
-			jump                   <= '0';
 			idex.ctrl_m.jump       <= '0';
 			idex.ctrl_m.branch     <= '0';
 			idex.ctrl_wb.reg_write <= '0';
