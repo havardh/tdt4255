@@ -54,6 +54,7 @@ package body asserts is
 		        write(outline, expected(expected'right-y));
 		    end loop;
 		end if;
+		
         writeline(output, outline);
         return string'("failure");
     end printReport;

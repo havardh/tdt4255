@@ -20,7 +20,10 @@ architecture Behavior of stage_id_tb is
 		stall : in std_logic;
 		wb : in wb_t;
 		ifid : in ifid_t;
-		idex : out idex_t
+		idex : out idex_t;
+		
+		forwarding_C : in std_logic;
+		forwarding_D : in std_logic
 	);
 	end component;
 
@@ -35,6 +38,9 @@ architecture Behavior of stage_id_tb is
 	signal stall          : std_logic; 
 	signal wb             : wb_t;
 	signal ifid           : ifid_t;
+	
+	-- Forwarding
+	signal forwarding_C, forwarding_D : std_logic;
 
 	-- Output
 	signal idex                  : idex_t;
@@ -52,7 +58,10 @@ begin
 			stall => stall,
 			wb => wb,
 			ifid => ifid,
-			idex => idex
+			idex => idex,
+			
+			forwarding_C => forwarding_C,
+			forwarding_D => forwarding_D
 		);
 
 	-- Map up control_unit output for easy assertions
@@ -82,6 +91,8 @@ begin
 		ifid.instruction <= (others => '0');
 		ifid.pc_incremented <= (others => '0');
 		stall <= '0';
+		forwarding_C <= '0';
+		forwarding_D <= '0';
 
 		-- Reset all
 		reset <= '1';
@@ -111,7 +122,7 @@ begin
 		wb.write_addr <= "00000";
 		wait for clk_period;
 
-		-- Read the values of $zero and $1 with: add $1 $0 $0 // $0 = $0 + $1
+		-- Read the values of $zero and $1 with: add $0 $1 $0 // $0 = $0 + $1
 		wb.reg_write <= '0';
 		ifid.instruction <= "00000000000000010000000000000000";
 		wait for 1 ns;
@@ -123,12 +134,18 @@ begin
 		assertEqual(idex.reg2, X"00000001");
 		assertEqual(idex.equals, '0', "Comparator is not 0");
 		
-		-- Read the values of $zero and $zero with: add $1 $0 $0 // $0 = $0 + $1
+		-- Read the values with rt and rs forwarded
 		wb.reg_write <= '0';
+		forwarding_C <= '1';
+		forwarding_D <= '1';
+		wb.write_data <= X"00000100";
 		ifid.instruction <= "00000000000000000000000000000000";
-		wait for clk_period;
-		assertEqual(idex.reg1, X"00000000");
-		assertEqual(idex.reg2, X"00000000");
+		wait for 1 ns;
+		assertEqual(ifid.instruction, "00000000000000000000000000000000");
+    	-- Verify that both are forwarded
+		assertEqual(idex.reg1, X"00000100");
+		assertEqual(idex.reg2, X"00000100");
+		
 		assertEqual(idex.equals, '1', "Comparator is not 1");
 
 		
@@ -249,6 +266,7 @@ begin
 			severity warning;
 						
 		wait;
+		
 	end process;
 		
 end Behavior;
