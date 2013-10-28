@@ -113,6 +113,8 @@ begin
     -- Stimulus process
     stim_proc: process
     begin		
+		  reset <= '1'; wait for clk_period*1.5; reset <= '0'; wait for clk_period;
+	 
         -- Write 5 to data memory location 0
         writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
         
@@ -169,6 +171,9 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D000C");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000D");
        
+		  
+		  
+		 
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;	
         wait for clk_period*50;	

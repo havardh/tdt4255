@@ -39,7 +39,9 @@ entity memory is
 		WRITE_DATA	:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Data to be written
 		MemWrite		:	in  STD_LOGIC;									-- Write Signal
 		ADDR			:	in  STD_LOGIC_VECTOR (N-1 downto 0);	-- Address to access data
-		READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0)		-- Data read from memory
+		READ_DATA	:	out STD_LOGIC_VECTOR (N-1 downto 0);   -- Data read from memory
+		
+		OUT_ADDR : out STD_LOGIC_VECTOR (N-1 downto 0)
 	);
 end memory;
 
@@ -69,6 +71,8 @@ begin
         end if;
         READ_DATA <= MEM(to_integer(unsigned( address_reg ((M-1) downto 0) )));
     end process MEM_PROC;
+
+	 OUT_ADDR <= address_reg;
 
 end Behavioral;
 

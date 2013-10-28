@@ -22,7 +22,9 @@ entity processor is
         dmem_address      : out std_logic_vector (MEM_ADDR_BUS-1 downto 0);
         dmem_address_wr   : out std_logic_vector (MEM_ADDR_BUS-1 downto 0);
         dmem_data_out     : out std_logic_vector (MEM_DATA_BUS-1 downto 0);
-        dmem_write_enable : out std_logic
+        dmem_write_enable : out std_logic;
+		  
+		  imem_address_out  : in std_logic_vector (MEM_ADDR_BUS-1 downto 0)
     );
 end processor;
 
@@ -47,11 +49,12 @@ architecture Behaviour of processor is
         port (
             clk            : in std_logic;
             reset          : in std_logic;
-            pc_next        : in pc_next_t;
+            pc_opt         : in pc_next_t;
             enable         : in std_logic;
 
-            pc_current     : out std_logic_vector(N-1 downto 0);
-            pc_incremented : out std_logic_vector(N-1 downto 0)
+            stall          : in std_logic;
+				pc             : in std_logic_vector(N-1 downto 0);
+				pc_next        : out std_logic_vector(N-1 downto 0)
         );
     end component;
     
@@ -75,7 +78,10 @@ architecture Behaviour of processor is
 		  stall      : in std_logic;
         wb         : in wb_t;
         ifid       : in ifid_t;
-        idex       : out idex_t
+        idex       : out idex_t;
+		 
+		  jump : out std_logic;
+		  jump_target : out std_logic_vector(N-1 downto 0)
     );
     end component;
     
@@ -92,7 +98,8 @@ architecture Behaviour of processor is
         input  : in ifid_t;
         clk    : in std_logic;
         reset  : in std_logic;
-        enable : in std_logic;
+        stall : in std_logic;
+		  enable : in std_logic;
         output : out ifid_t        
     );
     end component;
@@ -154,9 +161,15 @@ architecture Behaviour of processor is
     -- Forwarding singals
     signal forwarding_a, forwarding_b : std_logic_vector(1 downto 0);
     signal mem_wb_rd : std_logic_vector(N-1 downto 0);
-    
+	 
+	 -- Eager jump
+	 signal jump : std_logic;
+    signal jump_target : std_logic_vector(N-1 downto 0);
+	 signal pc_src : std_logic;
+	 signal pc_next : std_logic_vector(N-1 downto 0) := X"00000000";
+	 
 begin
-    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, enable => enable, output => ifid_out);
+    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, stall => stall, enable => processor_enable, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
     exmem_reg : register_exmem port map(input => exmem_in, clk => clk, reset => reset, output => exmem_out);
     memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => reset, output => memwb_out);
@@ -164,11 +177,18 @@ begin
     pc_next_stage : stage_pc_next port map(
         clk => clk, 
         reset => reset, 
-        pc_next => pc_next_in,
+		  
+		  --jump => jump_target,
+		  --src => pc_src,
+        pc_opt => pc_next_in,
         enable => enable,
+		  stall => stall,
         
-        pc_current => pc_current,
-        pc_incremented => pc_incremented
+        --pc_current => pc_current,
+        --pc_incremented => pc_incremented
+		  
+		  pc => imem_address_out,
+		  pc_next => pc_next
     );
     
     ex_stage : stage_ex port map(
@@ -188,6 +208,9 @@ begin
 		  stall => stall,
         ifid => ifid_out,
         idex => idex_in,
+		  
+		  jump_target => jump_target,
+		  jump => jump,
         
         -- Write back signals from the write back stage
         wb => wb_out
@@ -198,17 +221,18 @@ begin
 		hdu : hazard_detection_unit port map(
 				idex_rt       => idex_out.read_reg_rt_addr,
 				idex_mem_read => idex_out.ctrl_m.mem_read,
-				ifid_rt       => ifid_out.instruction(24 downto 20),
-				ifid_rs       => ifid_out.instruction(20 downto 16),
+				ifid_rt       => ifid_out.instruction(20 downto 16),
+				ifid_rs       => ifid_out.instruction(25 downto 21),
 				--ifid_write => 
 				stall    => stall
 		);
 		
     
     -- IF Stage
-    imem_address <= pc_current;
+    imem_address <= pc_next; --pc_current;
     ifid_in.instruction <= imem_data_in;
-    ifid_in.pc_incremented <= pc_incremented;
+    ifid_in.pc_incremented <= pc_next; 
+	 -- pc_incremented;
     
     -- MEM stage
     dmem_address <= exmem_out.alu_result;
@@ -227,30 +251,37 @@ begin
 	 -- /DEBUG
     
     -- PC next mux, TODO extract out of processor(?)
-    pc_next_in_mux : process(exmem_out)
+    pc_next_in_mux : process(jump, jump_target, idex_in, exmem_out)
     begin
-        if idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
-            pc_next_in.jump <= idex_in.jump_target;
+		  --if exmem_out.ctrl_m.jump = '1' then
+		  if idex_in.ctrl_m.jump = '1' then
+        --if jump = '1' then -- TODO: and prev ins == branch and taken
+            --pc_next_in.jump <= jump_target;
+				pc_next_in.jump <= idex_in.jump_target;
+				--pc_next_in.jump <= exmem_out.jump_target;
             pc_next_in.src <= '1';
+				--pc_src <= '1';
         elsif exmem_out.ctrl_m.branch = '1' and exmem_out.flags.zero = '1' then
             pc_next_in.jump <= exmem_out.branch_target;
             pc_next_in.src <= '1';
+				--pc_src <= '1';
         else
             pc_next_in.jump <= (others => '0');
             pc_next_in.src <= '0';
+				--pc_src <= '0';
         end if;
     end process;
 
-	--enable <= processor_enable;	
+	enable <= processor_enable;	
 
-		pc_stall: process(stall, processor_enable)
-		begin
-			if stall = '1' then
-				enable <= '0';
-			else
-				enable <= processor_enable;
-			end if;
-		end process;
+		--pc_stall: process(stall, processor_enable)
+		--begin
+		--	if stall = '1' then
+		--		enable <= '0';
+		--	else
+		--		enable <= processor_enable;
+		--	end if;
+		--end process;
 	
 	-- Forwarding unit
 	forward : forwarding_unit

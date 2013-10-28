@@ -120,17 +120,17 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
 
         -- j 0x4
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"08000004");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"08000005");
 
         -- add $1 $1 $1
+        -- writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"00210820");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00210820");
-
-        -- add $1 $1 $1
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
         
         -- sw $1, 1($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010001");
-
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010001");
+		  
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;
         wait for clk_period*10;
