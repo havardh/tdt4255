@@ -26,12 +26,17 @@ architecture b of branch_prediction_unit is
 	type MEM_T is array (MEM_SIZE-1 downto 0) of PREDICTION_STATE;
 	
 	signal mem : MEM_T := (others => TAKEN);
+	
+	signal pred_state : PREDICTION_STATE;
+	signal corr_state : PREDICTION_STATE;
 begin
+	pred_state <= mem(to_integer(unsigned(predict_addr(WIDTH-1 downto 0))));
+	corr_state <= mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0))));
+
 	-- Predict branch action based on prediction table
-	predictor : process(predict_addr, mem)
+	predictor : process(pred_state)
 	begin
-		if mem(to_integer(unsigned(predict_addr(WIDTH-1 downto 0)))) = TAKEN 
-			or mem(to_integer(unsigned(predict_addr(WIDTH-1 downto 0)))) = TAKEN_STRONG then
+		if pred_state = TAKEN or pred_state = TAKEN_STRONG then
 			prediction <= '1';
 		else
 			prediction <= '0';
@@ -43,17 +48,17 @@ begin
 	begin
 		if rising_edge(clk) and correct_enable = '1' then
 			if correct_action = '1' then
-				if mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) = NOT_TAKEN_STRONG then
+				if corr_state = NOT_TAKEN_STRONG then
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= NOT_TAKEN;
-				elsif mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) = NOT_TAKEN then
+				elsif corr_state = NOT_TAKEN then
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= TAKEN;
 				else
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= TAKEN_STRONG;
 				end if;
 			else 
-				if mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) = TAKEN_STRONG then
+				if corr_state = TAKEN_STRONG then
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= TAKEN;
-				elsif mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) = TAKEN then
+				elsif corr_state = TAKEN then
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= NOT_TAKEN;
 				else
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= NOT_TAKEN_STRONG;
