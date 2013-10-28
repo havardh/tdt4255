@@ -43,6 +43,10 @@ package pipeline_types is
 
     type idex_t is
     record
+		  -- DEBUG
+        instruction : std_logic_vector(N-1 downto 0);
+		  -- /DEBUG
+	 
         ctrl_wb : ctrl_wb_t;    
         ctrl_m : ctrl_m_t;
         ctrl_ex : ctrl_ex_t;
@@ -62,6 +66,10 @@ package pipeline_types is
     
     type exmem_t is
     record
+		  -- DEBUG
+        instruction : std_logic_vector(N-1 downto 0);
+		  -- /DEBUG
+		  
         ctrl_wb : ctrl_wb_t;
         ctrl_m : ctrl_m_t;
 
@@ -78,6 +86,10 @@ package pipeline_types is
 
     type memwb_t is
     record
+		  -- DEBUG
+        instruction : std_logic_vector(N-1 downto 0);
+		  -- /DEBUG
+		  
         ctrl_wb : ctrl_wb_t;
 
         mem_data       : std_logic_vector(N-1 downto 0);
@@ -86,7 +98,7 @@ package pipeline_types is
     end record;
 
     type wb_t is
-    record
+    record	 
         reg_write : std_logic;
         write_data : std_logic_vector(N-1 downto 0);
         write_addr : std_logic_vector(4 downto 0);
