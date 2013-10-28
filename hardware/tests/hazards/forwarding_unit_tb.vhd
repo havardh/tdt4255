@@ -21,7 +21,6 @@ architecture Behavior of forwarding_unit_tb is
 			forwarding_B 		: out std_logic_vector (1 downto 0);
 			
 			wb_register_rd : in std_logic_vector(4 downto 0);
-			wb_register_write : in std_logic;
 			if_id_register_rs : in std_logic_vector(4 downto 0);
 			if_id_register_rt : in std_logic_vector(4 downto 0); 
 			forwarding_C : out std_logic;
@@ -63,7 +62,6 @@ begin
 			forwarding_B 		=> forwarding_B ,
 			
 			wb_register_rd      => wb_register_rd,
-			wb_register_write   => wb_register_write,
 			if_id_register_rs   => if_id_register_rs,
 			if_id_register_rt   => if_id_register_rt,
 			forwarding_C        => forwarding_C,
@@ -162,14 +160,14 @@ begin
 		
 		-- testing forwarding_C
 		wb_register_rd <= "00001";
-		wb_register_write <= '0';
+		mem_wb_reg_write <= '0';
 		if_id_register_rs <= "00001";
 		wait for 10 ns;
 		
 		assert(false) report "testing forwarding_C set to 0 because write is low" severity note;
 		assertEqual(forwarding_C, '0', "forwarding_C != 0");
 		
-		wb_register_write <= '1';
+		mem_wb_reg_write <= '1';
 		wait for 10 ns;
 		
 		assert(false) report "testing forwarding_C set to 1" severity note;
@@ -184,14 +182,14 @@ begin
 		
 		-- testing forwarding_D
 		wb_register_rd <= "00001";
-		wb_register_write <= '0';
+		mem_wb_reg_write <= '0';
 		if_id_register_rt <= "00001";
 		wait for 10 ns;
 		
 		assert(false) report "testing forwarding_D set to 0 because write is low" severity note;
 		assertEqual(forwarding_D, '0', "forwarding_D != 0");
 		
-		wb_register_write <= '1';
+		mem_wb_reg_write <= '1';
 		wait for 10 ns;
 		
 		assert(false) report "testing forwarding_D set to 1" severity note;

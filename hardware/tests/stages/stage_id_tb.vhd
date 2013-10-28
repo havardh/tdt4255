@@ -23,8 +23,7 @@ architecture Behavior of stage_id_tb is
 		idex : out idex_t;
 		
 		forwarding_C : in std_logic;
-		forwarding_D : in std_logic;
-		wb_write_data : in std_logic_vector(31 downto 0)
+		forwarding_D : in std_logic
 	);
 	end component;
 
@@ -42,7 +41,6 @@ architecture Behavior of stage_id_tb is
 	
 	-- Forwarding
 	signal forwarding_C, forwarding_D : std_logic;
-	signal wb_write_data : std_logic_vector(31 downto 0);
 
 	-- Output
 	signal idex                  : idex_t;
@@ -63,8 +61,7 @@ begin
 			idex => idex,
 			
 			forwarding_C => forwarding_C,
-			forwarding_D => forwarding_D,
-			wb_write_data => wb_write_data
+			forwarding_D => forwarding_D
 		);
 
 	-- Map up control_unit output for easy assertions
@@ -96,7 +93,6 @@ begin
 		stall <= '0';
 		forwarding_C <= '0';
 		forwarding_D <= '0';
-		wb_write_data <= (others => '0');
 
 		-- Reset all
 		reset <= '1';
@@ -141,7 +137,7 @@ begin
 		wb.reg_write <= '0';
 		forwarding_C <= '1';
 		forwarding_D <= '1';
-		wb_write_data <= X"00000100";
+		wb.write_data <= X"00000100";
 		ifid.instruction <= "00000000000000000000000000000000";
 		wait for 1 ns;
 		assertEqual(ifid.instruction, "00000000000000000000000000000000");

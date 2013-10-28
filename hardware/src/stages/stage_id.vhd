@@ -24,8 +24,7 @@ entity stage_id is
 		
 		-- Forwarding signals
 		forwarding_C : in std_logic;
-		forwarding_D : in std_logic;
-		wb_write_data : in std_logic_vector(N-1 downto 0)
+		forwarding_D : in std_logic
 		);
 end stage_id;
 
@@ -143,15 +142,15 @@ begin
 		end if;
 	end process;
 	
-	process(reg1, reg2, forwarding_C, forwarding_D, wb_write_data) 
+	process(reg1, reg2, forwarding_C, forwarding_D, wb.write_data) 
 	begin
 		if forwarding_C = '1' then
-			idex.reg1 <= wb_write_data;
+			idex.reg1 <= wb.write_data;
 		else
 			idex.reg1 <= reg1;
 		end if;
 		if forwarding_D = '1' then
-			idex.reg2 <= wb_write_data;
+			idex.reg2 <= wb.write_data;
 		else
 			idex.reg2 <= reg2;
 		end if;
