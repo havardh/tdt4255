@@ -13,7 +13,7 @@ entity branch_prediction_unit is
 		
 		-- Correction inputs
 		correct_addr   : in std_logic_vector(WIDTH-1 downto 0);
-		correct_action : in std_logic;
+		correct_taken  : in std_logic;
 		correct_enable : in std_logic;
 		clk            : in std_logic
 	);
@@ -44,10 +44,10 @@ begin
 	end process;
 	
 	-- Correct prediciton table based on actual action taken
-	corrector : process(clk, correct_enable, correct_addr, correct_action) 
+	corrector : process(clk, correct_enable, correct_addr, correct_taken) 
 	begin
 		if rising_edge(clk) and correct_enable = '1' then
-			if correct_action = '1' then
+			if correct_taken = '1' then
 				if corr_state = NOT_TAKEN_STRONG then
 					mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0)))) <= NOT_TAKEN;
 				elsif corr_state = NOT_TAKEN then

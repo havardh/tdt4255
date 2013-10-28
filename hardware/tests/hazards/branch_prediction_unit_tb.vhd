@@ -16,14 +16,14 @@ architecture b of branch_prediction_unit_tb is
 		
 			-- Correction inputs
 			correct_addr   : in std_logic_vector(WIDTH-1 downto 0);
-			correct_action : in std_logic;
+			correct_taken : in std_logic;
 			correct_enable : in std_logic;
 			clk            : in std_logic
 		);
 	end component;
 	
 	signal predict_addr, correct_addr : std_logic_vector(2 downto 0) := "000";
-	signal prediction, correct_action, correct_enable, clk : std_logic;
+	signal prediction, correct_taken, correct_enable, clk : std_logic;
 	
 	
     -- Clock period definitions
@@ -36,7 +36,7 @@ begin
 			prediction => prediction,
 			
 			correct_addr => correct_addr,
-			correct_action => correct_action,
+			correct_taken => correct_taken,
 			correct_enable => correct_enable,
 			clk => clk
 		);
@@ -60,7 +60,7 @@ begin
 		
 		assert (false) report "Test that default prediction is changed after not taken branch" severity note;
 		correct_addr <= "101";
-		correct_action <= '0';
+		correct_taken <= '0';
 		correct_enable <= '1';
 		predict_addr <= "101";
 		wait for clk_period;		
@@ -68,7 +68,7 @@ begin
 		
 		assert (false) report "Test that the state does not change if enable is low" severity note;
 		correct_addr <= "101";
-		correct_action <= '1';
+		correct_taken <= '1';
 		correct_enable <= '0';
 		predict_addr <= "101";
 		wait for clk_period;		
@@ -77,7 +77,7 @@ begin
 		
 		assert (false) report "Test that the state does change if enable is high" severity note;
 		correct_addr <= "101";
-		correct_action <= '1';
+		correct_taken <= '1';
 		correct_enable <= '1';
 		predict_addr <= "101";
 		wait for clk_period;		
@@ -85,31 +85,31 @@ begin
 		
 		assert (false) report "Test that one taken and one not taken results in taken predict" severity note;		
 		correct_addr <= "101";
-		correct_action <= '1';
+		correct_taken <= '1';
 		correct_enable <= '1';
 		predict_addr <= "101";
 		wait for clk_period;
-		correct_action <= '0';
+		correct_taken <= '0';
 		wait for clk_period;
 		assertEqual(prediction, '1', "Prediction is not 1");
 		
 		assert (false) report "Test that one taken and two not taken results in not taken predict" severity note;		
 		correct_addr <= "101";
-		correct_action <= '1';
+		correct_taken <= '1';
 		correct_enable <= '1';
 		predict_addr <= "101";
 		wait for clk_period;
-		correct_action <= '0';
+		correct_taken <= '0';
 		wait for clk_period*2;
 		assertEqual(prediction, '0', "Prediction is not 1");
 		
 		assert (false) report "Test that we need two not taken to get a negative predict after several positives" severity note;		
 		correct_addr <= "101";
-		correct_action <= '1';
+		correct_taken <= '1';
 		correct_enable <= '1';
 		predict_addr <= "101";
 		wait for clk_period*5;
-		correct_action <= '0';
+		correct_taken <= '0';
 		-- We expect positive after 5 positives
 		assertEqual(prediction, '1', "Prediction is not 1");
 		wait for clk_period;
@@ -121,11 +121,11 @@ begin
 		
 		assert (false) report "Test that we need two taken to get a positive predict after several negatives" severity note;		
 		correct_addr <= "101";
-		correct_action <= '0';
+		correct_taken <= '0';
 		correct_enable <= '1';
 		predict_addr <= "101";
 		wait for clk_period*5;
-		correct_action <= '1';
+		correct_taken <= '1';
 		-- We expect positive after 5 positives
 		assertEqual(prediction, '0', "Prediction is not 0");
 		wait for clk_period;
