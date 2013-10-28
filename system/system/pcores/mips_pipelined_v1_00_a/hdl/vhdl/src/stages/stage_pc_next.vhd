@@ -58,11 +58,11 @@ begin
 		);
 
 	-- Latch next PC value on rising clock edge, value depending on input signal.
-	pc_latcher : process(clk, reset, pc_inc, pc_next)
+	pc_latcher : process(enable, clk, reset, pc_inc, pc_next)
 	begin
 		if reset = '1' then
 			pc <= X"00000000";
-		elsif rising_edge(clk) and enable = '1' then
+		elsif falling_edge(clk) and enable = '1' then
 			if pc_next.src = SRC_JUMP then
 				pc <= pc_next.jump;
 			else

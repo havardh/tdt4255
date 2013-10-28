@@ -1,7 +1,8 @@
 
 library ieee;
 use ieee.std_logic_1164.ALL;
-use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+--use ieee.numeric_std.all;
 
 use work.mips_constant_pkg.all;
 use work.pipeline_types.all;
@@ -69,11 +70,12 @@ architecture Behaviour of processor is
     
     component stage_id is
     port (
-        clk   : in std_logic;
-        reset : in std_logic;
-        wb    : in wb_t;
-        ifid  : in ifid_t;
-        idex  : out idex_t
+        clk        : in std_logic;
+        reset      : in std_logic;
+		  stall      : in std_logic;
+        wb         : in wb_t;
+        ifid       : in ifid_t;
+        idex       : out idex_t
     );
     end component;
     
@@ -121,18 +123,32 @@ architecture Behaviour of processor is
         output: out memwb_t        
     );
     end component;
-    
+
+		component hazard_detection_unit is
+			port(
+				idex_rt : in std_logic_vector(4 downto 0);
+				idex_mem_read : in std_logic;
+				ifid_rt : in std_logic_vector(4 downto 0);
+				ifid_rs : in std_logic_vector(4 downto 0);
+				stall : out std_logic
+		  );
+		end component;
+
+    signal enable : std_logic;
     -- Pipeline register signals
     signal ifid_in, ifid_out : ifid_t;
     signal idex_in, idex_out : idex_t;
     signal exmem_in, exmem_out : exmem_t;
     signal memwb_in, memwb_out : memwb_t;
-    
+
+		-- Stall signal from hazard unit to id stage
+		signal stall : std_logic;
+		
     -- Out singals from wb stage to reg file
     signal wb_out : wb_t;
     
     -- Program counters
-    signal pc_current, pc_incremented, pc_next : std_logic_vector(N-1 downto 0) := X"00000000";    
+    signal pc_current, pc_incremented : std_logic_vector(N-1 downto 0) := X"00000000";    
     signal pc_next_in : pc_next_t;
     
     -- Forwarding singals
@@ -140,7 +156,7 @@ architecture Behaviour of processor is
     signal mem_wb_rd : std_logic_vector(N-1 downto 0);
     
 begin
-    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, enable => processor_enable, output => ifid_out);
+    ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, enable => enable, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
     exmem_reg : register_exmem port map(input => exmem_in, clk => clk, reset => reset, output => exmem_out);
     memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => reset, output => memwb_out);
@@ -149,7 +165,7 @@ begin
         clk => clk, 
         reset => reset, 
         pc_next => pc_next_in,
-        enable => processor_enable,
+        enable => enable,
         
         pc_current => pc_current,
         pc_incremented => pc_incremented
@@ -169,6 +185,7 @@ begin
     id_stage : stage_id port map(
         clk => clk,
         reset => reset,
+		  stall => stall,
         ifid => ifid_out,
         idex => idex_in,
         
@@ -176,11 +193,21 @@ begin
         wb => wb_out
     );
 
-	wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
+		wb_stage: stage_wb port map(input => memwb_out,	output => wb_out);
+
+		hdu : hazard_detection_unit port map(
+				idex_rt       => idex_out.read_reg_rt_addr,
+				idex_mem_read => idex_out.ctrl_m.mem_read,
+				ifid_rt       => ifid_out.instruction(24 downto 20),
+				ifid_rs       => ifid_out.instruction(20 downto 16),
+				--ifid_write => 
+				stall    => stall
+		);
+		
     
     -- IF Stage
     imem_address <= pc_current;
-    ifid_in.instruction <= imem_data_in;    
+    ifid_in.instruction <= imem_data_in;
     ifid_in.pc_incremented <= pc_incremented;
     
     -- MEM stage
@@ -192,6 +219,12 @@ begin
     memwb_in.alu_data <= exmem_out.alu_result;
     memwb_in.ctrl_wb <= exmem_out.ctrl_wb;
     memwb_in.write_reg_addr <= exmem_out.write_reg_addr;
+	 
+	 -- DEBUG
+	 idex_in.instruction <= ifid_out.instruction;
+	 exmem_in.instruction <= idex_out.instruction;
+	 memwb_in.instruction <= exmem_out.instruction;
+	 -- /DEBUG
     
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(exmem_out)
@@ -207,8 +240,17 @@ begin
             pc_next_in.src <= '0';
         end if;
     end process;
-    
 
+	--enable <= processor_enable;	
+
+		pc_stall: process(stall, processor_enable)
+		begin
+			if stall = '1' then
+				enable <= '0';
+			else
+				enable <= processor_enable;
+			end if;
+		end process;
 	
 	-- Forwarding unit
 	forward : forwarding_unit
