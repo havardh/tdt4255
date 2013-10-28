@@ -132,6 +132,7 @@ begin
     -- Verify that $1 is updated but $0 is not.
 		assertEqual(idex.reg1, X"00000000");
 		assertEqual(idex.reg2, X"00000001");
+		assertEqual(idex.equals, '0', "Comparator is not 0");
 		
 		-- Read the values with rt and rs forwarded
 		wb.reg_write <= '0';
@@ -141,11 +142,12 @@ begin
 		ifid.instruction <= "00000000000000000000000000000000";
 		wait for 1 ns;
 		assertEqual(ifid.instruction, "00000000000000000000000000000000");
-		wait for clk_period;
-
-    	-- Verify that $1 is updated but $0 is not.
+    	-- Verify that both are forwarded
 		assertEqual(idex.reg1, X"00000100");
 		assertEqual(idex.reg2, X"00000100");
+		
+		assertEqual(idex.equals, '1', "Comparator is not 1");
+
 		
 		------------------------
 		-- Test Branch Target --
@@ -262,7 +264,7 @@ begin
 		assert (idex.ctrl_m.mem_write = '1')
 			report "mem_write should be 1 for non stall"
 			severity warning;
-				
+						
 		wait;
 		
 	end process;

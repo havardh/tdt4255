@@ -57,6 +57,8 @@ package pipeline_types is
         reg1 : std_logic_vector(N-1 downto 0);
         reg2 : std_logic_vector(N-1 downto 0);
         
+        equals : std_logic;
+        
         sign_extended : std_logic_vector(N-1 downto 0);
         
         read_reg_rs_addr  : std_logic_vector(4 downto 0);

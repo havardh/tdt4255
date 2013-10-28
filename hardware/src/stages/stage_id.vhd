@@ -166,5 +166,7 @@ begin
 	idex.read_reg_rs_addr <= ifid.instruction(25 downto 21);
 	idex.read_reg_rt_addr <= ifid.instruction(20 downto 16);
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
-
+	
+	idex.equals <= '1' when (reg1 xor reg2) = X"00000000" else '0';
+	
 end Behavioral;

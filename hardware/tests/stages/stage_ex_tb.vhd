@@ -61,6 +61,7 @@ begin
 			ctrl_ex => (alu_op => ALUOP_FUNC, others => '0'),
 			ctrl_m  => (others => '0'),
 			ctrl_wb => (others => '0'),
+            equals => '0',
 			others  => (others => '0')
 		);
 		forwarding_a <= "00";
@@ -183,6 +184,7 @@ begin
 			ctrl_ex => (alu_op => ALUOP_FUNC, others => '0'),
 			ctrl_m  => (others => '0'),
 			ctrl_wb => (others => '0'),
+            equals => '0',
 			others  => (others => '0')
 		);
 		forwarding_a <= "00";

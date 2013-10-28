@@ -45,10 +45,16 @@ package body asserts is
 
         write(outline, string'(" to be equal to "));
 
-        -- not sure why, but we need to loop the constant interface backwards. (its just vhdl I guess)
-        for y in expected'left downto expected'right loop
-            write(outline, expected(y));
-        end loop;
+		if expected'left > expected'right then
+		    for y in expected'left downto expected'right loop
+		        write(outline, expected(y));
+		    end loop;
+	    else
+		    for y in expected'right downto expected'left loop
+		        write(outline, expected(expected'right-y));
+		    end loop;
+		end if;
+		
         writeline(output, outline);
         return string'("failure");
     end printReport;
