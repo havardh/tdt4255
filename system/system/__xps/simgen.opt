@@ -1,1 +1,0 @@
- -p spartan6 -lang vhdl$(PROJECT_SEARCHPATHOPT) $(GLOBAL_SEARCHPATHOPT)   App_Communication/executable.elf -msg __xps/ise/xmsgprops.lst -s mti -X C:/Users/runarbol/Desktop/tdt4255/system/system/
