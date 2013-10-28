@@ -229,8 +229,8 @@ begin
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(exmem_out)
     begin
-        if exmem_out.ctrl_m.jump = '1' then
-            pc_next_in.jump <= exmem_out.jump_target;
+        if idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
+            pc_next_in.jump <= idex_in.jump_target;
             pc_next_in.src <= '1';
         elsif exmem_out.ctrl_m.branch = '1' and exmem_out.flags.zero = '1' then
             pc_next_in.jump <= exmem_out.branch_target;

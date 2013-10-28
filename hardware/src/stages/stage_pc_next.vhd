@@ -53,7 +53,7 @@ begin
 		port map (
 			x   => pc,
 			y   => X"00000001",
-			cin => '0',			
+			cin => '0',
 			r => pc_inc
 		);
 
