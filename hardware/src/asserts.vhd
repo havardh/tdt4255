@@ -14,6 +14,7 @@ use work.pipeline_types.all;
 
 package asserts is
     procedure assertEqual(actual : std_logic_vector; expected : std_logic_vector);
+    procedure assertEqual(actual : std_logic; expected : std_logic; message : string);
     
     procedure assertEqual(actual : ifid_t; expected : ifid_t);
     procedure assertEqual(actual : idex_t; expected : idex_t);
