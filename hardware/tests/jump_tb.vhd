@@ -123,7 +123,7 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"08000005");
 
         -- add $1 $1 $1
-        -- writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"00210820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"00210820");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00210820");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00210820");
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");

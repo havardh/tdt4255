@@ -76,6 +76,7 @@ architecture Behaviour of processor is
         clk        : in std_logic;
         reset      : in std_logic;
 		  stall      : in std_logic;
+		  flush      : in std_logic;
         wb         : in wb_t;
         ifid       : in ifid_t;
         idex       : out idex_t;
@@ -135,9 +136,11 @@ architecture Behaviour of processor is
 			port(
 				idex_rt : in std_logic_vector(4 downto 0);
 				idex_mem_read : in std_logic;
+				idex_jump : in std_logic;
 				ifid_rt : in std_logic_vector(4 downto 0);
 				ifid_rs : in std_logic_vector(4 downto 0);
-				stall : out std_logic
+				stall : out std_logic;
+				flush : out std_logic
 		  );
 		end component;
 
@@ -150,6 +153,7 @@ architecture Behaviour of processor is
 
 		-- Stall signal from hazard unit to id stage
 		signal stall : std_logic;
+		signal flush : std_logic;
 		
     -- Out singals from wb stage to reg file
     signal wb_out : wb_t;
@@ -168,6 +172,8 @@ architecture Behaviour of processor is
 	 signal pc_src : std_logic;
 	 signal pc_next : std_logic_vector(N-1 downto 0) := X"00000000";
 	 
+	 -- TODO: Remove
+	  
 begin
     ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, stall => stall, enable => processor_enable, output => ifid_out);
     idex_reg : register_idex port map(input => idex_in, clk => clk, reset => reset, output => idex_out);
@@ -202,10 +208,13 @@ begin
     	mem_wb_rd => wb_out.write_data 
     );
     
+	 --stall_or_flush <= stall or idex_in.ctrl_m.jump;
+	 
     id_stage : stage_id port map(
         clk => clk,
         reset => reset,
 		  stall => stall,
+		  flush => flush,
         ifid => ifid_out,
         idex => idex_in,
 		  
@@ -221,10 +230,12 @@ begin
 		hdu : hazard_detection_unit port map(
 				idex_rt       => idex_out.read_reg_rt_addr,
 				idex_mem_read => idex_out.ctrl_m.mem_read,
+				idex_jump     => idex_out.ctrl_m.jump,
 				ifid_rt       => ifid_out.instruction(20 downto 16),
 				ifid_rs       => ifid_out.instruction(25 downto 21),
 				--ifid_write => 
-				stall    => stall
+				stall    => stall,
+				flush    => flush
 		);
 		
     
@@ -253,22 +264,16 @@ begin
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(jump, jump_target, idex_in, exmem_out)
     begin
-		  --if exmem_out.ctrl_m.jump = '1' then
 		  if idex_in.ctrl_m.jump = '1' then
         --if jump = '1' then -- TODO: and prev ins == branch and taken
-            --pc_next_in.jump <= jump_target;
 				pc_next_in.jump <= idex_in.jump_target;
-				--pc_next_in.jump <= exmem_out.jump_target;
             pc_next_in.src <= '1';
-				--pc_src <= '1';
         elsif exmem_out.ctrl_m.branch = '1' and exmem_out.flags.zero = '1' then
             pc_next_in.jump <= exmem_out.branch_target;
             pc_next_in.src <= '1';
-				--pc_src <= '1';
         else
             pc_next_in.jump <= (others => '0');
             pc_next_in.src <= '0';
-				--pc_src <= '0';
         end if;
     end process;
 

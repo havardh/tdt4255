@@ -10,17 +10,21 @@ entity hazard_detection_unit is
 	port (
 		idex_rt : in std_logic_vector(4 downto 0);
 		idex_mem_read : in std_logic;
+		idex_jump : in std_logic;
 
 		ifid_rt : in std_logic_vector(4 downto 0);
 		ifid_rs : in std_logic_vector(4 downto 0);
 
-		stall : out std_logic
+		stall : out std_logic;
+		flush : out std_logic
 	);
 end hazard_detection_unit;
 
 architecture Behavioral of hazard_detection_unit is
 
 begin
+
+	flush <= idex_jump;
 	
 	process(idex_rt, idex_mem_read, ifid_rt, ifid_rs)
 	begin
