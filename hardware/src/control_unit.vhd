@@ -81,7 +81,7 @@ begin
 
 				
 			when others =>
-				ctrl_ex <= (alu_op => ALUOP_FUNC, others => '0');
+				ctrl_ex <= (alu_op => ALUOP_FUNC, reg_dst => '0', alu_src => '0');
 				ctrl_m  <= (others => '0');
 				ctrl_wb <= (others => '0');
 				--link <= '0';
