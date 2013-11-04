@@ -16,6 +16,9 @@ entity stage_id is
 
 		stall : in std_logic;
 		flush : in std_logic;
+		
+		predict_taken : in std_logic;
+		
 		-- Write Back
 		wb : in wb_t;
 		-- Stage Input
@@ -23,7 +26,6 @@ entity stage_id is
 		-- Stage Output
 		idex : out idex_t;
 		
-		jump : out std_logic;
 		-- Forwarding signals
 		forwarding_C : in std_logic;
 		forwarding_D : in std_logic
@@ -166,6 +168,7 @@ begin
 		end if;
 	end process;
 	
+	idex.predict_taken <= predict_taken;
 	idex.reg1 <= forwarded_reg1;
 	idex.reg2 <= forwarded_reg2;
 	

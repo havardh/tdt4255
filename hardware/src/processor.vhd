@@ -86,6 +86,7 @@ architecture Behaviour of processor is
         reset      : in std_logic;
 		  stall      : in std_logic;
 		  flush      : in std_logic;
+		  predict_taken : in std_logic;
         wb         : in wb_t;
         ifid       : in ifid_t;
         idex       : out idex_t;
@@ -241,7 +242,7 @@ begin
         reset => reset,
 		  stall => stall,
 		  flush => flush,
-		  
+		  predict_taken => predict_taken,
         ifid => ifid_out,
         idex => idex_in,
         
@@ -284,7 +285,7 @@ begin
     ifid_in.pc_incremented <= pc_next; 
 	 
 	 -- ID Stage
-	 idex_in.predict_taken <= predict_taken;
+	 --idex_in.predict_taken <= predict_taken;
     
     -- MEM stage
     dmem_address <= exmem_out.alu_result;
