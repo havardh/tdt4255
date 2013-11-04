@@ -118,6 +118,7 @@ begin
         
         -- lw $1, 0($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
+        
 
         -- j 0x4
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"08000005");

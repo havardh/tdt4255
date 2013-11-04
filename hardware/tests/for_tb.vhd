@@ -125,18 +125,19 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"8C030002"); -- n
 		  
         -- i++
-		  --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00220820");
+		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00220820");
 		  -- i < n
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"1061FFFD");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"1061FFFE");
 		  
 		  -- sw
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010002");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010002");
 		  
 		  command <= CMD_RUN;
         wait for clk_period*20;
         command <= CMD_NONE;
         wait for clk_period;
 
+        assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000005");
 		  assert( false) report "Done TC #2" severity note;
         
 		  

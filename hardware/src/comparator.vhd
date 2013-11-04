@@ -12,7 +12,7 @@ entity comparator is
 		input_1 : in std_logic_vector(N-1 downto 0);
 		input_2 : in std_logic_vector(N-1 downto 0);
 		
-		equal : out std_logic;
+		equal : out std_logic
 	);
 end comparator;
 
