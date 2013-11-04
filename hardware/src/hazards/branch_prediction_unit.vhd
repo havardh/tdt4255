@@ -4,6 +4,7 @@ use ieee.numeric_std.ALL;
 
 entity branch_prediction_unit is
 	generic (
+		-- Number of bytes used to store predictions
 		WIDTH : integer := 3
 	);
 	port (
@@ -29,8 +30,10 @@ architecture b of branch_prediction_unit is
 	
 	signal pred_state : PREDICTION_STATE;
 	signal corr_state : PREDICTION_STATE;
+	
+	signal predict_addr_reg : std_logic_vector(WIDTH-1 downto 0) := (others => '0');
 begin
-	pred_state <= mem(to_integer(unsigned(predict_addr(WIDTH-1 downto 0))));
+	pred_state <= mem(to_integer(unsigned(predict_addr_reg(WIDTH-1 downto 0))));
 	corr_state <= mem(to_integer(unsigned(correct_addr(WIDTH-1 downto 0))));
 
 	-- Predict branch action based on prediction table
@@ -40,6 +43,14 @@ begin
 			prediction <= '1';
 		else
 			prediction <= '0';
+		end if;
+	end process;
+	
+	-- Latch predict addr (Hopefully this will synthezise as RAM this way...)
+	process(clk, predict_addr)
+	begin
+		if rising_edge(clk) then
+			predict_addr_reg <= predict_addr;
 		end if;
 	end process;
 	
