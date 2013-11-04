@@ -73,6 +73,9 @@ architecture Behaviour of processor is
 			ex_mem_rd    : in std_logic_vector(N-1 downto 0);
 			mem_wb_rd    : in std_logic_vector(N-1 downto 0);
 		
+		   flush : out std_logic;
+		   pc_corrected : out std_logic_vector(N-1 downto 0);
+		
             output       : out exmem_t
         );
     end component;
@@ -172,9 +175,11 @@ architecture Behaviour of processor is
     signal exmem_in, exmem_out : exmem_t;
     signal memwb_in, memwb_out : memwb_t;
 
+	 signal flush : std_logic;
+
 		-- Stall signal from hazard unit to id stage
 		signal stall : std_logic;
-		signal flush : std_logic;
+		signal hazard_flush : std_logic;
 		
     -- Out singals from wb stage to reg file
     signal wb_out : wb_t;
@@ -194,6 +199,10 @@ architecture Behaviour of processor is
 	 
 	 -- Branch prediction
 	 signal predict_taken : std_logic;
+	 
+	 -- Branch correction
+	 signal correction_flush : std_logic;
+	 signal pc_corrected : std_logic_vector(N-1 downto 0);
     
 begin
     ifid_reg : register_ifid port map(input => ifid_in, clk => clk, reset => reset, stall => stall, enable => processor_enable, output => ifid_out);
@@ -220,7 +229,11 @@ begin
     	forwarding_b => forwarding_b,
     	ex_mem_rd => exmem_out.alu_result,
     	-- wb_out holds memwb_out data after the mux
-    	mem_wb_rd => wb_out.write_data 
+    	mem_wb_rd => wb_out.write_data ,
+		
+		flush => correction_flush ,
+		pc_corrected => pc_corrected
+		
     );
 	 
     id_stage : stage_id port map(
@@ -228,6 +241,7 @@ begin
         reset => reset,
 		  stall => stall,
 		  flush => flush,
+		  
         ifid => ifid_out,
         idex => idex_in,
         
@@ -246,11 +260,11 @@ begin
 				idex_mem_read => idex_out.ctrl_m.mem_read,
 				idex_jump     => idex_out.ctrl_m.jump,
 				idex_branch    => idex_out.ctrl_m.branch,
-				idex_predict_taken => predict_taken,
+				idex_predict_taken => idex_out.predict_taken,
 				ifid_rt       => ifid_out.instruction(20 downto 16),
 				ifid_rs       => ifid_out.instruction(25 downto 21),
 				stall    => stall,
-				flush    => flush
+				flush    => hazard_flush
 		);
 		
 		
@@ -265,9 +279,12 @@ begin
     
     -- IF Stage
     imem_address <= pc_next;
-    ifid_in.instruction <= imem_data_in;
+    ifid_in.instruction <= imem_data_in when correction_flush = '0' else X"00000000";
 	 ifid_in.pc_current <= imem_address_out;
     ifid_in.pc_incremented <= pc_next; 
+	 
+	 -- ID Stage
+	 idex_in.predict_taken <= predict_taken;
     
     -- MEM stage
     dmem_address <= exmem_out.alu_result;
@@ -280,15 +297,18 @@ begin
     memwb_in.write_reg_addr <= exmem_out.write_reg_addr;
 	 
 	 -- DEBUG
-	 idex_in.instruction <= ifid_out.instruction;
-	 exmem_in.instruction <= idex_out.instruction;
-	 memwb_in.instruction <= exmem_out.instruction;
+	 --idex_in.instruction <= ifid_out.instruction;
+	 --exmem_in.instruction <= idex_out.instruction;
+	 --memwb_in.instruction <= exmem_out.instruction;
 	 -- /DEBUG
     
     -- PC next mux, TODO extract out of processor(?)
     pc_next_in_mux : process(idex_in, exmem_out)
     begin
-		  if idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
+		  if correction_flush = '1' then
+		      pc_next_in.jump <= pc_corrected;
+				pc_next_in.src  <= '1';
+		  elsif idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
 				pc_next_in.jump <= idex_in.jump_target;
             pc_next_in.src <= '1';
         elsif idex_in.ctrl_m.branch = '1' and predict_taken = '1' then
@@ -321,5 +341,7 @@ begin
 			forwarding_d => forwarding_d
 		);
         
+		  
+	  flush <= hazard_flush or correction_flush;
     
 end architecture;

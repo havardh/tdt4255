@@ -17,6 +17,9 @@ entity stage_ex is
 		ex_mem_rd    : in std_logic_vector(N-1 downto 0);
 		mem_wb_rd    : in std_logic_vector(N-1 downto 0);
 		
+		flush : out std_logic;
+		pc_corrected : out std_logic_vector(N-1 downto 0);
+		
 		output: out exmem_t
 	);
 end stage_ex; 
@@ -129,4 +132,28 @@ architecture behavorial of stage_ex is
 			output.write_reg_addr <= input.write_reg_rd_addr;
 		end if;
 	end process;
+	
+	branch_correction: process( input.ctrl_m.branch, input.equals, input.predict_taken )
+	begin
+		if input.ctrl_m.branch = '1' then
+				
+			if input.equals /= input.predict_taken then
+				flush <= '1';
+				
+				if input.equals = '1' then
+					pc_corrected <= input.branch_target;
+				else 
+					pc_corrected <= input.pc_incremented;
+				end if;
+				
+			else
+				flush <= '0';
+				pc_corrected <= (others => '0');
+		   end if;
+		else
+			flush <= '0';
+			pc_corrected <= (others => '0');
+		end if;	
+	end process;
+	
 end architecture;

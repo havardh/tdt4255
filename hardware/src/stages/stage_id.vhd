@@ -172,6 +172,7 @@ begin
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
 	
 	idex.pc_current <= ifid.pc_current;
+	idex.pc_incremented <= ifid.pc_incremented;
 	idex.equals <= '1' when (reg1 xor reg2) = X"00000000" else '0';
 	
 end Behavioral;
