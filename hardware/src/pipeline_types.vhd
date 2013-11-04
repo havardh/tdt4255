@@ -38,6 +38,7 @@ package pipeline_types is
     type ifid_t is
     record
         instruction : std_logic_vector(N-1 downto 0);
+        pc_current : std_logic_vector(N-1 downto 0);
         pc_incremented : std_logic_vector(N-1 downto 0);
     end record;
 
@@ -46,6 +47,8 @@ package pipeline_types is
 		  -- DEBUG
         instruction : std_logic_vector(N-1 downto 0);
 		  -- /DEBUG
+	 
+		  pc_current : std_logic_vector(N-1 downto 0);
 	 
         ctrl_wb : ctrl_wb_t;    
         ctrl_m : ctrl_m_t;

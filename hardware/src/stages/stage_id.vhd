@@ -24,7 +24,6 @@ entity stage_id is
 		idex : out idex_t;
 		
 		jump : out std_logic;
-		jump_target : out std_logic_vector(31 downto 0);
 		-- Forwarding signals
 		forwarding_C : in std_logic;
 		forwarding_D : in std_logic
@@ -165,7 +164,6 @@ begin
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
 	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
-	jump_target        <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
 	-- Assume R-type instructions, let execute handle this 
@@ -173,6 +171,7 @@ begin
 	idex.read_reg_rt_addr <= ifid.instruction(20 downto 16);
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
 	
+	idex.pc_current <= ifid.pc_current;
 	idex.equals <= '1' when (reg1 xor reg2) = X"00000000" else '0';
 	
 end Behavioral;

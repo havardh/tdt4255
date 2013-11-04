@@ -163,18 +163,18 @@ begin
         -- 0x0A lui $15, 0x000F
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"3C0F000F");
         
-        
+        -- add
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"000F7820");
         
         -- 0x0C sw $15, 8($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0F0008");
                
         
-        -- 0x11 beq $0, $0, -1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"10001110");
+        -- 0x11 beq $0, $0, -2
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"1000FFFF");
         
         -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
---        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D0009");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D0009");
   --      writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000A");
     --    writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000B");
       --  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000C");
