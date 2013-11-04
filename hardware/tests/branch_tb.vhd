@@ -131,7 +131,7 @@ begin
 
         -- beq $0 $1 -0x4
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"1001FFFB");
-		  -- beq $0 $1 -0x5
+		  -- beq $0 $1 -0x5	
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"1001FFFA");
         
         -- sw $1, 1($0)

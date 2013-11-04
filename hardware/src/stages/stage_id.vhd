@@ -85,6 +85,8 @@ architecture Behavioral of stage_id is
 	signal ctrl_jump : std_logic;
 	
 	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
+	
+	signal forwarded_reg1, forwarded_reg2 : std_logic_vector(N-1 downto 0);
 
 begin
 
@@ -149,17 +151,23 @@ begin
 	process(reg1, reg2, forwarding_C, forwarding_D, wb.write_data) 
 	begin
 		if forwarding_C = '1' then
-			idex.reg1 <= wb.write_data;
+			forwarded_reg1 <= wb.write_data;
+			--idex.reg1 <= wb.write_data;
 		else
-			idex.reg1 <= reg1;
+			forwarded_reg1 <= reg1;
+			--idex.reg1 <= reg1;
 		end if;
 		if forwarding_D = '1' then
-			idex.reg2 <= wb.write_data;
+			forwarded_reg2 <= wb.write_data;
+			--idex.reg2 <= wb.write_data;
 		else
-			idex.reg2 <= reg2;
+			forwarded_reg2 <= reg2;
+			--idex.reg2 <= reg2;
 		end if;
 	end process;
 	
+	idex.reg1 <= forwarded_reg1;
+	idex.reg2 <= forwarded_reg2;
 	
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
@@ -173,6 +181,6 @@ begin
 	
 	idex.pc_current <= ifid.pc_current;
 	idex.pc_incremented <= ifid.pc_incremented;
-	idex.equals <= '1' when (reg1 xor reg2) = X"00000000" else '0';
+	idex.equals <= '0'; -- <= '1' when (forwarded_reg1 xor forwarded_reg2) = X"00000000" else '0';
 	
 end Behavioral;

@@ -58,6 +58,8 @@ architecture behavorial of stage_ex is
 	-- Final ALU B input after alusrc mux	
 	signal alu_b_in         : std_logic_vector (N-1 downto 0);
 	
+	signal equals : std_logic;
+	
 	begin
 	-- signal relaying
 	output.ctrl_wb 		  <= input.ctrl_wb;
@@ -133,14 +135,16 @@ architecture behavorial of stage_ex is
 		end if;
 	end process;
 	
-	branch_correction: process( input.ctrl_m.branch, input.equals, input.predict_taken )
+	equals <= '1' when (reg_1_internal xor reg_2_internal) = X"00000000" else '0';
+	
+	branch_correction: process( input.ctrl_m.branch, equals, input.predict_taken )
 	begin
 		if input.ctrl_m.branch = '1' then
 				
-			if input.equals /= input.predict_taken then
+			if equals /= input.predict_taken then
 				flush <= '1';
 				
-				if input.equals = '1' then
+				if equals = '1' then
 					pc_corrected <= input.branch_target;
 				else 
 					pc_corrected <= input.pc_incremented;

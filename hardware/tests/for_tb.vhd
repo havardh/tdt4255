@@ -124,20 +124,25 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"8C020001"); -- ++
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"8C030002"); -- n
 		  
-        -- i++
-		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00220820");
-		  -- i < n
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"1061FFFE");
+        -- beq i < n
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"10610002");
+		  
+		  -- i++
+		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00220820");
+		  --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00220820");
+		  
+		  -- j 
+		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"08000003");
 		  
 		  -- sw
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"AC010002");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010003");
 		  
 		  command <= CMD_RUN;
-        wait for clk_period*20;
+        wait for clk_period*80;
         command <= CMD_NONE;
         wait for clk_period;
 
-        assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000005");
+        assertData(command, bus_address_in, bus_data_out, X"00000003", X"00000005");
 		  assert( false) report "Done TC #2" severity note;
         
 		  
