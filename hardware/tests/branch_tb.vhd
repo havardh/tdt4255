@@ -5,10 +5,10 @@ use work.asserts.all;
 use work.mips_constant_pkg.all;
 use work.pipeline_types.all;
 
-entity jump_tb is
-end jump_tb;
+entity branch_tb is
+end branch_tb;
  
-architecture behavior of jump_tb is 
+architecture behavior of branch_tb is 
  
     -- Component Declaration for the Unit Under Test (UUT)
     component toplevel
@@ -59,12 +59,12 @@ architecture behavior of jump_tb is
 	    bus_command <= command;					
         bus_address <= address;
         bus_data <= data;
-        wait for clk_period*3.5;
+        wait for clk_period*3;
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
         bus_data <= zero;
-        wait for clk_period*2.5;
+        wait for clk_period*3;
     end procedure;
     
     -- Shorthand for writing data and instructions
@@ -77,14 +77,14 @@ architecture behavior of jump_tb is
 	begin
 	    bus_command <= CMD_RD;					
         bus_address <= address;
-        wait for clk_period*3.5;        
+        wait for clk_period*3;        
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
         wait for clk_period*2;      
         -- TODO Error messages are broken somehow here, but asserting will correctly pass and fail
         assertEqual(bus_data, expected);
-        wait for clk_period*0.5;
+        wait for clk_period*1;
     end procedure;
     
 begin
@@ -114,34 +114,45 @@ begin
     stim_proc: process
     begin		
         -- Write 5 to data memory location 0
-        writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
+        writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000001");
+        writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000001", X"00000001");
+        
         
         -- lw $1, 0($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
-        
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"8C020001");
+		  
 
-        -- j 0x4
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"08000005");
+        -- add $1 $1 $1		  
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"00220820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00220820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00220820");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00220820");
 
-        -- add $1 $1 $1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
+        -- beq $0 $1 -0x4
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"1001FFFB");
+		  -- beq $0 $1 -0x5	
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000007", X"1001FFFA");
         
         -- sw $1, 1($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010001");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000008", X"AC010002");
+		  
 		  
         -- Let the processor do it's thing, adjust the wait period to fit the program loaded
         command <= CMD_RUN;
-        wait for clk_period*10;
+        wait for clk_period*20;
         command <= CMD_NONE;
         wait for clk_period;
 
         -- Assert that the data memory contains what we expect
-        assertData(command, bus_address_in, bus_data_out, X"00000000", X"00000005");
-        assertData(command, bus_address_in, bus_data_out, X"00000001", X"0000000A");
-        wait;
+        assertData(command, bus_address_in, bus_data_out, X"00000002", X"00000005");
+
+		  assert( false) report "Done TC #1" severity note;
+        
+		  
+        
+		  
+		  wait;
     end process;
 
 end;

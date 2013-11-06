@@ -59,12 +59,12 @@ architecture behavior of toplevel_tb is
 	    bus_command <= command;					
         bus_address <= address;
         bus_data <= data;
-        wait for clk_period*3;
+        wait for clk_period*3.5;
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
         bus_data <= zero;
-        wait for clk_period*3;
+        wait for clk_period*2.5;
     end procedure;
     
     -- Shorthand for writing data and instructions
@@ -77,14 +77,14 @@ architecture behavior of toplevel_tb is
 	begin
 	    bus_command <= CMD_RD;					
         bus_address <= address;
-        wait for clk_period*3;        
+        wait for clk_period*3.5;        
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
         wait for clk_period*2;      
         -- TODO Error messages are broken somehow here, but asserting will correctly pass and fail
         assertEqual(bus_data, expected);
-        wait for clk_period*1;
+        wait for clk_period*0.5;
     end procedure;
     
 begin
@@ -163,23 +163,18 @@ begin
         -- 0x0A lui $15, 0x000F
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000010", X"3C0F000F");
         
-        
+        -- add
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000013", X"000F7820");
         
         -- 0x0C sw $15, 8($0)
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0F0008");
                
         
-        -- 0x11 beq $0, $0, -1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"10001110");
+        -- 0x11 beq $0, $0, -2
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"1000FFFF");
         
         -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
---        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D0009");
-  --      writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000A");
-    --    writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000B");
-      --  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000C");
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000019", X"AC0D000D");
-           --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000001A", X"AC0D000E");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D0009");
        
 		  
 		  
@@ -201,13 +196,7 @@ begin
         assertData(command, bus_address_in, bus_data_out, X"00000007", X"FFFF0000");
         assertData(command, bus_address_in, bus_data_out, X"00000008", X"000F0000");
         
-        --assertData(command, bus_address_in, bus_data_out, X"00000009", X"FFFF0000");
-        --assertData(command, bus_address_in, bus_data_out, X"0000000A", X"FFFF0000");
-        --assertData(command, bus_address_in, bus_data_out, X"0000000B", X"FFFF0000");
-        --assertData(command, bus_address_in, bus_data_out, X"0000000C", X"FFFF0000");
-        assertData(command, bus_address_in, bus_data_out, X"0000000D", X"00000000");
-        assertData(command, bus_address_in, bus_data_out, X"0000000E", X"00000000");
-        assertData(command, bus_address_in, bus_data_out, X"0000000F", X"00000000");
+        --assertData(command, bus_address_in, bus_data_out, X"00000009", X"00000000");
         
         assert (false) report "Done" severity note;
         

@@ -61,10 +61,14 @@ begin
 			ctrl_ex => (alu_op => ALUOP_FUNC, others => '0'),
 			ctrl_m  => (others => '0'),
 			ctrl_wb => (others => '0'),
-            equals => '0',
+         equals => '0',
+		   predict_taken => '0',
+			read_reg_rs_addr => (others => '0'),
+			read_reg_rt_addr => (others => '0'),
+			write_reg_rd_addr => (others => '0'),
 			others  => (others => '0')
 		);
-		forwarding_a <= "00";
+	   forwarding_a <= "00";
 		forwarding_b <= "00";
 		wait for 1 ns;
 		
@@ -184,7 +188,11 @@ begin
 			ctrl_ex => (alu_op => ALUOP_FUNC, others => '0'),
 			ctrl_m  => (others => '0'),
 			ctrl_wb => (others => '0'),
-            equals => '0',
+         equals => '0',
+		   predict_taken => '0',
+			read_reg_rs_addr => (others => '0'),
+			read_reg_rt_addr => (others => '0'),
+			write_reg_rd_addr => (others => '0'),
 			others  => (others => '0')
 		);
 		forwarding_a <= "00";

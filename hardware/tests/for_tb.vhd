@@ -5,10 +5,10 @@ use work.asserts.all;
 use work.mips_constant_pkg.all;
 use work.pipeline_types.all;
 
-entity jump_tb is
-end jump_tb;
+entity for_tb is
+end for_tb;
  
-architecture behavior of jump_tb is 
+architecture behavior of for_tb is 
  
     -- Component Declaration for the Unit Under Test (UUT)
     component toplevel
@@ -59,12 +59,12 @@ architecture behavior of jump_tb is
 	    bus_command <= command;					
         bus_address <= address;
         bus_data <= data;
-        wait for clk_period*3.5;
+        wait for clk_period*3;
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
         bus_data <= zero;
-        wait for clk_period*2.5;
+        wait for clk_period*3;
     end procedure;
     
     -- Shorthand for writing data and instructions
@@ -77,14 +77,14 @@ architecture behavior of jump_tb is
 	begin
 	    bus_command <= CMD_RD;					
         bus_address <= address;
-        wait for clk_period*3.5;        
+        wait for clk_period*3;        
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
         wait for clk_period*2;      
         -- TODO Error messages are broken somehow here, but asserting will correctly pass and fail
         assertEqual(bus_data, expected);
-        wait for clk_period*0.5;
+        wait for clk_period*1;
     end procedure;
     
 begin
@@ -113,35 +113,39 @@ begin
     -- Stimulus process
     stim_proc: process
     begin		
-        -- Write 5 to data memory location 0
-        writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000005");
-        
-        -- lw $1, 0($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000");
-        
-
-        -- j 0x4
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"08000005");
-
-        -- add $1 $1 $1
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00210820");
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"00210820");
-        
-        -- sw $1, 1($0)
-        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010001");
+                
+		  -- write to mem
+		  writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000000", X"00000000");
+		  writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000001", X"00000001");
+        writeData(command, bus_address_in, bus_data_in, CMD_WD, X"00000002", X"00000005");
 		  
-        -- Let the processor do it's thing, adjust the wait period to fit the program loaded
-        command <= CMD_RUN;
-        wait for clk_period*10;
+		  -- lw $1, 0($0)
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000000", X"8C010000"); -- i
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000001", X"8C020001"); -- ++
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000002", X"8C030002"); -- n
+		  
+        -- beq i < n
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000003", X"10610002");
+		  
+		  -- i++
+		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00220820");
+		  
+		  -- j 
+		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"08000003");
+		  
+		  -- sw
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000006", X"AC010003");
+		  
+		  command <= CMD_RUN;
+        wait for clk_period*80;
         command <= CMD_NONE;
         wait for clk_period;
 
-        -- Assert that the data memory contains what we expect
-        assertData(command, bus_address_in, bus_data_out, X"00000000", X"00000005");
-        assertData(command, bus_address_in, bus_data_out, X"00000001", X"0000000A");
-        wait;
+        assertData(command, bus_address_in, bus_data_out, X"00000003", X"00000005");
+		  assert( false) report "Done TC #2" severity note;
+        
+		  
+		  wait;
     end process;
 
 end;

@@ -16,6 +16,9 @@ entity stage_id is
 
 		stall : in std_logic;
 		flush : in std_logic;
+		
+		predict_taken : in std_logic;
+		
 		-- Write Back
 		wb : in wb_t;
 		-- Stage Input
@@ -23,8 +26,6 @@ entity stage_id is
 		-- Stage Output
 		idex : out idex_t;
 		
-		jump : out std_logic;
-		jump_target : out std_logic_vector(31 downto 0);
 		-- Forwarding signals
 		forwarding_C : in std_logic;
 		forwarding_D : in std_logic
@@ -86,6 +87,8 @@ architecture Behavioral of stage_id is
 	signal ctrl_jump : std_logic;
 	
 	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
+	
+	signal forwarded_reg1, forwarded_reg2 : std_logic_vector(N-1 downto 0);
 
 begin
 
@@ -150,22 +153,24 @@ begin
 	process(reg1, reg2, forwarding_C, forwarding_D, wb.write_data) 
 	begin
 		if forwarding_C = '1' then
-			idex.reg1 <= wb.write_data;
+			forwarded_reg1 <= wb.write_data;
 		else
-			idex.reg1 <= reg1;
+			forwarded_reg1 <= reg1;
 		end if;
 		if forwarding_D = '1' then
-			idex.reg2 <= wb.write_data;
+			forwarded_reg2 <= wb.write_data;
 		else
-			idex.reg2 <= reg2;
+			forwarded_reg2 <= reg2;
 		end if;
 	end process;
 	
+	idex.predict_taken <= predict_taken;
+	idex.reg1 <= forwarded_reg1;
+	idex.reg2 <= forwarded_reg2;
 	
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
 	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
-	jump_target        <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
 	-- Assume R-type instructions, let execute handle this 
@@ -173,6 +178,8 @@ begin
 	idex.read_reg_rt_addr <= ifid.instruction(20 downto 16);
 	idex.write_reg_rd_addr <= ifid.instruction(15 downto 11);
 	
-	idex.equals <= '1' when (reg1 xor reg2) = X"00000000" else '0';
+	idex.pc_current <= ifid.pc_current;
+	idex.pc_incremented <= ifid.pc_incremented;
+	idex.equals <= '0';
 	
 end Behavioral;
