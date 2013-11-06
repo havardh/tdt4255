@@ -265,8 +265,8 @@ begin
 		hdu : hazard_detection_unit port map(
 				idex_rt       => idex_out.read_reg_rt_addr,
 				idex_mem_read => idex_out.ctrl_m.mem_read,
-				idex_jump     => idex_out.ctrl_m.jump,
-				idex_branch    => idex_out.ctrl_m.branch,
+				idex_jump     => idex_out.ctrl_ex.jump,
+				idex_branch    => idex_out.ctrl_ex.branch,
 				idex_predict_taken => idex_out.predict_taken,
 				ifid_rt       => ifid_out.instruction(20 downto 16),
 				ifid_rs       => ifid_out.instruction(25 downto 21),
@@ -280,7 +280,7 @@ begin
 		 prediction     => predict_taken,
 		 correct_addr   => idex_in.pc_current(2 downto 0),
 		 correct_taken  => reg_values_equal,
-		 correct_enable => idex_in.ctrl_m.branch,
+		 correct_enable => idex_in.ctrl_ex.branch,
 		 clk            => clk
 	);		
     
@@ -305,10 +305,10 @@ begin
 		  if correction_flush = '1' then
 		      pc_next_in.jump <= pc_corrected;
 				pc_next_in.src  <= '1';
-		  elsif idex_in.ctrl_m.jump = '1' then
+		  elsif idex_in.ctrl_ex.jump = '1' then
 				pc_next_in.jump <= jump_target;
             pc_next_in.src <= '1';
-        elsif idex_in.ctrl_m.branch = '1' and predict_taken = '1' then
+        elsif idex_in.ctrl_ex.branch = '1' and predict_taken = '1' then
             pc_next_in.jump <= idex_in.branch_target;
             pc_next_in.src <= '1';
         else

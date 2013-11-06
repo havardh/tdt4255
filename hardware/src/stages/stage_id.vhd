@@ -143,10 +143,10 @@ begin
 			idex.ctrl_m  <= ctrl_m;
 			idex.ctrl_wb <= ctrl_wb;
 		else
-			idex.ctrl_m.mem_read  <= '0';
+			idex.ctrl_m.mem_read   <= '0';
 			idex.ctrl_m.mem_write  <= '0';
-			idex.ctrl_m.jump       <= '0';
-			idex.ctrl_m.branch     <= '0';
+			idex.ctrl_ex.jump      <= '0';
+			idex.ctrl_ex.branch    <= '0';
 			idex.ctrl_wb.reg_write <= '0';
 		end if;
 	end process;

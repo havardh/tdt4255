@@ -138,9 +138,9 @@ architecture behavorial of stage_ex is
 	equals <= '1' when (reg_1_internal xor reg_2_internal) = X"00000000" else '0';
 	reg_values_equal <= equals;
 	
-	branch_correction: process( input.ctrl_m.branch, equals, input.predict_taken )
+	branch_correction: process( input.ctrl_ex.branch, equals, input.predict_taken )
 	begin
-		if input.ctrl_m.branch = '1' then
+		if input.ctrl_ex.branch = '1' then
 				
 			if equals /= input.predict_taken then
 				flush <= '1';

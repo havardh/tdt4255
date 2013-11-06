@@ -57,7 +57,7 @@ begin
 		);
 
 	-- Latch next PC value on rising clock edge, value depending on input signal.
-	pc_latcher : process(enable, clk, reset, pc_inc, pc_opt, stall)
+	pc_latcher : process(enable, clk, reset, pc, pc_inc, pc_opt, stall)
 	begin
 		if reset = '1' then
 			pc_next <= X"00000000";

@@ -139,6 +139,8 @@ package body asserts is
     -- Assert that two ctrl_ex records are equal
     procedure assertEqual(actual : ctrl_ex_t; expected : ctrl_ex_t) is
     begin
+        assertEqual(actual.jump, expected.jump, string'("ctrl_ex.jump"));
+        assertEqual(actual.branch, expected.branch, string'("ctrl_ex.branch"));
         assertEqual(actual.alu_src, expected.alu_src, string'("ctrl_ex.alu_src"));
         assertEqual(actual.reg_dst, expected.reg_dst, string'("ctrl_ex.reg_dst"));
         assertEqual(actual.alu_op, expected.alu_op);            
@@ -147,8 +149,6 @@ package body asserts is
     -- Assert that two ctrl_m records are equal
     procedure assertEqual(actual : ctrl_m_t; expected : ctrl_m_t) is
     begin
-        assertEqual(actual.jump, expected.jump, string'("ctrl_m.jump"));
-        assertEqual(actual.branch, expected.branch, string'("ctrl_m.branch"));
         assertEqual(actual.mem_write, expected.mem_write, string'("ctrl_m.mem_write"));            
     end procedure;
     

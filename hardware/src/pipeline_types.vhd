@@ -10,6 +10,8 @@ package pipeline_types is
     
     type ctrl_ex_t is
     record
+		  branch : std_logic;
+		  jump : std_logic;
         alu_src : std_logic;
         reg_dst : std_logic;
         alu_op : ALU_OP;
@@ -17,8 +19,6 @@ package pipeline_types is
         
     type ctrl_m_t is
     record
-        jump : std_logic;
-        branch : std_logic;        
         mem_write : std_logic;
         mem_read : std_logic;
     end record;
