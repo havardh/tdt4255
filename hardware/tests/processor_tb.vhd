@@ -26,7 +26,9 @@ architecture behavior of processor_tb is
         dmem_address      : out std_logic_vector (MEM_ADDR_BUS-1 downto 0);
         dmem_address_wr   : out std_logic_vector (MEM_ADDR_BUS-1 downto 0);
         dmem_data_out     : out std_logic_vector (MEM_DATA_BUS-1 downto 0);
-        dmem_write_enable : out std_logic
+        dmem_write_enable : out std_logic;
+		  
+		  imem_address_out  : in std_logic_vector (MEM_ADDR_BUS-1 downto 0)
 			);
     end component;
     
@@ -43,7 +45,7 @@ architecture behavior of processor_tb is
 		signal dmem_address_wr : std_logic_vector (31 downto 0);
 		signal dmem_data_out : std_logic_vector (31 downto 0);
 		signal dmem_write_enable : std_logic;
-		
+		signal imem_address_out : std_logic_vector (31 downto 0);
 
     -- Clock period definitions
     constant clk_period : time := 40 ns;
@@ -61,7 +63,8 @@ begin
 				dmem_address => dmem_address,
 				dmem_address_wr => dmem_address_wr,
 				dmem_data_out => dmem_data_out,
-				dmem_write_enable => dmem_write_enable
+				dmem_write_enable => dmem_write_enable,
+				imem_address_out  => imem_address_out
     );
 
     -- Clock process definitions
