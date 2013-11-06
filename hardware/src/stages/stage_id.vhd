@@ -18,6 +18,7 @@ entity stage_id is
 		flush : in std_logic;
 		
 		predict_taken : in std_logic;
+		jump_target : out std_logic_vector(N-1 downto 0);
 		
 		-- Write Back
 		wb : in wb_t;
@@ -170,7 +171,7 @@ begin
 	
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
-	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
+	jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
 	-- Assume R-type instructions, let execute handle this 
@@ -180,6 +181,5 @@ begin
 	
 	idex.pc_current <= ifid.pc_current;
 	idex.pc_incremented <= ifid.pc_incremented;
-	idex.equals <= '0';
 	
 end Behavioral;
