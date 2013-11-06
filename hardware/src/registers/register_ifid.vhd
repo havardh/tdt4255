@@ -20,7 +20,7 @@ architecture Behaviour of register_ifid is
 begin
 	output <= output_internal;
 
-	latch : process(input, reset, clk, stall)
+	latch : process(input, enable, reset, clk, stall)
 	begin
 		if reset = '1' then
 			output_internal <= (others => (others => '0'));

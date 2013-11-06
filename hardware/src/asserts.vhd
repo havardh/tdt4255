@@ -27,6 +27,8 @@ package asserts is
     
     procedure assertEqual(actual : alu_op; expected : alu_op);
     procedure assertEqual(actual : alu_flags; expected : alu_flags);
+	 
+		 
 end asserts;
 
 package body asserts is
@@ -103,7 +105,6 @@ package body asserts is
         assertEqual(actual.ctrl_ex, expected.ctrl_ex);
         
         assertEqual(actual.branch_target, expected.branch_target, string'("idex.branch_target"));
-        assertEqual(actual.jump_target, expected.jump_target, string'("idex.jump_target"));
         assertEqual(actual.reg1, expected.reg1, string'("idex.reg1"));
         assertEqual(actual.reg2, expected.reg2, string'("idex.reg2"));
         assertEqual(actual.sign_extended, expected.sign_extended, string'("idex.sign_extended"));
@@ -112,7 +113,7 @@ package body asserts is
         assertEqual(actual.write_reg_rd_addr, expected.write_reg_rd_addr, string'("idex.write_reg_rd_addr"));
     end procedure;
     
-    -- Assert that two IDEX records are equal
+    -- Assert that two EXMEM records are equal
     procedure assertEqual(actual : exmem_t; expected : exmem_t) is
     begin
         assertEqual(actual.ctrl_wb, expected.ctrl_wb);
@@ -120,8 +121,6 @@ package body asserts is
         
         assertEqual(actual.flags, expected.flags);
         
-        assertEqual(actual.branch_target, expected.branch_target, string'("exmem.branch_target"));
-        assertEqual(actual.jump_target, expected.jump_target, string'("exmem.jump_target"));
         assertEqual(actual.alu_result, expected.alu_result, string'("exmem.alu_result"));
         assertEqual(actual.write_mem_data, expected.write_mem_data, string'("exmem.write_mem_data"));
         assertEqual(actual.write_reg_addr, expected.write_reg_addr, string'("exmem.write_reg_addr"));
@@ -140,6 +139,8 @@ package body asserts is
     -- Assert that two ctrl_ex records are equal
     procedure assertEqual(actual : ctrl_ex_t; expected : ctrl_ex_t) is
     begin
+        assertEqual(actual.jump, expected.jump, string'("ctrl_ex.jump"));
+        assertEqual(actual.branch, expected.branch, string'("ctrl_ex.branch"));
         assertEqual(actual.alu_src, expected.alu_src, string'("ctrl_ex.alu_src"));
         assertEqual(actual.reg_dst, expected.reg_dst, string'("ctrl_ex.reg_dst"));
         assertEqual(actual.alu_op, expected.alu_op);            
@@ -148,8 +149,6 @@ package body asserts is
     -- Assert that two ctrl_m records are equal
     procedure assertEqual(actual : ctrl_m_t; expected : ctrl_m_t) is
     begin
-        assertEqual(actual.jump, expected.jump, string'("ctrl_m.jump"));
-        assertEqual(actual.branch, expected.branch, string'("ctrl_m.branch"));
         assertEqual(actual.mem_write, expected.mem_write, string'("ctrl_m.mem_write"));            
     end procedure;
     
@@ -168,5 +167,6 @@ package body asserts is
         assertEqual(actual.zero, expected.zero, string'("alu_flags.zero"));
         assertEqual(actual.negative, expected.negative, string'("alu_flags.negative"));
     end procedure;
+	 
 
 end ASSERTS;
