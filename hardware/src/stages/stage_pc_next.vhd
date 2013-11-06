@@ -7,15 +7,11 @@ use work.pipeline_types.all;
 entity stage_pc_next is
 	generic ( N: natural := 32 );
 	port (
-		clk            : in std_logic;
 		reset          : in std_logic;
 		enable         : in std_logic;
 		pc_opt        : in pc_next_t;
 		
 		stall : in std_logic;
-		
-		--jump : in std_logic_vector(N-1 downto 0);
-		--src  : in std_logic;
 		
 		pc             : in std_logic_vector(N-1 downto 0);
 	
@@ -57,7 +53,7 @@ begin
 		);
 
 	-- Latch next PC value on rising clock edge, value depending on input signal.
-	pc_latcher : process(enable, clk, reset, pc, pc_inc, pc_opt, stall)
+	pc_latcher : process(enable, reset, pc, pc_inc, pc_opt, stall)
 	begin
 		if reset = '1' then
 			pc_next <= X"00000000";

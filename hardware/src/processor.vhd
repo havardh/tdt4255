@@ -53,7 +53,6 @@ architecture Behaviour of processor is
     -- Pipeline stages
     component stage_pc_next is
         port (
-            clk            : in std_logic;
             reset          : in std_logic;
             pc_opt         : in pc_next_t;
             enable         : in std_logic;
@@ -160,10 +159,11 @@ architecture Behaviour of processor is
 	end component;
 		
    component branch_prediction_unit is 
+	generic (WIDTH : integer := BRANCH_INDEX_WIDTH);
 	port(
-		 predict_addr : in std_logic_vector(2 downto 0);
+		 predict_addr : in std_logic_vector(BRANCH_INDEX_WIDTH-1 downto 0);
 		 prediction   : out std_logic;
-		 correct_addr   : in std_logic_vector(2 downto 0);
+		 correct_addr   : in std_logic_vector(BRANCH_INDEX_WIDTH-1 downto 0);
 		 correct_taken  : in std_logic;
 		 correct_enable : in std_logic;
 		 clk            : in std_logic
@@ -216,7 +216,6 @@ begin
     memwb_reg : register_memwb port map(input => memwb_in, clk => clk, reset => reset, output => memwb_out);
     
     pc_next_stage : stage_pc_next port map(
-        clk => clk, 
         reset => reset, 
         pc_opt => pc_next_in,
         enable => enable,
@@ -276,13 +275,13 @@ begin
 		
 		
 		bpu : branch_prediction_unit port map(
-		 predict_addr   => ifid_in.pc_current(2 downto 0), -- TODO Constants
-		 prediction     => predict_taken,
-		 correct_addr   => idex_in.pc_current(2 downto 0),
-		 correct_taken  => reg_values_equal,
-		 correct_enable => idex_in.ctrl_ex.branch,
-		 clk            => clk
-	);		
+			 predict_addr   => ifid_in.pc_current(BRANCH_INDEX_WIDTH-1 downto 0), -- TODO Constants
+			 prediction     => predict_taken,
+			 correct_addr   => idex_in.pc_current(BRANCH_INDEX_WIDTH-1 downto 0),
+			 correct_taken  => reg_values_equal,
+			 correct_enable => idex_in.ctrl_ex.branch,
+			 clk            => clk
+		);		
     
     -- IF Stage
     imem_address <= pc_next;
@@ -300,7 +299,7 @@ begin
     memwb_in.ctrl_wb <= exmem_out.ctrl_wb;
     memwb_in.write_reg_addr <= exmem_out.write_reg_addr;
 	     
-    pc_next_in_mux : process(idex_in, exmem_out)
+    pc_next_in_mux : process(idex_in, exmem_out, correction_flush, pc_corrected, jump_target, predict_taken)
     begin
 		  if correction_flush = '1' then
 		      pc_next_in.jump <= pc_corrected;

@@ -143,11 +143,9 @@ begin
 			idex.ctrl_m  <= ctrl_m;
 			idex.ctrl_wb <= ctrl_wb;
 		else
-			idex.ctrl_m.mem_read   <= '0';
-			idex.ctrl_m.mem_write  <= '0';
-			idex.ctrl_ex.jump      <= '0';
-			idex.ctrl_ex.branch    <= '0';
-			idex.ctrl_wb.reg_write <= '0';
+			idex.ctrl_ex <= (alu_op => ALUOP_FUNC, reg_dst => '0', alu_src => '0', jump => '0', branch => '0');
+			idex.ctrl_m  <= (others => '0');
+		   idex.ctrl_wb <= (others => '0');
 		end if;
 	end process;
 	

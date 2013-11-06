@@ -44,14 +44,12 @@ architecture behavorial of stage_ex is
         port (
             alu_op : in ALU_OP;
             func : in STD_LOGIC_VECTOR (5 downto 0);
-            alu_func : out ALU_INPUT;
-            jump_result : out std_logic
+            alu_func : out ALU_INPUT
         );
     end component;
 
 	-- ALU control signals
 	signal alu_input 			: ALU_INPUT;
-	signal alu_ctrl_jump_result : std_logic := '0';
 	
 	-- Internal reg 1 and 2 signals after forwarding
 	signal reg_1_internal : std_logic_vector (N-1 downto 0);
@@ -76,8 +74,7 @@ architecture behavorial of stage_ex is
 			func		=> input.sign_extended (5 downto 0),
 			
 			-- control outputs
-			alu_func 	=> alu_input,
-			jump_result => alu_ctrl_jump_result
+			alu_func 	=> alu_input
 		);
 		
 	-- ALU
