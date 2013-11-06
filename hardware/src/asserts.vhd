@@ -27,6 +27,8 @@ package asserts is
     
     procedure assertEqual(actual : alu_op; expected : alu_op);
     procedure assertEqual(actual : alu_flags; expected : alu_flags);
+	 
+		 
 end asserts;
 
 package body asserts is
@@ -165,5 +167,6 @@ package body asserts is
         assertEqual(actual.zero, expected.zero, string'("alu_flags.zero"));
         assertEqual(actual.negative, expected.negative, string'("alu_flags.negative"));
     end procedure;
+	 
 
 end ASSERTS;
