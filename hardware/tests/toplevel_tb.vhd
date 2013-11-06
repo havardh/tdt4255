@@ -81,8 +81,7 @@ architecture behavior of toplevel_tb is
           
         bus_command <= CMD_NONE;					
         bus_address <= zero;
-        wait for clk_period*2;      
-        -- TODO Error messages are broken somehow here, but asserting will correctly pass and fail
+        wait for clk_period*2;
         assertEqual(bus_data, expected);
         wait for clk_period*0.5;
     end procedure;
