@@ -154,17 +154,13 @@ begin
 	begin
 		if forwarding_C = '1' then
 			forwarded_reg1 <= wb.write_data;
-			--idex.reg1 <= wb.write_data;
 		else
 			forwarded_reg1 <= reg1;
-			--idex.reg1 <= reg1;
 		end if;
 		if forwarding_D = '1' then
 			forwarded_reg2 <= wb.write_data;
-			--idex.reg2 <= wb.write_data;
 		else
 			forwarded_reg2 <= reg2;
-			--idex.reg2 <= reg2;
 		end if;
 	end process;
 	
@@ -184,6 +180,6 @@ begin
 	
 	idex.pc_current <= ifid.pc_current;
 	idex.pc_incremented <= ifid.pc_incremented;
-	idex.equals <= '0'; -- <= '1' when (forwarded_reg1 xor forwarded_reg2) = X"00000000" else '0';
+	idex.equals <= '0';
 	
 end Behavioral;

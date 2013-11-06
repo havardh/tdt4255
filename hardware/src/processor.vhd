@@ -309,7 +309,7 @@ begin
 		  if correction_flush = '1' then
 		      pc_next_in.jump <= pc_corrected;
 				pc_next_in.src  <= '1';
-		  elsif idex_in.ctrl_m.jump = '1' then -- TODO: and prev ins == branch and taken
+		  elsif idex_in.ctrl_m.jump = '1' then
 				pc_next_in.jump <= idex_in.jump_target;
             pc_next_in.src <= '1';
         elsif idex_in.ctrl_m.branch = '1' and predict_taken = '1' then

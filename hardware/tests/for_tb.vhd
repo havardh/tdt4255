@@ -129,7 +129,6 @@ begin
 		  
 		  -- i++
 		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00220820");
-		  --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000004", X"00220820");
 		  
 		  -- j 
 		  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000005", X"08000003");
