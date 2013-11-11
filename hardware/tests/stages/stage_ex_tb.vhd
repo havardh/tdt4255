@@ -22,6 +22,11 @@ architecture Behavior of stage_ex_tb is
 		ex_mem_rd    : in std_logic_vector(N-1 downto 0);
 		mem_wb_rd    : in std_logic_vector(N-1 downto 0);
 		
+		reg_values_equal : out std_logic;
+		
+		flush : out std_logic;
+		pc_corrected : out std_logic_vector(N-1 downto 0);
+		
 		output: out exmem_t
 	);
 	end component;
@@ -61,7 +66,6 @@ begin
 			ctrl_ex => (alu_op => ALUOP_FUNC, others => '0'),
 			ctrl_m  => (others => '0'),
 			ctrl_wb => (others => '0'),
-         equals => '0',
 		   predict_taken => '0',
 			read_reg_rs_addr => (others => '0'),
 			read_reg_rt_addr => (others => '0'),
@@ -188,7 +192,6 @@ begin
 			ctrl_ex => (alu_op => ALUOP_FUNC, others => '0'),
 			ctrl_m  => (others => '0'),
 			ctrl_wb => (others => '0'),
-         equals => '0',
 		   predict_taken => '0',
 			read_reg_rs_addr => (others => '0'),
 			read_reg_rt_addr => (others => '0'),
