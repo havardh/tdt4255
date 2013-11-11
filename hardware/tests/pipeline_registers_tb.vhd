@@ -154,14 +154,14 @@ begin
             ctrl_wb => (others => '1'), 
             ctrl_ex => (alu_op => (ALUOP_FUNC), others => '0'), 
             ctrl_m => (others => '1'), 
-            equals => '0',
+           	predict_taken => '0',
             others => (others => '0')
         );
         idex_expected <= (
             ctrl_wb => (others => '1'), 
             ctrl_ex => (alu_op => (ALUOP_FUNC), others => '0'), 
             ctrl_m => (others => '1'), 
-            equals => '0',
+            predict_taken => '0',
             others => (others => '0')
         );
         wait for clk_period;
@@ -172,10 +172,9 @@ begin
             ctrl_m => (others => '1'),
             ctrl_wb => (others => '1'),
             reg1 => X"10101010", 
-            jump_target => X"11001100",
             
+            predict_taken => '1',
             ctrl_ex => (alu_op => (ALUOP_FUNC), others => '0'), 
-            equals => '0',
             others => (others => '0')
         );
         
