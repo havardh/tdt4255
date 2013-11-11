@@ -84,8 +84,6 @@ architecture Behavioral of stage_id is
 	signal ctrl_ex : ctrl_ex_t;
 	signal ctrl_m  : ctrl_m_t;
 	signal ctrl_wb : ctrl_wb_t;
-
-	signal ctrl_jump : std_logic;
 	
 	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
 	
