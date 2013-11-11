@@ -13,7 +13,6 @@ architecture behavior of stage_pc_next_tb is
     -- Component Declaration for the Unit Under Test (UUT) 
     component stage_pc_next
         port (
-			clk            : in std_logic;
 			reset          : in std_logic;
 			pc_opt        : in pc_next_t;
 			enable         : in std_logic;
@@ -26,7 +25,6 @@ architecture behavior of stage_pc_next_tb is
     end component;
 
     --Inputs and outputs
-    signal clk            : std_logic;
 	signal reset          : std_logic;
 	signal enable         : std_logic;
 	signal pc_opt	        : pc_next_t := (src => '0', jump => (others => '0'));
@@ -39,7 +37,6 @@ architecture behavior of stage_pc_next_tb is
 begin
     -- Instantiate the Unit Under Test (UUT)
     uut: stage_pc_next PORT MAP (
-		clk => clk,
 		reset => reset,
 		pc_opt => pc_opt,
 		enable => enable,
@@ -48,16 +45,6 @@ begin
 		pc => pc,
 		pc_next => pc_next
     );
-
-	-- Clock process definitions
-    clk_process: process
-    begin
-        clk <= '0';
-        wait for clk_period/2;
-        clk <= '1';
-        wait for clk_period/2;
-    end process;
-    
 
     -- Stimulus process
     stim_proc: process
@@ -70,42 +57,42 @@ begin
 
 		-- Hold reset state
 		reset <= '1';
-		wait for clk_period*2;
+		wait for 1 ns;
 		reset <= '0';
 	
 		-- Assert that PC adding works
 		assert (false) report "Test initial value after reset" severity note;
-		wait for clk_period;
+		wait for 1 ns;
 		assertEqual(pc_next, X"00000001");
 
 		-- Assert that pc latches correctly when jump is false
 		pc_opt <= (src => '0', jump => (others => '0'));
 		pc <= pc_next;
-		wait for clk_period;
+		wait for 1 ns;
 		assert (false) report "Test current latches next" severity note;
 		assertEqual(pc_next, X"00000002");
 
 		-- Assert that pc disregards jump address while source is still the incremented value
 		pc_opt <= (src => '0', jump => X"F0000000");
 		pc <= pc_next;
-		wait for clk_period;
+		wait for 1 ns;
 		assert (false) report "Test jump is ignored if source is incrmented" severity note;
 		assertEqual(pc_next, X"00000003");
 
 		-- Assert the PC does jump if src is jump
 		pc_opt <= (src => '1', jump => X"F0000000");
-		wait for clk_period;
+		wait for 1 ns;
 		assert (false) report "Test jump is taken if source is jump" severity note;
 		assertEqual(pc_next, X"F0000000");
 
 		-- Test that the unit correctly resets when reset is toggled
 		reset <= '1';
-		wait for clk_period * 0.5; -- Let the signal 'propagate'
+		wait for 1 ns; -- Let the signal 'propagate'
 		reset <= '0';
 		
 		assert (false) report "Test reset" severity note;
 		assertEqual(pc_next, X"00000000");
-		wait for clk_period*0.5;
+		wait for 1 ns;
 		
 		-- Test that when stall is pulled high the current pc is kept
 		assert (false) report "Test that stall keeps the PC value from changing" severity note;
@@ -114,12 +101,12 @@ begin
 		stall <= '1';
 		
 		assert(false) report " -- Normal pc increment is disregarded" severity note;
-		wait for clk_period;
+		wait for 1 ns;
 		assertEqual(pc_next, X"00000000");
 		
 		assert (false) report " -- Jumping is disregarded" severity note;
 		pc_opt <= (src => '1', jump => X"F0000000");
-		wait for clk_period;
+		wait for 1 ns;
 		assertEqual(pc_next, X"00000000");
 		
 		
