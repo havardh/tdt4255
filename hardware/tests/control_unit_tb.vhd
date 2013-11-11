@@ -56,8 +56,8 @@ begin
 
 	output(7) <= ctrl_ex.reg_dst;
 	output(6) <= ctrl_ex.alu_src;
-	output(5) <= ctrl_m.jump;
-	output(4) <= ctrl_m.branch;
+	output(5) <= ctrl_ex.jump;
+	output(4) <= ctrl_ex.branch;
 	output(3) <= ctrl_m.mem_write;
 	output(2) <= ctrl_m.mem_read;
 	output(1) <= ctrl_wb.mem_to_reg;

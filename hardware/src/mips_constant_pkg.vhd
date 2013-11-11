@@ -15,6 +15,7 @@ package MIPS_CONSTANT_PKG is
 	constant DADDR_BUS	: integer	:= 32;
 	constant DDATA_BUS	: integer	:= 32;
 	constant RADDR_BUS	: integer	:= 5;
+	constant BRANCH_INDEX_WIDTH : integer := 4;
 	
 	constant MEM_ADDR_COUNT	: integer	:= 8;
 	

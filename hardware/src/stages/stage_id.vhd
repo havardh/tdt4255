@@ -18,6 +18,7 @@ entity stage_id is
 		flush : in std_logic;
 		
 		predict_taken : in std_logic;
+		jump_target : out std_logic_vector(N-1 downto 0);
 		
 		-- Write Back
 		wb : in wb_t;
@@ -83,8 +84,6 @@ architecture Behavioral of stage_id is
 	signal ctrl_ex : ctrl_ex_t;
 	signal ctrl_m  : ctrl_m_t;
 	signal ctrl_wb : ctrl_wb_t;
-
-	signal ctrl_jump : std_logic;
 	
 	signal reg1, reg2 : std_logic_vector(N-1 downto 0);
 	
@@ -142,11 +141,9 @@ begin
 			idex.ctrl_m  <= ctrl_m;
 			idex.ctrl_wb <= ctrl_wb;
 		else
-			idex.ctrl_m.mem_read  <= '0';
-			idex.ctrl_m.mem_write  <= '0';
-			idex.ctrl_m.jump       <= '0';
-			idex.ctrl_m.branch     <= '0';
-			idex.ctrl_wb.reg_write <= '0';
+			idex.ctrl_ex <= (alu_op => ALUOP_FUNC, reg_dst => '0', alu_src => '0', jump => '0', branch => '0');
+			idex.ctrl_m  <= (others => '0');
+		   idex.ctrl_wb <= (others => '0');
 		end if;
 	end process;
 	
@@ -170,7 +167,7 @@ begin
 	
 	-- Jump Target is High bits of PC concatenated with the address portion of
 	-- the instruction
-	idex.jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
+	jump_target   <= ifid.pc_incremented(31 downto 26) & ifid.instruction(25 downto 0);
 	idex.sign_extended <= sign_extended;
 	
 	-- Assume R-type instructions, let execute handle this 
@@ -180,6 +177,5 @@ begin
 	
 	idex.pc_current <= ifid.pc_current;
 	idex.pc_incremented <= ifid.pc_incremented;
-	idex.equals <= '0';
 	
 end Behavioral;
