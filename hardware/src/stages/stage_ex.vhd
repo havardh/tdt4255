@@ -17,6 +17,11 @@ entity stage_ex is
 		ex_mem_rd    : in std_logic_vector(N-1 downto 0);
 		mem_wb_rd    : in std_logic_vector(N-1 downto 0);
 		
+		reg_values_equal : out std_logic;
+		
+		flush : out std_logic;
+		pc_corrected : out std_logic_vector(N-1 downto 0);
+		
 		output: out exmem_t
 	);
 end stage_ex; 
@@ -39,14 +44,12 @@ architecture behavorial of stage_ex is
         port (
             alu_op : in ALU_OP;
             func : in STD_LOGIC_VECTOR (5 downto 0);
-            alu_func : out ALU_INPUT;
-            jump_result : out std_logic
+            alu_func : out ALU_INPUT
         );
     end component;
 
 	-- ALU control signals
 	signal alu_input 			: ALU_INPUT;
-	signal alu_ctrl_jump_result : std_logic := '0';
 	
 	-- Internal reg 1 and 2 signals after forwarding
 	signal reg_1_internal : std_logic_vector (N-1 downto 0);
@@ -55,11 +58,11 @@ architecture behavorial of stage_ex is
 	-- Final ALU B input after alusrc mux	
 	signal alu_b_in         : std_logic_vector (N-1 downto 0);
 	
+	signal equals : std_logic;
+	
 	begin
 	-- signal relaying
 	output.ctrl_wb 		  <= input.ctrl_wb;
-	output.branch_target  <= input.branch_target;
-	output.jump_target 	  <= input.jump_target;
 	output.ctrl_m 		  <= input.ctrl_m;
 	output.write_mem_data <= reg_2_internal;
 	
@@ -71,8 +74,7 @@ architecture behavorial of stage_ex is
 			func		=> input.sign_extended (5 downto 0),
 			
 			-- control outputs
-			alu_func 	=> alu_input,
-			jump_result => alu_ctrl_jump_result
+			alu_func 	=> alu_input
 		);
 		
 	-- ALU
@@ -129,4 +131,31 @@ architecture behavorial of stage_ex is
 			output.write_reg_addr <= input.write_reg_rd_addr;
 		end if;
 	end process;
+	
+	equals <= '1' when (reg_1_internal xor reg_2_internal) = X"00000000" else '0';
+	reg_values_equal <= equals;
+	
+	branch_correction: process( input.ctrl_ex.branch, equals, input.predict_taken )
+	begin
+		if input.ctrl_ex.branch = '1' then
+				
+			if equals /= input.predict_taken then
+				flush <= '1';
+				
+				if equals = '1' then
+					pc_corrected <= input.branch_target;
+				else 
+					pc_corrected <= input.pc_incremented;
+				end if;
+				
+			else
+				flush <= '0';
+				pc_corrected <= (others => '0');
+		   end if;
+		else
+			flush <= '0';
+			pc_corrected <= (others => '0');
+		end if;	
+	end process;
+	
 end architecture;

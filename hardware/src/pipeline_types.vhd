@@ -10,6 +10,8 @@ package pipeline_types is
     
     type ctrl_ex_t is
     record
+		  branch : std_logic;
+		  jump : std_logic;
         alu_src : std_logic;
         reg_dst : std_logic;
         alu_op : ALU_OP;
@@ -17,8 +19,6 @@ package pipeline_types is
         
     type ctrl_m_t is
     record
-        jump : std_logic;
-        branch : std_logic;        
         mem_write : std_logic;
         mem_read : std_logic;
     end record;
@@ -38,26 +38,26 @@ package pipeline_types is
     type ifid_t is
     record
         instruction : std_logic_vector(N-1 downto 0);
+        pc_current : std_logic_vector(N-1 downto 0);
         pc_incremented : std_logic_vector(N-1 downto 0);
     end record;
 
     type idex_t is
     record
-		  -- DEBUG
-        instruction : std_logic_vector(N-1 downto 0);
-		  -- /DEBUG
+	 
+		  pc_current : std_logic_vector(N-1 downto 0);
+		  pc_incremented : std_logic_vector(N-1 downto 0);
 	 
         ctrl_wb : ctrl_wb_t;    
         ctrl_m : ctrl_m_t;
         ctrl_ex : ctrl_ex_t;
         
         branch_target : std_logic_vector(N-1 downto 0);
-        jump_target : std_logic_vector(N-1 downto 0);
         
         reg1 : std_logic_vector(N-1 downto 0);
         reg2 : std_logic_vector(N-1 downto 0);
         
-        equals : std_logic;
+		  predict_taken : std_logic;
         
         sign_extended : std_logic_vector(N-1 downto 0);
         
@@ -68,15 +68,9 @@ package pipeline_types is
     
     type exmem_t is
     record
-		  -- DEBUG
-        instruction : std_logic_vector(N-1 downto 0);
-		  -- /DEBUG
 		  
         ctrl_wb : ctrl_wb_t;
         ctrl_m : ctrl_m_t;
-
-        branch_target : std_logic_vector(N-1 downto 0);
-        jump_target : std_logic_vector(N-1 downto 0);
 
         flags : ALU_FLAGS;
         alu_result : std_logic_vector(N-1 downto 0);
@@ -88,9 +82,6 @@ package pipeline_types is
 
     type memwb_t is
     record
-		  -- DEBUG
-        instruction : std_logic_vector(N-1 downto 0);
-		  -- /DEBUG
 		  
         ctrl_wb : ctrl_wb_t;
 

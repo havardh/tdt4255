@@ -12,6 +12,9 @@ entity hazard_detection_unit is
 		idex_mem_read : in std_logic;
 		idex_jump : in std_logic;
 
+		idex_branch : in std_logic;
+		idex_predict_taken : in std_logic;
+
 		ifid_rt : in std_logic_vector(4 downto 0);
 		ifid_rs : in std_logic_vector(4 downto 0);
 
@@ -24,7 +27,7 @@ architecture Behavioral of hazard_detection_unit is
 
 begin
 
-	flush <= idex_jump;
+	flush <= idex_jump or (idex_predict_taken and idex_branch);
 	
 	process(idex_rt, idex_mem_read, ifid_rt, ifid_rs)
 	begin
