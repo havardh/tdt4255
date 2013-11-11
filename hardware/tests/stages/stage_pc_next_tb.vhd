@@ -105,6 +105,23 @@ begin
 		
 		assert (false) report "Test reset" severity note;
 		assertEqual(pc_next, X"00000000");
+		wait for clk_period*0.5;
+		
+		-- Test that when stall is pulled high the current pc is kept
+		assert (false) report "Test that stall keeps the PC value from changing" severity note;
+		pc <= X"00000000";
+		pc_opt <= (src => '0', jump => X"00000000");
+		stall <= '1';
+		
+		assert(false) report " -- Normal pc increment is disregarded" severity note;
+		wait for clk_period;
+		assertEqual(pc_next, X"00000000");
+		
+		assert (false) report " -- Jumping is disregarded" severity note;
+		pc_opt <= (src => '1', jump => X"F0000000");
+		wait for clk_period;
+		assertEqual(pc_next, X"00000000");
+		
 		
         wait;
     end process;

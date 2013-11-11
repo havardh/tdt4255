@@ -170,16 +170,16 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0F0008");
                
         
-        -- 0x11 beq $0, $0, -1
+        -- 0x11 beq $0, $0, -2
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"10001110");
         
         -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
---        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"AC0D0009");
-  --      writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D000A");
-    --    writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000B");
-      --  writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000C");
-        --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000019", X"AC0D000D");
-           --writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000001A", X"AC0D000E");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D0009");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000017", X"AC0D000A");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000018", X"AC0D000B");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000019", X"AC0D000C");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000001A", X"AC0D000D");
+        writeData(command, bus_address_in, bus_data_in, CMD_WI, X"0000001B", X"AC0D000E");
        
 		  
 		  
