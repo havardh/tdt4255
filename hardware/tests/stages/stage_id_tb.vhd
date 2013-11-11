@@ -35,15 +35,15 @@ architecture Behavior of stage_id_tb is
 	signal reset : std_logic;
 
 	-- Input
-	signal stall          : std_logic; 
-	signal wb             : wb_t;
-	signal ifid           : ifid_t;
+	signal stall : std_logic; 
+	signal wb    : wb_t;
+	signal ifid  : ifid_t;
 	
 	-- Forwarding
 	signal forwarding_C, forwarding_D : std_logic;
 
 	-- Output
-	signal idex                  : idex_t;
+	signal idex : idex_t;
 	
 	-- Control Unit output
 	signal ctrl_output : std_logic_vector(6 downto 0);
@@ -60,6 +60,7 @@ begin
 			ifid => ifid,
 			idex => idex,
 			
+			
 			forwarding_C => forwarding_C,
 			forwarding_D => forwarding_D
 		);
@@ -67,8 +68,8 @@ begin
 	-- Map up control_unit output for easy assertions
 	ctrl_output(6) <= idex.ctrl_ex.reg_dst;
 	ctrl_output(5) <= idex.ctrl_ex.alu_src;
-	ctrl_output(4) <= idex.ctrl_m.jump;
-	ctrl_output(3) <= idex.ctrl_m.branch;
+	ctrl_output(4) <= idex.ctrl_ex.jump;
+	ctrl_output(3) <= idex.ctrl_ex.branch;
 	ctrl_output(2) <= idex.ctrl_m.mem_write;
 	ctrl_output(1) <= idex.ctrl_wb.mem_to_reg;
 	ctrl_output(0) <= idex.ctrl_wb.reg_write;
@@ -129,10 +130,10 @@ begin
 		assertEqual(ifid.instruction, "00000000000000010000000000000000");
 		wait for clk_period;
 
-    -- Verify that $1 is updated but $0 is not.
+        -- Verify that $1 is updated but $0 is not.
 		assertEqual(idex.reg1, X"00000000");
 		assertEqual(idex.reg2, X"00000001");
-		assertEqual(idex.equals, '0', "Comparator is not 0");
+		--assertEqual(idex.equals, '0', "Comparator is not 0");
 		
 		-- Read the values with rt and rs forwarded
 		wb.reg_write <= '0';
@@ -141,12 +142,13 @@ begin
 		wb.write_data <= X"00000100";
 		ifid.instruction <= "00000000000000000000000000000000";
 		wait for 1 ns;
+		
 		assertEqual(ifid.instruction, "00000000000000000000000000000000");
     	-- Verify that both are forwarded
 		assertEqual(idex.reg1, X"00000100");
 		assertEqual(idex.reg2, X"00000100");
 		
-		assertEqual(idex.equals, '1', "Comparator is not 1");
+		--assertEqual(idex.equals, '1', "Comparator is not 1");
 
 		
 		------------------------
@@ -164,22 +166,6 @@ begin
 		ifid.pc_incremented <= X"00000111";
 		wait for clk_period;
 		assertEqual(idex.branch_target, X"00000222");
-
-		----------------------
-		-- Test Jump Target --
-		----------------------
-
-		-- Jump target should be equal to address portion of instruction if pc is low
-		ifid.pc_incremented <= X"00000000";
-		ifid.instruction <= X"0800ABC0";
-		wait for clk_period;
-		assertEqual(idex.jump_target, X"0000ABC0");
-
-		-- Jump target should include high order bits of PC
-		ifid.pc_incremented <= X"AC000000";
-		ifid.instruction <= X"0800ABC0";
-		wait for clk_period;
-		assertEqual(idex.jump_target, X"AC00ABC0");
 		
 		------------------------
 		------------------------
