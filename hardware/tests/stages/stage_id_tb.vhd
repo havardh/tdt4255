@@ -49,7 +49,7 @@ architecture Behavior of stage_id_tb is
 	signal forwarding_C, forwarding_D : std_logic;
 
 	-- Output
-	signal idex                  : idex_t;
+	signal idex : idex_t;
 	
 	-- Control Unit output
 	signal ctrl_output : std_logic_vector(6 downto 0);
@@ -67,6 +67,7 @@ begin
 			wb => wb,
 			ifid => ifid,
 			idex => idex,
+			
 			
 			forwarding_C => forwarding_C,
 			forwarding_D => forwarding_D
@@ -140,6 +141,25 @@ begin
 		assertEqual(ifid.instruction, "00000000000000010000000000000000");
 		wait for clk_period;
 
+        -- Verify that $1 is updated but $0 is not.
+		assertEqual(idex.reg1, X"00000000");
+		assertEqual(idex.reg2, X"00000001");
+		--assertEqual(idex.equals, '0', "Comparator is not 0");
+		
+		-- Read the values with rt and rs forwarded
+		wb.reg_write <= '0';
+		forwarding_C <= '1';
+		forwarding_D <= '1';
+		wb.write_data <= X"00000100";
+		ifid.instruction <= "00000000000000000000000000000000";
+		wait for 1 ns;
+		
+		assertEqual(ifid.instruction, "00000000000000000000000000000000");
+    	-- Verify that both are forwarded
+		assertEqual(idex.reg1, X"00000100");
+		assertEqual(idex.reg2, X"00000100");
+		
+		--assertEqual(idex.equals, '1', "Comparator is not 1");
 		
 		------------------------
 		-- Test Branch Target --

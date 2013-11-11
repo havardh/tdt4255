@@ -23,7 +23,6 @@ architecture Behavior of stage_ex_tb is
 		mem_wb_rd    : in std_logic_vector(N-1 downto 0);
 		
 		reg_values_equal : out std_logic;
-		
 		flush : out std_logic;
 		pc_corrected : out std_logic_vector(N-1 downto 0);
 		
@@ -36,6 +35,8 @@ architecture Behavior of stage_ex_tb is
 
 	-- Output
 	signal output : exmem_t;
+	signal reg_values_equal, flush : std_logic;
+	signal pc_corrected : std_logic_vector(N-1 downto 0);
 	
 	-- Forwarding signals
 	signal forwarding_a, forwarding_b : std_logic_vector(1 downto 0);
@@ -52,7 +53,11 @@ begin
 			forwarding_a => forwarding_a,
 			forwarding_b => forwarding_b,
 			ex_mem_rd => ex_mem_rd,
-			mem_wb_rd => mem_wb_rd
+			mem_wb_rd => mem_wb_rd,
+			
+			reg_values_equal => reg_values_equal,
+			pc_corrected => pc_corrected,
+			flush => flush
 		);
 
 	stim_proc: process
@@ -72,7 +77,8 @@ begin
 			write_reg_rd_addr => (others => '0'),
 			others  => (others => '0')
 		);
-	   forwarding_a <= "00";
+	    
+	    forwarding_a <= "00";
 		forwarding_b <= "00";
 		wait for 1 ns;
 		

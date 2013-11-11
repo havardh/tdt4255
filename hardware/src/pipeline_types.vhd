@@ -45,8 +45,8 @@ package pipeline_types is
     type idex_t is
     record
 	 
-		  pc_current : std_logic_vector(N-1 downto 0);
-		  pc_incremented : std_logic_vector(N-1 downto 0);
+		pc_current : std_logic_vector(N-1 downto 0);
+		pc_incremented : std_logic_vector(N-1 downto 0);
 	 
         ctrl_wb : ctrl_wb_t;    
         ctrl_m : ctrl_m_t;
@@ -57,7 +57,7 @@ package pipeline_types is
         reg1 : std_logic_vector(N-1 downto 0);
         reg2 : std_logic_vector(N-1 downto 0);
         
-		  predict_taken : std_logic;
+		predict_taken : std_logic;
         
         sign_extended : std_logic_vector(N-1 downto 0);
         

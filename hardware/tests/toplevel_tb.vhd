@@ -175,10 +175,10 @@ begin
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000014", X"AC0F0008");
                
         
-        -- 0x11 beq $0, $0, -2
+        -- 0x11 beq $0, $0, -1
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000015", X"1000FFFF");
         
-        -- Keep storing register $13, we expect three of these to run as we got no control hazard detection yet
+        -- Keep storing register $13, we expect this to never run because of the branch at 0x15
         writeData(command, bus_address_in, bus_data_in, CMD_WI, X"00000016", X"AC0D0009");
        
 		  
@@ -199,9 +199,8 @@ begin
         assertData(command, bus_address_in, bus_data_out, X"00000005", X"F0FF0000");
         assertData(command, bus_address_in, bus_data_out, X"00000006", X"000F0000");
         assertData(command, bus_address_in, bus_data_out, X"00000007", X"FFFF0000");
-        assertData(command, bus_address_in, bus_data_out, X"00000008", X"000F0000");
-        
-        --assertData(command, bus_address_in, bus_data_out, X"00000009", X"00000000");
+        assertData(command, bus_address_in, bus_data_out, X"00000008", X"000F0000");        
+        assertData(command, bus_address_in, bus_data_out, X"00000009", X"00000000");
         
         assert (false) report "Done" severity note;
         
