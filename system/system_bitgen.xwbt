@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\Users\runarbol\Desktop\tdt4255\system\system.ncd
-OUTFILE=C:\Users\runarbol\Desktop\tdt4255\system\system.bit
+INFILE=C:\Users\runarbol\Documents\GitHub\tdt4255\system\system.ncd
+OUTFILE=C:\Users\runarbol\Documents\GitHub\tdt4255\system\system.bit
 FAMILY=Spartan6
 PART=xc6slx16-2csg324
-WORKINGDIR=C:\Users\runarbol\Desktop\tdt4255\system
+WORKINGDIR=C:\Users\runarbol\Documents\GitHub\tdt4255\system
 LICENSE=ISE
 USER_INFO=174154421_208900020_000

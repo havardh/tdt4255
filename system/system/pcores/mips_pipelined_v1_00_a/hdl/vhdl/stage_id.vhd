@@ -141,7 +141,11 @@ begin
 			idex.ctrl_m  <= ctrl_m;
 			idex.ctrl_wb <= ctrl_wb;
 		else
-			idex.ctrl_ex <= (alu_op => ALUOP_FUNC, reg_dst => '0', alu_src => '0', jump => '0', branch => '0');
+			idex.ctrl_ex.alu_op <= ALUOP_FUNC;
+			idex.ctrl_ex.reg_dst <= '0';
+			idex.ctrl_ex.alu_src <= '0';
+			idex.ctrl_ex.jump <= '0';
+			idex.ctrl_ex.branch <= '0';
 			idex.ctrl_m  <= (others => '0');
 		   idex.ctrl_wb <= (others => '0');
 		end if;

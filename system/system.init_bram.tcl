@@ -1,4 +1,4 @@
-cd C:/Users/runarbol/Desktop/tdt4255/system/system
+cd C:/Users/runarbol/Documents/GitHub/tdt4255/system/system
 if { [ catch { xload xmp system.xmp } result ] } {
   exit 10
 }
