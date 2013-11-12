@@ -5,7 +5,7 @@ python driver/host.py -p $1 -c s
 #sleep 5
 python driver/host.py -p $1 -c s
 python driver/host.py -p $1 -r out.txt
-diff out.txt $2.out
+diff -wi out.txt $2.out
 if [ $? -ne 0 ]
 then
 	echo "Failed";
