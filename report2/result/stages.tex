@@ -1,0 +1,13 @@
+\subsection{Next Program Counter Stage}
+The pc next stage has four simple cases that are tested. These are tested by setting the inputs correctly and asserting that the output is as expected. The results attached shows that all assertions passes.
+
+\subsection{Instruction Decode Stage}
+The instruction decode test bench is divided in two parts. One synchronous part testing the signals going through the register file (this unit is the only synchronous unit in this stage), and one asynchronous part testing the rest of the components. The results of test bench is attached with the other results.
+
+\subsection{Execute Stage}
+
+The execute stage includes the ALU. This unit was included in the assignment startup code and is not tested comprehensivly. But the forwarding logic contained in this stage is. The test bench is selftesting and a screenshot of its execution in Modelsim is included as a attachment.
+
+\subsection{Write Back Stage}
+
+The write back stage test bench is a short test bench which verifies that the write back stage multiplexes the signals correclty and forwards the control signals back to the instruction decode stage. The test is self testing and a screenshot is attached.

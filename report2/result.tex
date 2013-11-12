@@ -1,0 +1,22 @@
+\section{Results}
+
+All testbenches are implemented as selftesting testsbenches. They contain 
+asserts which verify that the expected output has been generated. For the 
+low level components the tests are implemented as simple signal assignments 
+and assertions. Integration tests are written at the toplevel, here small 
+testprograms are loaded into the instruction memory with test data loaded
+into data memory, the processor is then enabled for a while. Finally the 
+resulting memory state is checked using assert functions.
+
+The test benches are presented in a bottom-up order, and a screenshot is 
+provided per testbench. For the higher level 
+units or units which contains states, the screenshot is included in the report
+and the result is described in more detail. The lower level tests have their test bench results combined into an attached .zip-file, and can be used for easy verification that all assertions pass.
+
+
+
+\input{result/hazards}
+\input{result/stages}
+\input{result/toplevel}
+\FloatBarrier
+\input{result/onthechip}

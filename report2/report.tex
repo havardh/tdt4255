@@ -1,0 +1,48 @@
+\documentclass[a4paper, 10pt, titlepage]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{newclude}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{bytefield}
+\usepackage{multirow}
+\usepackage{todo}
+\usepackage{placeins}
+\setcounter{secnumdepth}{5}
+\usepackage[toc,page]{appendix}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{
+	language=VHDL,
+    keywordstyle=\color{blue},
+    commentstyle=\color{dkgreen},
+    stringstyle=\color{mauve}
+}
+
+\newcommand{\swtext}[1]{\begin{sideways}\bf{#1}\end{sideways}}
+
+\title{Assignment 2 TDT4255}
+\author{Anders Holter Bjørkto\\
+    Runar Bergheim Olsen\\
+    Håvard Wormdal Høiby}
+
+\begin{document}
+  \maketitle
+	\newpage
+
+    \include{abstract}
+	\tableofcontents
+	\include{introduction}
+	\include{isa}
+	\include{implementation}
+	\include{result}
+	\include*{discussion}
+	\include*{conclusion}
+	\include{bibliography}
+%	\include{appendix}
+\end{document}

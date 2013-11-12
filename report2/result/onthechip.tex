@@ -1,0 +1,44 @@
+\section{Implementation on the FPGA}
+
+\subsection{Creating the bit file}
+The final bit file {\bf system\_final.bit} is included as a deliverable 
+for easy testing of the project on a FPGA. But the file can also easily 
+be created by following these steps.
+
+\begin{enumerate}
+	\item Open the ISE project located at:
+		{\bf system/system.xise}
+	\item Select the System file in the navigator
+  \item Right click on ``Update Bitstream with Processor Data`` and select ReRun All. This process takes a few minutes. 
+	\item The result is a file called {\bf system\_download.bit}
+\end{enumerate}
+
+
+\subsection{Uploading the code to the FPGA}
+Using the AvProg application installed on the lab, the FPGA can be configured 
+with the {\bf system\_download.bit} or {\bf system\_final.bit} file.
+This is done by:
+
+\begin{enumerate}
+\item Opening the application and connecting to the Development board through the COM port.
+\item Selecting the {\bf .bit} file through the {\bf browse} dialog. 
+\item Pressing the {\bf Configure FPGA} button.
+\item Disconnecting the COM port. 
+\end{enumerate}  
+
+\subsection{Running code on the FPGA}
+After the FPGA is configured with the core our two test programs can be executed using
+the {\bf driver/run\_test.sh} shell script we have prepared. It takes two arguments,
+the com port number and the name of the test to be executed (either bin/toplevel\_tb
+or bin/for\_tb). The shell script will prepare the memories, execute the processor,
+read back the result and validate against a excpected data set. The output will either
+be {\bf success} in case of a successfull test or {\bf failure} if the test fails.
+
+The two test programs execute the same instruction set as the test benches with the same
+name.
+
+\begin{verbatim}
+> ./driver/run_test.sh 3 bin/toplevel_tb
+< ....
+< success
+\end{verbatim}

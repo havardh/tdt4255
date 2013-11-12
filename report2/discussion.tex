@@ -1,0 +1,64 @@
+\section{Discussion}
+
+In this exercise we have gotten an even better introduction to the development of 
+processors and other components using a hardware description langauge and industrial
+grade development tools. We were able to build on our experience and knownledge from the first
+exercise \cite{multicycle}, which resulted in a much smoother development process with less problems
+caused by misunderstanding or wrong usage of the development tools.
+
+We were able to build on the framework of the previous exercise and use that as a 
+starting point when solving this exercise. This saved us some startup time, but in the
+end most of the code for this exercise ended up being written from scratch, as the 
+architectures are vastly different.
+
+Our implementation fulfills all functional requirements set by the exercise text.
+We support all the required MIPS instructions, and we have a forwarding and hazard
+detection unit that together solved all data and control hazards, either by forwarding
+values and allowing computation to continue, or stalling or flushing the pipeline to 
+prevent wrong instructions from being executed.
+
+In order to futher improve the efficency of the pipeline we've implemented a branch
+prediction unit that will predict actions taken by branches already in the ID stage,
+and that improves itself using a state machine learning algorithm. Combining this with
+unconditional jumps in the ID stage gives a fairly efficient pipeline.
+
+Our branch prediction unit has a bug that was discovered close to the deadline. The bug
+can be observed in the branch testbench (section~\ref{section:branch-tb}). If two
+branches follow each other in the code, both are initally in state TAKEN. Given that none 
+of them are to be followed, the frist one is correctly updated to NOT\_TAKEN, but the second one
+updates to TAKEN\_STRONG. As we were running out of time we were
+not able to fix this, but luckily this is a non-critical bug because the only side
+effect it will have is that branch predictions may in some cases be sub-optimal.
+
+During compilation of the system there are a couple of warnings related to unconnected
+signals. These are caused by signals in the pipeline registers that are sent to the
+related stage but not used. These are always used by atleast one of the additional units
+and the warnings are expected. We could have removed them but this would have required
+adding extra complexity to the pipeline registers to filter the signals not needed by
+the following stages.
+
+
+\subsection{Speedup}
+
+It is natural to compare the two processors we've implemeted during this course
+as they are in many ways equal, from a ISA point of view, but with two very different
+implementation approches. The obvious metric here is speed, or in this case 
+cycles spent executing the same test code. During testing we ran the for testbench 
+(Section~\ref{section:for-tb}) on both our designs, with the result being that
+our pipelined design uses only about 70\% of the time the first multicyle design
+uses. 
+
+This is a good speedup, but as we have a pipeline with 5 stages one would
+assume that a greater speedup would be achievable. The main reason the speedup is not as
+good as can be is that the test case contains several jumps, which all cause a 
+pipeline stall. There are also two mispredicted branches which each causes two
+stalls. So even if the full program when run is only 20 instructions to be executed
+the pipelined design also executes a total of 6 no-ops due to jumps, 4 no-ops due
+to mis-predicted branches and one stall due to a data dependecy, for a total of
+31 cycles. (Two more are needed before the data is availble in memory). Compared
+to our multicycle design which uses $16*2 + 4*3 = 44$ cycles, (4 loads and stores 
+and 16 normal instructions)
+
+
+Had the test been more focused on arithmetic we whould however have expected an
+even greater speedup.

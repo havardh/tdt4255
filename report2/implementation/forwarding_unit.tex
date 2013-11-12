@@ -1,0 +1,77 @@
+\subsection{Forwarding unit}
+\label{section:forwarding_unit}
+
+The forwarding unit is a combinatorial circuit that enables the usage of two consecutive instructions where one writes to a register and the other reads from that register.
+
+Each of the different forwarding hazard types that can occur, listed in table~\ref{table:forwarding_hazards}, should result in a corresponding, unique signal on either \emph{forwarding\_a} or \emph{forwarding\_b}. The letters a and b refers to which input on the ALU the hazard occurs on.
+
+\begin{table}[h]
+    \centering\begin{tabular}{ l l }
+        Type & Condition \\
+        \hline                        
+        1a & EX/MEM.RegisterRd = ID/EX.RegisterRs \\
+        1b & EX/MEM.RegisterRd = ID/EX.RegisterRt \\
+        2a & MEM/WB.RegisterRd = ID/EX.RegisterRs \\
+        2b & MEM/WB.RegisterRd = ID/EX.RegisterRs \\
+    \end{tabular}
+    \caption{Forwarding hazard types}
+    \label{table:forwarding_hazards}
+\end{table}
+
+A type 1 hazard occurs when the register to be written to in the EX/MEM stage is the same as the register read from in the ID/EX stage, which means that instruction 1 writes to the same register instruction 2 reads from.
+
+A type 2 hazard occurs when the register to be written to in the MEM/WB stage is the same as the register to be read from in the ID/EX stage. This means that instruction 1 writes to the same register that instruction 3 reads from.
+
+The forwarding signals are set by the formulas shown in table~\ref{table:forwarding_signal_results}. 
+
+\begin{table}[h]
+    \centerline{\begin{tabular}{ p{0.2cm} p{9.5cm} p{2cm} }
+         & Formula & result \\
+        \hline
+    \multirow{6}{0.2cm}{\swtext{Type 1 hazard}} 
+        & if (EX/MEM.RegWrite & \multirow{3}{2cm}{\emph{forwarding\_a} = 10}\\
+        & and (EX/MEM.RegisterRd $\neq$ 0) & \\
+        & and (EX/MEM.RegisterRd = ID/EX.RegisterRs)) & \\ 
+        \cline{2-3}
+        & if (EX/MEM.RegWrite & \multirow{3}{2cm}{\emph{forwarding\_b} = 10}\\
+        & and (EX/MEM.RegisterRd $\neq$ 0) & \\
+        & and (EX/MEM.RegisterRd = ID/EX.RegisterRt)) & \\
+        \hline
+    \multirow{10}{0.2cm}{\swtext{Type 2 hazard}}
+        & if (MEM/WB.RegWrite & \multirow{5}{2cm}{\emph{forwarding\_a} = 01}\\
+        & and (MEM/WB.RegisterRd $\neq$ 0) & \\
+        & and not(EX/MEM.RegWrite and(EX/MEM.RegisterRd $\neq$ 0)) & \\
+        & and (EX/MEM.RegisterRd $\neq$ ID/EX.RegisterRs & \\
+        & and (MEM/WB.RegisterRd = ID/EX.RegisterRs)) & \\
+        \cline{2-3}
+        & if (MEM/WB.RegWrite & \multirow{5}{2cm}{\emph{forwarding\_b} = 01}\\
+        & and (MEM/WB.RegisterRd $\neq$ 0) & \\
+        & and not(EX/MEM.RegWrite and(EX/MEM.RegisterRd $\neq$ 0)) & \\
+        & and (EX/MEM.RegisterRd $\neq$ ID/EX.RegisterRt & \\
+        & and (MEM/WB.RegisterRd = ID/EX.RegisterRt)) & \\     
+        \hline
+    \end{tabular}}
+    \caption{Forwarding formulas and results}
+    \label{table:forwarding_signal_results}
+\end{table}
+
+A MEM/WB hazard (type 2), can only occur if there has been no EX/MEM hazard (type 1), because if there is a type 1 hazard, the value that instruction write back will overwrite the value of the type 2 hazard instruction.
+
+In addition to the hazard detection mentioned above, the forwarding unit is also used to handle hazards between the write back and identify stage. These types of hazards are not mentioned in the curriculum and only occurs due to a implmenetation detail of our processor, this is explained more in detail in the identify stage section (\ref{section:stage_id}). The formulas for the two control signals, \emph{forwarding\_c} and \emph{forwarding\_d}, is shown in table~\ref{table:forwarding_c_d}.
+
+\begin{table}[h]
+    \centering\begin{tabular}{ l l }
+        Formula & result \\
+        \hline
+        if (MEM/WB.RegWrite & \multirow{3}{2cm}{\emph{forwarding\_c} = 1}\\
+        and (IF/ID.RegisterRs $\neq$ 0) & \\
+        and (IF/ID.RegisterRs = MEM/WB.RegisterRd)) & \\ 
+        \hline
+        if (MEM/WB.RegWrite & \multirow{3}{2cm}{\emph{forwarding\_d} = 1}\\
+        and (IF/ID.RegisterRt $\neq$ 0) & \\
+        and (IF/ID.RegisterRt = MEM/WB.RegisterRd)) & \\
+        \hline
+    \end{tabular}
+    \caption{Formulas for \emph{forwarding\_c} and \emph{forwarding\_d}}
+    \label{table:forwarding_c_d}
+\end{table}

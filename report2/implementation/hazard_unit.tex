@@ -1,0 +1,8 @@
+\subsection{Hazard unit}
+\label{sec:hazard_unit}
+
+The Hazard Unit includes two signals to the processor. These are stall and flush. 
+
+\subsubsection{Stall} The stall signal causes the pipeline to not execute the execute, memory and write back stages for the instruction in the instruction decode stage when the signal is asserted. It also forces the program counter to stop incrementing, so the instructions in the fetch and id stage are stalled one cycle. The stall signal is asserted when the instruction in execute stage is a load instruction and the instruction in the id stage is reading the value which is loaded. This has to happen because loading a word from memory cannot be performed in one cycle.
+
+\subsubsection{Flush} The flush signal is asserted when a jump or a branch instruction is in the execute stage. If the instruction is a branch, the branch predictor must also have predicted that the branch should be taken for the flush signal to be asserted. This causes the instruction after the jump or branch to be flushed. This has to be done because the instruction should not be executed, but fetching the instruction cannot be prevented. 

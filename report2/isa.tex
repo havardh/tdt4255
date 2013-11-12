@@ -1,0 +1,88 @@
+\subsection{ISA}
+\label{sec:isa}
+As stated previously, our MIPS implementation runs a subset of the 
+MIPS instruction set. All instructions required by the execise have 
+been implemented and tested. 
+
+In MIPS all instructions have the same width, 32 bits, and can be 
+categorized into three categories R-, I- and J-type instructions. 
+The bit layout of each of the instruction types is given in the 
+figures \ref{fig:rtype_format}, \ref{fig:itype_format} and 
+\ref{fig:jtype_format}. The subset of instructions our processor 
+supports falls within all of the three categories. 
+
+\FloatBarrier
+\subsubsection{R-Type instructions}
+R-type instructions have a total of three register fields, as well as 
+a function and shift field. Following this, R-Type instruction coding 
+is used for ALU operations as they have one destination and two source 
+registers. The R-Type instructions our implementation supports are shown
+in table~\ref{table:rtype_instructions}.
+
+\input{figures/isa/r_type}
+\begin{table}[h]
+    \begin{tabular}{l|l|l|l}
+    Phonetic & Operation & Opcode & Function \\
+
+    \hline
+    ADD \$rd, \$rs, \$rt & \$rd = \$rs + \$rd   & 000000 & 100000 \\
+    SUB \$rd, \$rs, \$rt & \$rd = \$rs - \$rd   & 000000 & 100011 \\ 
+    AND \$rd, \$rs, \$rt & \$rd = \$rs and \$rd & 000000 & 100100 \\ 
+    OR  \$rd, \$rs, \$rt & \$rd = \$rs or \$rd  & 000000 & 100101 \\  
+    SLT \$rd, \$rs, \$rt & if \$rs $<$ \$rt \$rd = 1 else \$rd = 0  & 000000 & 101010 \\
+    \hline
+    \end{tabular}
+
+    \caption{Supported R-Type instructions}
+    \label{table:rtype_instructions}
+\end{table}
+
+\FloatBarrier
+\subsubsection{I-Type instructions}
+I-Type instructions have half of the instruction word reserved for an 
+immediate value, and hence only have room for two register designators. 
+This encoding type is therefore used to map instructions that use immediate
+values, such as load immediate as well as load and store word. 
+The I-Type instructions our implementation supports are shown in 
+table~\ref{table:itype_instructions}.
+
+
+\input{figures/isa/i_type}
+\begin{table}[h]
+    \begin{tabular}{l|l|l|l}
+
+    Phonetic & Operation & Opcode \\
+    \hline
+    BEQ \$rs, \$rt, imm  & if \$rs == \$rt \$PC += 1 + imm & 000100 \\
+    LUI \$rs, imm        & \$rs = imm $<<$ 16                & 001111 \\
+    SW \$rt, imm(\$rs)   & mem[\$rs+imm] = \$rt            & 101011 \\
+    LW \$rt, imm(\$rs)   & \$rt = mem[\$rs+imm]            & 100011 \\
+    \hline
+    
+    \end{tabular}
+
+    \caption{Supported I-Type instructions}
+    \label{table:itype_instructions}
+\end{table}
+
+\FloatBarrier
+\subsubsection{J-Type instructions}
+J-Type instructions have an even larger immediate field with a width 
+of 26 bits. This encoding is mainly used to encode various jump instructions.
+The J-Type instruction our implementation supports is shown in 
+table~\ref{table:jtype_instructions}.
+
+\input{figures/isa/j_type}
+\begin{table}[h]
+    \begin{tabular}{l|l|l|l}
+
+    Phonetic & Operation & Opcode \\
+    \hline
+    J imm  & \$PC = (PC \& 0xf0000000) | (imm $<<$ 2) & 000010 \\
+    \hline
+    
+    \end{tabular}
+
+    \caption{Supported J-Type instructions}
+    \label{table:jtype_instructions}
+\end{table}
